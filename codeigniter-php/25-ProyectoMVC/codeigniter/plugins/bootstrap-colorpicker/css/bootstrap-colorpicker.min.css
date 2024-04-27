@@ -1,0 +1,491 @@
+/*!
+ * Bootstrap Colorpicker - Bootstrap Colorpicker is a modular color picker plugin for Bootstrap 4.
+ * @package bootstrap-colorpicker
+ * @version v3.4.0
+ * @license MIT
+ * @link https://itsjavi.com/bootstrap-colorpicker/
+ * @link https://github.com/itsjavi/bootstrap-colorpicker.git
+ */
+.colorpicker{position:relative;display:none;font-size:inherit;color:inherit;text-align:left;list-style:none;background-color:#fff;background-clip:padding-box;border:1px solid rgba(0,0,0,.2);padding:.75rem .75rem;width:148px;border-radius:4px;-webkit-box-sizing:content-box;box-sizing:content-box}.colorpicker.colorpicker-disabled,.colorpicker.colorpicker-disabled *{cursor:default!important}.colorpicker div{position:relative}.colorpicker-popup{position:absolute;top:100%;left:0;float:left;margin-top:1px;z-index:1060}.colorpicker-popup.colorpicker-bs-popover-content{position:relative;top:auto;left:auto;float:none;margin:0;z-index:initial;border:none;padding:.25rem 0;border-radius:0;background:0 0;-webkit-box-shadow:none;box-shadow:none}.colorpicker:after,.colorpicker:before{content:"";display:table;clear:both;line-height:0}.colorpicker-clear{clear:both;display:block}.colorpicker:before{content:'';display:inline-block;border-left:7px solid transparent;border-right:7px solid transparent;border-bottom:7px solid #ccc;border-bottom-color:rgba(0,0,0,.2);position:absolute;top:-7px;left:auto;right:6px}.colorpicker:after{content:'';display:inline-block;border-left:6px solid transparent;border-right:6px solid transparent;border-bottom:6px solid #fff;position:absolute;top:-6px;left:auto;right:7px}.colorpicker.colorpicker-with-alpha{width:170px}.colorpicker.colorpicker-with-alpha .colorpicker-alpha{display:block}.colorpicker-saturation{position:relative;width:126px;height:126px;background:-webkit-gradient(linear,left top,left bottom,from(transparent),to(black)),-webkit-gradient(linear,left top,right top,from(white),to(rgba(255,255,255,0)));background:linear-gradient(to bottom,transparent 0,#000 100%),linear-gradient(to right,#fff 0,rgba(255,255,255,0) 100%);cursor:crosshair;float:left;-webkit-box-shadow:0 0 0 1px rgba(0,0,0,.2);box-shadow:0 0 0 1px rgba(0,0,0,.2);margin-bottom:6px}.colorpicker-saturation .colorpicker-guide{display:block;height:6px;width:6px;border-radius:6px;border:1px solid #000;-webkit-box-shadow:0 0 0 1px rgba(255,255,255,.8);box-shadow:0 0 0 1px rgba(255,255,255,.8);position:absolute;top:0;left:0;margin:-3px 0 0 -3px}.colorpicker-alpha,.colorpicker-hue{position:relative;width:16px;height:126px;float:left;cursor:row-resize;margin-left:6px;margin-bottom:6px}.colorpicker-alpha-color{position:absolute;top:0;left:0;width:100%;height:100%}.colorpicker-alpha-color,.colorpicker-hue{-webkit-box-shadow:0 0 0 1px rgba(0,0,0,.2);box-shadow:0 0 0 1px rgba(0,0,0,.2)}.colorpicker-alpha .colorpicker-guide,.colorpicker-hue .colorpicker-guide{display:block;height:4px;background:rgba(255,255,255,.8);border:1px solid rgba(0,0,0,.4);position:absolute;top:0;left:0;margin-left:-2px;margin-top:-2px;right:-2px;z-index:1}.colorpicker-hue{background:-webkit-gradient(linear,left bottom,left top,from(red),color-stop(8%,#ff8000),color-stop(17%,#ff0),color-stop(25%,#80ff00),color-stop(33%,#0f0),color-stop(42%,#00ff80),color-stop(50%,#0ff),color-stop(58%,#0080ff),color-stop(67%,#00f),color-stop(75%,#8000ff),color-stop(83%,#ff00ff),color-stop(92%,#ff0080),to(red));background:linear-gradient(to top,red 0,#ff8000 8%,#ff0 17%,#80ff00 25%,#0f0 33%,#00ff80 42%,#0ff 50%,#0080ff 58%,#00f 67%,#8000ff 75%,#ff00ff 83%,#ff0080 92%,red 100%)}.colorpicker-alpha{background:linear-gradient(45deg,rgba(0,0,0,.1) 25%,transparent 25%,transparent 75%,rgba(0,0,0,.1) 75%,rgba(0,0,0,.1) 0),linear-gradient(45deg,rgba(0,0,0,.1) 25%,transparent 25%,transparent 75%,rgba(0,0,0,.1) 75%,rgba(0,0,0,.1) 0),#fff;background-size:10px 10px;background-position:0 0,5px 5px;display:none}.colorpicker-bar{min-height:16px;margin:6px 0 0 0;clear:both;text-align:center;font-size:10px;line-height:normal;max-width:100%;-webkit-box-shadow:0 0 0 1px rgba(0,0,0,.2);box-shadow:0 0 0 1px rgba(0,0,0,.2)}.colorpicker-bar:before{content:"";display:table;clear:both}.colorpicker-bar.colorpicker-bar-horizontal{height:126px;width:16px;margin:0 0 6px 0;float:left}.colorpicker-input-addon{position:relative}.colorpicker-input-addon i{display:inline-block;cursor:pointer;vertical-align:text-top;height:16px;width:16px;position:relative}.colorpicker-input-addon:before{content:"";position:absolute;width:16px;height:16px;display:inline-block;vertical-align:text-top;background:linear-gradient(45deg,rgba(0,0,0,.1) 25%,transparent 25%,transparent 75%,rgba(0,0,0,.1) 75%,rgba(0,0,0,.1) 0),linear-gradient(45deg,rgba(0,0,0,.1) 25%,transparent 25%,transparent 75%,rgba(0,0,0,.1) 75%,rgba(0,0,0,.1) 0),#fff;background-size:10px 10px;background-position:0 0,5px 5px}.colorpicker.colorpicker-inline{position:relative;display:inline-block;float:none;z-index:auto;vertical-align:text-bottom}.colorpicker.colorpicker-horizontal{width:126px;height:auto}.colorpicker.colorpicker-horizontal .colorpicker-bar{width:126px}.colorpicker.colorpicker-horizontal .colorpicker-saturation{float:none;margin-bottom:0}.colorpicker.colorpicker-horizontal .colorpicker-alpha,.colorpicker.colorpicker-horizontal .colorpicker-hue{float:none;width:126px;height:16px;cursor:col-resize;margin-left:0;margin-top:6px;margin-bottom:0}.colorpicker.colorpicker-horizontal .colorpicker-alpha .colorpicker-guide,.colorpicker.colorpicker-horizontal .colorpicker-hue .colorpicker-guide{position:absolute;display:block;bottom:-2px;left:0;right:auto;height:auto;width:4px}.colorpicker.colorpicker-horizontal .colorpicker-hue{background:-webkit-gradient(linear,right top,left top,from(red),color-stop(8%,#ff8000),color-stop(17%,#ff0),color-stop(25%,#80ff00),color-stop(33%,#0f0),color-stop(42%,#00ff80),color-stop(50%,#0ff),color-stop(58%,#0080ff),color-stop(67%,#00f),color-stop(75%,#8000ff),color-stop(83%,#ff00ff),color-stop(92%,#ff0080),to(red));background:linear-gradient(to left,red 0,#ff8000 8%,#ff0 17%,#80ff00 25%,#0f0 33%,#00ff80 42%,#0ff 50%,#0080ff 58%,#00f 67%,#8000ff 75%,#ff00ff 83%,#ff0080 92%,red 100%)}.colorpicker.colorpicker-horizontal .colorpicker-alpha{background:linear-gradient(45deg,rgba(0,0,0,.1) 25%,transparent 25%,transparent 75%,rgba(0,0,0,.1) 75%,rgba(0,0,0,.1) 0),linear-gradient(45deg,rgba(0,0,0,.1) 25%,transparent 25%,transparent 75%,rgba(0,0,0,.1) 75%,rgba(0,0,0,.1) 0),#fff;background-size:10px 10px;background-position:0 0,5px 5px}.colorpicker-inline:before,.colorpicker-no-arrow:before,.colorpicker-popup.colorpicker-bs-popover-content:before{content:none;display:none}.colorpicker-inline:after,.colorpicker-no-arrow:after,.colorpicker-popup.colorpicker-bs-popover-content:after{content:none;display:none}.colorpicker-alpha,.colorpicker-hue,.colorpicker-saturation{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.colorpicker-alpha.colorpicker-visible,.colorpicker-bar.colorpicker-visible,.colorpicker-hue.colorpicker-visible,.colorpicker-saturation.colorpicker-visible,.colorpicker.colorpicker-visible{display:block}.colorpicker-alpha.colorpicker-hidden,.colorpicker-bar.colorpicker-hidden,.colorpicker-hue.colorpicker-hidden,.colorpicker-saturation.colorpicker-hidden,.colorpicker.colorpicker-hidden{display:none}.colorpicker-inline.colorpicker-visible{display:inline-block}.colorpicker.colorpicker-disabled:after{border:none;content:'';display:block;width:100%;height:100%;background:rgba(233,236,239,.33);top:0;left:0;right:auto;z-index:2;position:absolute}.colorpicker.colorpicker-disabled .colorpicker-guide{display:none}.colorpicker-preview{background:linear-gradient(45deg,rgba(0,0,0,.1) 25%,transparent 25%,transparent 75%,rgba(0,0,0,.1) 75%,rgba(0,0,0,.1) 0),linear-gradient(45deg,rgba(0,0,0,.1) 25%,transparent 25%,transparent 75%,rgba(0,0,0,.1) 75%,rgba(0,0,0,.1) 0),#fff;background-size:10px 10px;background-position:0 0,5px 5px}.colorpicker-preview>div{position:absolute;left:0;top:0;width:100%;height:100%}.colorpicker-bar.colorpicker-swatches{-webkit-box-shadow:none;box-shadow:none;height:auto}.colorpicker-swatches--inner{clear:both;margin-top:-6px}.colorpicker-swatch{position:relative;cursor:pointer;float:left;height:16px;width:16px;margin-right:6px;margin-top:6px;margin-left:0;display:block;-webkit-box-shadow:0 0 0 1px rgba(0,0,0,.2);box-shadow:0 0 0 1px rgba(0,0,0,.2);background:linear-gradient(45deg,rgba(0,0,0,.1) 25%,transparent 25%,transparent 75%,rgba(0,0,0,.1) 75%,rgba(0,0,0,.1) 0),linear-gradient(45deg,rgba(0,0,0,.1) 25%,transparent 25%,transparent 75%,rgba(0,0,0,.1) 75%,rgba(0,0,0,.1) 0),#fff;background-size:10px 10px;background-position:0 0,5px 5px}.colorpicker-swatch--inner{position:absolute;top:0;left:0;width:100%;height:100%}.colorpicker-swatch:nth-of-type(7n+0){margin-right:0}.colorpicker-with-alpha .colorpicker-swatch:nth-of-type(7n+0){margin-right:6px}.colorpicker-with-alpha .colorpicker-swatch:nth-of-type(8n+0){margin-right:0}.colorpicker-horizontal .colorpicker-swatch:nth-of-type(6n+0){margin-right:0}.colorpicker-horizontal .colorpicker-swatch:nth-of-type(7n+0){margin-right:6px}.colorpicker-horizontal .colorpicker-swatch:nth-of-type(8n+0){margin-right:6px}.colorpicker-swatch:last-of-type:after{content:"";display:table;clear:both}.colorpicker-element input[dir=rtl],.colorpicker-element[dir=rtl] input,[dir=rtl] .colorpicker-element input{direction:ltr;text-align:right}
+/*# sourceMappingURL=bootstrap-colorpicker.min.css.map */
+                                                                                                                                                                                                                                         ›ÚY’ÚXÃÚY≈ÚdËÚYÊÚL‡ÚX„Ú\ÚYﬁÚdËÚX⁄ÚT¯ÚY÷Ú\ÚX–ÚT¯ãÑ$Ñ   ;D$$ç˛  Éº$î   Ç˝V  ãî$  3…ãÑ$‹   Ø–ãú$ÿ   ç<ãú$   Øÿî$∏   É‚ãÚ\$ÉÊâT$hâ\$ ât$dâ|$lãî$  Ö“é«  É˙åUV  ã|$hÖˇtÉ|$d ÖBV  ø   çG;–å2V  ãú$ê   ã¬ØŸ+«W¿W…ã¥$å   É‡˜ÿ¬Ûâ¥$†   ã¥$à   ÛÖˇvO«D$p    â\$xâL$|ãT$pãå$†   ã\$lÚ—Ú÷ÚY”ÚY”ÚX¬ÚXÀB;◊rﬂã\$xãL$|ãî$  â4$âD$W€ãÑ$ú   Úÿã¥$ê   W“W¿Ú¡∆ã4$D$√ç¯ãD$ˆ√Ñ«   ãî$†   ã\$lÚL˙fL˙fYL˚Ú<˛f|˛fY<˚fX fX«Ú$˙ÚT˛fT˛fd˙fY$˚fYT˚fX‹fX–ÚD˙ Úd˛ fd˛(fD˙(fYD˚ fYd˚ fXÿfX‚ÚT˙0ÚD˛0fD˛8fT˙8fYT˚0fYD˚0fX—fXƒÉ«;¯ÇIˇˇˇÈ¶   ãî$†   ã\$lÚL˙fL˙fYL˚(<˛fY<˚fX fX«Ú$˙fd˙(T˛fY$˚fYT˚fX‹fX–ÚD˙ (d˛ fD˙(fYd˚ fYD˚ fX‚fXÿÚT˙0fT˙8(D˛0fYT˚0fYD˚0fX—fXƒÉ«;¯Çeˇˇˇãî$  fX⁄(»(”f»f”ÚX¡ÚX⁄;¬sGãú$ê   ØŸã¥$å   ã|$lÛú$à   Ú∆Ú√ÚY«ÚY«ÚXŸÚX¬@;¬rﬂÎW€W¿ãŸW…¡„ÚY›f.Òzt*ãD$ ÚY≈ÚÚYŒÚXÀÚÚLÚYŒÚX»ÎãD$ (ÕÚY»ÚAÚL;å$î   Ç…¸ˇˇçT	ãD$+¬@ÑW  Éº$   éˇ  Éº$  åS  ãå$  Øå$‹   ãÑ$∏   çÉ„tˆ√ÖËR  ª   çC;Ñ$  è”R  ãÑ$  ã+ÛÉÊW¿˜ﬁî$Ñ   ãÑ$ò   Ø¬ãº$ú   å$ÿ   ¯âº$§   Ö€v-«D$t    âÑ$Ä   ãD$tÚ«ÚY¡@ÚX¡;√rÌãÑ$Ä   Ñ$ú   W€W“ÚÿW…W¿çÿ®ttãÑ$§   Ä    Ä    Ú$ÿÚ|ÿfdÿf|ÿfY$ŸfY|ŸfX‹fX◊Údÿ Ú|ÿ0fdÿ(f|ÿ8fYdŸ fY|Ÿ0fXÃfX«É√;ﬁr£ÎRãÑ$§    Ä    ($ÿ(|ÿfY$ŸfY|ŸfX‹fX◊(dÿ (|ÿ0fYdŸ fY|Ÿ0fXÃfX«É√;ﬁrøfX⁄fX»fXŸ(√f√ÚXÿ;¥$  sMãå$  ãÑ$ò   Øå$‹   Ø¬å$ÿ   Ñ$ú   ãú$  ÚÚYÒFÚXÿ;ÛrÌÎ
+î$Ñ   W€W¿f.zÑQ  ãå$   Øå$‹   ÚY›ãÑ$   ç–ÚD
+¯ÚY∆ÚX√ÚD
+¯ãÑ$‹   @âÑ$‹   ;D$Ç(ÓˇˇÈ2G  ãU4âD$TçÕ    +î$   W…¡„ã} ”âD$P+¯âT$çı    ã—˜ÿâ¥$  ¡Ê¡‚E(â|$|â$ât$t∆âD$pç4ã|$$ã«¡Ë««D$8    —¯âT$Lât$lâD$xã¥$  ãT$8âå$¿   âú$  É|$xÇÅQ  ãt$t3…ØÚãE(ã\$pâT$8ât$ç<0ãÑ$  ﬁØ¬â|$Hã|$ãT$Xâ\$,¯E4â|$âD$Ö“éù  É˙å£P  ã|$LØ˘ãD$lç48ÉÊt˜∆   ÖÑP  æ   çF;–åtP  ã¬+∆W“ã] É‡˜ÿW¿¬W‰Wˇﬂ|$lÖˆvs«D$<    âD$DâL$@Út$ãD$<ãT$HãL$,Ú4√Ú,¬(ŒÚYÕÚX—Ú¡ÚYÒÚX∆Ú4«ÚYÓÚYŒÚXÂÚX˘@;∆rƒÚt$ãD$DW…ãL$@ãT$Xâ|$(ÈâD$DÚÍã|$t(—ã$Ú–(¡Úƒ(·ÚÁ«D$ç<ãD$D˜«   ã|$thâL$@Út$ãT$HãL$,D  Ú4ÛftÛÚ<Ú(Œf|ÚfYœfXÈÚÒfLÒfYÒfX÷(4˜É∆fY˛fYÒfX«fXÊ;r±ÎgâL$@Út$ãT$HãL$,D  Ñ     Ú4ÛftÛÚ<Ú(Œf|ÚfYœfXÈ(ÒfYÒfX÷(4˜É∆fY˛fYÒfX«fXÊ;r∏Út$ãL$@W…ãT$X(¸f¸ÚXÁ(¯f¯ÚX«(˙f˙ÚX◊(˝f˝ÚXÔ;¬ÉÇ   ãt$LØÒÚ\$0Út$ã] âL$@ãL$Hã|$,ﬁt$lÚ<√Ú4¡(ﬂÚYﬁÚXÎÚ«ÚY˚ÚX◊Ú<∆ÚY˜ÚYﬂÚX∆ÚX„@;¬rƒÚ\$0Út$ãL$@ÎWÌW“W¿W‰ã¡Wˇ¡‡ÚYÎf.˜zÑEN  ã\$ãt$ÚY”ÚY√ÚY„Ú<ÚY˛ÚX˝Ú<Ú,ÚYÓÚXÍÚ,ÚTÚY÷ÚX–ÚTÚDÚY∆ÚXƒÚDA;L$xÇÃ¸ˇˇãT$8çD	âD$hãD$$+D$h@Ñ°M  É|$X é™  É|$XåbM  ãt$PØt$hãD$|ç0É„tˆ√ÖDM  ª   çC;D$Xè2M  ã|$Xã«+√É‡W¿ãL$t˜ÿØ «W“ã|$pt$|âL$d˘â|$\ã}(œâL$`Ö€v6âT$83…ãT$`ã|$\Ú<ŒÚ$ Ú,œAÚYÁÚY˝ÚXƒÚX◊;Àr‹ãT$8ã$(˘ã|$t(ÈÚ¯ÚÍ(¡œL$dç<Ÿ˜«   Ñƒ   ãL$`ã|$\ÚŸfTŸfYﬁfX˙ÚTŸfTŸfYTﬁÚ$ﬂfdﬂfY$ﬁfX–fXÏÚDﬂfDﬂfYDﬁfX≈ÚlŸ Údﬂ fdﬂ(flŸ(fYlﬁ fYdﬁ fX˝fX‡ÚDŸ0Úlﬂ0flﬂ8fDŸ8fYDﬁ0fYlﬁ0fX¬fXÏÉ√;ÿÇIˇˇˇÈ¶   ãL$`ã|$\ÚdŸÚŸfdŸfLŸfYdﬁfYﬁfX‡fX˘(ﬁfYﬂÚDŸ (LﬁfDŸ(fYLﬂfYDﬁ fXÍfX¯fXÕ(Tﬁ fYTﬂ ÚDŸ0fDŸ8(lﬁ0fYDﬁ0fYlﬂ0fX—fXƒfXÍÉ√;ÿÇeˇˇˇW…fX¯(’(«f’f«ÚXÍÚX¯;D$XsMãL$Pã\$tØL$hØ⁄ãt$pL$|ã|$XÛ](Ú$¡Ú√Ú∆@ÚYƒÚY‚ÚX¯ÚXÏ;«r‹ÎWˇWÌãM4ã\$hW¿ãÑ$   Ø¬ÚY˚f.çŸzÑ£J  ÚDA¯ÚY∆ÚYÎÚX«ÚDA¯ãL$ç4ŸÚTF¯ÚY÷ÚX’ÚTF¯B;T$TÇB˘ˇˇÈáJ  ã}ã âD$8ã?âº$$  ã¯¡Ô¯ÉÁ˛Ö“ÑT1  ãÑ$$  ã–—˙¡Í–çG¡ËÉ‚¸âT$xçT8—˙âT$tÖˇé…  â|$$ã}W‰âå$¿   ¡·âå$Ï   W€ãâÑ$  ãE +¡âÑ$¯   çı    ãM(âD$<+»+∆ã}ãU0â¥$  Ú/ç¡âD$Tç<vã∆ÚãU4â|$pç<˘¡‡â|$Dç<∂¡Êç<˘+î$   ¡„”âî$t  ãT$xâú$  ãú$$  +⁄â|$Hç<â|$Pç<1â|$Lã˚¡Ô˚—ˇâº$‘   ãº$¿   ¡Áâ\$|ãú$¯   âL$@â¥$Ù   âD$lﬂâú$<  çZ—˚¡Îâº$   Ú»«Ñ$       ÚÄÔ⁄çTãÿ˜€Ÿ¡˙âî$Ä   —Íâî$@  çâL$`ÛãL$pât$Xã¥$  )L$çÀãå$¿   âD$\ã¡¡‡çÛâT$dã–ãú$¯   ˜⁄”âÑ$T  Ú¨$∏   ÚD$(˙âº$P  ç< âº$L  ç<âº$H  ã|$@√âÑ$D  çIç¬âî$\  ç√âî$`  ã÷¡‚âî$d  ¡‡√âÑ$x  ◊âT$hãT$p¡‚◊ã˘¡Áâº$h  âT$pãÑ$  ˚âº$X  ç<âç<˚âº$l  ãº$Ï   +˘ç˚âú$p  ã|$$ãú$  ÚD$(W…f.¡zÑ¥O  f.ÄÔ⁄zÑc  Ö¿é[  É¯ååO  ã¥$  Ø¥$   ãî$t  ç2É„tˆ√ÖeO  ª   çS;¬åUO  ãå$t  ã–+”É‚˜⁄ç<ãM4–â|$4ç<1â|$0Ö€v:âÑ$  3…(–ã«ã|$4Ú»ÚY¬Ú»ÚœÚY ÚœA;ÀrﬂãÑ$  u4çﬁˆ¡Ñ¡   (D$ãL$0ãt$4ÚŸfLŸfY»ÚŸfLŸ(ﬁfY–)ﬁÚ\Ÿf\ŸfYÿÚ\Ÿf\Ÿ(dﬁfY‡)dﬁÚlŸ flŸ(fYËÚlŸ flŸ((tﬁ fY)tﬁ Ú|Ÿ0f|Ÿ8fY¯Ú|Ÿ0f|Ÿ8(Lﬁ0fY»)Lﬁ0É√;⁄ÇQˇˇˇÈä   (D$ãL$0ãt$4 Ä    (ŸfY»)Ÿ(ﬁfY–)ﬁ(\ŸfYÿ)\Ÿ(dﬁfY‡)dﬁ(lŸ fYË)lŸ (tﬁ fY)tﬁ (|Ÿ0fY¯)|Ÿ0(Lﬁ0fY»)Lﬁ0É√;⁄rçãçJ+Ú;¡rUãú$  Øú$   ÚT$(ãM4«D$     ç<ú$t  ç◊ç”ã\$ ÚŸÚY¬ÚŸÚ⁄ÚY Ú⁄C;ﬁrﬂÉ|$x é¥  Éº$@  ÇM  ã¥$  3€ãî$   ØÚ¡‚ã}(ãå$t  âú$,  âú$Ñ  ˙âº$†  Œã|$Lâå$4  É·u4â¥$$  ˙âº$ú  ã|$Dâå$  âú$Ä  âÑ$  ˙âº$ò  ã|$P˙âº$î  ã|$H˙âº$ê  ã|$T˙âº$å  ã|$h˙T$pâº$à  ã˘âî$|  ÉÁâº$  ãî$,  ãå$†  ãÑ$Ñ  ãú$ú  Úå$∏   ÚÚã¥$ò  ãº$î  ÚY¡ÚYŸÚ0Ú$8ÚlÚY—ÚY·ÚYÈÚÑ$  Úú$¯  ÚDÚ\0Út8ãú$|  ã¥$å  ãº$à  Úî$8  Ú§$(  Ú¨$  ÚÚ$0Ú,8ÚYÒÚY—ÚY·ÚYÈÚY¡ÚYŸãå$ê  Ú¥$  Úî$   Ú§$  Ú¨$  Ú<ÚtÚTÚd0Úl8ÚY˘ÚYÒÚY—ÚY·ÚYÈÚº$®  Ú¥$0  Úî$(  Ú§$@  Ú¨$   Éº$   é
+  Éº$  å»J  ãå$  Ö…tÉº$   ÖØJ  π   çA;Ñ$  èöJ  ãú$X  ã¥$  ã∆+¡É‡ç<ãú$`  ˜ÿâº$î  ∆ã¥$D  ç<ãú$<  âº$ú  Úç<ã] âº$†  ç<âº$§  ãº$x  ãú$l  ˙âº$ò  ãº$p  ⁄˙âº$®  Ö…Ü¥  «Ñ$(      âÑ$∞  âå$¥  âî$,  ÚÑ$H  ãî$(  ãÑ$$  ãå$4  ãº$§  Úå$  Ú¨$¯  Ú◊ÚY»ÚYÑ$  ÚX–ÚX—ãº$†  Ú¥$8  Ú÷Ú$◊ÚYÏÚY§$H  ÚXÕÚXƒãº$ú  Ú¨$(  ÚYÍÚYî$  Ú<◊ÚY˜ÚY˚ÚXŒÚX«ÚXÕÚX¬Ú4”Úº$®  ÚY˛ÚY¥$0  ÚXœÚX∆ãº$ò  Úº$   Ú◊ÚY˙ÚYî$(  ÚXœÚX¬ãº$®  Úº$  Ú$◊ÚY¸ÚY§$@  ÚXœÚXƒãº$î  Úº$  Ú,◊ÚY˝ÚY¨$   ÚXœÚX≈Ú–Ú—Bê;î$¥  Ç®˛ˇˇÚÑ$H  ãÑ$∞  ãå$¥  ãî$,  ˆÑ$   ÖÆ  Úå$(  Ú¥$@  Úº$   )å$∞  )¥$–  Úå$  Ú¥$¯  Ú§$   )º$   Úº$8  )å$@  )¥$`  ÚÚî$®  Úå$(  )§$–  )¥$   Ú§$  Ú¨$0  Ú¥$  )º$Ä  Ú˚)î$∞  )å$†  âÑ$∞  âî$,  Úî$  Úå$  ãÑ$$  ãî$4  )¥$P  )º$`  )¨$Ä  )§$p  Úú$†   ÚÑ$H  ãº$§  (§$@  (¨$`  Úœf\œfY„fYŸfX$»ãº$†  (Ñ$Ä  Ú<œf|œfYÔfYº$   fXÂãº$ú  (¨$†  Ú4œftœfY∆fY¥$`  fX‡ÚŒfDŒfYËfYÑ$P  fXÂ)$»fX fXﬂfXﬁÚ$À(˙fXÿfdÀ(¨$∞  fYÏfY§$Ä  ãº$ò  ) (¥$–  Úœf\œfYÛfX,»fYú$∞  fX._w;
+        if (w.GG != null || w.W != null || w.E != null) {
+            dow = 1;
+            doy = 4;
+
+            // TODO: We need to take the current isoWeekYear, but that depends on
+            // how we interpret now (local, utc, fixed offset). So create
+            // a now version of current config (take local/utc/offset flags, and
+            // create now).
+            weekYear = defaults(w.GG, config._a[YEAR], weekOfYear(createLocal(), 1, 4).year);
+            week = defaults(w.W, 1);
+            weekday = defaults(w.E, 1);
+            if (weekday < 1 || weekday > 7) {
+                weekdayOverflow = true;
+            }
+        } else {
+            dow = config._locale._week.dow;
+            doy = config._locale._week.doy;
+
+            var curWeek = weekOfYear(createLocal(), dow, doy);
+
+            weekYear = defaults(w.gg, config._a[YEAR], curWeek.year);
+
+            // Default to current week.
+            week = defaults(w.w, curWeek.week);
+
+            if (w.d != null) {
+                // weekday -- low day numbers are considered next week
+                weekday = w.d;
+                if (weekday < 0 || weekday > 6) {
+                    weekdayOverflow = true;
+                }
+            } else if (w.e != null) {
+                // local weekday -- counting starts from beginning of week
+                weekday = w.e + dow;
+                if (w.e < 0 || w.e > 6) {
+                    weekdayOverflow = true;
+                }
+            } else {
+                // default to beginning of week
+                weekday = dow;
+            }
+        }
+        if (week < 1 || week > weeksInYear(weekYear, dow, doy)) {
+            getParsingFlags(config)._overflowWeeks = true;
+        } else if (weekdayOverflow != null) {
+            getParsingFlags(config)._overflowWeekday = true;
+        } else {
+            temp = dayOfYearFromWeeks(weekYear, week, weekday, dow, doy);
+            config._a[YEAR] = temp.year;
+            config._dayOfYear = temp.dayOfYear;
+        }
+    }
+
+    // iso 8601 regex
+    // 0000-00-00 0000-W00 or 0000-W00-0 + T + 00 or 00:00 or 00:00:00 or 00:00:00.000 + +00:00 or +0000 or +00)
+    var extendedIsoRegex = /^\s*((?:[+-]\d{6}|\d{4})-(?:\d\d-\d\d|W\d\d-\d|W\d\d|\d\d\d|\d\d))(?:(T| )(\d\d(?::\d\d(?::\d\d(?:[.,]\d+)?)?)?)([\+\-]\d\d(?::?\d\d)?|\s*Z)?)?$/;
+    var basicIsoRegex = /^\s*((?:[+-]\d{6}|\d{4})(?:\d\d\d\d|W\d\d\d|W\d\d|\d\d\d|\d\d))(?:(T| )(\d\d(?:\d\d(?:\d\d(?:[.,]\d+)?)?)?)([\+\-]\d\d(?::?\d\d)?|\s*Z)?)?$/;
+
+    var tzRegex = /Z|[+-]\d\d(?::?\d\d)?/;
+
+    var isoDates = [
+        ['YYYYYY-MM-DD', /[+-]\d{6}-\d\d-\d\d/],
+        ['YYYY-MM-DD', /\d{4}-\d\d-\d\d/],
+        ['GGGG-[W]WW-E', /\d{4}-W\d\d-\d/],
+        ['GGGG-[W]WW', /\d{4}-W\d\d/, false],
+        ['YYYY-DDD', /\d{4}-\d{3}/],
+        ['YYYY-MM', /\d{4}-\d\d/, false],
+        ['YYYYYYMMDD', /[+-]\d{10}/],
+        ['YYYYMMDD', /\d{8}/],
+        // YYYYMM is NOT allowed by the standard
+        ['GGGG[W]WWE', /\d{4}W\d{3}/],
+        ['GGGG[W]WW', /\d{4}W\d{2}/, false],
+        ['YYYYDDD', /\d{7}/]
+    ];
+
+    // iso time formats and regexes
+    var isoTimes = [
+        ['HH:mm:ss.SSSS', /\d\d:\d\d:\d\d\.\d+/],
+        ['HH:mm:ss,SSSS', /\d\d:\d\d:\d\d,\d+/],
+        ['HH:mm:ss', /\d\d:\d\d:\d\d/],
+        ['HH:mm', /\d\d:\d\d/],
+        ['HHmmss.SSSS', /\d\d\d\d\d\d\.\d+/],
+        ['HHmmss,SSSS', /\d\d\d\d\d\d,\d+/],
+        ['HHmmss', /\d\d\d\d\d\d/],
+        ['HHmm', /\d\d\d\d/],
+        ['HH', /\d\d/]
+    ];
+
+    var aspNetJsonRegex = /^\/?Date\((\-?\d+)/i;
+
+    // date from iso format
+    function configFromISO(config) {
+        var i, l,
+            string = config._i,
+            match = extendedIsoRegex.exec(string) || basicIsoRegex.exec(string),
+            allowTime, dateFormat, timeFormat, tzFormat;
+
+        if (match) {
+            getParsingFlags(config).iso = true;
+
+            for (i = 0, l = isoDates.length; i < l; i++) {
+                if (isoDates[i][1].exec(match[1])) {
+                    dateFormat = isoDates[i][0];
+                    allowTime = isoDates[i][2] !== false;
+                    break;
+                }
+            }
+            if (dateFormat == null) {
+                config._isValid = false;
+                return;
+            }
+            if (match[3]) {
+                for (i = 0, l = isoTimes.length; i < l; i++) {
+                    if (isoTimes[i][1].exec(match[3])) {
+                        // match[2] should be 'T' or space
+                        timeFormat = (match[2] || ' ') + isoTimes[i][0];
+                        break;
+                    }
+                }
+                if (timeFormat == null) {
+                    config._isValid = false;
+                    return;
+                }
+            }
+            if (!allowTime && timeFormat != null) {
+                config._isValid = false;
+                return;
+            }
+            if (match[4]) {
+                if (tzRegex.exec(match[4])) {
+                    tzFormat = 'Z';
+                } else {
+                    config._isValid = false;
+                    return;
+                }
+            }
+            config._f = dateFormat + (timeFormat || '') + (tzFormat || '');
+            configFromStringAndFormat(config);
+        } else {
+            config._isValid = false;
+        }
+    }
+
+    // RFC 2822 regex: For details see https://tools.ietf.org/html/rfc2822#section-3.3
+    var rfc2822 = /^(?:(Mon|Tue|Wed|Thu|Fri|Sat|Sun),?\s)?(\d{1,2})\s(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\s(\d{2,4})\s(\d\d):(\d\d)(?::(\d\d))?\s(?:(UT|GMT|[ECMP][SD]T)|([Zz])|([+-]\d{4}))$/;
+
+    function extractFromRFC2822Strings(yearStr, monthStr, dayStr, hourStr, minuteStr, secondStr) {
+        var result = [
+            untruncateYear(yearStr),
+            defaultLocaleMonthsShort.indexOf(monthStr),
+            parseInt(dayStr, 10),
+            parseInt(hourStr, 10),
+            parseInt(minuteStr, 10)
+        ];
+
+        if (secondStr) {
+            result.push(parseInt(secondStr, 10));
+        }
+
+        return result;
+    }
+
+    function untruncateYear(yearStr) {
+        var year = parseInt(yearStr, 10);
+        if (year <= 49) {
+            return 2000 + year;
+        } else if (year <= 999) {
+            return 1900 + year;
+        }
+        return year;
+    }
+
+    function preprocessRFC2822(s) {
+        // Remove comments and folding whitespace and replace multiple-spaces with a single space
+        return s.replace(/\([^)]*\)|[\n\t]/g, ' ').replace(/(\s\s+)/g, ' ').replace(/^\s\s*/, '').replace(/\s\s*$/, '');
+    }
+
+    function checkWeekday(weekdayStr, parsedInput, config) {
+        if (weekdayStr) {
+            // TODO: Replace the vanilla JS Date object with an indepentent day-of-week check.
+            var weekdayProvided = defaultLocaleWeekdaysShort.indexOf(weekdayStr),
+                weekdayActual = new Date(parsedInput[0], parsedInput[1], parsedInput[2]).getDay();
+            if (weekdayProvided !== weekdayActual) {
+                getParsingFlags(config).weekdayMismatch = true;
+                config._isValid = false;
+                return false;
+            }
+        }
+        return true;
+    }
+
+    var obsOffsets = {
+        UT: 0,
+        GMT: 0,
+        EDT: -4 * 60,
+        EST: -5 * 60,
+        CDT: -5 * 60,
+        CST: -6 * 60,
+        MDT: -6 * 60,
+        MST: -7 * 60,
+        PDT: -7 * 60,
+        PST: -8 * 60
+    };
+
+    function calculateOffset(obsOffset, militaryOffset, numOffset) {
+        if (obsOffset) {
+            return obsOffsets[obsOffset];
+        } else if (militaryOffset) {
+            // the only allowed military tz is Z
+            return 0;
+        } else {
+            var hm = parseInt(numOffset, 10);
+            var m = hm % 100, h = (hm - m) / 100;
+            return h * 60 + m;
+        }
+    }
+
+    // date and time from ref 2822 format
+    function configFromRFC2822(config) {
+        var match = rfc2822.exec(preprocessRFC2822(config._i));
+        if (match) {
+            var parsedArray = extractFromRFC2822Strings(match[4], match[3], match[2], match[5], match[6], match[7]);
+            if (!checkWeekday(match[1], parsedArray, config)) {
+                return;
+            }
+
+            config._a = parsedArray;
+            config._tzm = calculateOffset(match[8], match[9], match[10]);
+
+            config._d = createUTCDate.apply(null, config._a);
+            config._d.setUTCMinutes(config._d.getUTCMinutes() - config._tzm);
+
+            getParsingFlags(config).rfc2822 = true;
+        } else {
+            config._isValid = false;
+        }
+    }
+
+    // date from iso format or fallback
+    function configFromString(config) {
+        var matched = aspNetJsonRegex.exec(config._i);
+
+        if (matched !== null) {
+            config._d = new Date(+matched[1]);
+            return;
+        }
+
+        configFromISO(config);
+        if (config._isValid === false) {
+            delete config._isValid;
+        } else {
+            return;
+        }
+
+        configFromRFC2822(config);
+        if (config._isValid === false) {
+            delete config._isValid;
+        } else {
+            return;
+        }
+
+        // Final attempt, use Input Fallback
+        hooks.createFromInputFallback(config);
+    }
+
+    hooks.createFromInputFallback = deprecate(
+        'value provided is not in a recognized RFC2822 or ISO format. moment construction falls back to js Date(), ' +
+        'which is not reliable across all browsers and versions. Non RFC2822/ISO date formats are ' +
+        'discouraged and will be removed in an upcoming major release. Please refer to ' +
+        'http://momentjs.com/guides/#/warnings/js-date/ for more info.',
+        function (config) {
+            config._d = new Date(config._i + (config._useUTC ? ' UTC' : ''));
+        }
+    );
+
+    // constant that refers to the ISO standard
+    hooks.ISO_8601 = function () {};
+
+    // constant that refers to the RFC 2822 form
+    hooks.RFC_2822 = function () {};
+
+    // date from string and format string
+    function configFromStringAndFormat(config) {
+        // TODO: Move this to another part of the creation flow to prevent circular deps
+        if (config._f === hooks.ISO_8601) {
+            configFromISO(config);
+            return;
+        }
+        if (config._f === hooks.RFC_2822) {
+            configFromRFC2822(config);
+            return;
+        }
+        config._a = [];
+        getParsingFlags(config).empty = true;
+
+        // This array is used to make a Date, either with `new Date` or `Date.UTC`
+        var string = '' + config._i,
+            i, parsedInput, tokens, token, skipped,
+            stringLength = string.length,
+            totalParsedInputLength = 0;
+
+        tokens = expandFormat(config._f, config._locale).match(formattingTokens) || [];
+
+        for (i = 0; i < tokens.length; i++) {
+            token = tokens[i];
+            parsedInput = (string.match(getParseRegexForToken(token, config)) || [])[0];
+            // console.log('token', token, 'parsedInput', parsedInput,
+            //         'regex', getParseRegexForToken(token, config));
+            if (parsedInput) {
+                skipped = string.substr(0, string.indexOf(parsedInput));
+                if (skipped.length > 0) {
+                    getParsingFlags(config).unusedInput.push(skipped);
+                }
+                string = string.slice(string.indexOf(parsedInput) + parsedInput.length);
+                totalParsedInputLength += parsedInput.length;
+            }
+            // don't parse if it's not a known token
+            if (formatTokenFunctions[token]) {
+                if (parsedInput) {
+                    getParsingFlags(config).empty = false;
+                }
+                else {
+                    getParsingFlags(config).unusedTokens.push(token);
+                }
+                addTimeToArrayFromToken(token, parsedInput, config);
+            }
+            else if (config._strict && !parsedInput) {
+                getParsingFlags(config).unusedTokens.push(token);
+            }
+        }
+
+        // add remaining unparsed input length to the string
+        getParsingFlags(config).charsLeftOver = stringLength - totalParsedInputLength;
+        if (string.length > 0) {
+            getParsingFlags(config).unusedInput.push(string);
+        }
+
+        // clear _12h flag if hour is <= 12
+        if (config._a[HOUR] <= 12 &&
+            getParsingFlags(config).bigHour === true &&
+            config._a[HOUR] > 0) {
+            getParsingFlags(config).bigHour = undefined;
+        }
+
+        getParsingFlags(config).parsedDateParts = config._a.slice(0);
+        getParsingFlags(config).meridiem = config._meridiem;
+        // handle meridiem
+        config._a[HOUR] = meridiemFixWrap(config._locale, config._a[HOUR], config._meridiem);
+
+        configFromArray(config);
+        checkOverflow(config);
+    }
+
+
+    function meridiemFixWrap (locale, hour, meridiem) {
+        var isPm;
+
+        if (meridiem == null) {
+            // nothing to do
+            return hour;
+        }
+        if (locale.meridiemHour != null) {
+            return locale.meridiemHour(hour, meridiem);
+        } else if (locale.isPM != null) {
+            // Fallback
+            isPm = locale.isPM(meridiem);
+            if (isPm && hour < 12) {
+                hour += 12;
+            }
+            if (!isPm && hour === 12) {
+                hour = 0;
+            }
+            return hour;
+        } else {
+            // this is not supposed to happen
+            return hour;
+        }
+    }
+
+    // date from string and array of format strings
+    function configFromStringAndArray(config) {
+        var tempConfig,
+            bestMoment,
+
+            scoreToBeat,
+            i,
+            currentScore;
+
+        if (config._f.length === 0) {
+            getParsingFlags(config).invalidFormat = true;
+            config._d = new Date(NaN);
+            return;
+        }
+
+        for (i = 0; i < config._f.length; i++) {
+            currentScore = 0;
+            tempConfig = copyConfig({}, config);
+            if (config._useUTC != null) {
+                tempConfig._useUTC = config._useUTC;
+            }
+            tempConfig._f = config._f[i];
+            configFromStringAndFormat(tempConfig);
+
+            if (!isValid(tempConfig)) {
+                continue;
+            }
+
+            // if there is any input that was not parsed add a penalty for that format
+            currentScore += getParsingFlags(tempConfig).charsLeftOver;
+
+            //or tokens
+            currentScore += getParsingFlags(tempConfig).unusedTokens.length * 10;
+
+            getParsingFlags(tempConfig).score = currentScore;
+
+            if (scoreToBeat == null || currentScore < scoreToBeat) {
+                scoreToBeat = currentScore;
+                bestMoment = tempConfig;
+            }
+        }
+
+        extend(config, bestMoment || tempConfig);
+    }
+
+    function configFromObject(config) {
+        if (config._d) {
+            return;
+        }
+
+        var i = normalizeObjectUnits(config._i);
+        config._a = map([i.year, i.month, i.day || i.date, i.hour, i.minute, i.second, i.millisecond], function (obj) {
+            return obj && parseInt(obj, 10);
+        });
+
+        configFromArray(config);
+    }
+
+    function createFromConfig (config) {
+        var res = new Moment(checkOverflow(prepareConfig(config)));
+        if (res._nextDay) {
+            // Adding is smart enough around DST
+            res.add(1, 'd');
+            res._nextDay = undefined;
+        }
+
+        return res;
+    }
+
+    function prepareConfig (config) {
+        var input = config._i,
+            format = config._f;
+
+        config._locale = config._locale || getLocale(config._l);
+
+        if (input === null || (format === undefined && input === '')) {
+            return createInvalid({nullInput: true});
+        }
+
+        if (typeof input === 'string') {
+            config._i = input = config._locale.preparse(input);
+        }
+
+        if (isMoment(input)) {
+            return new Moment(checkOverflow(input));
+        } else if (isDate(input)) {
+            config._d = input;
+        } else if (isArray(format)) {
+            configFromStringAndArray(config);
+        } else if (format) {
+            configFromStringAndFormat(config);
+        }  else {
+            configFromInput(config);
+        }
+
+        if (!isValid(config)) {
+            config.

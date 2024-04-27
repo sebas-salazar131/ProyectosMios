@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+    <h1>Ejemplo simple DOM</h1>
+
+    <input id="dato" type="text" placeholder="nombre">
+    <button onclick="holamundo()" class="btn btn-primary">Saludar</button>
+    <p id="parrafo"></p>
+    <hr>
+    <h2>Suma</h2>
+    
+    <input id="dato1" type="number" placeholder="ingrese numero 1">
+    <input id="dato2" type="number" placeholder="ingrese numero 2">
+    <button onclick="suma()">Sumar</button>
+    <p id="resultado"></p>
+
+    <hr>
+    <h2>Gustos 🤑</h2>
+    <label for="gusto">Que gustos tienes ?</label>
+    <input id="gusto" type="text">
+    <button onclick="agregarGustoPro()">Agregar</button>
+    <ol id="lista"></ol>
+
+    <script src="js/introDOM.js"></script>
+</body>
+</html>

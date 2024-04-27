@@ -1,0 +1,678 @@
+.flag-icon-background {
+  background-size: contain;
+  background-position: 50%;
+  background-repeat: no-repeat;
+}
+.flag-icon {
+  background-size: contain;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  position: relative;
+  display: inline-block;
+  width: 1.33333333em;
+  line-height: 1em;
+}
+.flag-icon:before {
+  content: "\00a0";
+}
+.flag-icon.flag-icon-squared {
+  width: 1em;
+}
+.flag-icon-ad {
+  background-image: url(../flags/4x3/ad.svg);
+}
+.flag-icon-ad.flag-icon-squared {
+  background-image: url(../flags/1x1/ad.svg);
+}
+.flag-icon-ae {
+  background-image: url(../flags/4x3/ae.svg);
+}
+.flag-icon-ae.flag-icon-squared {
+  background-image: url(../flags/1x1/ae.svg);
+}
+.flag-icon-af {
+  background-image: url(../flags/4x3/af.svg);
+}
+.flag-icon-af.flag-icon-squared {
+  background-image: url(../flags/1x1/af.svg);
+}
+.flag-icon-ag {
+  background-image: url(../flags/4x3/ag.svg);
+}
+.flag-icon-ag.flag-icon-squared {
+  background-image: url(../flags/1x1/ag.svg);
+}
+.flag-icon-ai {
+  background-image: url(../flags/4x3/ai.svg);
+}
+.flag-icon-ai.flag-icon-squared {
+  background-image: url(../flags/1x1/ai.svg);
+}
+.flag-icon-al {
+  background-image: url(../flags/4x3/al.svg);
+}
+.flag-icon-al.flag-icon-squared {
+  background-image: url(../flags/1x1/al.svg);
+}
+.flag-icon-am {
+  background-image: url(../flags/4x3/am.svg);
+}
+.flag-icon-am.flag-icon-squared {
+  background-image: url(../flags/1x1/am.svg);
+}
+.flag-icon-ao {
+  background-image: url(../flags/4x3/ao.svg);
+}
+.flag-icon-ao.flag-icon-squared {
+  background-image: url(../flags/1x1/ao.svg);
+}
+.flag-icon-aq {
+  background-image: url(../flags/4x3/aq.svg);
+}
+.flag-icon-aq.flag-icon-squared {
+  background-image: url(../flags/1x1/aq.svg);
+}
+.flag-icon-ar {
+  background-image: url(../flags/4x3/ar.svg);
+}
+.flag-icon-ar.flag-icon-squared {
+  background-image: url(../flags/1x1/ar.svg);
+}
+.flag-icon-as {
+  background-image: url(../flags/4x3/as.svg);
+}
+.flag-icon-as.flag-icon-squared {
+  background-image: url(../flags/1x1/as.svg);
+}
+.flag-icon-at {
+  background-image: url(../flags/4x3/at.svg);
+}
+.flag-icon-at.flag-icon-squared {
+  background-image: url(../flags/1x1/at.svg);
+}
+.flag-icon-au {
+  background-image: url(../flags/4x3/au.svg);
+}
+.flag-icon-au.flag-icon-squared {
+  background-image: url(../flags/1x1/au.svg);
+}
+.flag-icon-aw {
+  background-image: url(../flags/4x3/aw.svg);
+}
+.flag-icon-aw.flag-icon-squared {
+  background-image: url(../flags/1x1/aw.svg);
+}
+.flag-icon-ax {
+  background-image: url(../flags/4x3/ax.svg);
+}
+.flag-icon-ax.flag-icon-squared {
+  background-image: url(../flags/1x1/ax.svg);
+}
+.flag-icon-az {
+  background-image: url(../flags/4x3/az.svg);
+}
+.flag-icon-az.flag-icon-squared {
+  background-image: url(../flags/1x1/az.svg);
+}
+.flag-icon-ba {
+  background-image: url(../flags/4x3/ba.svg);
+}
+.flag-icon-ba.flag-icon-squared {
+  background-image: url(../flags/1x1/ba.svg);
+}
+.flag-icon-bb {
+  background-image: url(../flags/4x3/bb.svg);
+}
+.flag-icon-bb.flag-icon-squared {
+  background-image: url(../flags/1x1/bb.svg);
+}
+.flag-icon-bd {
+  background-image: url(../flags/4x3/bd.svg);
+}
+.flag-icon-bd.flag-icon-squared {
+  background-image: url(../flags/1x1/bd.svg);
+}
+.flag-icon-be {
+  background-image: url(../flags/4x3/be.svg);
+}
+.flag-icon-be.flag-icon-squared {
+  background-image: url(../flags/1x1/be.svg);
+}
+.flag-icon-bf {
+  background-image: url(../flags/4x3/bf.svg);
+}
+.flag-icon-bf.flag-icon-squared {
+  background-image: url(../flags/1x1/bf.svg);
+}
+.flag-icon-bg {
+  background-image: url(../flags/4x3/bg.svg);
+}
+.flag-icon-bg.flag-icon-squared {
+  background-image: url(../flags/1x1/bg.svg);
+}
+.flag-icon-bh {
+  background-image: url(../flags/4x3/bh.svg);
+}
+.flag-icon-bh.flag-icon-squared {
+  background-image: url(../flags/1x1/bh.svg);
+}
+.flag-icon-bi {
+  background-image: url(../flags/4x3/bi.svg);
+}
+.flag-icon-bi.flag-icon-squared {
+  background-image: url(../flags/1x1/bi.svg);
+}
+.flag-icon-bj {
+  background-image: url(../flags/4x3/bj.svg);
+}
+.flag-icon-bj.flag-icon-squared {
+  background-image: url(../flags/1x1/bj.svg);
+}
+.flag-icon-bl {
+  background-image: url(../flags/4x3/bl.svg);
+}
+.flag-icon-bl.flag-icon-squared {
+  background-image: url(../flags/1x1/bl.svg);
+}
+.flag-icon-bm {
+  background-image: url(../flags/4x3/bm.svg);
+}
+.flag-icon-bm.flag-icon-squared {
+  background-image: url(../flags/1x1/bm.svg);
+}
+.flag-icon-bn {
+  background-image: url(../flags/4x3/bn.svg);
+}
+.flag-icon-bn.flag-icon-squared {
+  background-image: url(../flags/1x1/bn.svg);
+}
+.flag-icon-bo {
+  background-image: url(../flags/4x3/bo.svg);
+}
+.flag-icon-bo.flag-icon-squared {
+  background-image: url(../flags/1x1/bo.svg);
+}
+.flag-icon-bq {
+  background-image: url(../flags/4x3/bq.svg);
+}
+.flag-icon-bq.flag-icon-squared {
+  background-image: url(../flags/1x1/bq.svg);
+}
+.flag-icon-br {
+  background-image: url(../flags/4x3/br.svg);
+}
+.flag-icon-br.flag-icon-squared {
+  background-image: url(../flags/1x1/br.svg);
+}
+.flag-icon-bs {
+  background-image: url(../flags/4x3/bs.svg);
+}
+.flag-icon-bs.flag-icon-squared {
+  background-image: url(../flags/1x1/bs.svg);
+}
+.flag-icon-bt {
+  background-image: url(../flags/4x3/bt.svg);
+}
+.flag-icon-bt.flag-icon-squared {
+  background-image: url(../flags/1x1/bt.svg);
+}
+.flag-icon-bv {
+  background-image: url(../flags/4x3/bv.svg);
+}
+.flag-icon-bv.flag-icon-squared {
+  background-image: url(../flags/1x1/bv.svg);
+}
+.flag-icon-bw {
+  background-image: url(../flags/4x3/bw.svg);
+}
+.flag-icon-bw.flag-icon-squared {
+  background-image: url(../flags/1x1/bw.svg);
+}
+.flag-icon-by {
+  background-image: url(../flags/4x3/by.svg);
+}
+.flag-icon-by.flag-icon-squared {
+  background-image: url(../flags/1x1/by.svg);
+}
+.flag-icon-bz {
+  background-image: url(../flags/4x3/bz.svg);
+}
+.flag-icon-bz.flag-icon-squared {
+  background-image: url(../flags/1x1/bz.svg);
+}
+.flag-icon-ca {
+  background-image: url(../flags/4x3/ca.svg);
+}
+.flag-icon-ca.flag-icon-squared {
+  background-image: url(../flags/1x1/ca.svg);
+}
+.flag-icon-cc {
+  background-image: url(../flags/4x3/cc.svg);
+}
+.flag-icon-cc.flag-icon-squared {
+  background-image: url(../flags/1x1/cc.svg);
+}
+.flag-icon-cd {
+  background-image: url(../flags/4x3/cd.svg);
+}
+.flag-icon-cd.flag-icon-squared {
+  background-image: url(../flags/1x1/cd.svg);
+}
+.flag-icon-cf {
+  background-image: url(../flags/4x3/cf.svg);
+}
+.flag-icon-cf.flag-icon-squared {
+  background-image: url(../flags/1x1/cf.svg);
+}
+.flag-icon-cg {
+  background-image: url(../flags/4x3/cg.svg);
+}
+.flag-icon-cg.flag-icon-squared {
+  background-image: url(../flags/1x1/cg.svg);
+}
+.flag-icon-ch {
+  background-image: url(../flags/4x3/ch.svg);
+}
+.flag-icon-ch.flag-icon-squared {
+  background-image: url(../flags/1x1/ch.svg);
+}
+.flag-icon-ci {
+  background-image: url(../flags/4x3/ci.svg);
+}
+.flag-icon-ci.flag-icon-squared {
+  background-image: url(../flags/1x1/ci.svg);
+}
+.flag-icon-ck {
+  background-image: url(../flags/4x3/ck.svg);
+}
+.flag-icon-ck.flag-icon-squared {
+  background-image: url(../flags/1x1/ck.svg);
+}
+.flag-icon-cl {
+  background-image: url(../flags/4x3/cl.svg);
+}
+.flag-icon-cl.flag-icon-squared {
+  background-image: url(../flags/1x1/cl.svg);
+}
+.flag-icon-cm {
+  background-image: url(../flags/4x3/cm.svg);
+}
+.flag-icon-cm.flag-icon-squared {
+  background-image: url(../flags/1x1/cm.svg);
+}
+.flag-icon-cn {
+  background-image: url(../flags/4x3/cn.svg);
+}
+.flag-icon-cn.flag-icon-squared {
+  background-image: url(../flags/1x1/cn.svg);
+}
+.flag-icon-co {
+  background-image: url(../flags/4x3/co.svg);
+}
+.flag-icon-co.flag-icon-squared {
+  background-image: url(../flags/1x1/co.svg);
+}
+.flag-icon-cr {
+  background-image: url(../flags/4x3/cr.svg);
+}
+.flag-icon-cr.flag-icon-squared {
+  background-image: url(../flags/1x1/cr.svg);
+}
+.flag-icon-cu {
+  background-image: url(../flags/4x3/cu.svg);
+}
+.flag-icon-cu.flag-icon-squared {
+  background-image: url(../flags/1x1/cu.svg);
+}
+.flag-icon-cv {
+  background-image: url(../flags/4x3/cv.svg);
+}
+.flag-icon-cv.flag-icon-squared {
+  background-image: url(../flags/1x1/cv.svg);
+}
+.flag-icon-cw {
+  background-image: url(../flags/4x3/cw.svg);
+}
+.flag-icon-cw.flag-icon-squared {
+  background-image: url(../flags/1x1/cw.svg);
+}
+.flag-icon-cx {
+  background-image: url(../flags/4x3/cx.svg);
+}
+.flag-icon-cx.flag-icon-squared {
+  background-image: url(../flags/1x1/cx.svg);
+}
+.flag-icon-cy {
+  background-image: url(../flags/4x3/cy.svg);
+}
+.flag-icon-cy.flag-icon-squared {
+  background-image: url(../flags/1x1/cy.svg);
+}
+.flag-icon-cz {
+  background-image: url(../flags/4x3/cz.svg);
+}
+.flag-icon-cz.flag-icon-squared {
+  background-image: url(../flags/1x1/cz.svg);
+}
+.flag-icon-de {
+  background-image: url(../flags/4x3/de.svg);
+}
+.flag-icon-de.flag-icon-squared {
+  background-image: url(../flags/1x1/de.svg);
+}
+.flag-icon-dj {
+  background-image: url(../flags/4x3/dj.svg);
+}
+.flag-icon-dj.flag-icon-squared {
+  background-image: url(../flags/1x1/dj.svg);
+}
+.flag-icon-dk {
+  background-image: url(../flags/4x3/dk.svg);
+}
+.flag-icon-dk.flag-icon-squared {
+  background-image: url(../flags/1x1/dk.svg);
+}
+.flag-icon-dm {
+  background-image: url(../flags/4x3/dm.svg);
+}
+.flag-icon-dm.flag-icon-squared {
+  background-image: url(../flags/1x1/dm.svg);
+}
+.flag-icon-do {
+  background-image: url(../flags/4x3/do.svg);
+}
+.flag-icon-do.flag-icon-squared {
+  background-image: url(../flags/1x1/do.svg);
+}
+.flag-icon-dz {
+  background-image: url(../flags/4x3/dz.svg);
+}
+.flag-icon-dz.flag-icon-squared {
+  background-image: url(../flags/1x1/dz.svg);
+}
+.flag-icon-ec {
+  background-image: url(../flags/4x3/ec.svg);
+}
+.flag-icon-ec.flag-icon-squared {
+  background-image: url(../flags/1x1/ec.svg);
+}
+.flag-icon-ee {
+  background-image: url(../flags/4x3/ee.svg);
+}
+.flag-icon-ee.flag-icon-squared {
+  background-image: url(../flags/1x1/ee.svg);
+}
+.flag-icon-eg {
+  background-image: url(../flags/4x3/eg.svg);
+}
+.flag-icon-eg.flag-icon-squared {
+  background-image: url(../flags/1x1/eg.svg);
+}
+.flag-icon-eh {
+  background-image: url(../flags/4x3/eh.svg);
+}
+.flag-icon-eh.flag-icon-squared {
+  background-image: url(../flags/1x1/eh.svg);
+}
+.flag-icon-er {
+  background-image: url(../flags/4x3/er.svg);
+}
+.flag-icon-er.flag-icon-squared {
+  background-image: url(../flags/1x1/er.svg);
+}
+.flag-icon-es {
+  background-image: url(../flags/4x3/es.svg);
+}
+.flag-icon-es.flag-icon-squared {
+  background-image: url(../flags/1x1/es.svg);
+}
+.flag-icon-et {
+  background-image: url(../flags/4x3/et.svg);
+}
+.flag-icon-et.flag-icon-squared {
+  background-image: url(../flags/1x1/et.svg);
+}
+.flag-icon-fi {
+  background-image: url(../flags/4x3/fi.svg);
+}
+.flag-icon-fi.flag-icon-squared {
+  background-image: url(../flags/1x1/fi.svg);
+}
+.flag-icon-fj {
+  background-image: url(../flags/4x3/fj.svg);
+}
+.flag-icon-fj.flag-icon-squared {
+  background-image: url(../flags/1x1/fj.svg);
+}
+.flag-icon-fk {
+  background-image: url(../flags/4x3/fk.svg);
+}
+.flag-icon-fk.flag-icon-squared {
+  background-image: url(../flags/1x1/fk.svg);
+}
+.flag-icon-fm {
+  background-image: url(../flags/4x3/fm.svg);
+}
+.flag-icon-fm.flag-icon-squared {
+  background-image: url(../flags/1x1/fm.svg);
+}
+.flag-icon-fo {
+  background-image: url(../flags/4x3/fo.svg);
+}
+.flag-icon-fo.flag-icon-squared {
+  background-image: url(../flags/1x1/fo.svg);
+}
+.flag-icon-fr {
+  background-image: url(../flags/4x3/fr.svg);
+}
+.flag-icon-fr.flag-icon-squared {
+  background-image: url(../flags/1x1/fr.svg);
+}
+.flag-icon-ga {
+  background-image: url(../flags/4x3/ga.svg);
+}
+.flag-icon-ga.flag-icon-squared {
+  background-image: url(../flags/1x1/ga.svg);
+}
+.flag-icon-gb {
+  background-image: url(../flags/4x3/gb.svg);
+}
+.flag-icon-gb.flag-icon-squared {
+  background-image: url(../flags/1x1/gb.svg);
+}
+.flag-icon-gd {
+  background-image: url(../flags/4x3/gd.svg);
+}
+.flag-icon-gd.flag-icon-squared {
+  background-image: url(../flags/1x1/gd.svg);
+}
+.flag-icon-ge {
+  background-image: url(../flags/4x3/ge.svg);
+}
+.flag-icon-ge.flag-icon-squared {
+  background-image: url(../flags/1x1/ge.svg);
+}
+.flag-icon-gf {
+  background-image: url(../flags/4x3/gf.svg);
+}
+.flag-icon-gf.flag-icon-squared {
+  background-image: url(../flags/1x1/gf.svg);
+}
+.flag-icon-gg {
+  background-image: url(../flags/4x3/gg.svg);
+}
+.flag-icon-gg.flag-icon-squared {
+  background-image: url(../flags/1x1/gg.svg);
+}
+.flag-icon-gh {
+  background-image: url(../flags/4x3/gh.svg);
+}
+.flag-icon-gh.flag-icon-squared {
+  background-image: url(../flags/1x1/gh.svg);
+}
+.flag-icon-gi {
+  background-image: url(../flags/4x3/gi.svg);
+}
+.flag-icon-gi.flag-icon-squared {
+  background-image: url(../flags/1x1/gi.svg);
+}
+.flag-icon-gl {
+  background-image: url(../flags/4x3/gl.svg);
+}
+.flag-icon-gl.flag-icon-squared {
+  background-image: url(../flags/1x1/gl.svg);
+}
+.flag-icon-gm {
+  background-image: url(../flags/4x3/gm.svg);
+}
+.flag-icon-gm.flag-icon-squared {
+  background-image: url(../flags/1x1/gm.svg);
+}
+.flag-icon-gn {
+  background-image: url(../flags/4x3/gn.svg);
+}
+.flag-icon-gn.flag-icon-squared {
+  background-image: url(../flags/1x1/gn.svg);
+}
+.flag-icon-gp {
+  background-image: url(../flags/4x3/gp.svg);
+}
+.flag-icon-gp.flag-icon-squared {
+  background-image: url(../flags/1x1/gp.svg);
+}
+.flag-icon-gq {
+  background-image: url(../flags/4x3/gq.svg);
+}
+.flag-icon-gq.flag-icon-squared {
+  background-image: url(../flags/1x1/gq.svg);
+}
+.flag-icon-gr {
+  background-image: url(../flags/4x3/gr.svg);
+}
+.flag-icon-gr.flag-icon-squared {
+  background-image: url(../flags/1x1/gr.svg);
+}
+.flag-icon-gs {
+  background-image: url(../flags/4x3/gs.svg);
+}
+.flag-icon-gs.flag-icon-squared {
+  background-image: url(../flags/1x1/gs.svg);
+}
+.flag-icon-gt {
+  background-image: url(../flags/4x3/gt.svg);
+}
+.flag-icon-gt.flag-icon-squared {
+  background-image: url(../flags/1x1/gt.svg);
+}
+.flag-icon-gu {
+  background-image: url(../flags/4x3/gu.svg);
+}
+.flag-icon-gu.flag-icon-squared {
+  background-image: url(../flags/1x1/gu.svg);
+}
+.flag-icon-gw {
+  background-image: url(../flags/4x3/gw.svg);
+}
+.flag-icon-gw.flag-icon-squared {
+  background-image: url(../flags/1x1/gw.svg);
+}
+.flag-icon-gy {
+  background-image: url(../flags/4x3/gy.svg);
+}
+.flag-icon-gy.flag-icon-squared {
+  background-image: url(../flags/1x1/gy.svg);
+}
+.flag-icon-hk {
+  background-image: url(../flags/4x3/hk.svg);
+}
+.flag-icon-hk.flag-icon-squared {
+  background-image: url(../flags/1x1/hk.svg);
+}
+.flag-icon-hm {
+  background-image: url(../flags/4x3/hm.svg);
+}
+.flag-icon-hm.flag-icon-squared {
+  background-image: url(../flags/1x1/hm.svg);
+}
+.flag-icon-hn {
+  background-image: url(../flags/4x3/hn.svg);
+}
+.flag-icon-hn.flag-icon-squared {
+  background-image: url(../flags/1x1/hn.svg);
+}
+.flag-icon-hr {
+  background-image: url(../flags/4x3/hr.svg);
+}
+.flag-icon-hr.flag-icon-squared {
+  background-image: url(../flags/1x1/hr.svg);
+}
+.flag-icon-ht {
+  background-image: url(../flags/4x3/ht.svg);
+}
+.flag-icon-ht.flag-icon-squared {
+  background-image: url(../flags/1x1/ht.svg);
+}
+.flag-icon-hu {
+  background-image: url(../flags/4x3/hu.svg);
+}
+.flag-icon-hu.flag-icon-squared {
+  background-image: url(../flags/1x1/hu.svg);
+}
+.flag-icon-id {
+  background-image: url(../flags/4x3/id.svg);
+}
+.flag-icon-id.flag-icon-squared {
+  background-image: url(../flags/1x1/id.svg);
+}
+.flag-icon-ie {
+  background-image: url(../flags/4x3/ie.svg);
+}
+.flag-icon-ie.flag-icon-squared {
+  background-image: url(../flags/1x1/ie.svg);
+}
+.flag-icon-il {
+  background-image: url(../flags/4x3/il.svg);
+}
+.flag-icon-il.flag-icon-squared {
+  background-image: url(../flags/1x1/il.svg);
+}
+.flag-icon-im {
+  background-image: url(../flags/4x3/im.svg);
+}
+.flag-icon-im.flag-icon-squared {
+  background-image: url(../flags/1x1/im.svg);
+}
+.flag-icon-in {
+  background-image: url(../flags/4x3/in.svg);
+}
+.flag-icon-in.flag-icon-squared {
+  background-image: url(../flags/1x1/in.svg);
+}
+.flag-icon-io {
+  background-image: url(../flags/4x3/io.svg);
+}
+.flag-icon-io.flag-icon-squared {
+  background-image: url(../flags/1x1/io.svg);
+}
+.flag-icon-iq {
+  background-image: url(../flags/4x3/iq.svg);
+}
+.flag-icon-iq.flag-icon-squared {
+  background-image: url(../flags/1x1/iq.svg);
+}
+.flag-icon-ir {
+  background-image: url(../flags/4x3/ir.svg);
+}
+.flag-icon-ir.flag-icon-squared {
+  background-image: url(../flags/1x1/ir.svg);
+}
+.flag-icon-is {
+  background-image: url(../flags/4x3/is.svg);
+}
+.flag-icon-is.flag-icon-squared {
+  background-image: url(../flags/1x1/is.svg);
+}
+.flag-icon-it {
+  background-image: url(../flags/4x3/it.svg);
+}
+.flag-icont: 600;\n}\n\nblockquote.quote-primary {\n  border-color: #007bff;\n}\n\nblockquote.quote-primary h1,\nblockquote.quote-primary h2,\nblockquote.quote-primary h3,\nblockquote.quote-primary h4,\nblockquote.quote-primary h5,\nblockquote.quote-primary h6 {\n  color: #007bff;\n}\n\nblockquote.quote-secondary {\n  border-color: #6c757d;\n}\n\nblockquote.quote-secondary h1,\nblockquote.quote-secondary h2,\nblockquote.quote-secondary h3,\nblockquote.quote-secondary h4,\nblockquote.quote-secondary h5,\nblockquote.quote-secondary h6 {\n  color: #6c757d;\n}\n\nblockquote.quote-success {\n  border-color: #28a745;\n}\n\nblockquote.quote-success h1,\nblockquote.quote-success h2,\nblockquote.quote-success h3,\nblockquote.quote-success h4,\nblockquote.quote-success h5,\nblockquote.quote-success h6 {\n  color: #28a745;\n}\n\nblockquote.quote-info {\n  border-color: #17a2b8;\n}\n\nblockquote.quote-info h1,\nblockquote.quote-info h2,\nblockquote.quote-info h3,\nblockquote.quote-info h4,\nblockquote.quote-info h5,\nblockquote.quote-info h6 {\n  color: #17a2b8;\n}\n\nblockquote.quote-warning {\n  border-color: #ffc107;\n}\n\nblockquote.quote-warning h1,\nblockquote.quote-warning h2,\nblockquote.quote-warning h3,\nblockquote.quote-warning h4,\nblockquote.quote-warning h5,\nblockquote.quote-warning h6 {\n  color: #ffc107;\n}\n\nblockquote.quote-danger {\n  border-color: #dc3545;\n}\n\nblockquote.quote-danger h1,\nblockquote.quote-danger h2,\nblockquote.quote-danger h3,\nblockquote.quote-danger h4,\nblockquote.quote-danger h5,\nblockquote.quote-danger h6 {\n  color: #dc3545;\n}\n\nblockquote.quote-light {\n  border-color: #f8f9fa;\n}\n\nblockquote.quote-light h1,\nblockquote.quote-light h2,\nblockquote.quote-light h3,\nblockquote.quote-light h4,\nblockquote.quote-light h5,\nblockquote.quote-light h6 {\n  color: #f8f9fa;\n}\n\nblockquote.quote-dark {\n  border-color: #343a40;\n}\n\nblockquote.quote-dark h1,\nblockquote.quote-dark h2,\nblockquote.quote-dark h3,\nblockquote.quote-dark h4,\nblockquote.quote-dark h5,\nblockquote.quote-dark h6 {\n  color: #343a40;\n}\n\nblockquote.quote-lightblue {\n  border-color: #3c8dbc;\n}\n\nblockquote.quote-lightblue h1,\nblockquote.quote-lightblue h2,\nblockquote.quote-lightblue h3,\nblockquote.quote-lightblue h4,\nblockquote.quote-lightblue h5,\nblockquote.quote-lightblue h6 {\n  color: #3c8dbc;\n}\n\nblockquote.quote-navy {\n  border-color: #001f3f;\n}\n\nblockquote.quote-navy h1,\nblockquote.quote-navy h2,\nblockquote.quote-navy h3,\nblockquote.quote-navy h4,\nblockquote.quote-navy h5,\nblockquote.quote-navy h6 {\n  color: #001f3f;\n}\n\nblockquote.quote-olive {\n  border-color: #3d9970;\n}\n\nblockquote.quote-olive h1,\nblockquote.quote-olive h2,\nblockquote.quote-olive h3,\nblockquote.quote-olive h4,\nblockquote.quote-olive h5,\nblockquote.quote-olive h6 {\n  color: #3d9970;\n}\n\nblockquote.quote-lime {\n  border-color: #01ff70;\n}\n\nblockquote.quote-lime h1,\nblockquote.quote-lime h2,\nblockquote.quote-lime h3,\nblockquote.quote-lime h4,\nblockquote.quote-lime h5,\nblockquote.quote-lime h6 {\n  color: #01ff70;\n}\n\nblockquote.quote-fuchsia {\n  border-color: #f012be;\n}\n\nblockquote.quote-fuchsia h1,\nblockquote.quote-fuchsia h2,\nblockquote.quote-fuchsia h3,\nblockquote.quote-fuchsia h4,\nblockquote.quote-fuchsia h5,\nblockquote.quote-fuchsia h6 {\n  color: #f012be;\n}\n\nblockquote.quote-maroon {\n  border-color: #d81b60;\n}\n\nblockquote.quote-maroon h1,\nblockquote.quote-maroon h2,\nblockquote.quote-maroon h3,\nblockquote.quote-maroon h4,\nblockquote.quote-maroon h5,\nblockquote.quote-maroon h6 {\n  color: #d81b60;\n}\n\nblockquote.quote-blue {\n  border-color: #007bff;\n}\n\nblockquote.quote-blue h1,\nblockquote.quote-blue h2,\nblockquote.quote-blue h3,\nblockquote.quote-blue h4,\nblockquote.quote-blue h5,\nblockquote.quote-blue h6 {\n  color: #007bff;\n}\n\nblockquote.quote-indigo {\n  border-color: #6610f2;\n}\n\nblockquote.quote-indigo h1,\nblockquote.quote-indigo h2,\nblockquote.quote-indigo h3,\nblockquote.quote-indigo h4,\nblockquote.quote-indigo h5,\nblockquote.quote-indigo h6 {\n  color: #6610f2;\n}\n\nblockquote.quote-purple {\n  border-color: #6f42c1;\n}\n\nblockquote.quote-purple h1,\nblockquote.quote-purple h2,\nblockquote.quote-purple h3,\nblockquote.quote-purple h4,\nblockquote.quote-purple h5,\nblockquote.quote-purple h6 {\n  color: #6f42c1;\n}\n\nblockquote.quote-pink {\n  border-color: #e83e8c;\n}\n\nblockquote.quote-pink h1,\nblockquote.quote-pink h2,\nblockquote.quote-pink h3,\nblockquote.quote-pink h4,\nblockquote.quote-pink h5,\nblockquote.quote-pink h6 {\n  color: #e83e8c;\n}\n\nblockquote.quote-red {\n  border-color: #dc3545;\n}\n\nblockquote.quote-red h1,\nblockquote.quote-red h2,\nblockquote.quote-red h3,\nblockquote.quote-red h4,\nblockquote.quote-red h5,\nblockquote.quote-red h6 {\n  color: #dc3545;\n}\n\nblockquote.quote-orange {\n  border-color: #fd7e14;\n}\n\nblockquote.quote-orange h1,\nblockquote.quote-orange h2,\nblockquote.quote-orange h3,\nblockquote.quote-orange h4,\nblockquote.quote-orange h5,\nblockquote.quote-orange h6 {\n  color: #fd7e14;\n}\n\nblockquote.quote-yellow {\n  border-color: #ffc107;\n}\n\nblockquote.quote-yellow h1,\nblockquote.quote-yellow h2,\nblockquote.quote-yellow h3,\nblockquote.quote-yellow h4,\nblockquote.quote-yellow h5,\nblockquote.quote-yellow h6 {\n  color: #ffc107;\n}\n\nblockquote.quote-green {\n  border-color: #28a745;\n}\n\nblockquote.quote-green h1,\nblockquote.quote-green h2,\nblockquote.quote-green h3,\nblockquote.quote-green h4,\nblockquote.quote-green h5,\nblockquote.quote-green h6 {\n  color: #28a745;\n}\n\nblockquote.quote-teal {\n  border-color: #20c997;\n}\n\nblockquote.quote-teal h1,\nblockquote.quote-teal h2,\nblockquote.quote-teal h3,\nblockquote.quote-teal h4,\nblockquote.quote-teal h5,\nblockquote.quote-teal h6 {\n  color: #20c997;\n}\n\nblockquote.quote-cyan {\n  border-color: #17a2b8;\n}\n\nblockquote.quote-cyan h1,\nblockquote.quote-cyan h2,\nblockquote.quote-cyan h3,\nblockquote.quote-cyan h4,\nblockquote.quote-cyan h5,\nblockquote.quote-cyan h6 {\n  color: #17a2b8;\n}\n\nblockquote.quote-white {\n  border-color: #fff;\n}\n\nblockquote.quote-white h1,\nblockquote.quote-white h2,\nblockquote.quote-white h3,\nblockquote.quote-white h4,\nblockquote.quote-white h5,\nblockquote.quote-white h6 {\n  color: #fff;\n}\n\nblockquote.quote-gray {\n  border-color: #6c757d;\n}\n\nblockquote.quote-gray h1,\nblockquote.quote-gray h2,\nblockquote.quote-gray h3,\nblockquote.quote-gray h4,\nblockquote.quote-gray h5,\nblockquote.quote-gray h6 {\n  color: #6c757d;\n}\n\nblockquote.quote-gray-dark {\n  border-color: #343a40;\n}\n\nblockquote.quote-gray-dark h1,\nblockquote.quote-gray-dark h2,\nblockquote.quote-gray-dark h3,\nblockquote.quote-gray-dark h4,\nblockquote.quote-gray-dark h5,\nblockquote.quote-gray-dark h6 {\n  color: #343a40;\n}\n\n.tab-custom-content {\n  border-top: 1px solid #dee2e6;\n  margin-top: .5rem;\n  padding-top: .5rem;\n}\n\n.nav + .tab-custom-content {\n  border-top: none;\n  border-bottom: 1px solid #dee2e6;\n  margin-top: 0;\n  margin-bottom: .5rem;\n  padding-bottom: .5rem;\n}\n\n.badge-btn {\n  border-radius: 0.15rem;\n  font-size: 0.75rem;\n  font-weight: 400;\n  padding: 0.25rem 0.5rem;\n}\n\n.badge-btn.badge-pill {\n  padding: .375rem .6rem;\n}\n\n.dark-mode a:not(.btn):hover {\n  color: #3395ff;\n}\n\n.dark-mode .attachment-block {\n  background-color: #3d444b;\n}\n\n.dark-mode .attachment-block .attachment-text {\n  color: #ced4da;\n}\n\n.dark-mode blockquote {\n  background-color: #3f474e;\n}\n\n.dark-mode blockquote.quote-primary {\n  border-color: #007bff;\n}\n\n.dark-mode blockquote.quote-primary h1,\n.dark-mode blockquote.quote-primary h2,\n.dark-mode blockquote.quote-primary h3,\n.dark-mode blockquote.quote-primary h4,\n.dark-mode blockquote.quote-primary h5,\n.dark-mode blockquote.quote-primary h6 {\n  color: #007bff;\n}\n\n.dark-mode blockquote.quote-secondary {\n  border-color: #6c757d;\n}\n\n.dark-mode blockquote.quote-secondary h1,\n.dark-mode blockquote.quote-secondary h2,\n.dark-mode blockquote.quote-secondary h3,\n.dark-mode blockquote.quote-secondary h4,\n.dark-mode blockquote.quote-secondary h5,\n.dark-mode blockquote.quote-secondary h6 {\n  color: #6c757d;\n}\n\n.dark-mode blockquote.quote-success {\n  border-color: #28a745;\n}\n\n.dark-mode blockquote.quote-success h1,\n.dark-mode blockquote.quote-success h2,\n.dark-mode blockquote.quote-success h3,\n.dark-mode blockquote.quote-success h4,\n.dark-mode blockquote.quote-success h5,\n.dark-mode blockquote.quote-success h6 {\n  color: #28a745;\n}\n\n.dark-mode blockquote.quote-info {\n  border-color: #17a2b8;\n}\n\n.dark-mode blockquote.quote-info h1,\n.dark-mode blockquote.quote-info h2,\n.dark-mode blockquote.quote-info h3,\n.dark-mode blockquote.quote-info h4,\n.dark-mode blockquote.quote-info h5,\n.dark-mode blockquote.quote-info h6 {\n  color: #17a2b8;\n}\n\n.dark-mode blockquote.quote-warning {\n  border-color: #ffc107;\n}\n\n.dark-mode blockquote.quote-warning h1,\n.dark-mode blockquote.quote-warning h2,\n.dark-mode blockquote.quote-warning h3,\n.dark-mode blockquote.quote-warning h4,\n.dark-mode blockquote.quote-warning h5,\n.dark-mode blockquote.quote-warning h6 {\n  color: #ffc107;\n}\n\n.dark-mode blockquote.quote-danger {\n  border-color: #dc3545;\n}\n\n.dark-mode blockquote.quote-danger h1,\n.dark-mode blockquote.quote-danger h2,\n.dark-mode blockquote.quote-danger h3,\n.dark-mode blockquote.quote-danger h4,\n.dark-mode blockquote.quote-danger h5,\n.dark-mode blockquote.quote-danger h6 {\n  color: #dc3545;\n}\n\n.dark-mode blockquote.quote-light {\n  border-color: #f8f9fa;\n}\n\n.dark-mode blockquote.quote-light h1,\n.dark-mode blockquote.quote-light h2,\n.dark-mode blockquote.quote-light h3,\n.dark-mode blockquote.quote-light h4,\n.dark-mode blockquote.quote-light h5,\n.dark-mode blockquote.quote-light h6 {\n  color: #f8f9fa;\n}\n\n.dark-mode blockquote.quote-dark {\n  border-color: #343a40;\n}\n\n.dark-mode blockquote.quote-dark h1,\n.dark-mode blockquote.quote-dark h2,\n.dark-mode blockquote.quote-dark h3,\n.dark-mode blockquote.quote-dark h4,\n.dark-mode blockquote.quote-dark h5,\n.dark-mode blockquote.quote-dark h6 {\n  color: #343a40;\n}\n\n.dark-mode blockquote.quote-lightblue {\n  border-color: #3c8dbc;\n}\n\n.dark-mode blockquote.quote-lightblue h1,\n.dark-mode blockquote.quote-lightblue h2,\n.dark-mode blockquote.quote-lightblue h3,\n.dark-mode blockquote.quote-lightblue h4,\n.dark-mode blockquote.quote-lightblue h5,\n.dark-mode blockquote.quote-lightblue h6 {\n  color: #3c8dbc;\n}\n\n.dark-mode blockquote.quote-navy {\n  border-color: #001f3f;\n}\n\n.dark-mode blockquote.quote-navy h1,\n.dark-mode blockquote.quote-navy h2,\n.dark-mode blockquote.quote-navy h3,\n.dark-mode blockquote.quote-navy h4,\n.dark-mode blockquote.quote-navy h5,\n.dark-mode blockquote.quote-navy h6 {\n  color: #001f3f;\n}\n\n.dark-mode blockquote.quote-olive {\n  border-color: #3d9970;\n}\n\n.dark-mode blockquote.quote-olive h1,\n.dark-mode blockquote.quote-olive h2,\n.dark-mode blockquote.quote-olive h3,\n.dark-mode blockquote.quote-olive h4,\n.dark-mode blockquote.quote-olive h5,\n.dark-mode blockquote.quote-olive h6 {\n  color: #3d9970;\n}\n\n.dark-mode blockquote.quote-lime {\n  border-color: #01ff70;\n}\n\n.dark-mode blockquote.quote-lime h1,\n.dark-mode blockquote.quote-lime h2,\n.dark-mode blockquote.quote-lime h3,\n.dark-mode blockquote.quote-lime h4,\n.dark-mode blockquote.quote-lime h5,\n.dark-mode blockquote.quote-lime h6 {\n  color: #01ff70;\n}\n\n.dark-mode blockquote.quote-fuchsia {\n  border-color: #f012be;\n}\n\n.dark-mode blockquote.quote-fuchsia h1,\n.dark-mode blockquote.quote-fuchsia h2,\n.dark-mode blockquote.quote-fuchsia h3,\n.dark-mode blockquote.quote-fuchsia h4,\n.dark-mode blockquote.quote-fuchsia h5,\n.dark-mode blockquote.quote-fuchsia h6 {\n  color: #f012be;\n}\n\n.dark-mode blockquote.quote-maroon {\n  border-color: #d81b60;\n}\n\n.dark-mode blockquote.quote-maroon h1,\n.dark-mode blockquote.quote-maroon h2,\n.dark-mode blockquote.quote-maroon h3,\n.dark-mode blockquote.quote-maroon h4,\n.dark-mode blockquote.quote-maroon h5,\n.dark-mode blockquote.quote-maroon h6 {\n  color: #d81b60;\n}\n\n.dark-mode blockquote.quote-blue {\n  border-color: #007bff;\n}\n\n.dark-mode blockquote.quote-blue h1,\n.dark-mode blockquote.quote-blue h2,\n.dark-mode blockquote.quote-blue h3,\n.dark-mode blockquote.quote-blue h4,\n.dark-mode blockquote.quote-blue h5,\n.dark-mode blockquote.quote-blue h6 {\n  color: #007bff;\n}\n\n.dark-mode blockquote.quote-indigo {\n  border-color: #6610f2;\n}\n\n.dark-mode blockquote.quote-indigo h1,\n.dark-mode blockquote.quote-indigo h2,\n.dark-mode blockquote.quote-indigo h3,\n.dark-mode blockquote.quote-indigo h4,\n.dark-mode blockquote.quote-indigo h5,\n.dark-mode blockquote.quote-indigo h6 {\n  color: #6610f2;\n}\n\n.dark-mode blockquote.quote-purple {\n  border-color: #6f42c1;\n}\n\n.dark-mode blockquote.quote-purple h1,\n.dark-mode blockquote.quote-purple h2,\n.dark-mode blockquote.quote-purple h3,\n.dark-mode blockquote.quote-purple h4,\n.dark-mode blockquote.quote-purple h5,\n.dark-mode blockquote.quote-purple h6 {\n  color: #6f42c1;\n}\n\n.dark-mode blockquote.quote-pink {\n  border-color: #e83e8c;\n}\n\n.dark-mode blockquote.quote-pink h1,\n.dark-mode blockquote.quote-pink h2,\n.dark-mode blockquote.quote-pink h3,\n.dark-mode blockquote.quote-pink h4,\n.dark-mode blockquote.quote-pink h5,\n.dark-mode blockquote.quote-pink h6 {\n  color: #e83e8c;\n}\n\n.dark-mode blockquote.quote-red {\n  border-color: #dc3545;\n}\n\n.dark-mode blockquote.quote-red h1,\n.dark-mode blockquote.quote-red h2,\n.dark-mode blockquote.quote-red h3,\n.dark-mode blockquote.quote-red h4,\n.dark-mode blockquote.quote-red h5,\n.dark-mode blockquote.quote-red h6 {\n  color: #dc3545;\n}\n\n.dark-mode blockquote.quote-orange {\n  border-color: #fd7e14;\n}\n\n.dark-mode blockquote.quote-orange h1,\n.dark-mode blockquote.quote-orange h2,\n.dark-mode blockquote.quote-orange h3,\n.dark-mode blockquote.quote-orange h4,\n.dark-mode blockquote.quote-orange h5,\n.dark-mode blockquote.quote-orange h6 {\n  color: #fd7e14;\n}\n\n.dark-mode blockquote.quote-yellow {\n  border-color: #ffc107;\n}\n\n.dark-mode blockquote.quote-yellow h1,\n.dark-mode blockquote.quote-yellow h2,\n.dark-mode blockquote.quote-yellow h3,\n.dark-mode blockquote.quote-yellow h4,\n.dark-mode blockquote.quote-yellow h5,\n.dark-mode blockquote.quote-yellow h6 {\n  color: #ffc107;\n}\n\n.dark-mode blockquote.quote-green {\n  border-color: #28a745;\n}\n\n.dark-mode blockquote.quote-green h1,\n.dark-mode blockquote.quote-green h2,\n.dark-mode blockquote.quote-green h3,\n.dark-mode blockquote.quote-green h4,\n.dark-mode blockquote.quote-green h5,\n.dark-mode blockquote.quote-green h6 {\n  color: #28a745;\n}\n\n.dark-mode blockquote.quote-teal {\n  border-color: #20c997;\n}\n\n.dark-mode blockquote.quote-teal h1,\n.dark-mode blockquote.quote-teal h2,\n.dark-mode blockquote.quote-teal h3,\n.dark-mode blockquote.quote-teal h4,\n.dark-mode blockquote.quote-teal h5,\n.dark-mode blockquote.quote-teal h6 {\n  color: #20c997;\n}\n\n.dark-mode blockquote.quote-cyan {\n  border-color: #17a2b8;\n}\n\n.dark-mode blockquote.quote-cyan h1,\n.dark-mode blockquote.quote-cyan h2,\n.dark-mode blockquote.quote-cyan h3,\n.dark-mode blockquote.quote-cyan h4,\n.dark-mode blockquote.quote-cyan h5,\n.dark-mode blockquote.quote-cyan h6 {\n  color: #17a2b8;\n}\n\n.dark-mode blockquote.quote-white {\n  border-color: #fff;\n}\n\n.dark-mode blockquote.quote-white h1,\n.dark-mode blockquote.quote-white h2,\n.dark-mode blockquote.quote-white h3,\n.dark-mode blockquote.quote-white h4,\n.dark-mode blockquote.quote-white h5,\n.dark-mode blockquote.quote-white h6 {\n  color: #fff;\n}\n\n.dark-mode blockquote.quote-gray {\n  border-color: #6c757d;\n}\n\n.dark-mode blockquote.quote-gray h1,\n.dark-mode blockquote.quote-gray h2,\n.dark-mode blockquote.quote-gray h3,\n.dark-mode blockquote.quote-gray h4,\n.dark-mode blockquote.quote-gray h5,\n.dark-mode blockquote.quote-gray h6 {\n  color: #6c757d;\n}\n\n.dark-mode blockquote.quote-gray-dark {\n  border-color: #343a40;\n}\n\n.dark-mode blockquote.quote-gray-dark h1,\n.dark-mode blockquote.quote-gray-dark h2,\n.dark-mode blockquote.quote-gray-dark h3,\n.dark-mode blockquote.quote-gray-dark h4,\n.dartn-light {\n  color: #1f2d3d;\n  background-color: #f8f9fa;\n  border-color: #f8f9fa;\n  box-shadow: none;\n}\n\n.btn-light:hover {\n  color: #1f2d3d;\n  background-color: #e2e6ea;\n  border-color: #dae0e5;\n}\n\n.btn-light:focus, .btn-light.focus {\n  color: #1f2d3d;\n  background-color: #e2e6ea;\n  border-color: #dae0e5;\n  box-shadow: 0 0 0 0 rgba(215, 218, 222, 0.5);\n}\n\n.btn-light.disabled, .btn-light:disabled {\n  color: #1f2d3d;\n  background-color: #f8f9fa;\n  border-color: #f8f9fa;\n}\n\n.btn-light:not(:disabled):not(.disabled):active, .btn-light:not(:disabled):not(.disabled).active,\n.show > .btn-light.dropdown-toggle {\n  color: #1f2d3d;\n  background-color: #dae0e5;\n  border-color: #d3d9df;\n}\n\n.btn-light:not(:disabled):not(.disabled):active:focus, .btn-light:not(:disabled):not(.disabled).active:focus,\n.show > .btn-light.dropdown-toggle:focus {\n  box-shadow: 0 0 0 0 rgba(215, 218, 222, 0.5);\n}\n\n.btn-dark {\n  color: #fff;\n  background-color: #343a40;\n  border-color: #343a40;\n  box-shadow: none;\n}\n\n.btn-dark:hover {\n  color: #fff;\n  background-color: #23272b;\n  border-color: #1d2124;\n}\n\n.btn-dark:focus, .btn-dark.focus {\n  color: #fff;\n  background-color: #23272b;\n  border-color: #1d2124;\n  box-shadow: 0 0 0 0 rgba(82, 88, 93, 0.5);\n}\n\n.btn-dark.disabled, .btn-dark:disabled {\n  color: #fff;\n  background-color: #343a40;\n  border-color: #343a40;\n}\n\n.btn-dark:not(:disabled):not(.disabled):active, .btn-dark:not(:disabled):not(.disabled).active,\n.show > .btn-dark.dropdown-toggle {\n  color: #fff;\n  background-color: #1d2124;\n  border-color: #171a1d;\n}\n\n.btn-dark:not(:disabled):not(.disabled):active:focus, .btn-dark:not(:disabled):not(.disabled).active:focus,\n.show > .btn-dark.dropdown-toggle:focus {\n  box-shadow: 0 0 0 0 rgba(82, 88, 93, 0.5);\n}\n\n.btn-outline-primary {\n  color: #007bff;\n  border-color: #007bff;\n}\n\n.btn-outline-primary:hover {\n  color: #fff;\n  background-color: #007bff;\n  border-color: #007bff;\n}\n\n.btn-outline-primary:focus, .btn-outline-primary.focus {\n  box-shadow: 0 0 0 0 rgba(0, 123, 255, 0.5);\n}\n\n.btn-outline-primary.disabled, .btn-outline-primary:disabled {\n  color: #007bff;\n  background-color: transparent;\n}\n\n.btn-outline-primary:not(:disabled):not(.disabled):active, .btn-outline-primary:not(:disabled):not(.disabled).active,\n.show > .btn-outline-primary.dropdown-toggle {\n  color: #fff;\n  background-color: #007bff;\n  border-color: #007bff;\n}\n\n.btn-outline-primary:not(:disabled):not(.disabled):active:focus, .btn-outline-primary:not(:disabled):not(.disabled).active:focus,\n.show > .btn-outline-primary.dropdown-toggle:focus {\n  box-shadow: 0 0 0 0 rgba(0, 123, 255, 0.5);\n}\n\n.btn-outline-secondary {\n  color: #6c757d;\n  border-color: #6c757d;\n}\n\n.btn-outline-secondary:hover {\n  color: #fff;\n  background-color: #6c757d;\n  border-color: #6c757d;\n}\n\n.btn-outline-secondary:focus, .btn-outline-secondary.focus {\n  box-shadow: 0 0 0 0 rgba(108, 117, 125, 0.5);\n}\n\n.btn-outline-secondary.disabled, .btn-outline-secondary:disabled {\n  color: #6c757d;\n  background-color: transparent;\n}\n\n.btn-outline-secondary:not(:disabled):not(.disabled):active, .btn-outline-secondary:not(:disabled):not(.disabled).active,\n.show > .btn-outline-secondary.dropdown-toggle {\n  color: #fff;\n  background-color: #6c757d;\n  border-color: #6c757d;\n}\n\n.btn-outline-secondary:not(:disabled):not(.disabled):active:focus, .btn-outline-secondary:not(:disabled):not(.disabled).active:focus,\n.show > .btn-outline-secondary.dropdown-toggle:focus {\n  box-shadow: 0 0 0 0 rgba(108, 117, 125, 0.5);\n}\n\n.btn-outline-success {\n  color: #28a745;\n  border-color: #28a745;\n}\n\n.btn-outline-success:hover {\n  color: #fff;\n  background-color: #28a745;\n  border-color: #28a745;\n}\n\n.btn-outline-success:focus, .btn-outline-success.focus {\n  box-shadow: 0 0 0 0 rgba(40, 167, 69, 0.5);\n}\n\n.btn-outline-success.disabled, .btn-outline-success:disabled {\n  color: #28a745;\n  background-color: transparent;\n}\n\n.btn-outline-success:not(:disabled):not(.disabled):active, .btn-outline-success:not(:disabled):not(.disabled).active,\n.show > .btn-outline-success.dropdown-toggle {\n  color: #fff;\n  background-color: #28a745;\n  border-color: #28a745;\n}\n\n.btn-outline-success:not(:disabled):not(.disabled):active:focus, .btn-outline-success:not(:disabled):not(.disabled).active:focus,\n.show > .btn-outline-success.dropdown-toggle:focus {\n  box-shadow: 0 0 0 0 rgba(40, 167, 69, 0.5);\n}\n\n.btn-outline-info {\n  color: #17a2b8;\n  border-color: #17a2b8;\n}\n\n.btn-outline-info:hover {\n  color: #fff;\n  background-color: #17a2b8;\n  border-color: #17a2b8;\n}\n\n.btn-outline-info:focus, .btn-outline-info.focus {\n  box-shadow: 0 0 0 0 rgba(23, 162, 184, 0.5);\n}\n\n.btn-outline-info.disabled, .btn-outline-info:disabled {\n  color: #17a2b8;\n  background-color: transparent;\n}\n\n.btn-outline-info:not(:disabled):not(.disabled):active, .btn-outline-info:not(:disabled):not(.disabled).active,\n.show > .btn-outline-info.dropdown-toggle {\n  color: #fff;\n  background-color: #17a2b8;\n  border-color: #17a2b8;\n}\n\n.btn-outline-info:not(:disabled):not(.disabled):active:focus, .btn-outline-info:not(:disabled):not(.disabled).active:focus,\n.show > .btn-outline-info.dropdown-toggle:focus {\n  box-shadow: 0 0 0 0 rgba(23, 162, 18

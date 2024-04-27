@@ -1,0 +1,14 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.formulario{
+    text-align: center;
+    margin-top: 15%; 
+    padding: 2em;
+}
+
+.margen{
+    padding: 1.5em;
+}

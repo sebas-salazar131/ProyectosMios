@@ -1,0 +1,53 @@
+article{
+    border: 1px solid black ;
+    padding: 1em;
+    display: inline-block;
+    
+}
+img{
+    width: 100%;
+}
+
+@media (min-width:901px){
+    body{
+        background: rgb(224, 128, 128);
+    }
+    article{
+        display: inline-block;
+        display: inline-flex;
+        width: 28%;
+        vertical-align: top;
+    }
+}
+/*pantalla mediada mayor a 500px y menor a 900px*/
+@media (min-width:501px) and (max-width:900px){
+    body{
+        background: yellow;
+    }
+    article{
+        display: inline-flex;
+        width: 38%;
+        margin-left: 1em;
+        vertical-align: top;
+    }
+    .cuadro{
+        display: inline-flex;
+        width: 90%;
+        height: 40%;
+        margin: 1em;
+        vertical-align: top;
+    }
+
+}
+/*pantalla penqueña menor a igual 500px*/
+@media (max-width:500px){
+    body{
+        background: blue;
+    }
+    article{
+        display: inline-block;
+        width: 90%;
+        margin: 0px auto;
+    }
+
+}

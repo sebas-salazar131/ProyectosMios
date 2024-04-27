@@ -1,0 +1,116 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+.contenedor{
+    width: 80%;
+    margin: 0px auto;
+}
+
+
+nav{
+    background: rgba(4, 81, 195, 0.5); /* color fondo */
+    padding: 1em 2em;
+    text-align: center;
+    width: 95,5%;
+    
+}
+nav ul li{
+    display: inline-block;
+    margin-left: 30px;
+    border-right: 1px solid black;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: aliceblue;
+    padding: 2em;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-transform: uppercase;
+
+    
+}
+
+header article{
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 18%;
+    display: block;
+    margin-top: 3em;
+    padding: 1em;
+    margin-left: 78%;
+}
+.letra, .titu{
+    color: aliceblue;
+}
+header{
+    background-image: url(../img/Travel-to-Rome-houses-city-Italy_1920x1200.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-right: 0,5em;
+    padding-top: 2em;
+    padding-bottom: 2em;
+}
+nav div{
+    display: inline-block;
+}
+
+.lupa{
+    margin-right: 1em;
+    text-align: right;
+    width: 15%;
+    color: aliceblue;
+}
+.lupa i{
+    background: rgb(37, 98, 184);
+    padding: 1em;
+}
+.rojo, .naranja{
+    display: inline-block;
+    color: aliceblue;
+}
+.rojo{
+    width: 60%;
+    background: red;
+}
+.naranja{
+    background: orange;
+    width: 39% 60%;
+}
+.cuadro{
+   background: orange; 
+}
+.paque{
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    margin-left: 35%;
+}
+.acomodar{
+    background: white;
+}
+.lineas{
+    height: 60px;
+    width: 225px;
+    display: inline-block;
+    margin-left: 8em;
+}
+.linea{
+    height: 60px;
+    width: 225px;
+    display: inline-block;
+    margin-left: 8em;
+}
+.imagen{
+    height: 200;
+    width: 310px;
+    display: inline-block;
+    margin: 2em;
+}
+.padre{
+    background: white;
+}
+.hijo{
+    height: 200px;
+    width: 310px;
+    display: inline-block;
+}
+

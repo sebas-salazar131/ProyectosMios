@@ -1,0 +1,28 @@
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+
+class Dashboard extends CI_Controller {
+
+	
+	public function index(){
+		$this->load->view('login');
+	}
+    public function login(){
+		$this->load->view('login');
+	}
+
+    public function validarIngreso(){
+		$email = $this->input->post('campo_email');
+		$password = $this->input->post('campo_password');
+		$this->load->database();
+		$this->load->helper('form');
+
+
+		if ($email!="" && $password!="") {
+
+			$this->load->model('PersonasModel');
+			$validacion = $this->PersonasModel->validarIngreso($email, $password);
+
+			if ($validacion) {
+				// EXTRAER LOS DATOS DE LA PERSONA Y USUARIO
+				$datosPer

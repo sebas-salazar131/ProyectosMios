@@ -1,0 +1,264 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="flag-icons-ai" viewBox="0 0 512 512">
+  <defs id="defs1837">
+    <clipPath id="ai-a">
+      <path id="path1834" fill-opacity=".7" d="M0 0h640v480H0z"/>
+    </clipPath>
+  </defs>
+  <path id="rect4120" fill="#012169" fill-opacity="1" stroke-width="4.1" d="M0 0h512v512H0z"/>
+  <path id="path1855" fill="#49497d" d="m384 212.7 2 2z"/>
+  <path id="path1857" fill="#0e0e6e" d="m386 212.7 2 2z"/>
+  <path id="path1859" fill="#262678" d="m379.9 214.7 2 2z"/>
+  <path id="path1861" fill="#808067" d="m382 214.7 2 2z"/>
+  <path id="path1863" fill="#58587b" d="m388 214.7 2 2z"/>
+  <path id="path1865" fill="#0e0e6e" d="m312.9 216.8 2 2z"/>
+  <path id="path1867" fill="#1b1b74" d="m375.9 216.8 2 2z"/>
+  <path id="path1869" fill="#6e6c70" d="m377.9 216.8 2 2z"/>
+  <path id="path1871" fill="#cc3" d="M316.5 220.4c0 52.5-6 111.6 33 152.7 8 8.4 23.4 27.7 36.5 27 13.7-.8 31.4-21.1 39.2-31 34-44.8 28.7-98.2 29.8-150.2-15.3 6.9-23 9.2-36.4 9-10 1-25.3-5.5-34.5-10-6 4-14.7 8.9-30.4 9.4-18 .8-23.8-2.3-37.2-7z"/>
+  <path id="path1873" fill="#99994e" d="m390 216.8 2 2z"/>
+  <path id="path1875" fill="#49497d" d="m392 216.8 2 2z"/>
+  <path id="path1877" fill="#0e0e6e" d="m455 216.8 2 2z"/>
+  <path id="path1879" fill="#a4a43d" d="m315 218.8 2 2z"/>
+  <path id="path1881" fill="#6e6c70" d="m317 218.8 2 2z"/>
+  <path id="path1883" fill="#3a3a7c" d="m319 218.8 2 2z"/>
+  <path id="path1885" fill="#1b1b74" d="m371.8 218.8 2 2z"/>
+  <path id="path1887" fill="#6e6c70" d="m373.8 218.8 2 2z"/>
+  <path id="path1889" fill="#a4a43d" d="m375.9 218.8 2 2z"/>
+  <path id="path1891" fill="#d0d045" d="m384 218.8 2 2z"/>
+  <path id="path1893" fill="#a4a43d" d="m392 218.8 2 2z"/>
+  <path id="path1895" fill="#8d8d5b" d="m394 218.8 2 2z"/>
+  <path id="path1897" fill="#3a3a7c" d="m396.2 218.8 2 2z"/>
+  <path id="path1899" fill="#262678" d="m448.9 218.8 2 2z"/>
+  <path id="path1901" fill="#53527c" d="m451 218.8 2 2z"/>
+  <path id="path1903" fill="#8d8d5b" d="m453 218.8 2 2z"/>
+  <path id="path1905" fill="#737370" d="m323 220.9 2 2z"/>
+  <path id="path1907" fill="#53527c" d="m325 220.9 2 2z"/>
+  <path id="path1909" fill="#1b1b74" d="m327 220.9 2 2z"/>
+  <path id="path1911" fill="#262678" d="m367.7 220.9 2 2z"/>
+  <path id="path1913" fill="#6e6c70" d="m369.8 220.9 2 2z"/>
+  <path id="path1915" fill="#a4a43d" d="m371.8 220.9 2 2z"/>
+  <path id="path1917" fill="#e5e59d" d="m382 220.9 2 2z"/>
+  <path id="path1919" fill="#fff" d="M320.6 226a509 509 0 0 0 4 88.2c4.9 15.4 4.2 23.9 11.3 33l99-.7c6-9.7 10.5-24.4 11-30.3 5.6-29.7 5.7-62.6 5.9-92a62 62 0 0 1-35.7 7.4 69 69 0 0 1-30.5-9.2c-9.5 5.6-12.8 8.2-28.4 8.9-12.2.6-22 1.6-36.6-5.2z"/>
+  <path id="path1921" fill="#f2f1d7" d="m386 220.9 2 2z"/>
+  <path id="path1923" fill="#d9d868" d="m388 220.9 2 2z"/>
+  <path id="path1925" fill="#a4a43d" d="m396.2 220.9 2 2z"/>
+  <path id="path1927" fill="#99994e" d="m398.2 220.9 2 2z"/>
+  <path id="path1929" fill="#49497d" d="m400.2 220.9 2 2z"/>
+  <path id="path1931" fill="#0e0e6e" d="m402.2 220.9 2 2z"/>
+  <path id="path1933" fill="#3a3a7c" d="m442.9 220.9 2 2z"/>
+  <path id="path1935" fill="#667" d="m444.9 220.9 2 2z"/>
+  <path id="path1937" fill="#99994e" d="m446.9 220.9 2 2z"/>
+  <path id="path1939" fill="#a4a43d" d="m448.9 220.9 2 2-2-2m-121.8 2 2 2z"/>
+  <path id="path1941" fill="#99994e" d="m329.2 222.9 2 2z"/>
+  <path id="path1943" fill="#6e6c70" d="m331.2 222.9 2 2z"/>
+  <path id="path1945" fill="#49497d" d="m333.2 222.9 2 2z"/>
+  <path id="path1947" fill="#1b1b74" d="m335.2 222.9 2 2-2-2m26.4 0 2 2z"/>
+  <path id="path1949" fill="#53527c" d="m363.6 222.9 2 2-2-2z"/>
+  <path id="path1951" fill="#8d8d5b" d="m365.7 222.9 2 2z"/>
+  <path id="path1953" fill="#a4a43d" d="m367.7 222.9 2 2z"/>
+  <path id="path1955" fill="#e5e59d" d="m377.9 222.9 2 2z"/>
+  <path id="path1957" fill="#fbfaf2" d="m379.9 222.9 2 2z"/>
+  <path id="path1959" fill="#f2f1d2" d="m390 222.9 2 2z"/>
+  <path id="path1961" fill="#d9d868" d="m392 222.9 2 2z"/>
+  <path id="path1963" fill="#a4a43d" d="m402.2 222.9 2 2z"/>
+  <path id="path1965" fill="#6e6c70" d="m404.3 222.9 2 2z"/>
+  <path id="path1967" fill="#3a3a7c" d="m406.3 222.9 2 2z"/>
+  <path id="path1969" fill="#0e0e6e" d="m432.7 222.9 2 2z"/>
+  <path id="path1971" fill="#32327b" d="m434.7 222.9 2 2z"/>
+  <path id="path1973" fill="#58587b" d="m436.8 222.9 2 2z"/>
+  <path id="path1975" fill="#808067" d="m438.8 222.9 2 2z"/>
+  <path id="path1977" fill="#a4a43d" d="m442.2 223.5 1.3.7z"/>
+  <path id="path1979" fill="#dddc7a" d="m319 224.9 2 2z"/>
+  <path id="path1981" fill="#d0d045" d="m321 224.9 2 2z"/>
+  <path id="path1983" fill="#a4a43d" d="m336.6 225.5 1.4.7z"/>
+  <path id="path1985" fill="#808067" d="m339.3 224.9 2 2z"/>
+  <path id="path1987" fill="#667" d="m341.3 224.9 2 2z"/>
+  <path id="path1989" fill="#58587b" d="m343.4 224.9 2 2z"/>
+  <path id="path1991" fill="#49497d" d="m345.4 224.9 2 2z"/>
+  <path id="path1993" fill="#737370" d="m357.6 224.9 2 2z"/>
+  <path id="path1995" fill="#99994e" d="m359.6 224.9 2 2z"/>
+  <path id="path1997" fill="#a4a43d" d="m361.6 224.9 2 2z"/>
+  <path id="path1999" fill="#e5e59d" d="m373.8 224.9 2 2z"/>
+  <path id="path2001" fill="#fbfaf2" d="m375.9 224.9 2 2z"/>
+  <path id="path2003" fill="#f2f1d2" d="m394 224.9 2 2z"/>
+  <path id="path2005" fill="#d9d868" d="m396.2 224.9 2 2z"/>
+  <path id="path2007" fill="#a4a43d" d="m407.6 225.5 1.4.7-1.3-.7z"/>
+  <path id="path2009" fill="#808067" d="m410.4 224.9 2 2z"/>
+  <path id="path2011" fill="#667" d="m412.4 224.9 2 2z"/>
+  <path id="path2013" fill="#58587b" d="m414.4 224.9 2 2z"/>
+  <path id="path2015" fill="#3a3a7c" d="m416.5 224.9 2 2z"/>
+  <path id="path2017" fill="#58587b" d="m425.9 225.5 1.4.7z"/>
+  <path id="path2019" fill="#737370" d="m428.6 224.9 2 2z"/>
+  <path id="path2021" fill="#99994e" d="m430.6 224.9 2 2-2-2z"/>
+  <path id="path2023" fill="#a4a43d" d="m432.7 224.9 2 2z"/>
+  <path id="path2025" fill="#dddc7a" d="m448.9 224.9 2 2z"/>
+  <path id="path2027" fill="#d0d045" d="m451 224.9 2 2z"/>
+  <path id="path2029" fill="#f2f1d7" d="m323 226.9 2 2z"/>
+  <path id="path2031" fill="#e0dea1" d="m325 226.9 2 2z"/>
+  <path id="path2033" fill="#dddc7a" d="m327 226.9 2 2z"/>
+  <path id="path2035" fill="#d9d868" d="m367.7 226.9 2 2z"/>
+  <path id="path2037" fill="#e5e3af" d="m369.8 226.9 2 2z"/>
+  <path id="path2039" fill="#f6f6e4" d="m398.2 226.9 2 2z"/>
+  <path id="path2041" fill="#e1e18c" d="m400.2 226.9 2 2z"/>
+  <path id="path2043" fill="#d4d456" d="m440.8 226.9 2 2z"/>
+  <path id="path2045" fill="#e1e18c" d="m442.9 226.9 2 2z"/>
+  <path id="path2047" fill="#eeedc1" d="m444.9 226.9 2 2z"/>
+  <path id="path2049" fill="#f2f1d2" d="m331.2 228.9 2 2z"/>
+  <path id="path2051" fill="#e0dea1" d="m333.2 228.9 2 2z"/>
+  <path id="path2053" fill="#dddc7a" d="m335.2 228.9 2 2z"/>
+  <path id="path2055" fill="#d0d045" d="m337.3 228.9 2 2z"/>
+  <path id="path2057" fill="#dddc7a" d="m361.6 228.9 2 2z"/>
+  <path id="path2059" fill="#e5e3af" d="m363.6 228.9 2 2-2-2z"/>
+  <path id="path2061" fill="#f6f6e4" d="m365.7 228.9 2 2z"/>
+  <path id="path2063" fill="#eeedc1" d="m404.3 228.9 2 2z"/>
+  <path id="path2065" fill="#e1e18c" d="m406.3 228.9 2 2z"/>
+  <path id="path2067" fill="#d4d456" d="m408.3 228.9 2 2z"/>
+  <path id="path2069" fill="#d9d868" d="m432.7 228.9 2 2z"/>
+  <path id="path2071" fill="#e1e18c" d="m434.7 228.9 2 2z"/>
+  <path id="path2073" fill="#eeedc1" d="m436.8 228.9 2 2z"/>
+  <path id="path2075" fill="#f6f6e4" d="m438.8 228.9 2 2z"/>
+  <path id="path2077" fill="#f2f1d7" d="m341.3 230.9 2 2-2-2z"/>
+  <path id="path2079" fill="#f2f1d2" d="m343.4 230.9 2 2-2-2z"/>
+  <path id="path2081" fill="#eeedc1" d="m345.4 230.9 2 2-2-2z"/>
+  <path id="path2083" fill="#f2f1d2" d="m354.9 231.6 1.3.7z"/>
+  <path id="path2085" fill="#fbfaf2" d="m357.6 230.9 2 2-2-2z"/>
+  <path id="path2087" fill="#fef8f1" d="m367.7 230.9 4 4v-4h-4z"/>
+  <path id="path2089" fill="#f2f1d7" d="m412.4 230.9 2 2-2-2z"/>
+  <path id="path2091" fill="#f2f1d2" d="m414.4 230.9 2 2-2-2z"/>
+  <path id="path2093" fill="#e5e3af" d="m416.5 230.9 2 2-2-2z"/>
+  <path id="path2095" fill="#e5e59d" d="m419.9 231.6 1.3.7-1.4-.7z"/>
+  <path id="path2097" fill="#e0dea1" d="m422.6 230.9 2 2-2-2z"/>
+  <path id="path2099" fill="#f2f1d2" d="m425.9 231.6 1.4.7z"/>
+  <path id="path2101" fill="#fbfaf2" d="m428.6 230.9 2 2-2-2z"/>
+  <path id="path2103" fill="#fef8f1" d="m363.6 233 2 2-2-2z"/>
+  <path id="path2105" fill="#fbbe66" d="m365.7 233 2 2z"/>
+  <path id="path2107" fill="#fbc477" d="m363.6 235 2 2-2-2z"/>
+  <path id="path2109" fill="#fcb144" d="m367.7 235 2 2z"/>
+  <path id="path2111" fill="#fe9f11" d="m363.6 237 2 2-2-2z"/>
+  <path id="path2113" fill="#fea522" d="m367.7 237 2 2z"/>
+  <path id="path2115" fill="#fae3c9" d="m361.6 239 2 2-2-2m8.2 0 2 2z"/>
+  <path id="path2117" fill="#fbead6" d="m379.9 239 2 2z"/>
+  <path id="path2119" fill="#f9d6aa" d="m382 239 2 2z"/>
+  <path id="path2121" fill="#fae3c9" d="m390 239 2 2z"/>
+  <path id="path2123" fill="#fef8f1" d="m392 239 2 2z"/>
+  <path id="path2125" fill="#f9d099" d="m361.6 241 2 2z"/>
+  <path id="path2127" fill="#fdab33" d="m369.8 241 2 2z"/>
+  <path id="path2129" fill="#fcf1e4" d="m373.8 241 2 2z"/>
+  <path id="path2131" fill="#fbc477" d="m375.9 241 2 2z"/>
+  <path id="path2133" fill="#fea522" d="m377.9 241 2 2z"/>
+  <path id="path2135" fill="#fcb755" d="m394 241 2 2z"/>
+  <path id="path2137" fill="#f9d6aa" d="m396.2 241 2 2z"/>
+  <path id="path2139" fill="#faca88" d="m361.6 243.2 2 2z"/>
+  <path id="path2141" fill="#fea522" d="m371.8 243.2 2 2-2-2m26.4 0 2 2z"/>
+  <path id="path2143" fill="#f8dcbb" d="m400.2 243.2 2 2z"/>
+  <path id="path2145" fill="#f6f6e4" d="m319 245.2 2 2z"/>
+  <path id="path2147" fill="#fbc477" d="m361.6 245.2 2 2z"/>
+  <path id="path2149" fill="#fbbe66" d="m402.2 245.2 2 2z"/>
+  <path id="path2151" fill="#f8dcbb" d="m404.3 245.2 2 2z"/>
+  <path id="path2153" fill="#faca88" d="m361.6 247.2 2 2z"/>
+  <path id="path2155" fill="#fcb755" d="m408.3 247.2 2 2z"/>
+  <path id="path2157" fill="#f8dcbb" d="m410.4 247.2 2 2z"/>
+  <path id="path2159" fill="#fef8f1" d="m359.6 249.3 2 2z"/>
+  <path id="path2161" fill="#fe9f11" d="m361.6 249.3 2 2z"/>
+  <path id="path2163" fill="#fdab33" d="m418.5 249.3 2 2z"/>
+  <path id="path2165" fill="#fcb144" d="m420.6 249.3 2 2z"/>
+  <path id="path2167" fill="#fbc477" d="m422.6 249.3 2 2z"/>
+  <path id="path2169" fill="#f9d6aa" d="m424.6 249.3 4 4z"/>
+  <path id="path2171" fill="#fef8f1" d="m426.6 249.3 2 2z"/>
+  <path id="path2173" fill="#fcb144" d="m359.6 251.3 2 2z"/>
+  <path id="path2175" fill="#fdab33" d="m388 251.3 2 2z"/>
+  <path id="path2177" fill="#fbc477" d="m390 251.3 2 2zm8 0 2.2 2-2-2z"/>
+  <path id="path2179" fill="#fea522" d="m400.2 251.3 2 2z"/>
+  <path id="path2181" fill="#fae3c9" d="m357.6 253.3 2 2z"/>
+  <path id="path2183" fill="#fcb144" d="m384 253.3 2 2z"/>
+  <path id="path2185" fill="#fae3c9" d="m386 253.3 2 2z"/>
+  <path id="path2187" fill="#f8dcbb" d="m402.2 253.3 2 2z"/>
+  <path id="path2189" fill="#fdab33" d="m404.3 253.3 2 2z"/>
+  <path id="path2191" fill="#fe9f11" d="m416.5 253.3 2 2z"/>
+  <path id="path2193" fill="#fcb755" d="m418.5 253.3 2 2z"/>
+  <path id="path2195" fill="#f9d099" d="m420.6 253.3 2 2z"/>
+  <path id="path2197" fill="#fbead6" d="m422.6 253.3 2 2z"/>
+  <path id="path2199" fill="#fcb144" d="m357.6 255.3 2 2z"/>
+  <path id="path2201" fill="#fbbe66" d="m382 255.3 2 2z"/>
+  <path id="path2203" fill="#f9d099" d="m406.3 255.3 2 2z"/>
+  <path id="path2205" fill="#fbead6" d="m414.4 255.3 2 2z"/>
+  <path id="path2207" fill="#fcf1e4" d="m355.6 257.4 2 2z"/>
+  <path id="path2209" fill="#fbbe66" d="m379.9 257.4 2 2z"/>
+  <path id="path2211" fill="#f9d099" d="m408.3 257.4 2 2z"/>
+  <path id="path2213" fill="#fae3c9" d="m414.4 257.4 2 2z"/>
+  <path id="path2215" fill="#fbc477" d="m355.6 259.4 2 2z"/>
+  <path id="path2217" fill="#fcb144" d="m377.9 259.4 2 2-2-2m32.5 0 2 2z"/>
+  <path id="path2219" fill="#fbbe66" d="m414.4 259.4 2 2z"/>
+  <path id="path2221" fill="#f6f6e4" d="m319 261.4 2 2z"/>
+  <path id="path2223" fill="#fea522" d="m355.6 261.4 2 2z"/>
+  <path id="path2225" fill="#fbead6" d="m377.9 261.4 2 2z"/>
+  <path id="path2227" fill="#fcf1e4" d="m410.4 261.4 2 2z"/>
+  <path id="path2229" fill="#fef8f1" d="m416.5 261.4 2 2z"/>
+  <path id="path2231" fill="#fcf1e4" d="m353.6 263.5 2 2z"/>
+  <path id="path2233" fill="#fbbe66" d="m375.9 263.5 2 2z"/>
+  <path id="path2235" fill="#faca88" d="m412.4 263.5 2 2z"/>
+  <path id="path2237" fill="#f9d099" d="m416.5 263.5 2 2z"/>
+  <path id="path2239" fill="#f9d6aa" d="m353.6 265.5 2 2z"/>
+  <path id="path2241" fill="#fcf1e4" d="m375.9 265.5 2 2z"/>
+  <path id="path2243" fill="#fae3c9" d="m386 265.5 2 2z"/>
+  <path id="path2245" fill="#fea522" d="m388 265.5 2 2z"/>
+  <path id="path2247" fill="#fcb144" d="m390 265.5 2 2z"/>
+  <path id="path2249" fill="#f9d6aa" d="m392 265.5 2 2z"/>
+  <path id="path2251" fill="#fef8f1" d="m412.4 265.5 2 2z"/>
+  <path id="path2253" fill="#fea522" d="m414.4 265.5 2 2z"/>
+  <path id="path2255" fill="#fdab33" d="m416.5 265.5 2 2z"/>
+  <path id="path2257" fill="#faca88" d="m353.6 267.5-2.1 6 2-6z"/>
+  <path id="path2259" fill="#fea522" d="m373.8 267.5 2 2z"/>
+  <path id="path2261" fill="#fef8f1" d="m375.9 267.5 2 2z"/>
+  <path id="path2263" fill="#f9d099" d="m386 267.5 2 2z"/>
+  <path id="path2265" fill="#fdab33" d="m394 267.5 2 2z"/>
+  <path id="path2267" fill="#fae3c9" d="m396.2 267.5 2 2z"/>
+  <path id="path2269" fill="#f8dcbb" d="m414.4 267.5 2 2z"/>
+  <path id="path2271" fill="#f90" d="m416.5 267.5 2 2z"/>
+  <path id="path2273" fill="#fbead6" d="m419.2 268.9.6 1.3z"/>
+  <path id="path2275" fill="#fea522" d="m377.9 269.5 2 2z"/>
+  <path id="path2277" fill="#fbbe66" d="m379.9 269.5 2 2z"/>
+  <path id="path2279" fill="#faca88" d="m382 269.5 2 2z"/>
+  <path id="path2281" fill="#fcb144" d="m384 269.5 2 2z"/>
+  <path id="path2283" fill="#fae3c9" d="m386 269.5 2 2z"/>
+  <path id="path2285" fill="#fe9f11" d="m388 269.5 2 2z"/>
+  <path id="path2287" fill="#fdab33" d="m398.2 269.5 2 2z"/>
+  <path id="path2289" fill="#fbc477" d="m400.2 269.5 2 2z"/>
+  <path id="path2291" fill="#faca88" d="m402.2 269.5 2 2z"/>
+  <path id="path2293" fill="#f9d6aa" d="m404.3 269.5 2 2z"/>
+  <path id="path2295" fill="#fae3c9" d="m407.6 270.2 1.4.7-1.3-.7z"/>
+  <path id="path2297" fill="#fef8f1" d="m410.4 269.5 2 2z"/>
+  <path id="path2299" fill="#fbc477" d="m416.5 269.5 2 2z"/>
+  <path id="path2301" fill="#fef8f1" d="m329.2 271.6 2 2z"/>
+  <path id="path2303" fill="#fcf1e4" d="m331.2 271.6 2 2z"/>
+  <path id="path2305" fill="#fcb755" d="m384 271.6 2 2z"/>
+  <path id="path2307" fill="#fbead6" d="m388 271.6 2 2z"/>
+  <path id="path2309" fill="#fea522" d="m390 271.6 2 2z"/>
+  <path id="path2311" fill="#fe9f11" d="m406.3 271.6 2 2z"/>
+  <path id="path2313" fill="#fcb144" d="m408.3 271.6-2 4z"/>
+  <path id="path2315" fill="#fe9f11" d="m412.4 271.6 2 2z"/>
+  <path id="path2317" fill="#fbbe66" d="m414.4 271.6 2 2z"/>
+  <path id="path2319" fill="#fcf1e4" d="m416.5 271.6 2 2z"/>
+  <path id="path2321" fill="#fae3c9" d="m329.2 273.6 2 2z"/>
+  <path id="path2323" fill="#fe9f11" d="m331.2 273.6 4 4z"/>
+  <path id="path2325" fill="#fbead6" d="m333.2 273.6 2 2zm18.3 0 2 2z"/>
+  <path id="path2327" fill="#fae3c9" d="m353.6 273.6 2 2z"/>
+  <path id="path2329" fill="#fe9f11" d="m371.8 273.6 2 2z"/>
+  <path id="path2331" fill="#fbc477" d="m373.8 273.6 2 2z"/>
+  <path id="path2333" fill="#fea522" d="m375.9 273.6 2 2z"/>
+  <path id="path2335" fill="#fbc477" d="m382 273.6 2 2z"/>
+  <path id="path2337" fill="#fef8f1" d="m384 273.6 2 2z"/>
+  <path id="path2339" fill="#fbc477" d="m392 273.6 2 2z"/>
+  <path id="path2341" fill="#fff" d="m408.3 273.6 2 2z"/>
+  <path id="path2343" fill="#fdab33" d="m410.4 273.6 2 2z"/>
+  <path id="path2345" fill="#fbc477" d="m418.5 273.6 2 2z"/>
+  <path id="path2347" fill="#fef8f1" d="m329.2 275.6 2 2z"/>
+  <path id="path2349" fill="#fbead6" d="m335.2 275.6 2 2z"/>
+  <path id="path2351" fill="#f9d6aa" d="m345.4 275.6 2 2z"/>
+  <path id="path2353" fill="#fe9f11" d="m355.6 275.6 2 2z"/>
+  <path id="path2355" fill="#f9d6aa" d="m358.9 276.3 1.4.7z"/>
+  <path id="path2357" fill="#f8dcbb" d="m371.8 275.6 2 2z"/>
+  <path id="path2359" fill="#fcf1e4" d="m377.9 275.6 2 2z"/>
+  <path id="path2361" fill="#f9d6aa" d="m394 275.6 2 2z"/>
+  <path id="path2363" fill="#fdab33" d="m408.3 275.6 2 2z"/>
+  <path id="path2365" fill="#fcb755" d="m420.6 275.6 2 2z"/>
+  <path id="path2367" fill="#fef\n}\n\n@mixin plain-hover-focus() {\n  &,\n  &:hover,\n  &:focus {\n    @content;\n  }\n}\n\n@mixin hover-focus-active() {\n  &:hover,\n  &:focus,\n  &:active {\n    @content;\n  }\n}\n","// stylelint-disable selector-list-comma-newline-after\n\n//\n// Headings\n//\n\nh1, h2, h3, h4, h5, h6,\n.h1, .h2, .h3, .h4, .h5, .h6 {\n  margin-bottom: $headings-margin-bottom;\n  font-family: $headings-font-family;\n  font-weight: $headings-font-weight;\n  line-height: $headings-line-height;\n  color: $headings-color;\n}\n\nh1, .h1 { @include font-size($h1-font-size); }\nh2, .h2 { @include font-size($h2-font-size); }\nh3, .h3 { @include font-size($h3-font-size); }\nh4, .h4 { @include font-size($h4-font-size); }\nh5, .h5 { @include font-size($h5-font-size); }\nh6, .h6 { @include font-size($h6-font-size); }\n\n.lead {\n  @include font-size($lead-font-size);\n  font-weight: $lead-font-weight;\n}\n\n// Type display classes\n.display-1 {\n  @include font-size($display1-size);\n  font-weight: $display1-weight;\n  line-height: $display-line-height;\n}\n.display-2 {\n  @include font-size($display2-size);\n  font-weight: $display2-weight;\n  line-height: $display-line-height;\n}\n.display-3 {\n  @include font-size($display3-size);\n  font-weight: $display3-weight;\n  line-height: $display-line-height;\n}\n.display-4 {\n  @include font-size($display4-size);\n  font-weight: $display4-weight;\n  line-height: $display-line-height;\n}\n\n\n//\n// Horizontal rules\n//\n\nhr {\n  margin-top: $hr-margin-y;\n  margin-bottom: $hr-margin-y;\n  border: 0;\n  border-top: $hr-border-width solid $hr-border-color;\n}\n\n\n//\n// Emphasis\n//\n\nsmall,\n.small {\n  @include font-size($small-font-size);\n  font-weight: $font-weight-normal;\n}\n\nmark,\n.mark {\n  padding: $mark-padding;\n  background-color: $mark-bg;\n}\n\n\n//\n// Lists\n//\n\n.list-unstyled {\n  @include list-unstyled();\n}\n\n// Inline turns list items into inline-block\n.list-inline {\n  @include list-unstyled();\n}\n.list-inline-item {\n  display: inline-block;\n\n  &:not(:last-child) {\n    margin-right: $list-inline-padding;\n  }\n}\n\n\n//\n// Misc\n//\n\n// Builds on `abbr`\n.initialism {\n  @include font-size(90%);\n  text-transform: uppercase;\n}\n\n// Blockquotes\n.blockquote {\n  margin-bottom: $spacer;\n  @include font-size($blockquote-font-size);\n}\n\n.blockquote-footer {\n  display: block;\n  @include font-size($blockquote-small-font-size);\n  color: $blockquote-small-color;\n\n  &::before {\n    content: \"\\2014\\00A0\"; // em dash, nbsp\n  }\n}\n","// Lists\n\n// Unstyled keeps list items block level, just removes default browser padding and list-style\n@mixin list-unstyled() {\n  padding-left: 0;\n  list-style: none;\n}\n","// Responsive images (ensure images don't scale beyond their parents)\n//\n// This is purposefully opt-in via an explicit class rather than being the default for all `<img>`s.\n// We previously tried the \"images are responsive by default\" approach in Bootstrap v2,\n// and abandoned it in Bootstrap v3 because it breaks lots of third-party widgets (including Google Maps)\n// which weren't expecting the images within themselves to be involuntarily resized.\n// See also https://github.com/twbs/bootstrap/issues/18178\n.img-fluid {\n  @include img-fluid();\n}\n\n\n// Image thumbnails\n.img-thumbnail {\n  padding: $thumbnail-padding;\n  background-color: $thumbnail-bg;\n  border: $thumbnail-border-width solid $thumbnail-border-color;\n  @include border-radius($thumbnail-border-radius);\n  @include box-shadow($thumbnail-box-shadow);\n\n  // Keep them at most 100% wide\n  @include img-fluid();\n}\n\n//\n// Figures\n//\n\n.figure {\n  // Ensures the caption's text aligns with the image.\n  display: inline-block;\n}\n\n.figure-img {\n  margin-bottom: $spacer * .5;\n  line-height: 1;\n}\n\n.figure-caption {\n  @include font-size($figure-caption-font-size);\n  color: $figure-caption-color;\n}\n","// Image Mixins\n// - Responsive image\n// - Retina image\n\n\n// Responsive image\n//\n// Keep images from scaling beyond the width of their parents.\n\n@mixin img-fluid() {\n  // Part 1: Set a maximum relative to the parent\n  max-width: 100%;\n  // Part 2: Override the height to auto, otherwise images will be stretched\n  // when setting a width and height attribute on the img element.\n  height: auto;\n}\n\n\n// Retina image\n//\n// Short retina mixin for setting background-image and -size.\n\n@mixin img-retina($file-1x, $file-2x, $width-1x, $height-1x) {\n  background-image: url($file-1x);\n\n  // Autoprefixer takes care of adding -webkit-min-device-pixel-ratio and -o-min-device-pixel-ratio,\n  // but doesn't convert dppx=>dpi.\n  // There's no such thing as unprefixed min-device-pixel-ratio since it's nonstandard.\n  // Compatibility info: https://caniuse.com/css-media-resolution\n  @media only screen and (min-resolution: 192dpi), // IE9-11 don't support dppx\n    only screen and (min-resolution: 2dppx) { // Standardized\n    background-image: url($file-2x);\n    background-size: $width-1x $height-1x;\n  }\n  @include deprecate(\"`img-retina()`\", \"v4.3.0\", \"v5\");\n}\n","// stylelint-disable property-disallowed-list\n// Single side border-radius\n\n// Helper function to replace negative values with 0\n@function valid-radius($radius) {\n  $return: ();\n  @each $value in $radius {\n    @if type-of($value) == number {\n      $return: append($return, max($value, 0));\n    } @else {\n      $return: append($return, $value);\n    }\n  }\n  @return $return;\n}\n\n@mixin border-radius($radius: $border-radius, $fallback-border-radius: false) {\n  @if $enable-rounded {\n    border-radius: valid-radius($radius);\n  }\n  @else if $fallback-border-radius != false {\n    border-radius: $fallback-border-radius;\n  }\n}\n\n@mixin border-top-radius($radius) {\n  @if $enable-rounded {\n    border-top-left-radius: valid-radius($radius);\n    border-top-right-radius: valid-radius($radius);\n  }\n}\n\n@mixin border-right-radius($radius) {\n  @if $enable-rounded {\n    border-top-right-radius: valid-radius($radius);\n    border-bottom-right-radius: valid-radius($radius);\n  }\n}\n\n@mixin border-bottom-radius($radius) {\n  @if $enable-rounded {\n    border-bottom-right-radius: valid-radius($radius);\n    border-bottom-left-radius: valid-radius($radius);\n  }\n}\n\n@mixin border-left-radius($radius) {\n  @if $enable-rounded {\n    border-top-left-radius: valid-radius($radius);\n    border-bottom-left-radius: valid-radius($radius);\n  }\n}\n\n@mixin border-top-left-radius($radius) {\n  @if $enable-rounded {\n    border-top-left-radius: valid-radius($radius);\n  }\n}\n\n@mixin border-top-right-radius($radius) {\n  @if $enable-rounded {\n    border-top-right-radius: valid-radius($radius);\n  }\n}\n\n@mixin border-bottom-right-radius($radius) {\n  @if $enable-rounded {\n    border-bottom-right-radius: valid-radius($radius);\n  }\n}\n\n@mixin border-bottom-left-radius($radius) {\n  @if $enable-rounded {\n    border-bottom-left-radius: valid-radius($radius);\n  }\n}\n","@mixin box-shadow($shadow...) {\n  @if $enable-shadows {\n    $result: ();\n\n    @if (length($shadow) == 1) {\n      // We can pass `@include box-shadow(none);`\n      $result: $shadow;\n    } @else {\n      // Filter to avoid invalid properties for example `box-shadow: none, 1px 1px black;`\n      @for $i from 1 through length($shadow) {\n        @if nth($shadow, $i) != \"none\" {\n          $result: append($result, nth($shadow, $i), \"comma\");\n        }\n      }\n    }\n    @if (length($result) > 0) {\n      box-shadow: $result;\n    }\n  }\n}\n","// Inline code\ncode {\n  @include font-size($code-font-size);\n  color: $code-color;\n  word-wrap: break-word;\n\n  // Streamline the style when inside anchors to avoid broken underline and more\n  a > & {\n    color: inherit;\n  }\n}\n\n// User input typically entered via keyboard\nkbd {\n  padding: $kbd-padding-y $kbd-padding-x;\n  @include font-size($kbd-font-size);\n  color: $kbd-color;\n  background-color: $kbd-bg;\n  @include border-radius($border-radius-sm);\n  @include box-shadow($kbd-box-shadow);\n\n  kbd {\n    padding: 0;\n    @include font-size(100%);\n    font-weight: $nested-kbd-font-weight;\n    @include box-shadow(none);\n  }\n}\n\n// Blocks of code\npre {\n  display: block;\n  @include font-size($code-font-size);\n  color: $pre-color;\n\n  // Account for some code outputs that place code tags in pre tags\n  code {\n    @include font-size(inherit);\n    color: inherit;\n    word-break: normal;\n  }\n}\n\n// Enable scrollable blocks of code\n.pre-scrollable {\n  max-height: $pre-scrollable-max-height;\n  overflow-y: scroll;\n}\n","// Container widths\n//\n// Set the container width, and override it for fixed navbars in media queries.\n\n@if $enable-grid-classes {\n  // Single container class with breakpoint max-widths\n  .container,\n  // 100% wide container at all breakpoints\n  .container-fluid {\n    @include make-container();\n  }\n\n  // Responsive containers that are 100% wide until a breakpoint\n  @each $breakpoint, $container-max-width in $container-max-widths {\n    .container-#{$breakpoint} {\n      @extend .container-fluid;\n    }\n\n    @include media-breakpoint-up($breakpoint, $grid-breakpoints) {\n      %responsive-container-#{$breakpoint} {\n        max-width: $container-max-width;\n      }\n\n      // Extend each breakpoint which is smaller or equal to the current breakpoint\n      $extend-breakpoint: true;\n\n      @each $name, $width in $grid-breakpoints {\n        @if ($extend-breakpoint) {\n          .container#{breakpoint-infix($name, $grid-breakpoints)} {\n            @extend %responsive-container-#{$breakpoint};\n          }\n\n          // Once the current breakpoint is reached, stop extending\n          @if ($breakpoint == $name) {\n            $extend-breakpoint: false;\n          }\n        }\n      }\n    }\n  }\n}\n\n\n// Row\n//\n// Rows contain your columns.\n\n@if $enable-grid-classes {\n  .row {\n    @include make-row();\n  }\n\n  // Remove the negative margin from default .row, then the horizontal padding\n  // from all immediate children columns (to prevent runaway style inheritance).\n  .no-gutters {\n    margin-right: 0;\n    margin-left: 0;\n\n    > .col,\n    > [class*=\"col-\"] {\n      padding-right: 0;\n      padding-left: 0;\n    }\n  }\n}\n\n// Columns\n//\n// Common styles for small and large grid columns\n\n@if $enable-grid-classes {\n  @include make-grid-columns();\n}\n","/// Grid system\n//\n// Generate semantic grid columns with these mixins.\n\n@mixin make-container($gutter: $grid-gutter-width) {\n  width: 100%;\n  padding-right: $gutter * .5;\n  padding-left: $gutter * .5;\n  margin-right: auto;\n  margin-left: auto;\n}\n\n@mixin make-row($gutter: $grid-gutter-width) {\n  display: flex;\n  flex-wrap: wrap;\n  margin-right: -$gutter * .5;\n  margin-left: -$gutter * .5;\n}\n\n// For each breakpoint, define the maximum width of the container in a media query\n@mixin make-container-max-widths($max-widths: $container-max-widths, $breakpoints: $grid-breakpoints) {\n  @each $breakpoint, $container-max-width in $max-widths {\n    @include media-breakpoint-up($breakpoint, $breakpoints) {\n      max-width: $container-max-width;\n    }\n  }\n  @include deprecate(\"The `make-container-max-widths` mixin\", \"v4.5.2\", \"v5\");\n}\n\n@mixin make-col-ready($gutter: $grid-gutter-width) {\n  position: relative;\n  // Prevent columns from becoming too narrow when at smaller grid tiers by\n  // always setting `width: 100%;`. This works because we use `flex` values\n  // later on to override this initial width.\n  width: 100%;\n  padding-right: $gutter * .5;\n  padding-left: $gutter * .5;\n}\n\n@mixin make-col($size, $columns: $grid-columns) {\n  flex: 0 0 percentage(divide($size, $columns));\n  // Add a `max-width` to ensure content within each column does not blow out\n  // the width of the column. Applies to IE10+ and Firefox. Chrome and Safari\n  // do not appear to require this.\n  max-width: percentage(divide($size, $columns));\n}\n\n@mixin make-col-auto() {\n  flex: 0 0 auto;\n  width: auto;\n  max-width: 100%; // Reset earlier grid tiers\n}\n\n@mixin make-col-offset($size, $columns: $grid-columns) {\n  $num: divide($size, $columns);\n  margin-left: if($num == 0, 0, percentage($num));\n}\n\n// Row columns\n//\n// Specify on a parent element(e.g., .row) to force immediate children into NN\n// numberof columns. Supports wrapping to new lines, but does not do a Masonry\n// style grid.\n@mixin row-cols($count) {\n  > * {\n    flex: 0 0 divide(100%, $count);\n    max-width: divide(100%, $count);\n  }\n}\n","// Breakpoint viewport sizes and media queries.\n//\n// Breakpoints are defined as a map of (name: minimum width), order from small to large:\n//\n//    (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px)\n//\n// The map defined in the `$grid-breakpoints` global variable is used as the `$breakpoints` argument by default.\n\n// Name of the next breakpoint, or null for the last breakpoint.\n//\n//    >> breakpoint-next(sm)\n//    md\n//    >> breakpoint-next(sm, (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px))\n//    md\n//    >> breakpoint-next(sm, $breakpoint-names: (xs sm md lg xl))\n//    md\n@function breakpoint-next($name, $breakpoints: $grid-breakpoints, $breakpoint-names: map-keys($breakpoints)) {\n  $n: index($breakpoint-names, $name);\n  @return if($n != null and $n < length($breakpoint-names), nth($breakpoint-names, $n + 1), null);\n}\n\n// Minimum breakpoint width. Null for the smallest (first) breakpoint.\n//\n//    >> breakpoint-min(sm, (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px))\n//    576px\n@function breakpoint-min($name, $breakpoints: $grid-breakpoints) {\n  $min: map-get($breakpoints, $name);\n  @return if($min != 0, $min, null);\n}\n\n// Maximum breakpoint width. Null for the largest (last) breakpoint.\n// The maximum value is calculated as the minimum of the next one less 0.02px\n// to work around the limitations of `min-` and `max-` prefixes and viewports with fractional widths.\n// See https://www.w3.org/TR/mediaqueries-4/#mq-min-max\n// Uses 0.02px rather than 0.01px to work around a current rounding bug in Safari.\n// See https://bugs.webkit.org/show_bug.cgi?id=178261\n//\n//    >> breakpoint-max(sm, (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px))\n//    767.98px\n@function breakpoint-max($name, $breakpoints: $grid-breakpoints) {\n  $next: breakpoint-next($name, $breakpoints);\n  @return if($next, breakpoint-min($next, $breakpoints) - .02, null);\n}\n\n// Returns a blank string if smallest breakpoint, otherwise returns the name with a dash in front.\n// Useful for making responsive utilities.\n//\n//    >> breakpoint-infix(xs, (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px))\n//    \"\"  (Returns a blank string)\n//    >> breakpoint-infix(sm, (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px))\n//    \"-sm\"\n@function breakpoint-infix($name, $breakpoints: $grid-breakpoints) {\n  @return if(breakpoint-min($name, $breakpoints) == null, \"\", \"-#{$name}\");\n}\n\n// Media of at least the minimum breakpoint width. No query for the smallest breakpoint.\n// Makes the @content apply to the given breakpoint and wider.\n@mixin media-breakpoint-up($name, $breakpoints: $grid-breakpoints) {\n  $min: breakpoint-min($name, $breakpoints);\n  @if $min {\n    @media (min-width: $min) {\n      @content;\n    }\n  } @else {\n    @content;\n  }\n}\n\n// Media of at most the maximum breakpoint width. No query for the largest breakpoint.\n// Makes the @content apply to the given breakpoint and narrower.\n@mixin media-breakpoint-down($name, $breakpoints: $grid-breakpoints) {\n  $max: breakpoint-max($name, $breakpoints);\n  @if $max {\n    @media (max-width: $max) {\n      @content;\n    }\n  } @else {\n    @content;\n  }\n}\n\n// Media that spans multiple breakpoint widths.\n// Makes the @content apply between the min and max breakpoints\n@mixin media-breakpoint-between($lower, $upper, $breakpoints: $grid-breakpoints) {\n  $min: breakpoint-min($lower, $breakpoints);\n  $max: breakpoint-max($upper, $breakpoints);\n\n  @if $min != null and $max != null {\n    @media (min-width: $min) and (max-width: $max) {\n      @content;\n    }\n  } @else if $max == null {\n    @include media-breakpoint-up($lower, $breakpoints) {\n      @content;\n    }\n  }ocus,\n.dark-mode .navbar-fuchsia.navbar-dark .form-control-navbar:focus + .input-group-append .btn-navbar {\n  background-color: #f88adf;\n  border-color: #f99de4 !important;\n  color: #fff;\n}\n\n.dark-mode .navbar-maroon {\n  background-color: #ed6c9b;\n  color: #1f2d3d;\n}\n\n.dark-mode .navbar-maroon.navbar-light .form-control-navbar::placeholder {\n  color: rgba(52, 58, 64, 0.8);\n}\n\n.dark-mode .navbar-maroon.navbar-light .form-control-navbar,\n.dark-mode .navbar-maroon.navbar-light .form-control-navbar + .input-group-append > .btn-navbar {\n  background-color: #ea5a8f;\n  border-color: #e8447f;\n  color: rgba(52, 58, 64, 0.8);\n}\n\n.dark-mode .navbar-maroon.navbar-light .form-control-navbar:focus::placeholder {\n  color: #343a40;\n}\n\n.dark-mode .navbar-maroon.navbar-light .form-control-navbar:focus,\n.dark-mode .navbar-maroon.navbar-light .form-control-navbar:focus + .input-group-append .btn-navbar {\n  background-color: #ea568c;\n  border-color: #e8447f !important;\n  color: #343a40;\n}\n\n.dark-mode .navbar-maroon.navbar-dark .form-control-navbar::placeholder {\n  color: rgba(255, 255, 255, 0.8);\n}\n\n.dark-mode .navbar-maroon.navbar-dark .form-control-navbar,\n.dark-mode .navbar-maroon.navbar-dark .form-control-navbar + .input-group-append > .btn-navbar {\n  background-color: #ef7ea8;\n  border-color: #f295b7;\n  color: rgba(255, 255, 255, 0.8);\n}\n\n.dark-mode .navbar-maroon.navbar-dark .form-control-navbar:focus::placeholder {\n  color: #fff;\n}\n\n.dark-mode .navbar-maroon.navbar-dark .form-control-navbar:focus,\n.dark-mode .navbar-maroon.navbar-dark .form-control-navbar:focus + .input-group-append .btn-navbar {\n  background-color: #f083ab;\n  border-color: #f295b7 !important;\n  color: #fff;\n}\n\n.dark-mode .navbar-blue {\n  background-color: #3f6791;\n  color: #fff;\n}\n\n.dark-mode .navbar-blue.navbar-light .form-control-navbar::placeholder {\n  color: rgba(52, 58, 64, 0.8);\n}\n\n.dark-mode .navbar-blue.navbar-light .form-control-navbar,\n.dark-mode .navbar-blue.navbar-light .form-control-navbar + .input-group-append > .btn-navbar {\n  background-color: #395d83;\n  border-color: #315071;\n  color: rgba(52, 58, 64, 0.8);\n}\n\n.dark-mode .navbar-blue.navbar-light .form-control-navbar:focus::placeholder {\n  color: #343a40;\n}\n\n.dark-mode .navbar-blue.navbar-light .form-control-navbar:focus,\n.dark-mode .navbar-blue.navbar-light .form-control-navbar:focus + .input-group-append .btn-navbar {\n  background-color: #375a7f;\n  border-color: #315071 !important;\n  color: #343a40;\n}\n\n.dark-mode .navbar-blue.navbar-dark .form-control-navbar::placeholder {\n  color: rgba(255, 255, 255, 0.8);\n}\n\n.dark-mode .navbar-blue.navbar-dark .form-control-navbar,\n.dark-mode .navbar-blue.navbar-dark .form-control-navbar + .input-group-append > .btn-navbar {\n  background-color: #45719f;\n  border-color: #4d7eb1;\n  color: rgba(255, 255, 255, 0.8);\n}\n\n.dark-mode .navbar-blue.navbar-dark .form-control-navbar:focus::placeholder {\n  color: #fff;\n}\n\n.dark-mode .navbar-blue.navbar-dark .form-control-navbar:focus,\n.dark-mode .navbar-blue.navbar-dark .form-control-navbar:focus + .input-group-append .btn-navbar {\n  background-color: #4774a3;\n  border-color: #4d7eb1 !important;\n  color: #fff;\n}\n\n.dark-mode .navbar-indigo {\n  background-color: #6610f2;\n  color: #fff;\n}\n\n.dark-mode .navbar-indigo.navbar-light .form-control-navbar::placeholder {\n  color: rgba(52, 58, 64, 0.8);\n}\n\n.dark-mode .navbar-indigo.navbar-light .form-control-navbar,\n.dark-mode .navbar-indigo.navbar-light .form-control-navbar + .input-group-append > .btn-navbar {\n  background-color: #5d0ce1;\n  border-color: #530bc9;\n  color: rgba(52, 58, 64, 0.8);\n}\n\n.dark-mode .navbar-indigo.navbar-light .form-control-navbar:focus::placeholder {\n  color: #343a40;\n}\n\n.dark-mode .navbar-indigo.navbar-light .form-control-navbar:focus,\n.dark-mode .navbar-indigo.navbar-light .form-control-navbar:focus + .input-group-append .btn-navbar {\n  background-color: #5b0cdd;\n  border-color: #530bc9 !important;\n  color: #343a40;\n}\n\n.dark-mode .navbar-indigo.navbar-dark .form-control-navbar::placeholder {\n  color: rgba(255, 255, 255, 0.8);\n}\n\n.dark-mode .navbar-indigo.navbar-dark .form-control-navbar,\n.dark-mode .navbar-indigo.navbar-dark .form-control-navbar + .input-group-append > .btn-navbar {\n  background-color: #7223f3;\n  border-color: #823cf4;\n  color: rgba(255, 255, 255, 0.8);\n}\n\n.dark-mode .navbar-indigo.navbar-dark .form-control-navbar:focus::placeholder {\n  color: #fff;\n}\n\n.dark-mode .navbar-indigo.navbar-dark .form-control-navbar:focus,\n.dark-mode .navbar-indigo.navbar-dark .form-control-navbar:focus + .input-group-append .btn-navbar {\n  background-color: #7528f3;\n  border-color: #823cf4 !important;\n  color: #fff;\n}\n\n.dark-mode .navbar-purple {\n  background-color: #6f42c1;\n  color: #fff;\n}\n\n.dark-mode .navbar-purple.navbar-light .form-control-navbar::placeholder {\n  color: rgba(52, 58, 64, 0.8);\n}\n\n.dark-mode .navbar-purple.navbar-light .form-control-navbar,\n.dark-mode .navbar-purple.navbar-light .form-control-navbar + .input-group-append > .btn-navbar {\n  background-color: #663bb4;\n  border-color: #5b35a0;\n  color: rgba(52, 58, 64, 0.8);\n}\n\n.dark-mode .navbar-purple.navbar-light .form-control-navbar:focus::placeholder {\n  color: #343a40;\n}\n\n.dark-mode .navbar-purple.navbar-light .form-control-navbar:focus,\n.dark-mode .navbar-purple.navbar-light .form-control-navbar:focus + .input-group-append .btn-navbar {\n  background-color: #643ab0;\n  border-color: #5b35a0 !important;\n  color: #343a40;\n}\n\n.dark-mode .navbar-purple.navbar-dark .form-control-navbar::placeholder {\n  color: rgba(255, 255, 255, 0.8);\n}\n\n.dark-mode .navbar-purple.navbar-dark .form-control-navbar,\n.dark-mode .navbar-purple.navbar-dark .form-control-navbar + .input-group-append > .btn-navbar {\n  background-color: #7b51c6;\n  border-color: #8965cc;\n  color: rgba(255, 255, 255, 0.8);\n}\n\n.dark-mode .navbar-purple.navbar-dark .form-control-navbar:focus::placeholder {\n  color: #fff;\n}\n\n.dark-mode .navbar-purple.navbar-dark .form-control-navbar:focus,\n.dark-mode .navbar-purple.navbar-dark .form-control-navbar:focus + .input-group-append .btn-navbar {\n  background-color: #7e55c7;\n  border-color: #8965cc !important;\n  color: #fff;\n}\n\n.dark-mode .navbar-pink {\n  background-color: #e83e8c;\n  color: #fff;\n}\n\n.dark-mode .navbar-pink.navbar-light .form-control-navbar::placeholder {\n  color: rgba(52, 58, 64, 0.8);\n}\n\n.dark-mode .navbar-pink.navbar-light .form-control-navbar,\n.dark-mode .navbar-pink.navbar-light .form-control-navbar + .input-group-append > .btn-navbar {\n  background-color: #e62c81;\n  border-color: #de1a74;\n  color: rgba(52, 58, 64, 0.8);\n}\n\n.dark-mode .navbar-pink.navbar-light .form-control-navbar:focus::placeholder {\n  color: #343a40;\n}\n\n.dark-mode .navbar-pink.navbar-light .form-control-navbar:focus,\n.dark-mode .navbar-pink.navbar-light .form-control-navbar:focus + .input-group-append .btn-navbar {\n  background-color: #e5277e;\n  border-color: #de1a74 !important;\n  color: #343a40;\n}\n\n.dark-mode .navbar-pink.navbar-dark .form-control-navbar::placeholder {\n  color: rgba(255, 255, 255, 0.8);\n}\n\n.dark-mode .navbar-pink.navbar-dark .form-control-navbar,\n.dark-mode .navbar-pink.navbar-dark .form-control-navbar + .input-group-append > .btn-navbar {\n  background-color: #ea5097;\n  border-color: #ed67a4;\n  color: rgba(255, 255, 255, 0.8);\n}\n\n.dark-mode .navbar-pink.navbar-dark .form-control-navbar:focus::placeholder {\n  color: #fff;\n}\n\n.dark-mode .navbar-pink.navbar-dark .form-control-navbar:focus,\n.dark-mode .navbar-pink.navbar-dark .form-control-navbar:focus + .input-group-append .btn-navbar {\n  background-color: #eb559a;\n  border-color: #ed67a4 !important;\n  color: #fff;\n}\n\n.dark-mode .navbar-red {\n  background-color: #e74c3c;\n  color: #fff;\n}\n\n.dark-mode .navbar-red.navbar-light .form-control-navbar::placeholder {\n  color: rgba(52, 58, 64, 0.8);\n}\n\n.dark-mode .navbar-red.navbar-light .form-control-navbar,\n.dark-mode .navbar-red.navbar-light .form-control-navbar + .input-group-append > .btn-navbar {\n  background-color: #e53b2a;\n  border-color: #da2d1b;\n  color: rgba(52, 58, 64, 0.8);\n}\n\n.dark-mode .navbar-red.navbar-light .form-control-navbar:focus::placeholder {\n  color: #343a40;\n}\n\n.dark-mode .navbar-red.navbar-light .form-control-navbar:focus,\n.dark-mode .navbar-red.navbar-light .form-control-navbar:focus + .input-group-append .btn-navbar {\n  background-color: #e43725;\n  border-color: #da2d1b !important;\n  color: #343a40;\n}\n\n.dark-mode .navbar-red.navbar-dark .form-control-navbar::placeholder {\n  color: rgba(255, 255, 255, 0.8);\n}\n\n.dark-mode .navbar-red.navbar-dark .form-control-navbar,\n.dark-mode .navbar-red.navbar-dark .form-control-navbar + .input-group-append > .btn-navbar {\n  background-color: #e95d4e;\n  border-color: #ec7265;\n  color: rgba(255, 255, 255, 0.8);\n}\n\n.dark-mode .navbar-red.navbar-dark .form-control-navbar:focus::placeholder {\n  color: #fff;\n}\n\n.dark-mode .navbar-red.navbar-dark .form-control-navbar:focus,\n.dark-mode .navbar-red.navbar-dark .form-control-navbar:focus + .input-group-append .btn-navbar {\n  background-color: #ea6153;\n  border-color: #ec7265 !important;\n  color: #fff;\n}\n\n.dark-mode .navbar-orange {\n  background-color: #fd7e14;\n  color: #1f2d3d;\n}\n\n.dark-mode .navbar-orange.navbar-light .form-control-navbar::placeholder {\n  color: rgba(52, 58, 64, 0.8);\n}\n\n.dark-mode .navbar-orange.navbar-light .form-control-navbar,\n.dark-mode .navbar-orange.navbar-light .form-control-navbar + .input-group-append > .btn-navbar {\n  background-color: #fa7302;\n  border-color: #e16702;\n  color: rgba(52, 58, 64, 0.8);\n}\n\n.dark-mode .navbar-orange.navbar-light .form-control-navbar:focus::placeholder {\n  color: #343a40;\n}\n\n.dark-mode .navbar-orange.navbar-light .form-control-navbar:focus,\n.dark-mode .navbar-orange.navbar-light .form-control-navbar:focus + .input-group-append .btn-navbar {\n  background-color: #f57102;\n  border-color: #e16702 !important;\n  color: #343a40;\n}\n\n.dark-mode .navbar-orange.navbar-dark .form-control-navbar::placeholder {\n  color: rgba(255, 255, 255, 0.8);\n}\n\n.dark-mode .navbar-orange.navbar-dark .form-control-navbar,\n.dark-mode .navbar-orange.navbar-dark .form-control-navbar + .input-group-append > .btn-navbar {\n  background-color: #fd8928;\n  border-color: #fd9742;\n  color: rgba(255, 255, 255, 0.8);\n}\n\n.dark-mode .navbar-orange.navbar-dark .form-control-navbar:focus::placeholder {\n  color: #fff;\n}\n\n.dark-mode .navbar-orange.navbar-dark .form-control-navbar:focus,\n.dark-mode .navbar-orange.navbar-dark .form-control-navbar:focus + .input-group-append .btn-navbar {\n  background-color: #fd8c2d;\n  border-color: #fd9742 !important;\n  color: #fff;\n}\n\n.dark-mode .navbar-yellow {\n  background-color: #f39c12;\n  color: #1f2d3d;\n}\n\n.dark-mode .navbar-yellow.navbar-light .form-control-navbar::placeholder {\n  color: rgba(52, 58, 64, 0.8);\n}\n\n.dark-mode .navbar-yellow.navbar-light .form-control-navbar,\n.dark-mode .navbar-yellow.navbar-light .form-control-navbar + .input-group-append > .btn-navbar {\n  background-color: #e5910c;\n  border-color: #cd820a;\n  color: rgba(52, 58, 64, 0.8);\n}\n\n.dark-mode .navbar-yellow.navbar-light .form-control-navbar:focus::placeholder {\n  color: #343a40;\n}\n\n.dark-mode .navbar-yellow.navbar-light .form-control-navbar:focus,\n.dark-mode .navbar-yellow.navbar-light .form-control-navbar:focus + .input-group-append .btn-navbar {\n  background-color: #e08e0b;\n  border-color: #cd820a !important;\n  color: #343a40;\n}\n\n.dark-mode .navbar-yellow.navbar-dark .form-control-navbar::placeholder {\n  color: rgba(255, 255, 255, 0.8);\n}\n\n.dark-mode .navbar-yellow.navbar-dark .form-control-navbar,\n.dark-mode .navbar-yellow.navbar-dark .form-control-navbar + .input-group-append > .btn-navbar {\n  background-color: #f4a425;\n  border-color: #f5ae3e;\n  color: rgba(255, 255, 255, 0.8);\n}\n\n.dark-mode .navbar-yellow.navbar-dark .form-control-navbar:focus::placeholder {\n  color: #fff;\n}\n\n.dark-mode .navbar-yellow.navbar-dark .form-control-navbar:focus,\n.dark-mode .navbar-yellow.navbar-dark .form-control-navbar:focus + .input-group-append .btn-navbar {\n  background-color: #f4a62a;\n  border-color: #f5ae3e !important;\n  color: #fff;\n}\n\n.dark-mode .navbar-green {\n  background-color: #00bc8c;\n  color: #fff;\n}\n\n.dark-mode .navbar-green.navbar-light .form-control-navbar::placeholder {\n  color: rgba(52, 58, 64, 0.8);\n}\n\n.dark-mode .navbar-green.navbar-light .form-control-navbar,\n.dark-mode .navbar-green.navbar-light .form-control-navbar + .input-group-append > .btn-navbar {\n  background-color: #00a87d;\n  border-color: #008e6a;\n  color: rgba(52, 58, 64, 0.8);\n}\n\n.dark-mode .navbar-green.navbar-light .form-control-navbar:focus::placeholder {\n  color: #343a40;\n}\n\n.dark-mode .navbar-green.navbar-light .form-control-navbar:focus,\n.dark-mode .navbar-green.navbar-light .form-control-navbar:focus + .input-group-append .btn-navbar {\n  background-color: #00a379;\n  border-color: #008e6a !important;\n  color: #343a40;\n}\n\n.dark-mode .navbar-green.navbar-dark .form-control-navbar::placeholder {\n  color: rgba(255, 255, 255, 0.8);\n}\n\n.dark-mode .navbar-green.navbar-dark .form-control-navbar,\n.dark-mode .navbar-green.navbar-dark .form-control-navbar + .input-group-append > .btn-navbar {\n  background-color: #00d09b;\n  border-color: #00eaae;\n  color: rgba(255, 255, 255, 0.8);\n}\n\n.dark-mode .navbar-green.navbar-dark .form-control-navbar:focus::placeholder {\n  color: #fff;\n}\n\n.dark-mode .navbar-green.navbar-dark .form-control-navbar:focus,\n.dark-mode .navbar-green.navbar-dark .form-control-navbar:focus + .input-group-append .btn-navbar {\n  background-color: #00d69f;\n  border-color: #00eaae !important;\n  color: #fff;\n}\n\n.dark-mode .navbar-teal {\n  background-color: #20c997;\n  color: #fff;\n}\n\n.dark-mode .navbar-teal.navbar-light .form-control-navbar::placeholder {\n  color: rgba(52, 58, 64, 0.8);\n}\n\n.dark-mode .navbar-teal.navbar-light .form-control-navbar,\n.dark-mode .navbar-teal.navbar-light .form-control-navbar + .input-group-append > .btn-navbar {\n  background-color: #1db78a;\n  border-color: #1aa179;\n  color: rgba(52, 58, 64, 0.8);\n}\n\n.dark-mode .navbar-teal.navbar-light .form-control-navbar:focus::placeholder {\n  color: #343a40;\n}\n\n.dark-mode .navbar-teal.navbar-light .form-control-navbar:focus,\n.dark-mode .navbar-teal.navbar-light .form-control-navbar:focus + .input-group-append .btn-navbar {\n  background-color: #1cb386;\n  border-color: #1aa179 !important;\n  color: #343a40;\n}\n\n.dark-mode .navbar-teal.navbar-dark .form-control-navbar::placeholder {\n  color: rgba(255, 255, 255, 0.8);\n}\n\n.dark-mode .navbar-teal.navbar-dark .form-control-navbar,\n.dark-mode .navbar-teal.navbar-dark .form-control-navbar + .input-group-append > .btn-navbar {\n  background-color: #23dba4;\n  border-color: #38dfae;\n  color: rgba(255, 255, 255, 0.8);\n}\n\n.dark-mode .navbar-teal.navbar-dark .form-control-navbar:focus::placeholder {\n  color: #fff;\n}\n\n.dark-mode .navbar-teal.navbar-dark .form-control-navbar:focus,\n.dark-mode .navbar-teal.navbar-dark .form-cont

@@ -1,0 +1,42 @@
+.logo{
+    font-size: 30px; 
+}
+.tamaño{
+    font-size: 100px;
+}
+.azul{
+    color: rgb(8, 152, 248) ;
+}
+.imagen{
+    width: 100%;
+}
+.fondo{
+    background: grey;
+}
+.celu{
+    width: 250px;
+    height: 250px;
+}
+.ti{
+    margin-left: 20em;
+}
+.ta{
+    margin-right: 10em;
+}
+.pe{
+    margin-bottom: 2em;
+    margin-top: 4em;
+}
+.face{
+    color: blue;
+    font-size: 20px;
+}
+.foo{
+    background: rgb(78, 77, 77);
+}
+.foo2{
+    background: black;
+}
+.to{
+    padding: 2em;
+}

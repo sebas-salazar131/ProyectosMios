@@ -1,0 +1,103 @@
+1. Casos de uso y mi propia interpretación
+
+Un caso de uso es un diagrama de un proceso que se debe seguir, un paso a paso a  seguir donde solo intervienen los  actores,
+donde se especifican requerimientos funcionales del software y para quien es, que a las vez proporcionan una estructura 
+y se debe indicar la interaccion entre el usuario y el cliente
+
+Ejemplos de casos de uso
+-crear un pedido
+-solicitar catalogo
+-pedir producto
+-proporcionar datos del cliente
+-acordar pago
+
+2. diagrama de clases y mi propia interpretacion
+
+un diagrama de clases es unicamente para crear un modelo de programacion orientado a objetos, es una interpretacion de
+como va a funcionar el proceso para crear el software por medio de codigo, todo es por ordenador 
+
+ejemplos de clases para pedidos
+#id de pedido
++fecha de pedido
++estado de pedido
++id empleado
+
+3. diagrama de objetos
+ 
+el diagrama de obejtos esta ligado al diagrama de clases comparten los mismos simbolos y pertenece a la categoria de 
+diagramas estructurales, en si muestra un grafico de instancias que representa a un diagrama de clases, muestra el estado
+de un sistema detallado y su punto especifico de tiempo, ya es la salida del diagrama de clases
+
+ejemplo de D. objetos relacionado con el diagrama clases
+-ingrese el id del pedido: 23848382
+-la fecha del fue 20/12/2004
+-estado de pedido: en proceso de envio
+-id empleado: 39388923
+
+4. diagrama de componentes
+
+un diagrama de componentes pueden ilustrar aspectos modelado logico y fisicos, en si son todas las relaciones 
+y dependencias en el proceso de realizacion  de un software, son partes moduladas de un sistema "titulos" procesos a
+llevar a cabo o que ya se realizaron, componentes fisicos 
+
+ejemplos de diagrama de componentes
+-interfaz terminal:
+que se hace en ese proceso...
+-analisis y control:
+rutinas y cosas a llevar a cabo...
+-Gestion de cuentas:
+proceso financiero...
+
+5. diagramas de distribucion
+
+aqui es donde se representa toda la estructura del hardware que estara en nuestro software, es como un nodo es cualquier 
+elemento que que sea recurso de hardware, de forma de establecer todos los mapas necesarios para documentar los requerimientos 
+de nuestro sistema.
+en si es todo dispositivo que se requiere para la construccion de un software o para la implementacion de uno
+
+6. diagrama de actividades
+
+es especialmente utilizada para describir cualquier tipo de proceso en los diferentes caso de uso, com tipo trasacciones o 
+procedimientos que haya en un sistema de informacion, en conclusion es especificar que hacer en algun tipo de caso, con una 
+variedad de opciones graficamente y asi mismo explicando el paso a paso en cada uno de ellos para que en ningun proceso haya
+algun tipo de error ya que se explica especificamente cada uno de esos procesos 
+
+ejemplos de diagrama de distribucion
+fin de la jornada:
+ir casa o ir al baño
+iniciar el dia:
+desayunar o ducharse
+
+7. diagrama de estado 
+los diagramas de estado pueden ayudar a visualizar el ciclo de la vida de un objeto de una forma que se pueda comprender 
+y documentar por cuales procesos pasa el objeto y que cambios se han hecho a dar muy notables junto a las respuestas y
+acciones, representacion grafica de un objeto de estado finito, hasta el final de su vida util
+
+ejemplos de diagrama de estado
+de un empleado:
+-contratado
+-paro
+-sigue activo
+-jubilado
+
+8. diagrama de colaboracion
+
+tambien es definido como diagrama de comunicacion ya  que este se basa entre la union de varios objetos para la 
+realizacion de un proceso especificas o como en un caso de uso
+
+ejemplos de diagrama de colaboracion sitio web
+-persona que se encarga de hacer el boceto
+-otra que se encargue de como se va a ver visualmente
+-otro se encarga de codificarla y hacer que funcione
+
+9. diagrama de secuencia
+la interacción de un conjunto de objetos en una aplicación a través del tiempo y se modela para cada caso de uso
+explorar la lógica de cualquier función, procedimiento o proceso complejo.
+
+
+
+
+
+
+
+

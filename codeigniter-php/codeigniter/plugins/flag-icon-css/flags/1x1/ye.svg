@@ -1,0 +1,11 @@
+// CodeMirror, copyright (c) by Marijn Haverbeke and others
+// Distributed under an MIT license: https://codemirror.net/LICENSE
+
+// declare global: tern, server
+
+var server;
+
+this.onmessage = function(e) {
+  var data = e.data;
+  switch (data.type) {
+  case "init": return 

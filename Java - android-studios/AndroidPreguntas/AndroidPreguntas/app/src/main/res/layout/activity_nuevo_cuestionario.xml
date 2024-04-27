@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".NuevoCuestionario"
+    android:orientation="vertical"
+    android:layout_marginLeft="50dp"
+    android:layout_marginRight="50dp"
+    >
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nuevo Cuestionario"
+        android:textSize="31dp"
+        android:paddingLeft="30dp"
+        android:layout_marginTop="60dp"
+        android:textColor="#2271b3"
+        android:textStyle="bold"
+        />
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@mipmap/icono_preguntass_round"
+        android:layout_gravity="center"
+        android:layout_marginTop="40dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Usuario:"
+        android:textSize="30dp"
+        android:textAlignment="center"
+        android:layout_marginTop="30dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="usu"
+        android:textSize="50dp"
+        android:textStyle="bold"
+        android:id="@+id/nombre"
+        android:textAlignment="center"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Fecha inicio:"
+        android:textSize="30dp"
+        android:textAlignment="center"
+        android:layout_marginTop="30dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="fecha"
+        android:textSize="50dp"
+        android:textStyle="bold"
+        android:id="@+id/fecha"
+        android:textAlignment="center"/>
+
+    <Button
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Empezar"
+        android:layout_gravity="center"
+        android:onClick="empezarCuestionario"
+        android:backgroundTint="#2271b3"
+        android:layout_marginTop="30dp"
+        android:textSize="25dp"
+
+        />
+</LinearLayout>

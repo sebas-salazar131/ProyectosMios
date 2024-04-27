@@ -1,0 +1,13 @@
+.sombra{
+    box-shadow: 0px 0px 10px 5px;
+}
+.jugado{
+    text-align: center;
+}
+.fondo{
+    background: rgb(127, 145, 138);
+}
+.imagen{
+    width: 150px;
+    height: 150px;
+}

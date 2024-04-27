@@ -1,0 +1,593 @@
+{"version":3,"file":"adminlte.js","sources":["../../build/js/CardRefresh.js","../../build/js/CardWidget.js","../../build/js/ControlSidebar.js","../../build/js/DirectChat.js","../../build/js/Dropdown.js","../../build/js/ExpandableTable.js","../../build/js/Fullscreen.js","../../build/js/IFrame.js","../../build/js/Layout.js","../../build/js/PushMenu.js","../../build/js/SidebarSearch.js","../../build/js/NavbarSearch.js","../../build/js/Toasts.js","../../build/js/TodoList.js","../../build/js/Treeview.js"],"sourcesContent":["/**\n * --------------------------------------------\n * AdminLTE CardRefresh.js\n * License MIT\n * --------------------------------------------\n */\n\nimport $ from 'jquery'\n\n/**\n * Constants\n * ====================================================\n */\n\nconst NAME = 'CardRefresh'\nconst DATA_KEY = 'lte.cardrefresh'\nconst EVENT_KEY = `.${DATA_KEY}`\nconst JQUERY_NO_CONFLICT = $.fn[NAME]\n\nconst EVENT_LOADED = `loaded${EVENT_KEY}`\nconst EVENT_OVERLAY_ADDED = `overlay.added${EVENT_KEY}`\nconst EVENT_OVERLAY_REMOVED = `overlay.removed${EVENT_KEY}`\n\nconst CLASS_NAME_CARD = 'card'\n\nconst SELECTOR_CARD = `.${CLASS_NAME_CARD}`\nconst SELECTOR_DATA_REFRESH = '[data-card-widget=\"card-refresh\"]'\n\nconst Default = {\n  source: '',\n  sourceSelector: '',\n  params: {},\n  trigger: SELECTOR_DATA_REFRESH,\n  content: '.card-body',\n  loadInContent: true,\n  loadOnInit: true,\n  loadErrorTemplate: true,\n  responseType: '',\n  overlayTemplate: '<div class=\"overlay\"><i class=\"fas fa-2x fa-sync-alt fa-spin\"></i></div>',\n  errorTemplate: '<span class=\"text-danger\"></span>',\n  onLoadStart() {},\n  onLoadDone(response) {\n    return response\n  },\n  onLoadFail(_jqXHR, _textStatus, _errorThrown) {}\n}\n\nclass CardRefresh {\n  constructor(element, settings) {\n    this._element = element\n    this._parent = element.parents(SELECTOR_CARD).first()\n    this._settings = $.extend({}, Default, settings)\n    this._overlay = $(this._settings.overlayTemplate)\n\n    if (element.hasClass(CLASS_NAME_CARD)) {\n      this._parent = element\n    }\n\n    if (this._settings.source === '') {\n      throw new Error('Source url was not defined. Please specify a url in your CardRefresh source option.')\n    }\n  }\n\n  load() {\n    this._addOverlay()\n    this._settings.onLoadStart.call($(this))\n\n    $.get(this._settings.source, this._settings.params, response => {\n      if (this._settings.loadInContent) {\n        if (this._settings.sourceSelector !== '') {\n          response = $(response).find(this._settings.sourceSelector).html()\n        }\n\n        this._parent.find(this._settings.content).html(response)\n      }\n\n      this._settings.onLoadDone.call($(this), response)\n      this._removeOverlay()\n    }, this._settings.responseType !== '' && this._settings.responseType)\n    .fail((jqXHR, textStatus, errorThrown) => {\n      this._removeOverlay()\n\n      if (this._settings.loadErrorTemplate) {\n        const msg = $(this._settings.errorTemplate).text(errorThrown)\n        this._parent.find(this._settings.content).empty().append(msg)\n      }\n\n      this._settings.onLoadFail.call($(this), jqXHR, textStatus, errorThrown)\n    })\n\n    $(this._element).trigger($.Event(EVENT_LOADED))\n  }\n\n  _addOverlay() {\n    this._parent.append(this._overlay)\n    $(this._element).trigger($.Event(EVENT_OVERLAY_ADDED))\n  }\n\n  _removeOverlay() {\n    this._parent.find(this._overlay).remove()\n    $(this._element).trigger($.Event(EVENT_OVERLAY_REMOVED))\n  }\n\n  // Private\n\n  _init() {\n    $(this).find(this._settings.trigger).on('click', () => {\n      this.load()\n    })\n\n    if (this._settings.loadOnInit) {\n      this.load()\n    }\n  }\n\n  // Static\n\n  static _jQueryInterface(config) {\n    let data = $(this).data(DATA_KEY)\n    const _options = $.extend({}, Default, $(this).data())\n\n    if (!data) {\n      data = new CardRefresh($(this), _options)\n      $(this).data(DATA_KEY, typeof config === 'string' ? data : config)\n    }\n\n    if (typeof config === 'string' && /load/.test(config)) {\n      data[config]()\n    } else {\n      data._init($(this))\n    }\n  }\n}\n\n/**\n * Data API\n * ====================================================\n */\n\n$(document).on('click', SELECTOR_DATA_REFRESH, function (event) {\n  if (event) {\n    event.preventDefault()\n  }\n\n  CardRefresh._jQueryInterface.call($(this), 'load')\n})\n\n$(() => {\n  $(SELECTOR_DATA_REFRESH).each(function () {\n    CardRefresh._jQueryInterface.call($(this))\n  })\n})\n\n/**\n * jQuery API\n * ====================================================\n */\n\n$.fn[NAME] = CardRefresh._jQueryInterface\n$.fn[NAME].Constructor = CardRefresh\n$.fn[NAME].noConflict = function () {\n  $.fn[NAME] = JQUERY_NO_CONFLICT\n  return CardRefresh._jQueryInterface\n}\n\nexport default CardRefresh\n","/**\n * --------------------------------------------\n * AdminLTE CardWidget.js\n * License MIT\n * --------------------------------------------\n */\n\nimport $ from 'jquery'\n\n/**\n * Constants\n * ====================================================\n */\n\nconst NAME = 'CardWidget'\nconst DATA_KEY = 'lte.cardwidget'\nconst EVENT_KEY = `.${DATA_KEY}`\nconst JQUERY_NO_CONFLICT = $.fn[NAME]\n\nconst EVENT_EXPANDED = `expanded${EVENT_KEY}`\nconst EVENT_COLLAPSED = `collapsed${EVENT_KEY}`\nconst EVENT_MAXIMIZED = `maximized${EVENT_KEY}`\nconst EVENT_MINIMIZED = `minimized${EVENT_KEY}`\nconst EVENT_REMOVED = `removed${EVENT_KEY}`\n\nconst CLASS_NAME_CARD = 'card'\nconst CLASS_NAME_COLLAPSED = 'collapsed-card'\nconst CLASS_NAME_COLLAPSING = 'collapsing-card'\nconst CLASS_NAME_EXPANDING = 'expanding-card'\nconst CLASS_NAME_WAS_COLLAPSED = 'was-collapsed'\nconst CLASS_NAME_MAXIMIZED = 'maximized-card'\n\nconst SELECTOR_DATA_REMOVE = '[data-card-widget=\"remove\"]'\nconst SELECTOR_DATA_COLLAPSE = '[data-card-widget=\"collapse\"]'\nconst SELECTOR_DATA_MAXIMIZE = '[data-card-widget=\"maximize\"]'\nconst SELECTOR_CARD = `.${CLASS_NAME_CARD}`\nconst SELECTOR_CARD_HEADER = '.card-header'\nconst SELECTOR_CARD_BODY = '.card-body'\nconst SELECTOR_CARD_FOOTER = '.card-footer'\n\nconst Default = {\n  animationSpeed: 'normal',\n  collapseTrigger: SELECTOR_DATA_COLLAPSE,\n  removeTrigger: SELECTOR_DATA_REMOVE,\n  maximizeTrigger: SELECTOR_DATA_MAXIMIZE,\n  collapseIcon: 'fa-minus',\n  expandIcon: 'fa-plus',\n  maximizeIcon: 'fa-expand',\n  minimizeIcon: 'fa-compress'\n}\n\nclass CardWidget {\n  constructor(element, settings) {\n    this._element = element\n    this._parent = element.parents(SELECTOR_CARD).first()\n\n    if (element.hasClass(CLASS_NAME_CARD)) {\n      this._parent = element\n    }\n\n    this._settings = $.extend({}, Default, settings)\n  }\n\n  collapse() {\n    this._parent.addClass(CLASS_NAME_COLLAPSING).children(`${SELECTOR_CARD_BODY}, ${SELECTOR_CARD_FOOTER}`)\n      .slideUp(this._settings.animationSpeed, () => {\n        this._parent.addClass(CLASS_NAME_COLLAPSED).removeClass(CLASS_NAME_COLLAPSING)\n      })\n\n    this._parent.find(`> ${SELECTOR_CARD_HEADER} ${this._settings.collapseTrigger} .${this._settings.collapseIcon}`)\n      .addClass(this._settings.expandIcon)\n      .removeClass(this._settings.collapseIcon)\n\n    this._element.trigger($.Event(EVENT_COLLAPSED), this._parent)\n  }\n\n  expand() {\n    this._parent.addClass(CLASS_NAME_EXPANDING).children(`${SELECTOR_CARD_BODY}, ${SELECTOR_CARD_FOOTER}`)\n      .slideDown(this._settings.animationSpeed, () => {\n        this._parent.removeClass(CLASS_NAME_COLLAPSED).removeClass(CLASS_NAME_EXPANDING)\n      })\n\n    this._parent.find(`> ${SELECTOR_CARD_HEADER} ${this._settings.collapseTrigger} .${this._settings.expandIcon}`)\n      .addClass(this._settings.collapseIcon)\n      .removeClass(this._settings.expandIcon)\n\n    this._element.trigger($.Event(EVENT_EXPANDED), this._parent)\n  }\n\n  remove() {\n    this._parent.slideUp()\n    this._element.trigger($.Event(EVENT_REMOVED), this._parent)\n  }\n\n  toggle() {\n    if (this._parent.hasClass(CLASS_NAME_COLLAPSED)) {\n      this.expand()\n      return\n    }\n\n    this.collapse()\n  }\n\n  maximize() {\n    this._parent.find(`${this._settings.maximizeTrigger} .${this._settings.maximizeIcon}`)\n      .addClass(this._settings.minimizeIcon)\n      .removeClass(this._settings.maximizeIcon)\n    this._parent.css({\n      height: this._parent.height(),\n      width: this._parent.width(),\n      transition: 'all .15s'\n    }).delay(150).queue(function () {\n      const $element = $(this)\n\n      $element.addClass(CLASS_NAME_MAXIMIZED)\n      $('html').addClass(CLASS_NAME_MAXIMIZED)\n      if ($element.hasClass(CLASS_NAME_COLLAPSED)) {\n        $element.addClass(CLASS_NAME_WAS_COLLAPSED)\n      }\n\n      $element.dequeue()\n    })\n\n    this._element.trigger($.Event(EVENT_MAXIMIZED), this._parent)\n  }\n\n  minimize() {\n    this._parent.find(`${this._settings.maximizeTrigger} .${this._settings.minimizeIcon}`)\n      .addClass(this._settings.maximizeIcon)\n      .removeClass(this._settings.minimizeIcon)\n    this._parent.css('cssText', `height: ${this._parent[0].style.height} !important; width: ${this._parent[0].style.width} !important; transition: all .15s;`\n    ).delay(10).queue(function () {\n      const $element = $(this)\n\n      $element.removeClass(CLASS_NAME_MAXIMIZED)\n      $('html').removeClass(CLASS_NAME_MAXIMIZED)\n      $element.css({\n        height: 'inherit',\n        width: 'inherit'\n      })\n      if ($element.hasClass(CLASS_NAME_WAS_COLLAPSED)) {\n        $element.removeClass(CLASS_NAME_WAS_COLLAPSED)\n      }\n\n      $element.dequeue()\n    })\n\n    this._element.trigger($.Event(EVENT_MINIMIZED), this._parent)\n  }\n\n  toggleMaximize() {\n    if (this._parent.hasClass(CLASS_NAME_MAXIMIZED)) {\n      this.minimize()\n      return\n    }\n\n    this.maximize()\n  }\n\n  // Private\n\n  _init(card) {\n    this._parent = card\n\n    $(this).find(this._settings.collapseTrigger).click(() => {\n      this.toggle()\n    })\n\n    $(this).find(this._settings.maximizeTrigger).click(() => {\n      this.toggleMaximize()\n    })\n\n    $(this).find(this._settings.removeTrigger).click(() => {\n      this.remove()\n    })\n  }\n\n  // Static\n\n  static _jQueryInterface(config) {\n    let data = $(this).data(DATA_KEY)\n    const _options = $.extend({}, Default, $(this).data())\n\n    if (!data) {\n      data = new CardWidget($(this), _options)\n      $(this).data(DATA_KEY, typeof config === 'string' ? data : config)\n    }\n\n    if (typeof config === 'string' && /collapse|expand|remove|toggle|maximize|minimize|toggleMaximize/.test(config)) {\n      data[config]()\n    } else if (typeof config === 'object') {\n      data._init($(this))\n    }\n  }\n}\n\n/**\n * Data API\n * ====================================================\n */\n\n$(document).on('click', SELECTOR_DATA_COLLAPSE, function (event) {\n  if (event) {\n    event.preventDefault()\n  }\n\n  CardWidget._jQueryInterface.call($(this), 'toggle')\n})\n\n$(document).on('click', SELECTOR_DATA_REMOVE, function (event) {\n  if (event) {\n    event.preventDefault()\n  }\n\n  CardWidget._jQueryInterface.call($(this), 'remove')\n})\n\n$(document).on('click', SELECTOR_DATA_MAXIMIZE, function (event) {\n  if (event) {\n    event.preventDefault()\n  }\n\n  CardWidget._jQueryInterface.call($(this), 'toggleMaximize')\n})\n\n/**\n * jQuery API\n * ====================================================\n */\n\n$.fn[NAME] = CardWidget._jQueryInterface\n$.fn[NAME].Constructor = CardWidget\n$.fn[NAME].noConflict = function () {\n  $.fn[NAME] = JQUERY_NO_CONFLICT\n  return CardWidget._jQueryInterface\n}\n\nexport default CardWidget\n","/**\n * --------------------------------------------\n * AdminLTE ControlSidebar.js\n * License MIT\n * --------------------------------------------\n */\n\nimport $ from 'jquery'\n\n/**\n * Constants\n * ====================================================\n */\n\nconst NAME = 'ControlSidebar'\nconst DATA_KEY = 'lte.controlsidebar'\nconst EVENT_KEY = `.${DATA_KEY}`\nconst JQUERY_NO_CONFLICT = $.fn[NAME]\n\nconst EVENT_COLLAPSED = `collapsed${EVENT_KEY}`\nconst EVENT_COLLAPSED_DONE = `collapsed-done${EVENT_KEY}`\nconst EVENT_EXPANDED = `expanded${EVENT_KEY}`\n\nconst SELECTOR_CONTROL_SIDEBAR = '.control-sidebar'\nconst SELECTOR_CONTROL_SIDEBAR_CONTENT = '.control-sidebar-content'\nconst SELECTOR_DATA_TOGGLE = '[data-widget=\"control-sidebar\"]'\nconst SELECTOR_HEADER = '.main-header'\nconst SELECTOR_FOOTER = '.main-footer'\n\nconst CLASS_NAME_CONTROL_SIDEBAR_ANIMATE = 'control-sidebar-animate'\nconst CLASS_NAME_CONTROL_SIDEBAR_OPEN = 'control-sidebar-open'\nconst CLASS_NAME_CONTROL_SIDEBAR_SLIDE = 'control-sidebar-slide-open'\nconst CLASS_NAME_LAYOUT_FIXED = 'layout-fixed'\nconst CLASS_NAME_NAVBAR_FIXED = 'layout-navbar-fixed'\nconst CLASS_NAME_NAVBAR_SM_FIXED = 'layout-sm-navbar-fixed'\nconst CLASS_NAME_NAVBAR_MD_FIXED = 'layout-md-navbar-fixed'\nconst CLASS_NAME_NAVBAR_LG_FIXED = 'layout-lg-navbar-fixed'\nconst CLASS_NAME_NAVBAR_XL_FIXED = 'layout-xl-navbar-fixed'\nconst CLASS_NAME_FOOTER_FIXED = 'layout-footer-fixed'\nconst CLASS_NAME_FOOTER_SM_FIXED = 'layout-sm-footer-fixed'\nconst CLASS_NAME_FOOTER_MD_FIXED = 'layout-md-footer-fixed'\nconst CLASS_NAME_FOOTER_LG_FIXED = 'layout-lg-footer-fixed'\nconst CLASS_NAME_FOOTER_XL_FIXED = 'layout-xl-footer-fixed'\n\nconst Default = {\n  controlsidebarSlide: true,\n  scrollbarTheme: 'os-theme-light',\n  scrollbarAutoHide: 'l',\n  target: SELECTOR_CONTROL_SIDEBAR,\n  animationSpeed: 300\n}\n\n/**\n * Class Definition\n * ====================================================\n */\n\nclass ControlSidebar {\n  constructor(element, config) {\n    this._element = element\n    this._config = config\n  }\n\n  // Public\n\n  collapse() {\n    const $body = $('body')\n    const $html = $('html')\n\n    // Show the control sidebar\n    if (this._config.controlsidebarSlide) {\n      $html.addClass(CLASS_NAME_CONTROL_SIDEBAR_ANIMATE)\n      $body.removeClass(CLASS_NAME_CONTROL_SIDEBAR_SLIDE).delay(300).queue(function () {\n        $(SELECTOR_CONTROL_SIDEBAR).hide()\n        $html.removeClass(CLASS_NAME_CONTROL_SIDEBAR_ANIMATE)\n        $(this).dequeue()\n      })\n    } else {\n      $body.removeClass(CLASS_NAME_CONTROL_SIDEBAR_OPEN)\n    }\n\n    $(this._element).trigger($.Event(EVENT_COLLAPSED))\n\n    setTimeout(() => {\n      $(this._element).trigger($.Event(EVENT_COLLAPSED_DONE))\n    }, this._config.animationSpeed)\n  }\n\n  show(toggle = false) {\n    const $body = $('body')\n    const $html = $('html')\n\n    if (toggle) {\n      $(SELECTOR_CONTROL_SIDEBAR).hide()\n    }\n\n    // Collapse the control sidebar\n    if (this._config.controlsidebarSlide) {\n      $html.addClass(CLASS_NAME_CONTROL_SIDEBAR_ANIMATE)\n      $(this._config.target).show().delay(10).queue(function () {\n        $body.addClass(CLASS_NAME_CONTROL_SIDEBAR_SLIDE).delay(300).queue(function () {\n          $html.removeClass(CLASS_NAME_CONTROL_SIDEBAR_ANIMATE)\n          $(this).dequeue()\n        })\n        $(this).dequeue()\n      })\n    } else {\n      $body.addClass(CLASS_NAME_CONTROL_SIDEBAR_OPEN)\n    }\n\n    this._fixHeight()\n    this._fixScrollHeight()\n\n    $(this._element).trigger($.Event(EVENT_EXPANDED))\n  }\n\n  toggle() {\n    const $body = $('body')\n    const { target } = this._config\n\n    const notVisible = !$(target).is(':visible')\n    const shouldClose = ($body.hasClass(CLASS_NAME_CONTROL_SIDEBAR_OPEN) ||\n      $body.hasClass(CLASS_NAME_CONTROL_SIDEBAR_SLIDE))\n    const shouldToggle = notVisible && ($body.hasClass(CLASS_NAME_CONTROL_SIDEBAR_OPEN) ||\n      $body.hasClass(CLASS_NAME_CONTROL_SIDEBAR_SLIDE))\n\n    if (notVisible || shouldToggle) {\n      // Open the control sidebar\n      this.show(notVisible)\n    } else if (shouldClose) {\n      // Close the control sidebar\n      this.collapse()\n    }\n  }\n\n  // Private\n\n  _init() {\n    const $body = $('body')\n    const shouldNotHideAll = $body.hasClass(CLASS_NAME_CONTROL_SIDEBAR_OPEN) ||\n        $body.hasClass(CLASS_NAME_CONTROL_SIDEBAR_SLIDE)\n\n    if (shouldNotHideAll) {\n      $(SELECTOR_CONTROL_SIDEBAR).not(this._config.target).hide()\n      $(this._config.target).css('display', 'block')\n    } else {\n      $(SELECTOR_CONTROL_SIDEBAR).hide()\n    }\n\n    this._fixHeight()\n    this._fixScrollHeight()\n\n    $((model.x)) {
+		xAlign = 'right';
+
+		// Is tooltip too wide and goes outside left edge of canvas?
+		if (orf(model.x)) {
+			xAlign = 'center';
+			yAlign = yf(model.y);
+		}
+	}
+
+	var opts = tooltip._options;
+	return {
+		xAlign: opts.xAlign ? opts.xAlign : xAlign,
+		yAlign: opts.yAlign ? opts.yAlign : yAlign
+	};
+}
+
+/**
+ * Helper to get the location a tooltip needs to be placed at given the initial position (via the vm) and the size and alignment
+ */
+function getBackgroundPoint(vm, size, alignment, chart) {
+	// Background Position
+	var x = vm.x;
+	var y = vm.y;
+
+	var caretSize = vm.caretSize;
+	var caretPadding = vm.caretPadding;
+	var cornerRadius = vm.cornerRadius;
+	var xAlign = alignment.xAlign;
+	var yAlign = alignment.yAlign;
+	var paddingAndSize = caretSize + caretPadding;
+	var radiusAndPadding = cornerRadius + caretPadding;
+
+	if (xAlign === 'right') {
+		x -= size.width;
+	} else if (xAlign === 'center') {
+		x -= (size.width / 2);
+		if (x + size.width > chart.width) {
+			x = chart.width - size.width;
+		}
+		if (x < 0) {
+			x = 0;
+		}
+	}
+
+	if (yAlign === 'top') {
+		y += paddingAndSize;
+	} else if (yAlign === 'bottom') {
+		y -= size.height + paddingAndSize;
+	} else {
+		y -= (size.height / 2);
+	}
+
+	if (yAlign === 'center') {
+		if (xAlign === 'left') {
+			x += paddingAndSize;
+		} else if (xAlign === 'right') {
+			x -= paddingAndSize;
+		}
+	} else if (xAlign === 'left') {
+		x -= radiusAndPadding;
+	} else if (xAlign === 'right') {
+		x += radiusAndPadding;
+	}
+
+	return {
+		x: x,
+		y: y
+	};
+}
+
+function getAlignedX(vm, align) {
+	return align === 'center'
+		? vm.x + vm.width / 2
+		: align === 'right'
+			? vm.x + vm.width - vm.xPadding
+			: vm.x + vm.xPadding;
+}
+
+/**
+ * Helper to build before and after body lines
+ */
+function getBeforeAfterBodyLines(callback) {
+	return pushOrConcat([], splitNewlines(callback));
+}
+
+var exports$4 = core_element.extend({
+	initialize: function() {
+		this._model = getBaseModel(this._options);
+		this._lastActive = [];
+	},
+
+	// Get the title
+	// Args are: (tooltipItem, data)
+	getTitle: function() {
+		var me = this;
+		var opts = me._options;
+		var callbacks = opts.callbacks;
+
+		var beforeTitle = callbacks.beforeTitle.apply(me, arguments);
+		var title = callbacks.title.apply(me, arguments);
+		var afterTitle = callbacks.afterTitle.apply(me, arguments);
+
+		var lines = [];
+		lines = pushOrConcat(lines, splitNewlines(beforeTitle));
+		lines = pushOrConcat(lines, splitNewlines(title));
+		lines = pushOrConcat(lines, splitNewlines(afterTitle));
+
+		return lines;
+	},
+
+	// Args are: (tooltipItem, data)
+	getBeforeBody: function() {
+		return getBeforeAfterBodyLines(this._options.callbacks.beforeBody.apply(this, arguments));
+	},
+
+	// Args are: (tooltipItem, data)
+	getBody: function(tooltipItems, data) {
+		var me = this;
+		var callbacks = me._options.callbacks;
+		var bodyItems = [];
+
+		helpers$1.each(tooltipItems, function(tooltipItem) {
+			var bodyItem = {
+				before: [],
+				lines: [],
+				after: []
+			};
+			pushOrConcat(bodyItem.before, splitNewlines(callbacks.beforeLabel.call(me, tooltipItem, data)));
+			pushOrConcat(bodyItem.lines, callbacks.label.call(me, tooltipItem, data));
+			pushOrConcat(bodyItem.after, splitNewlines(callbacks.afterLabel.call(me, tooltipItem, data)));
+
+			bodyItems.push(bodyItem);
+		});
+
+		return bodyItems;
+	},
+
+	// Args are: (tooltipItem, data)
+	getAfterBody: function() {
+		return getBeforeAfterBodyLines(this._options.callbacks.afterBody.apply(this, arguments));
+	},
+
+	// Get the footer and beforeFooter and afterFooter lines
+	// Args are: (tooltipItem, data)
+	getFooter: function() {
+		var me = this;
+		var callbacks = me._options.callbacks;
+
+		var beforeFooter = callbacks.beforeFooter.apply(me, arguments);
+		var footer = callbacks.footer.apply(me, arguments);
+		var afterFooter = callbacks.afterFooter.apply(me, arguments);
+
+		var lines = [];
+		lines = pushOrConcat(lines, splitNewlines(beforeFooter));
+		lines = pushOrConcat(lines, splitNewlines(footer));
+		lines = pushOrConcat(lines, splitNewlines(afterFooter));
+
+		return lines;
+	},
+
+	update: function(changed) {
+		var me = this;
+		var opts = me._options;
+
+		// Need to regenerate the model because its faster than using extend and it is necessary due to the optimization in Chart.Element.transition
+		// that does _view = _model if ease === 1. This causes the 2nd tooltip update to set properties in both the view and model at the same time
+		// which breaks any animations.
+		var existingModel = me._model;
+		var model = me._model = getBaseModel(opts);
+		var active = me._active;
+
+		var data = me._data;
+
+		// In the case where active.length === 0 we need to keep these at existing values for good animations
+		var alignment = {
+			xAlign: existingModel.xAlign,
+			yAlign: existingModel.yAlign
+		};
+		var backgroundPoint = {
+			x: existingModel.x,
+			y: existingModel.y
+		};
+		var tooltipSize = {
+			width: existingModel.width,
+			height: existingModel.height
+		};
+		var tooltipPosition = {
+			x: existingModel.caretX,
+			y: existingModel.caretY
+		};
+
+		var i, len;
+
+		if (active.length) {
+			model.opacity = 1;
+
+			var labelColors = [];
+			var labelTextColors = [];
+			tooltipPosition = positioners[opts.position].call(me, active, me._eventPosition);
+
+			var tooltipItems = [];
+			for (i = 0, len = active.length; i < len; ++i) {
+				tooltipItems.push(createTooltipItem(active[i]));
+			}
+
+			// If the user provided a filter function, use it to modify the tooltip items
+			if (opts.filter) {
+				tooltipItems = tooltipItems.filter(function(a) {
+					return opts.filter(a, data);
+				});
+			}
+
+			// If the user provided a sorting function, use it to modify the tooltip items
+			if (opts.itemSort) {
+				tooltipItems = tooltipItems.sort(function(a, b) {
+					return opts.itemSort(a, b, data);
+				});
+			}
+
+			// Determine colors for boxes
+			helpers$1.each(tooltipItems, function(tooltipItem) {
+				labelColors.push(opts.callbacks.labelColor.call(me, tooltipItem, me._chart));
+				labelTextColors.push(opts.callbacks.labelTextColor.call(me, tooltipItem, me._chart));
+			});
+
+
+			// Build the Text Lines
+			model.title = me.getTitle(tooltipItems, data);
+			model.beforeBody = me.getBeforeBody(tooltipItems, data);
+			model.body = me.getBody(tooltipItems, data);
+			model.afterBody = me.getAfterBody(tooltipItems, data);
+			model.footer = me.getFooter(tooltipItems, data);
+
+			// Initial positioning and colors
+			model.x = tooltipPosition.x;
+			model.y = tooltipPosition.y;
+			model.caretPadding = opts.caretPadding;
+			model.labelColors = labelColors;
+			model.labelTextColors = labelTextColors;
+
+			// data points
+			model.dataPoints = tooltipItems;
+
+			// We need to determine alignment of the tooltip
+			tooltipSize = getTooltipSize(this, model);
+			alignment = determineAlignment(this, tooltipSize);
+			// Final Size and Position
+			backgroundPoint = getBackgroundPoint(model, tooltipSize, alignment, me._chart);
+		} else {
+			model.opacity = 0;
+		}
+
+		model.xAlign = alignment.xAlign;
+		model.yAlign = alignment.yAlign;
+		model.x = backgroundPoint.x;
+		model.y = backgroundPoint.y;
+		model.width = tooltipSize.width;
+		model.height = tooltipSize.height;
+
+		// Point where the caret on the tooltip points to
+		model.caretX = tooltipPosition.x;
+		model.caretY = tooltipPosition.y;
+
+		me._model = model;
+
+		if (changed && opts.custom) {
+			opts.custom.call(me, model);
+		}
+
+		return me;
+	},
+
+	drawCaret: function(tooltipPoint, size) {
+		var ctx = this._chart.ctx;
+		var vm = this._view;
+		var caretPosition = this.getCaretPosition(tooltipPoint, size, vm);
+
+		ctx.lineTo(caretPosition.x1, caretPosition.y1);
+		ctx.lineTo(caretPosition.x2, caretPosition.y2);
+		ctx.lineTo(caretPosition.x3, caretPosition.y3);
+	},
+	getCaretPosition: function(tooltipPoint, size, vm) {
+		var x1, x2, x3, y1, y2, y3;
+		var caretSize = vm.caretSize;
+		var cornerRadius = vm.cornerRadius;
+		var xAlign = vm.xAlign;
+		var yAlign = vm.yAlign;
+		var ptX = tooltipPoint.x;
+		var ptY = tooltipPoint.y;
+		var width = size.width;
+		var height = size.height;
+
+		if (yAlign === 'center') {
+			y2 = ptY + (height / 2);
+
+			if (xAlign === 'left') {
+				x1 = ptX;
+				x2 = x1 - caretSize;
+				x3 = x1;
+
+				y1 = y2 + caretSize;
+				y3 = y2 - caretSize;
+			} else {
+				x1 = ptX + width;
+				x2 = x1 + caretSize;
+				x3 = x1;
+
+				y1 = y2 - caretSize;
+				y3 = y2 + caretSize;
+			}
+		} else {
+			if (xAlign === 'left') {
+				x2 = ptX + cornerRadius + (caretSize);
+				x1 = x2 - caretSize;
+				x3 = x2 + caretSize;
+			} else if (xAlign === 'right') {
+				x2 = ptX + width - cornerRadius - caretSize;
+				x1 = x2 - caretSize;
+				x3 = x2 + caretSize;
+			} else {
+				x2 = vm.caretX;
+				x1 = x2 - caretSize;
+				x3 = x2 + caretSize;
+			}
+			if (yAlign === 'top') {
+				y1 = ptY;
+				y2 = y1 - caretSize;
+				y3 = y1;
+			} else {
+				y1 = ptY + height;
+				y2 = y1 + caretSize;
+				y3 = y1;
+				// invert drawing order
+				var tmp = x3;
+				x3 = x1;
+				x1 = tmp;
+			}
+		}
+		return {x1: x1, x2: x2, x3: x3, y1: y1, y2: y2, y3: y3};
+	},
+
+	drawTitle: function(pt, vm, ctx) {
+		var title = vm.title;
+		var length = title.length;
+		var titleFontSize, titleSpacing, i;
+
+		if (length) {
+			var rtlHelper = getRtlHelper(vm.rtl, vm.x, vm.width);
+
+			pt.x = getAlignedX(vm, vm._titleAlign);
+
+			ctx.textAlign = rtlHelper.textAlign(vm._titleAlign);
+			ctx.textBaseline = 'middle';
+
+			titleFontSize = vm.titleFontSize;
+			titleSpacing = vm.titleSpacing;
+
+			ctx.fillStyle = vm.titleFontColor;
+			ctx.font = helpers$1.fontString(titleFontSize, vm._titleFontStyle, vm._titleFontFamily);
+
+			for (i = 0; i < length; ++i) {
+				ctx.fillText(title[i], rtlHelper.x(pt.x), pt.y + titleFontSize / 2);
+				pt.y += titleFontSize + titleSpacing; // Line Height and spacing
+
+				if (i + 1 === length) {
+					pt.y += vm.titleMarginBottom - titleSpacing; // If Last, add margin, remove spacing
+				}
+			}
+		}
+	},
+
+	drawBody: function(pt, vm, ctx) {
+		var bodyFontSize = vm.bodyFontSize;
+		var bodySpacing = vm.bodySpacing;
+		var bodyAlign = vm._bodyAlign;
+		var body = vm.body;
+		var drawColorBoxes = vm.displayColors;
+		var xLinePadding = 0;
+		var colorX = drawColorBoxes ? getAlignedX(vm, 'left') : 0;
+
+		var rtlHelper = getRtlHelper(vm.rtl, vm.x, vm.width);
+
+		var fillLineOfText = function(line) {
+			ctx.fillText(line, rtlHelper.x(pt.x + xLinePadding), pt.y + bodyFontSize / 2);
+			pt.y += bodyFontSize + bodySpacing;
+		};
+
+		var bodyItem, textColor, labelColors, lines, i, j, ilen, jlen;
+		var bodyAlignForCalculation = rtlHelper.textAlign(bodyAlign);
+
+		ctx.textAlign = bodyAlign;
+		ctx.textBaseline = 'middle';
+		ctx.font = helpers$1.fontString(bodyFontSize, vm._bodyFontStyle, vm._bodyFontFamily);
+
+		pt.x = getAlignedX(vm, bodyAlignForCalculation);
+
+		// Before body lines
+		ctx.fillStyle = vm.bodyFontColor;
+		helpers$1.each(vm.beforeBody, fillLineOfText);
+
+		xLinePadding = drawColorBoxes && bodyAlignForCalculation !== 'right'
+			? bodyAlign === 'center' ? (bodyFontSize / 2 + 1) : (bodyFontSize + 2)
+			: 0;
+
+		// Draw body lines now
+		for (i = 0, ilen = body.length; i < ilen; ++i) {
+			bodyItem = body[i];
+			textColor = vm.labelTextColors[i];
+			labelColors = vm.labelColors[i];
+
+			ctx.fillStyle = textColor;
+			helpers$1.each(bodyItem.before, fillLineOfText);
+
+			lines = bodyItem.lines;
+			for (j = 0, jlen = lines.length; j < jlen; ++j) {
+				// Draw Legend-like boxes if needed
+				if (drawColorBoxes) {
+					var rtlColorX = rtlHelper.x(colorX);
+
+					// Fill a white rect so that colours merge nicely if the opacity is < 1
+					ctx.fillStyle = vm.legendColorBackground;
+					ctx.fillRect(rtlHelper.leftForLtr(rtlColorX, bodyFontSize), pt.y, bodyFontSize, bodyFontSize);
+
+					// Border
+					ctx.lineWidth = 1;
+					ctx.strokeStyle = labelColors.borderColor;
+					ctx.strokeRect(rtlHelper.leftForLtr(rtlColorX, bodyFontSize), pt.y, bodyFontSize, bodyFontSize);
+
+					// Inner square
+					ctx.fillStyle = labelColors.backgroundColor;
+					ctx.fillRect(rtlHelper.leftForLtr(rtlHelper.xPlus(rtlColorX, 1), bodyFontSize - 2), pt.y + 1, bodyFontSize - 2, bodyFontSize - 2);
+					ctx.fillStyle = textColor;
+				}
+
+				fillLineOfText(lines[j]);
+			}
+
+			helpers$1.each(bodyItem.after, fillLineOfText);
+		}
+
+		// Reset back to 0 for after body
+		xLinePadding = 0;
+
+		// After body lines
+		helpers$1.each(vm.afterBody, fillLineOfText);
+		pt.y -= bodySpacing; // Remove last body spacing
+	},
+
+	drawFooter: function(pt, vm, ctx) {
+		var footer = vm.footer;
+		var length = footer.length;
+		var footerFontSize, i;
+
+		if (length) {
+			var rtlHelper = getRtlHelper(vm.rtl, vm.x, vm.width);
+
+			pt.x = getAlignedX(vm, vm._footerAlign);
+			pt.y += vm.footerMarginTop;
+
+			ctx.textAlign = rtlHelper.textAlign(vm._footerAlign);
+			ctx.textBaseline = 'middle';
+
+			footerFontSize = vm.footerFontSize;
+
+			ctx.fillStyle = vm.footerFontColor;
+			ctx.font = helpers$1.fontString(footerFontSize, vm._footerFontStyle, vm._footerFontFamily);
+
+			for (i = 0; i < length; ++i) {
+				ctx.fillText(footer[i], rtlHelper.x(pt.x), pt.y + footerFontSize / 2);
+				pt.y += footerFontSize + vm.footerSpacing;
+			}
+		}
+	},
+
+	drawBackground: function(pt, vm, ctx, tooltipSize) {
+		ctx.fillStyle = vm.backgroundColor;
+		ctx.strokeStyle = vm.borderColor;
+		ctx.lineWidth = vm.borderWidth;
+		var xAlign = vm.xAlign;
+		var yAlign = vm.yAlign;
+		var x = pt.x;
+		var y = pt.y;
+		var width = tooltipSize.width;
+		var height = tooltipSize.height;
+		var radius = vm.cornerRadius;
+
+		ctx.beginPath();
+		ctx.moveTo(x + radius, y);
+		if (yAlign === 'top') {
+			this.drawCaret(pt, tooltipSize);
+		}
+		ctx.lineTo(x + width - radius, y);
+		ctx.quadraticCurveTo(x + width, y, x + width, y + radius);
+		if (yAlign === 'center' && xAlign === 'right') {
+			this.drawCaret(pt, tooltipSize);
+		}
+		ctx.lineTo(x + width, y + height - radius);
+		ctx.quadraticCurveTo(x + width, y + height, x + width - radius, y + height);
+		if (yAlign === 'bottom') {
+			this.drawCaret(pt, tooltipSize);
+		}
+		ctx.lineTo(x + radius, y + height);
+		ctx.quadraticCurveTo(x, y + height, x, y + height - radius);
+		if (yAlign === 'center' && xAlign === 'left') {
+			this.drawCaret(pt, tooltipSize);
+		}
+		ctx.lineTo(x, y + radius);
+		ctx.quadraticCurveTo(x, y, x + radius, y);
+		ctx.closePath();
+
+		ctx.fill();
+
+		if (vm.borderWidth > 0) {
+			ctx.stroke();
+		}
+	},
+
+	draw: function() {
+		var ctx = this._chart.ctx;
+		var vm = this._view;
+
+		if (vm.opacity === 0) {
+			return;
+		}
+
+		var tooltipSize = {
+			width: vm.width,
+			height: vm.height
+		};
+		var pt = {
+			x: vm.x,
+			y: vm.y
+		};
+
+		// IE11/Edge does not like very small opacities, so snap to 0
+		var opacity = Math.abs(vm.opacity < 1e-3) ? 0 : vm.opacity;
+
+		// Truthy/falsey value for empty tooltip
+		var hasTooltipContent = vm.title.length || vm.beforeBody.length || vm.body.length || vm.afterBody.length || vm.footer.length;
+
+		if (this._options.enabled && hasTooltipContent) {
+			ctx.save();
+			ctx.globalAlpha = opacity;
+
+			// Draw Background
+			this.drawBackground(pt, vm, ctx, tooltipSize);
+
+			// Draw Title, Body, and Footer
+			pt.y += vm.yPadding;
+
+			helpers$1.rtl.overrideTextDirection(ctx, vm.textDirection);
+
+			// Titles
+			this.drawTitle(pt, vm, ctx);
+
+			// Body
+			this.drawBody(pt, vm, ctx);
+
+			// Footer
+			this.drawFooter(pt, vm, ctx);
+
+			helpers$1.rtl.restoreTextDirection(ctx, vm.textDirection);
+
+			ctx.restore();
+		}
+	},
+
+	/**
+	 * Handle an event
+	 * @private
+	 * @param {IEvent} event - The event to handle
+	 * @returns {boolean} true if the tooltip changed
+	 */
+	handleEvent: function(e) {
+		var me = this;
+		var options = me._options;
+		var changed = false;
+
+		me._lastActive = me._lastActive || [];
+
+		// Find Active Elements for tooltips
+		if (e.type === 'mouseout') {
+			me._active = [];
+		} else {
+			me._active = me._chart.getElementsAtEventForMode(e, options.mode, options);
+			if (options.reverse) {
+				me._active.reverse();
+			}
+		}
+
+		// Remember Last Actives
+		changed 

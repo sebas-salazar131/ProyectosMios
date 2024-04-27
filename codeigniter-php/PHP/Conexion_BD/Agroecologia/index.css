@@ -1,0 +1,43 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.body{
+    background-image: url("img/fondo.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.formulario{
+    margin-top: 15%;
+    position:relative;
+    padding-left:4em;
+    padding-right: 4em;
+    top: 50%;
+    left: 40%;
+    bottom: 20%;
+    transform: translate(-50,-50);
+    width: 400px;
+    background: green;
+    border-radius: 10px;
+    text-align: center;
+    
+}
+.margen{
+    padding: 2em;
+    background: rgb(119, 184, 125);
+}
+
+.modal-footer .modal-title{
+    display: flex;
+    justify-content: center;
+  }
+
+.feme .mascu .perso{
+    padding-left: 2px;
+    background: rgb(26, 49, 22);
+}
+.modal-content {
+    background:  rgb(119, 184, 125);
+}
+

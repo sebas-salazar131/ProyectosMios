@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nombre"
+        android:layout_gravity="center"
+        android:textSize="17dp"/>
+
+    <EditText
+        android:id="@+id/text_nombre"
+        android:layout_width="370dp"
+        android:layout_height="50dp"
+        android:inputType="text"
+        android:layout_marginLeft="18dp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Apellidos"
+        android:layout_gravity="center"
+        android:textSize="17dp"/>
+
+    <EditText
+        android:id="@+id/text_apellido"
+        android:layout_width="370dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="18dp"
+        android:inputType="text"
+        app:layout_constraintStart_toStartOf="@+id/textView2"
+        tools:layout_editor_absoluteY="116dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Telefono"
+        android:textSize="17dp"
+        android:layout_gravity="center"/>
+
+    <EditText
+        android:id="@+id/text_telefono"
+        android:layout_width="370dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="18dp"
+
+        android:inputType="text"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Direccion"
+        android:layout_gravity="center"
+        android:textSize="17dp"/>
+
+    <EditText
+        android:id="@+id/text_direccion"
+        android:layout_width="370dp"
+        android:layout_height="50dp"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="287dp"
+        android:layout_marginLeft="18dp"
+        android:inputType="text"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Correo"
+        android:layout_gravity="center"
+        android:textSize="17dp"/>
+
+    <EditText
+        android:id="@+id/text_correo"
+        android:layout_width="370dp"
+        android:layout_height="50dp"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="287dp"
+        android:layout_marginLeft="18dp"
+        android:inputType="text"/>
+
+    <Button
+        android:layout_width="120dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:text="Enviar"
+        android:onClick="mostrarinfo"/>
+
+    <TextView
+        android:id="@+id/info"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="30dp"/>
+
+</LinearLayout>

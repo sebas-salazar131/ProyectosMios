@@ -1,0 +1,11 @@
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+
+class PersonasModel extends CI_Model {
+	public $table = 'usuarios';
+	public function validarIngreso($email, $password){
+		$this->db->select('cedula, email, tipo');
+		$this->db->where('email', $email);
+		$this->db->where('password', $password );
+        $this->db->where('estado', 'Activo');
+		$registros = $this->db->get('usua

@@ -1,0 +1,855 @@
+/**
+  * bootstrap-switch - Turn checkboxes and radio buttons into toggle switches.
+  *
+  * @version v3.3.4
+  * @homepage https://bttstrp.github.io/bootstrap-switch
+  * @author Mattia Larentis <mattia@larentis.eu> (http://larentis.eu)
+  * @license Apache-2.0
+  */
+
+.clearfix {
+  *zoom: 1;
+}
+.clearfix:before,
+.clearfix:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+.clearfix:after {
+  clear: both;
+}
+.hide-text {
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+.input-block-level {
+  display: block;
+  width: 100%;
+  min-height: 30px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.bootstrap-switch {
+  display: inline-block;
+  direction: ltr;
+  cursor: pointer;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  border: 1px solid;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  position: relative;
+  text-align: left;
+  overflow: hidden;
+  line-height: 8px;
+  z-index: 0;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  vertical-align: middle;
+  -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  -moz-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+.bootstrap-switch .bootstrap-switch-container {
+  display: inline-block;
+  top: 0;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+.bootstrap-switch .bootstrap-switch-handle-on,
+.bootstrap-switch .bootstrap-switch-handle-off,
+.bootstrap-switch .bootstrap-switch-label {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: inline-block !important;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 8px;
+  padding-right: 8px;
+  font-size: 14px;
+  line-height: 20px;
+}
+.bootstrap-switch .bootstrap-switch-handle-on,
+.bootstrap-switch .bootstrap-switch-handle-off {
+  text-align: center;
+  z-index: 1;
+}
+.bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-primary,
+.bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-primary {
+  color: #fff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  background-color: #005fcc;
+  background-image: -moz-linear-gradient(top, #0044cc, #08c);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#0044cc), to(#08c));
+  background-image: -webkit-linear-gradient(top, #0044cc, #08c);
+  background-image: -o-linear-gradient(top, #0044cc, #08c);
+  background-image: linear-gradient(to bottom, #0044cc, #08c);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0044cc', endColorstr='#ff0088cc', GradientType=0);
+  border-color: #08c #08c #005580;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  *background-color: #08c;
+  /* Darken IE7 buttons by default so they stand out more given they won't have borders */
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+}
+.bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-primary:hover,
+.bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-primary:hover,
+.bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-primary:focus,
+.bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-primary:focus,
+.bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-primary:active,
+.bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-primary:active,
+.bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-primary.active,
+.bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-primary.active,
+.bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-primary.disabled,
+.bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-primary.disabled,
+.bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-primary[disabled],
+.bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-primary[disabled] {
+  color: #fff;
+  background-color: #08c;
+  *background-color: #0077b3;
+}
+.bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-primary:active,
+.bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-primary:active,
+.bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-primary.active,
+.bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-primary.active {
+  background-color: #006699 \9;
+}
+.bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-info,
+.bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-info {
+  color: #fff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  background-color: #41a7c5;
+  background-image: -moz-linear-gradient(top, #2f96b4, #5bc0de);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#2f96b4), to(#5bc0de));
+  background-image: -webkit-linear-gradient(top, #2f96b4, #5bc0de);
+  background-image: -o-linear-gradient(top, #2f96b4, #5bc0de);
+  background-image: linear-gradient(to bottom, #2f96b4, #5bc0de);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff2f96b4', endColorstr='#ff5bc0de', GradientType=0);
+  border-color: #5bc0de #5bc0de #28a1c5;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  *background-color: #5bc0de;
+  /* Darken IE7 buttons by default so they stand out more given they won't have borders */
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+}
+.bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-info:hover,
+.bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-info:hover,
+.bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-info:focus,
+.bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-info:focus,
+.bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-info:active,
+.bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-info:active,
+.bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-info.active,
+.bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-info.active,
+.bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-info.disabled,
+.bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-info.disabled,
+.bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-info[disabled],
+.bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-info[disabled] {
+  color: #fff;
+  background-color: #5bc0de;
+  *background-color: #46b8da;
+}
+.bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-info:active,
+.bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-info:active,
+.bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-info.active,
+.bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-info.active {
+  background-color: #31b0d5 \9;
+}
+.bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-success,
+.bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-success {
+  color: #fff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  background-color: #58b058;
+  background-image: -moz-linear-gradient(top, #51a351, #62c462);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#51a351), to(#62c462));
+  background-image: -webkit-linear-gradient(top, #51a351, #62c462);
+  background-image: -o-linear-gradient(top, #51a351, #62c462);
+  background-image: linear-gradient(to bottom, #51a351, #62c462);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff51a351', endColorstr='#ff62c462', GradientType=0);
+  border-color: #62c462 #62c462 #3b9e3b;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  *background-color: #62c462;
+  /* Darken IE7 buttons by default so they stand out more given they won't have borders */
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+}
+.bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-success:hover,
+.bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-success:hover,
+.bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-success:focus,
+.bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-success:focus,
+.bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-success:active,
+.bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-success:active,
+.bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-success.active,
+.bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-success.active,
+.bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-success.disabled,
+.bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-success.disabled,
+.bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-success[disabled],
+.bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-success[disabled] {
+  color: #fff;
+  background-color: #62c462;
+  *background-color: #4fbd4f;
+}
+.bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-success:active,
+.bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-success:active,
+.bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-success.active,
+.bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-success.active {
+  background-color: #42b142 \9;
+}
+.bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-warning,
+.bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-warning {
+  color: #fff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  background-color: #f9a123;
+  background-image: -moz-linear-gradient(top, #f89406, #fbb450);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#f89406), to(#fbb450));
+  background-image: -webkit-linear-gradient(top, #f89406, #fbb450);
+  background-image: -o-linear-gradient(top, #f89406, #fbb450);
+  background-image: linear-gradient(to bottom, #f89406, #fbb450);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff89406', endColorstr='#fffbb450', GradientType=0);
+  border-color: #fbb450 #fbb450 #f89406;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  *background-color: #fbb450;
+  /* Darken IE7 buttons by default so they stand out more given they won't have borders */
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+}
+.bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-warning:hover,
+.bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-warning:hover,
+.bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-warning:focus,
+.bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-warning:focus,
+.bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-warning:active,
+.bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-warning:active,
+.bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-warning.active,
+.bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-warning.active,
+.bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-warning.disabled,
+.bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-warning.disabled,
+.bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-warning[disabled],
+.bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-warning[disabled] {
+  color: #fff;
+  background-color: #fbb450;
+  *background-color: #faa937;
+}
+.bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-warning:active,
+.bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-warning:active,
+.bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-warning.active,
+.bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-warning.active {
+  background-color: #fa9f1e \9;
+}
+.bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-danger,
+.bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-danger {
+  color: #fff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  background-color: #d14641;
+  background-image: -moz-linear-gradient(top, #bd362f, #ee5f5b);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#bd362f), to(#ee5f5b));
+  background-image: -webkit-linear-gradient(top, #bd362f, #ee5f5b);
+  background-image: -o-linear-gradient(top, #bd362f, #ee5f5b);
+  background-image: linear-gradient(to bottom, #bd362f, #ee5f5b);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffbd362f', endColorstr='#ffee5f5b', GradientType=0);
+  border-color: #ee5f5b #ee5f5b #e51d18;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  *background-color: #ee5f5b;
+  /* Darken IE7 buttons by default so they stand out more given they won't have borders */
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+}
+.bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-danger:hover,
+.bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-danger:hover,
+.bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-danger:focus,
+.bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-danger:focus,
+.bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-danger:active,
+.bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-danger:active,
+.bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-danger.active,
+.bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-danger.active,
+.bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-danger.disabled,
+.bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-danger.disabled,
+.bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-danger[disabled],
+.bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-danger[disabled] {
+  color: #fff;
+  background-color: #ee5f5b;
+  *background-color: #ec4844;
+}
+.bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-danger:active,
+.bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-danger:active,
+.bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-danger.active,
+.bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-danger.active {
+  background-color: #e9322d \9;
+}
+.bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-default,
+.bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-default {
+  color: #333;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+  background-color: #f0f0f0;
+  background-image: -moz-linear-gradient(top, #e6e6e6, #fff);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#e6e6e6), to(#fff));
+  background-image: -webkit-linear-gradient(top, #e6e6e6, #fff);
+  background-image: -o-linear-gradient(top, #e6e6e6, #fff);
+  background-image: linear-gradient(to bottom, #e6e6e6, #fff);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffe6e6e6', endColorstr='#ffffffff', GradientType=0);
+  border-color: #fff #fff #d9d9d9;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  *background-color: #fff;
+  /* Darken IE7 buttons by default so they stand out more given they won't have borders */
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+}
+.bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-default:hover,
+.bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-default:hover,
+.bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-default:focus,
+.bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-default:focus,
+.bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-default:active,
+.bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-default:active,
+.bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-default.active,
+.bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-default.active,
+.bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-default.disabled,
+.bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-default.disabled,
+.bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-default[disabled],
+.boots},a=e.isHorizontal();n.display?(t=(H.isArray(n.text)?n.text.length:1)*H.options._parseFont(n).lineHeight+2*n.padding,e.width=i.width=a?e.maxWidth:t,e.height=i.height=a?t:e.maxHeight):e.width=i.width=e.height=i.height=0},afterFit:Ii,isHorizontal:function(){var t=this.options.position;return"top"===t||"bottom"===t},draw:function(){var t=this,e=t.ctx,n=t.options;if(n.display){var i,a,r,o=H.options._parseFont(n),s=o.lineHeight,l=s/2+n.padding,u=0,d=t.top,h=t.left,c=t.bottom,f=t.right;e.fillStyle=H.valueOrDefault(n.fontColor,N.global.defaultFontColor),e.font=o.string,t.isHorizontal()?(a=h+(f-h)/2,r=d+l,i=f-h):(a="left"===n.position?h+l:f-l,r=d+(c-d)/2,i=c-d,u=Math.PI*("left"===n.position?-.5:.5)),e.save(),e.translate(a,r),e.rotate(u),e.textAlign="center",e.textBaseline="middle";var g=n.text;if(H.isArray(g))for(var p=0,m=0;m<g.length;++m)e.fillText(g[m],0,p,i),p+=s;else e.fillText(g,0,0,i);e.restore()}}});function Oi(t,e){var n=new Fi({ctx:t.ctx,options:e,chart:t});pe.configure(t,n,e),pe.addBox(t,n),t.titleBlock=n}var Li={},Ri=wi,zi=Ti,Ni={id:"title",_element:Fi,beforeInit:function(t){var e=t.options.title;e&&Oi(t,e)},beforeUpdate:function(t){var e=t.options.title,n=t.titleBlock;e?(H.mergeIf(e,N.global.title),n?(pe.configure(t,n,e),n.options=e):Oi(t,e)):n&&(pe.removeBox(t,n),delete t.titleBlock)}};for(var Bi in Li.filler=Ri,Li.legend=zi,Li.title=Ni,en.helpers=H,function(){function t(t,e,n){var i;return"string"==typeof t?(i=parseInt(t,10),-1!==t.indexOf("%")&&(i=i/100*e.parentNode[n])):i=t,i}function e(t){return null!=t&&"none"!==t}function n(n,i,a){var r=document.defaultView,o=H._getParentNode(n),s=r.getComputedStyle(n)[i],l=r.getComputedStyle(o)[i],u=e(s),d=e(l),h=Number.POSITIVE_INFINITY;return u||d?Math.min(u?t(s,n,a):h,d?t(l,o,a):h):"none"}H.where=function(t,e){if(H.isArray(t)&&Array.prototype.filter)return t.filter(e);var n=[];return H.each(t,(function(t){e(t)&&n.push(t)})),n},H.findIndex=Array.prototype.findIndex?function(t,e,n){return t.findIndex(e,n)}:function(t,e,n){n=void 0===n?t:n;for(var i=0,a=t.length;i<a;++i)if(e.call(n,t[i],i,t))return i;return-1},H.findNextWhere=function(t,e,n){H.isNullOrUndef(n)&&(n=-1);for(var i=n+1;i<t.length;i++){var a=t[i];if(e(a))return a}},H.findPreviousWhere=function(t,e,n){H.isNullOrUndef(n)&&(n=t.length);for(var i=n-1;i>=0;i--){var a=t[i];if(e(a))return a}},H.isNumber=function(t){return!isNaN(parseFloat(t))&&isFinite(t)},H.almostEquals=function(t,e,n){return Math.abs(t-e)<n},H.almostWhole=function(t,e){var n=Math.round(t);return n-e<=t&&n+e>=t},H.max=function(t){return t.reduce((function(t,e){return isNaN(e)?t:Math.max(t,e)}),Number.NEGATIVE_INFINITY)},H.min=function(t){return t.reduce((function(t,e){return isNaN(e)?t:Math.min(t,e)}),Number.POSITIVE_INFINITY)},H.sign=Math.sign?function(t){return Math.sign(t)}:function(t){return 0===(t=+t)||isNaN(t)?t:t>0?1:-1},H.toRadians=function(t){return t*(Math.PI/180)},H.toDegrees=function(t){return t*(180/Math.PI)},H._decimalPlaces=function(t){if(H.isFinite(t)){for(var e=1,n=0;Math.round(t*e)/e!==t;)e*=10,n++;return n}},H.getAngleFromPoint=function(t,e){var n=e.x-t.x,i=e.y-t.y,a=Math.sqrt(n*n+i*i),r=Math.atan2(i,n);return r<-.5*Math.PI&&(r+=2*Math.PI),{angle:r,distance:a}},H.distanceBetweenPoints=function(t,e){return Math.sqrt(Math.pow(e.x-t.x,2)+Math.pow(e.y-t.y,2))},H.aliasPixel=function(t){return t%2==0?0:.5},H._alignPixel=function(t,e,n){var i=t.currentDevicePixelRatio,a=n/2;return Math.round((e-a)*i)/i+a},H.splineCurve=function(t,e,n,i){var a=t.skip?e:t,r=e,o=n.skip?e:n,s=Math.sqrt(Math.pow(r.x-a.x,2)+Math.pow(r.y-a.y,2)),l=Math.sqrt(Math.pow(o.x-r.x,2)+Math.pow(o.y-r.y,2)),u=s/(s+l),d=l/(s+l),h=i*(u=isNaN(u)?0:u),c=i*(d=isNaN(d)?0:d);return{previous:{x:r.x-h*(o.x-a.x),y:r.y-h*(o.y-a.y)},next:{x:r.x+c*(o.x-a.x),y:r.y+c*(o.y-a.y)}}},H.EPSILON=Number.EPSILON||1e-14,H.splineCurveMonotone=function(t){var e,n,i,a,r,o,s,l,u,d=(t||[]).map((function(t){return{model:t._model,deltaK:0,mK:0}})),h=d.length;for(e=0;e<h;++e)if(!(i=d[e]).model.skip){if(n=e>0?d[e-1]:null,(a=e<h-1?d[e+1]:null)&&!a.model.skip){var c=a.model.x-i.model.x;i.deltaK=0!==c?(a.model.y-i.model.y)/c:0}!n||n.model.skip?i.mK=i.deltaK:!a||a.model.skip?i.mK=n.deltaK:this.sign(n.deltaK)!==this.sign(i.deltaK)?i.mK=0:i.mK=(n.deltaK+i.deltaK)/2}for(e=0;e<h-1;++e)i=d[e],a=d[e+1],i.model.skip||a.model.skip||(H.almostEquals(i.deltaK,0,this.EPSILON)?i.mK=a.mK=0:(r=i.mK/i.deltaK,o=a.mK/i.deltaK,(l=Math.pow(r,2)+Math.pow(o,2))<=9||(s=3/Math.sqrt(l),i.mK=r*s*i.deltaK,a.mK=o*s*i.deltaK)));for(e=0;e<h;++e)(i=d[e]).model.skip||(n=e>0?d[e-1]:null,a=e<h-1?d[e+1]:null,n&&!n.model.skip&&(u=(i.model.x-n.model.x)/3,i.model.controlPointPreviousX=i.model.x-u,i.model.controlPointPreviousY=i.model.y-u*i.mK),a&&!a.model.skip&&(u=(a.model.x-i.model.x)/3,i.model.controlPointNextX=i.model.x+u,i.model.controlPointNextY=i.model.y+u*i.mK))},H.nextItem=function(t,e,n){return n?e>=t.length-1?t[0]:t[e+1]:e>=t.length-1?t[t.length-1]:t[e+1]},H.previousItem=function(t,e,n){return n?e<=0?t[t.length-1]:t[e-1]:e<=0?t[0]:t[e-1]},H.niceNum=function(t,e){var n=Math.floor(H.log10(t)),i=t/Math.pow(10,n);return(e?i<1.5?1:i<3?2:i<7?5:10:i<=1?1:i<=2?2:i<=5?5:10)*Math.pow(10,n)},H.requestAnimFrame="undefined"==typeof window?function(t){t()}:window.requestAnimationFrame||window.webkitRequestAnimationFrame||window.mozRequestAnimationFrame||window.oRequestAnimationFrame||window.msRequestAnimationFrame||function(t){return window.setTimeout(t,1e3/60)},H.getRelativePosition=function(t,e){var n,i,a=t.originalEvent||t,r=t.target||t.srcElement,o=r.getBoundingClientRect(),s=a.touches;s&&s.length>0?(n=s[0].clientX,i=s[0].clientY):(n=a.clientX,i=a.clientY);var l=parseFloat(H.getStyle(r,"padding-left")),u=parseFloat(H.getStyle(r,"padding-top")),d=parseFloat(H.getStyle(r,"padding-right")),h=parseFloat(H.getStyle(r,"padding-bottom")),c=o.right-o.left-l-d,f=o.bottom-o.top-u-h;return{x:n=Math.round((n-o.left-l)/c*r.width/e.currentDevicePixelRatio),y:i=Math.round((i-o.top-u)/f*r.height/e.currentDevicePixelRatio)}},H.getConstraintWidth=function(t){return n(t,"max-width","clientWidth")},H.getConstraintHeight=function(t){return n(t,"max-height","clientHeight")},H._calculatePadding=function(t,e,n){return(e=H.getStyle(t,e)).indexOf("%")>-1?n*parseInt(e,10)/100:parseInt(e,10)},H._getParentNode=function(t){var e=t.parentNode;return e&&"[object ShadowRoot]"===e.toString()&&(e=e.host),e},H.getMaximumWidth=function(t){var e=H._getParentNode(t);if(!e)return t.clientWidth;var n=e.clientWidth,i=n-H._calculatePadding(e,"padding-left",n)-H._calculatePadding(e,"padding-right",n),a=H.getConstraintWidth(t);return isNaN(a)?i:Math.min(i,a)},H.getMaximumHeight=function(t){var e=H._getParentNode(t);if(!e)return t.clientHeight;var n=e.clientHeight,i=n-H._calculatePadding(e,"padding-top",n)-H._calculatePadding(e,"padding-bottom",n),a=H.getConstraintHeight(t);return isNaN(a)?i:Math.min(i,a)},H.getStyle=function(t,e){return t.currentStyle?t.currentStyle[e]:document.defaultView.getComputedStyle(t,null).getPropertyValue(e)},H.retinaScale=function(t,e){var n=t.currentDevicePixelRatio=e||"undefined"!=typeof window&&window.devicePixelRatio||1;if(1!==n){var i=t.canvas,a=t.height,r=t.width;i.height=a*n,i.width=r*n,t.ctx.scale(n,n),i.style.height||i.style.width||(i.style.height=a+"px",i.style.width=r+"px")}},H.fontString=function(t,e,n){return e+" "+t+"px "+n},H.longestText=function(t,e,n,i){var a=(i=i||{}).data=i.data||{},r=i.garbageCollect=i.garbageCollect||[];i.font!==e&&(a=i.data={},r=i.garbageCollect=[],i.font=e),t.font=e;var o,s,l,u,d,h=0,c=n.length;for(o=0;o<c;o++)if(null!=(u=n[o])&&!0!==H.isArray(u))h=H.measureText(t,a,r,h,u);else if(H.isArray(u))for(s=0,l=u.length;s<l;s++)null==(d=u[s])||H.isArray(d)||(h=H.measureText(t,a,r,h,d));var f=r.length/2;if(f>n.length){for(o=0;o<f;o++)delete a[r[o]];r.splice(0,f)}return h},H.measureText=function(t,e,n,i,a){var r=e[a];return r||(r=e[a]=t.measureText(a).width,n.push(a)),r>i&&(i=r),i},H.numberOfLabelLines=function(t){var e=1;return H.each(t,(function(t){H.isArray(t)&&t.length>e&&(e=t.length)})),e},H.color=_?function(t){return t instanceof CanvasGradient&&(t=N.global.defaultColor),_(t)}:function(t){return console.error("Color.js not found!"),t},H.getHoverColor=function(t){return t instanceof CanvasPattern||t instanceof CanvasGradient?t:H.color(t).saturate(.5).darken(.1).rgbString()}}(),en._adapters=rn,en.Animation=$,en.animationService=J,en.controllers=Jt,en.DatasetController=it,en.defaults=N,en.Element=K,en.elements=kt,en.Interaction=re,en.layouts=pe,en.platform=Oe,en.plugins=Le,en.Scale=yn,en.scaleService=Re,en.Ticks=on,en.Tooltip=Ye,en.helpers.each(fi,(function(t,e){en.scaleService.registerScaleType(e,t,t._defaults)})),Li)Li.hasOwnProperty(Bi)&&en.plugins.register(Li[Bi]);en.platform.initialize();var Ei=en;return"undefined"!=typeof window&&(window.Chart=en),en.Chart=en,en.Legend=Li.legend._element,en.Title=Li.title._element,en.pluginService=en.plugins,en.PluginBase=en.Element.extend({}),en.canvasHelpers=en.helpers.canvas,en.layoutService=en.layouts,en.LinearScaleBase=Cn,en.helpers.each(["Bar","Bubble","Doughnut","Line","PolarArea","Radar","Scatter"],(function(t){en[t]=function(e,n){return new en(e,en.helpers.merge(n||{},{type:t.charAt(0).toLowerCase()+t.slice(1)}))}})),Ei}));
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             )t$@)î$Ä   Út”¯@(º$†   Y˛∆ˆ±Yt$P(î$ê   Ú–˛Ú|”¯Y◊∆ˇ±Y¯Út—¯Ú–◊(|$p\ÚY˛(‘∆ˆ±Yt$`Ú–˛Ú|—¯Y◊∆ˇ±Y˝Út”¯Ú–◊(|$@Y˛∆ˆ±YÛÚ–˛Út◊¯X◊\Ú(—Y÷∆ˆ±Y¥$Ä   Ú–÷ÚT◊¯J;∆ÇFˇˇˇÈ.ËˇˇâÑ$   ã¬¡·Ø¡Ú¨‘®  Úº‘ò  Ûı)t$@ã},+¥$,  +˘¡Ê«â¥$$  +∆¡„çrˇâ$ãE$âú$(  +√ØﬁØÒÛ˜)¥$ê   Úú‘†  ÛÕÿ˜+¥$$  ât$ã¥$(  Út”¯çZ˛ØÛØŸ)L$0Û„Úå‘ê  )d$ ﬂ+ú$$  Ú§‘à  Û”â\$çZ˝)T$Û—Û«)T$p)D$PÛ‹ÛƒÚT÷Úd÷¯ã¥$(  ØÛØŸÛÈ)¨$Ä   )\$`ÛÓﬂ+ú$$  â\$çZ¸Û⁄)¨$∞   )ú$‡   Û Úl÷ËÚT÷Ú\÷¯ã¥$(  ØÛ)Ñ$–   Ûƒ)Ñ$0  Û˛∆3ˆØÀ)å$†   ÛÙÚD–‡ÛÕÛ„˘)º$¿   Û˝)å$   ÛÍÛ Û”)§$p  ÛÿÛ‡ÚD–Ë)º$   Û¯)º$  Û¯)º$P  Ú|–Û«)Ñ$@  Û«Ú|–¯)Ñ$`  Û«Ûˇ+º$$  ãÑ$   ãL$ãT$ã$)º$Ä  )¨$†  )¥$ê  âº$¥  ÚlÛ¯@(t$0Yı∆Ì±Yl$@ã|$Ú–ı(¨$∞   ÚtÛ¯YÓ∆ˆ±Y¥$¿   Ú|Ú¯Ú–Ó(t$ \˝Y˜∆ˇ±Y|$Ú–˜(º$‡   ÚtÚ¯Y˛∆ˆ±Y¥$†   ÚlÛ¯Ú–˛(¥$0  Yı∆Ì±Y¨$ê  Ú–ıÚlÒ¯X˛(¥$   \Ô(º$ê   Y˝∆Ì±Yl$PÚ–˝Ú|Ò¯Y˜∆ˇ±Yº$   ÚlÚ¯Ú–˜(˘Y˝∆Ì±Y¨$†  Ú–˝ÚlÛ¯X˜(º$p  Y˝∆Ì±YÍÚ–˝Úl˜¯X˜\Ó(t$pYı∆Ì±Y¨$Ä   Ú–ı(ÏÚt˜¯YÓ∆ˆ±YÛÚ|Ò¯Ú–Ó(¥$P  Y˜∆ˇ±Yº$  ãº$¥  Ú–˜Ú|Ú¯XÓ(¥$`  Y˜∆ˇ±Yº$@  Ú–˜Ú|Û¯XÓ(¥$Ä  Y˜∆ˇ±Y¯Ú–˜Ú|˜¯XÓ\˝(¨$–   YÔ∆ˇ±êY|$`Ú–ÔÚl˜¯N;Ñ$∞  Ç ˛ˇˇÈŒ„ˇˇÉ˚ÇÓÚˇˇ∫   3¿È>ıˇˇÉ˚ÇŸÚˇˇ∫   3¿È)ıˇˇÉ˚ÇƒÚˇˇ∫   3¿ÈıˇˇãÑ$   @;Ñ$∞  ÇñÒˇˇÈu„ˇˇ«D$    È¶œˇˇ«D$    ÈÕÕˇˇ«D$    È»ˇˇ3ˆW¿W…W“W€È„ÿˇˇ3ˆW…W“W€W¿È–ÿˇˇãT$B;T$Ç~’ˇˇãt$ãT$ãú$(  ã¬+∆âÑ$  Ö¿é˜‚ˇˇãE«Ñ$       ã É¯Ñ  É¯Ñu  É¯Ñ®  Ö¿éƒ‚ˇˇât$ç<Iâ|$ç<ââ<$W“âD$HâT$âå$‰   âú$(  ã¥$   ãî$‰   ã¬ã\$(⁄¡‡âD$tç’    ¡‚âT$xãU,ã˙ãD$H+˘âL$dØ¡ç›    ã\$â|$â¥$   ¡ÊâL$¡„˜€Ÿ+˚˜€¯⁄+˛+ﬁâ|$Xã˙+˘ãL$ât$ãT$Hâ\$8ç<œ¯+˛ã¥$(  â|$4ã˙«D$<    çı    ãu$Ø˚+Ûâ\$Dç÷ﬂç◊Úâ\$@ât$Tãt$ã\$ãT$ç<Ûãt$+˙ç<œ¯+˛â|$0ã<$ç<˚+˙ç<œ¯+˛â|$,ã|$d+º$‰   ç˚+⁄çÀ¡+∆ãt$<âD$ãî$‰   Ø÷F˜⁄ãD$XÚD–¯\√ÚD–¯;t$HÉ3	  ã∆W€˜ÿyÕÉ˛W€å		  ãT$Dçı    Ø÷˜ÿãL$@+ »É·tˆ¡ÖŒ  π   çA;å©  ãﬁçÚ+Ÿ˜⁄É„˜€T$TﬁãD$dØ∆âT$PÖ…vX3ˇãT$4â\$\+–âD$`ât$<ã«ã\$Pã¥$‰   ÚD¬¯∆Ú˚GÛËYÈÛ‡∆…±Y·Ú–ÏX›;˘r’ã\$\ãD$`ãt$<ãT$dØ—∆⁄ã|$0+¯âT$$â|$pãT$4ã|$,+–+¯˜ÿD$â\$\âD$`â|$lât$<ã\$$ãD$Pãt$dç|¯Ú'(,»f$7ã|$pÛ¸Y˝ÛÙç|;¯∆Ì±YıÚÚ–˛f7Xﬂ(d»Û»YÃÛË∆‰±YÏã|$lÚ–Õ(d» ç|;¯(t»0É¡XÀÚf7Û√YƒÛÎ∆‰±YÏã|$`Ú–≈ç|;¯\$xX¡Úf7ÛŸYﬁÛ…∆ˆ±YŒÚ–ŸXÿ;L$\Ç4ˇˇˇ(√ã\$\çC√ãt$<Xÿ;ÇÂ˝ˇˇ3¿ã÷+”âT$LÉ¯u3¿È•   É|$L|ÚãT$D3…˜⁄É¬¯Ø÷∆⁄ã|$@ãD$LÉ‡˛ât$<ç<ﬂ◊ã˛˜ﬂ|$H˚Ø|$dâT$ ãT$8ãÒâ\$\âD$hçT:¯ã|$ ã\$dç2Ú (œÉ¡fÛËYÈÛ‡∆…±Y·t$tÚ–ÏX›;L$hr∆(√√ã\$\XÿãD$hãt$<ãå$‰   Ø»;D$LÉ˝ˇˇãT$D˜⁄É¬¯Ø÷ã|$@ât$<ç<ﬂ◊âT$(ã÷˜⁄T$H⁄Ø\$d\$8ãT$(ãt$Lãº$‰   ÚDÀ¯œÚ¬@ÛËYÈÛ‡∆…±Y·Ú–ÏX›;∆r’ãt$<È£¸ˇˇ¡·+÷ãã},+˘ØÒ¡„ç<◊˜çPˇâ4$ãu$âú$(  +ÛØ⁄Ø—ﬁ◊âT$ãî$(  Úl√¯çX˛Ø”ØŸÛ≈Ûı)D$0÷ﬂâ\$çX˝ØÀÚ\¬ÚT¬¯ÛÎãî$(  ˘Ø”Û„Û⁄Û“ÚãL$ãT$ã$Ú|∆ËÛœ)L$ Ûœ)L$PÚL∆Û˘)|$@Û˘)|$pÚ|∆¯3¿Ûœ)L$`Ûœã¥$   )L$Ú|√¯(∆Y«(Ã∆ˇ±FY|$0Ú–«Ú|¡¯\¯Ú|¡¯Yœ∆ˇ±Y˝ÚD√¯Ú–œ(˙Y¯∆¿±Y√Ú–¯(D$PXœÚ|¬¯\˘Ú|¬¯Y«∆ˇ±Y|$ ÚL¡¯Ú–«(|$pY˘∆…±YL$@Ú–˘ÚL√¯X«(|$Y˘∆…±YL$`Ú–˘ÚL«¯X«\»ÚL«¯H;¥$  Ç/ˇˇˇÈ`‹ˇˇ¡·+÷ãã},+˘ØÒ¡„ç<◊˜çPˇâ4$ãu$âú$(  +ÛØ⁄Ø—ﬁ◊âT$ãî$(  Úd√¯çX˛Ø”ØÀÛÙÛÏ)t$Ú˘ãT$ã$ãú$   ÚT∆ÚD∆¯3¿Û‚Û⁄Û–Û»ã¥$   Út¡¯(√(|$CY˛∆ˆ±YıÚ–˛Út¬¯\˜Út¬¯Y∆∆ˆ±YÙÚ|¡¯Ú–∆(ÒY˜∆ˇ±Y˙Ú–˜Ú|«¯X∆\¯Ú|«¯H;ﬁròÈ_€ˇˇ¡·+÷ãã},+˘ØÒ¡„ç◊Úâ4$çpˇã}$âú$(  +˚ØﬁØÒﬂÚât$ã¥$(  Út√¯çX˛ØÛØŸÛÊÛﬁ)d$`)\$P˜⁄â\$çX˝ÚD∆Ú|∆¯ã¥$(  ØÛØŸÛÔ)l$ Û–Û»˜⁄â\$çX¸ØÀ)L$0Út∆ËÚD∆Úl∆¯ã¥$(  —ØÛ3…ÛÁÛÕÛ˝)L$p˛)º$Ä   )T$@Û–Úl«Û˝ÚL«Ë)º$∞   Ú|«¯)d$ÛÊÛﬁ)î$¿   ÛÛ¡ÚT«‡)Ñ$ê   Û≈ÛÔÛˇâî$  )ú$†   Û⁄Û“Û…ãt$ã\$ã$ãî$   )º$–   )¨$‡   )¥$   Úl»¯B(t$PYı∆Ì±Yl$`(|$0Ú–ıÚlŒ¯ã|$\ÓÚlŒ¯Y˝∆Ì±Yl$@Út»¯Ú–˝(l$YÓ∆ˆ±Yt$ Ú–Ó(¥$†   X˝Úlœ¯\ÔÚlœ¯Yı∆Ì±YÏÚ|Œ¯Ú–ı(¨$   YÔ∆ˇ±Yº$¿   Ú–ÔÚ|»¯Xı(¨$Ä   YÔ∆ˇ±Y|$pÚ–ÔÚ|À¯Xı(Í\˛Ú|À¯YÔ∆ˇ±Y˚Útœ¯Ú–Ô(˘Y˛∆ˆ±Y¥$ê   ãº$  Ú–˛ÚtŒ¯XÔ(º$∞   Y˛∆ˆ±YÚ–˛Út»¯XÔ(º$–   Y˛∆ˆ±Y¥$‡   Ú–˛Útœ¯XÔ\ıÚtœ¯I;î$  Çé˛ˇˇÈcÿˇˇÉ˛ÇŸˆˇˇ∏   3€ÈÍ¯ˇˇÉ˛Çƒˆˇˇ∏   3€È’¯ˇˇÉ˛ÇØˆˇˇ∏   3€È¿¯ˇˇã¥$   F;¥$  Ç|ıˇˇÈ
+ÿˇˇÄ    Ä    ÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃUãÏÉ‰VWSÅÏ‘  ãMãE(ãU0ä	ã ã:ÿ7€t:‹7€u	ª   ãÛÎ3€æ   ãMÖ€Eﬁä	:‡7€t:‰7€uã˛Î3ˇãMÖˇE˛ä	:Ë7€t
+:Ï7€t3ˆÖˆÑ⁄)  ÖˇÑÆ  Ö€Ñ  ãMã	ãÒÉÊ¸é1  ç^—˚¡Îç|3¡ˇâº$‡   ÉˇåÓb  ãÿã¯¡„ât$fÔÌã¥$‡   ÉÊ˛ât$ãÛ¡Á˜ﬁÛâî$Ã  âÑ$»  fn˜ø@   fp˛ fnˆÛf|$0fnÁã¯¡Áfnﬁ˜ﬂkË˚fbÛflıfp‰ fd$ Ûft$`ãT$fnﬁÛfn÷ç4≈    ˜ﬁfb⁄fn◊˚Ûﬁfl›fú$Ä   fnœfb—fnŒfn√3€fb»fl’flÕfo-p7€f¨$∞   fo-ê7€foÄ7€f¨$ê   fÑ$†   fnm$(†7€fpÌ f¨$–   ZË)¨$¿   ¿fo-`7€ãt$)D$fl$@fL$PfT$pfol$`foî$–   f˛Íf˛l$@f~ÔÚpÕÓ(¨$¿   f~»Û~?(∞7€f8çù    W˘É√ZÁ(ÙÚƒfYÙf‰(ﬁfYÂf∆ÌfY≈f–ƒf∆ﬁfXÛˇZÁf∆¿(¸f^∆Zt$fY¸fZ¿Ú‹f‰fYÊf∆ˆfYﬁf–‹(Áf∆ÁfX¸f∆€f^ﬂfZ˚«ÚÑƒ¿  fÑƒ‡  foÑ$Ä   f˛¬f˛Ñ$∞   f~«Úp¯ÓÛ~'f~ˇêf'W·ZÃ(˘Ú¡fY˘fY≈f…(ﬂfYå$¿   ‰f–¡ZÃZd$f∆ﬂfX˚f∆¿(Ÿf^«Ú˘fYŸfY˛fZ¿f…fYÃf–˘(Àf∆ÀfXŸf∆ˇf^˚fZˇ«ÚÑƒ»  fÑƒË  foD$pf˛¬f˛Ñ$†   f~«ÚpÿÓÛ~f~ﬂ(ú$¿   fW∞7€Z (˘Ú¡fY˘fY≈f…fYÀf–¡(œf∆œfX˘f∆¿f^«“fZ»Z¬(¯Ú–fY¯fY÷f¿fYƒf––(«f∆«fX¯f∆“f^◊fZ“fo|$Pf˛º$–   f˛º$ê   f~ˇ Úåƒ–  fåƒ  ÚpœÓÛ~f~œfW∞7€Z¯(◊ÚœfY◊fYÕfˇ(Í¿fY˚Z¿f–œ(ÿÚ¯fYÿfY˛f¿(ÛfYƒf∆Íf–¯fX’f∆ÛfXﬁf∆…f∆ˇf^ f^˚fZÈfZ◊fo|$ foD$@f˛«ÍfD$@fot$0fod$`foå$Ä   f˛Êfo\$pf˛ŒfoD$Pf˛ﬁÚ¨ƒÿ  f˛∆f¨ƒ¯  foî$∞   fo¨$†   f˛◊fo¥$ê   f˛Ôf˛˜fd$`få$Ä   fî$∞   f\$pf¨$†   fD$Pf¥$ê   ;⁄Ç?¸ˇˇâT$ãî$Ã  ãÑ$»  ã|$ãﬂ¡„â\$;º$‡   É⁄  ât$ç≈    ˜€ç4@]$âå$†   âî$Ã  âÑ$»  ç<Ûã¡ÊÛâ4$ã¡Êâ|$ﬁã|$Ø˛Z–7€ât$ãœã4$ãD$ãT$â\$ã}$ç(¡Bf∆¡ÚW¿7€Z⁄(ÎÚÛfYÎfYf€(ÂfYŸf–Ûf∆ÂfXÏf∆ˆf^ıÚTW¿7€Z⁄fZ˛(ÎÚÛfYÎfYf€(ÂfYŸã|$f–ÛÚTW¿7€f∆ÂZ⁄fXÏf∆ˆf^ı(ÎÚ”fYÎfY–f€(ÂfYŸf–”f∆ÂfXÏf∆“f^’ã|$Úº¿  fZ˛fZÚÚ\W¿7€Z„Úº»  (¸Ú‘fY¸fY–f‰(«fY·f–‘f∆«fX¯f∆“f^◊fZ¬Ú¥–  ÚÑÿ  É¿ L$;î$‡   Ç¢˛ˇˇãt$ãå$†   ãî$Ã  ãÑ$»  ;Œé¢  ãŸ+ﬁÉ˚å∫[  âú$Ä   É„¯â\$ç≈    ã¯ØﬁfÔ…(%†7€fn]$¡Áâî$Ã  âÑ$»  âå$†   fnÔç<√fp˝ fnÎf|$@çı    ãD$fn◊ø   fbÍfn”çúÙ¿  flÈfn˜ç<ı   fpˆ â$ãú$Ä   fn«3ˇfb–fl—fpÀ Z‹‰ã$)d$)\$PfL$ ft$0foL$ fo≈f˛¡f˛¬f~¡Úp‡Ó(D$Pf˛l$@Û~9f˛Õf~·f˛T$0f˛ fber}} The boundaries of
+     *     the word, or null if there are no more words.
+     */
+    function findWord(cm, cur, forward, bigWord, emptyLineIsWord) {
+      var lineNum = cur.line;
+      var pos = cur.ch;
+      var line = cm.getLine(lineNum);
+      var dir = forward ? 1 : -1;
+      var charTests = bigWord ? bigWordCharTest: wordCharTest;
+
+      if (emptyLineIsWord && line == '') {
+        lineNum += dir;
+        line = cm.getLine(lineNum);
+        if (!isLine(cm, lineNum)) {
+          return null;
+        }
+        pos = (forward) ? 0 : line.length;
+      }
+
+      while (true) {
+        if (emptyLineIsWord && line == '') {
+          return { from: 0, to: 0, line: lineNum };
+        }
+        var stop = (dir > 0) ? line.length : -1;
+        var wordStart = stop, wordEnd = stop;
+        // Find bounds of next word.
+        while (pos != stop) {
+          var foundWord = false;
+          for (var i = 0; i < charTests.length && !foundWord; ++i) {
+            if (charTests[i](line.charAt(pos))) {
+              wordStart = pos;
+              // Advance to end of word.
+              while (pos != stop && charTests[i](line.charAt(pos))) {
+                pos += dir;
+              }
+              wordEnd = pos;
+              foundWord = wordStart != wordEnd;
+              if (wordStart == cur.ch && lineNum == cur.line &&
+                  wordEnd == wordStart + dir) {
+                // We started at the end of a word. Find the next one.
+                continue;
+              } else {
+                return {
+                  from: Math.min(wordStart, wordEnd + 1),
+                  to: Math.max(wordStart, wordEnd),
+                  line: lineNum };
+              }
+            }
+          }
+          if (!foundWord) {
+            pos += dir;
+          }
+        }
+        // Advance to next/prev line.
+        lineNum += dir;
+        if (!isLine(cm, lineNum)) {
+          return null;
+        }
+        line = cm.getLine(lineNum);
+        pos = (dir > 0) ? 0 : line.length;
+      }
+    }
+
+    /**
+     * @param {CodeMirror} cm CodeMirror object.
+     * @param {Pos} cur The position to start from.
+     * @param {int} repeat Number of words to move past.
+     * @param {boolean} forward True to search forward. False to search
+     *     backward.
+     * @param {boolean} wordEnd True to move to end of word. False to move to
+     *     beginning of word.
+     * @param {boolean} bigWord True if punctuation count as part of the word.
+     *     False if only alphabet characters count as part of the word.
+     * @return {Cursor} The position the cursor should move to.
+     */
+    function moveToWord(cm, cur, repeat, forward, wordEnd, bigWord) {
+      var curStart = copyCursor(cur);
+      var words = [];
+      if (forward && !wordEnd || !forward && wordEnd) {
+        repeat++;
+      }
+      // For 'e', empty lines are not considered words, go figure.
+      var emptyLineIsWord = !(forward && wordEnd);
+      for (var i = 0; i < repeat; i++) {
+        var word = findWord(cm, cur, forward, bigWord, emptyLineIsWord);
+        if (!word) {
+          var eodCh = lineLength(cm, cm.lastLine());
+          words.push(forward
+              ? {line: cm.lastLine(), from: eodCh, to: eodCh}
+              : {line: 0, from: 0, to: 0});
+          break;
+        }
+        words.push(word);
+        cur = new Pos(word.line, forward ? (word.to - 1) : word.from);
+      }
+      var shortCircuit = words.length != repeat;
+      var firstWord = words[0];
+      var lastWord = words.pop();
+      if (forward && !wordEnd) {
+        // w
+        if (!shortCircuit && (firstWord.from != curStart.ch || firstWord.line != curStart.line)) {
+          // We did not start in the middle of a word. Discard the extra word at the end.
+          lastWord = words.pop();
+        }
+        return new Pos(lastWord.line, lastWord.from);
+      } else if (forward && wordEnd) {
+        return new Pos(lastWord.line, lastWord.to - 1);
+      } else if (!forward && wordEnd) {
+        // ge
+        if (!shortCircuit && (firstWord.to != curStart.ch || firstWord.line != curStart.line)) {
+          // We did not start in the middle of a word. Discard the extra word at the end.
+          lastWord = words.pop();
+        }
+        return new Pos(lastWord.line, lastWord.to);
+      } else {
+        // b
+        return new Pos(lastWord.line, lastWord.from);
+      }
+    }
+
+    function moveToEol(cm, head, motionArgs, vim, keepHPos) {
+      var cur = head;
+      var retval= new Pos(cur.line + motionArgs.repeat - 1, Infinity);
+      var end=cm.clipPos(retval);
+      end.ch--;
+      if (!keepHPos) {
+        vim.lastHPos = Infinity;
+        vim.lastHSPos = cm.charCoords(end,'div').left;
+      }
+      return retval;
+    }
+
+    function moveToCharacter(cm, repeat, forward, character) {
+      var cur = cm.getCursor();
+      var start = cur.ch;
+      var idx;
+      for (var i = 0; i < repeat; i ++) {
+        var line = cm.getLine(cur.line);
+        idx = charIdxInLine(start, line, character, forward, true);
+        if (idx == -1) {
+          return null;
+        }
+        start = idx;
+      }
+      return new Pos(cm.getCursor().line, idx);
+    }
+
+    function moveToColumn(cm, repeat) {
+      // repeat is always >= 1, so repeat - 1 always corresponds
+      // to the column we want to go to.
+      var line = cm.getCursor().line;
+      return clipCursorToContent(cm, new Pos(line, repeat - 1));
+    }
+
+    function updateMark(cm, vim, markName, pos) {
+      if (!inArray(markName, validMarks)) {
+        return;
+      }
+      if (vim.marks[markName]) {
+        vim.marks[markName].clear();
+      }
+      vim.marks[markName] = cm.setBookmark(pos);
+    }
+
+    function charIdxInLine(start, line, character, forward, includeChar) {
+      // Search for char in line.
+      // motion_options: {forward, includeChar}
+      // If includeChar = true, include it too.
+      // If forward = true, search forward, else search backwards.
+      // If char is not found on this line, do nothing
+      var idx;
+      if (forward) {
+        idx = line.indexOf(character, start + 1);
+        if (idx != -1 && !includeChar) {
+          idx -= 1;
+        }
+      } else {
+        idx = line.lastIndexOf(character, start - 1);
+        if (idx != -1 && !includeChar) {
+          idx += 1;
+        }
+      }
+      return idx;
+    }
+
+    function findParagraph(cm, head, repeat, dir, inclusive) {
+      var line = head.line;
+      var min = cm.firstLine();
+      var max = cm.lastLine();
+      var start, end, i = line;
+      function isEmpty(i) { return !cm.getLine(i); }
+      function isBoundary(i, dir, any) {
+        if (any) { return isEmpty(i) != isEmpty(i + dir); }
+        return !isEmpty(i) && isEmpty(i + dir);
+      }
+      if (dir) {
+        while (min <= i && i <= max && repeat > 0) {
+          if (isBoundary(i, dir)) { repeat--; }
+          i += dir;
+        }
+        return new Pos(i, 0);
+      }
+
+      var vim = cm.state.vim;
+      if (vim.visualLine && isBoundary(line, 1, true)) {
+        var anchor = vim.sel.anchor;
+        if (isBoundary(anchor.line, -1, true)) {
+          if (!inclusive || anchor.line != line) {
+            line += 1;
+          }
+        }
+      }
+      var startState = isEmpty(line);
+      for (i = line; i <= max && repeat; i++) {
+        if (isBoundary(i, 1, true)) {
+          if (!inclusive || isEmpty(i) != startState) {
+            repeat--;
+          }
+        }
+      }
+      end = new Pos(i, 0);
+      // select boundary before paragraph for the last one
+      if (i > max && !startState) { startState = true; }
+      else { inclusive = false; }
+      for (i = line; i > min; i--) {
+        if (!inclusive || isEmpty(i) == startState || i == line) {
+          if (isBoundary(i, -1, true)) { break; }
+        }
+      }
+      start = new Pos(i, 0);
+      return { start: start, end: end };
+    }
+
+    function findSentence(cm, cur, repeat, dir) {
+
+      /*
+        Takes an index object
+        {
+          line: the line string,
+          ln: line number,
+          pos: index in line,
+          dir: direction of traversal (-1 or 1)
+        }
+        and modifies the line, ln, and pos members to represent the
+        next valid position or sets them to null if there are
+        no more valid positions.
+       */
+      function nextChar(cm, idx) {
+        if (idx.pos + idx.dir < 0 || idx.pos + idx.dir >= idx.line.length) {
+          idx.ln += idx.dir;
+          if (!isLine(cm, idx.ln)) {
+            idx.line = null;
+            idx.ln = null;
+            idx.pos = null;
+            return;
+          }
+          idx.line = cm.getLine(idx.ln);
+          idx.pos = (idx.dir > 0) ? 0 : idx.line.length - 1;
+        }
+        else {
+          idx.pos += idx.dir;
+        }
+      }
+
+      /*
+        Performs one iteration of traversal in forward direction
+        Returns an index object of the new location
+       */
+      function forward(cm, ln, pos, dir) {
+        var line = cm.getLine(ln);
+        var stop = (line === "");
+
+        var curr = {
+          line: line,
+          ln: ln,
+          pos: pos,
+          dir: dir,
+        }
+
+        var last_valid = {
+          ln: curr.ln,
+          pos: curr.pos,
+        }
+
+        var skip_empty_lines = (curr.line === "");
+
+        // Move one step to skip character we start on
+        nextChar(cm, curr);
+
+        while (curr.line !== null) {
+          last_valid.ln = curr.ln;
+          last_valid.pos = curr.pos;
+
+          if (curr.line === "" && !skip_empty_lines) {
+            return { ln: curr.ln, pos: curr.pos, };
+          }
+          else if (stop && curr.line !== "" && !isWhiteSpaceString(curr.line[curr.pos])) {
+            return { ln: curr.ln, pos: curr.pos, };
+          }
+          else if (isEndOfSentenceSymbol(curr.line[curr.pos])
+            && !stop
+            && (curr.pos === curr.line.length - 1
+              || isWhiteSpaceString(curr.line[curr.pos + 1]))) {
+            stop = true;
+          }
+
+          nextChar(cm, curr);
+        }
+
+        /*
+          Set the position to the last non whitespace character on the last
+          valid line in the case that we reach the end of the document.
+        */
+        var line = cm.getLine(last_valid.ln);
+        last_valid.pos = 0;
+        for(var i = line.length - 1; i >= 0; --i) {
+          if (!isWhiteSpaceString(line[i])) {
+            last_valid.pos = i;
+            break;
+          }
+        }
+
+        return last_valid;
+
+      }
+
+      /*
+        Performs one iteration of traversal in reverse direction
+        Returns an index object of the new location
+       */
+      function reverse(cm, ln, pos, dir) {
+        var line = cm.getLine(ln);
+
+        var curr = {
+          line: line,
+          ln: ln,
+          pos: pos,
+          dir: dir,
+        }
+
+        var last_valid = {
+          ln: curr.ln,
+          pos: null,
+        };
+
+        var skip_empty_lines = (curr.line === "");
+
+        // Move one step to skip character we start on
+        nextChar(cm, curr);
+
+        while (curr.line !== null) {
+
+          if (curr.line === "" && !skip_empty_lines) {
+            if (last_valid.pos !== null) {
+              return last_valid;
+            }
+            else {
+              return { ln: curr.ln, pos: curr.pos };
+            }
+          }
+          else if (isEndOfSentenceSymbol(curr.line[curr.pos])
+              && last_valid.pos !== null
+              && !(curr.ln === last_valid.ln && curr.pos + 1 === last_valid.pos)) {
+            return last_valid;
+          }
+          else if (curr.line !== "" && !isWhiteSpaceString(curr.line[curr.pos])) {
+            skip_empty_lines = false;
+            last_valid = { ln: curr.ln, pos: curr.pos }
+          }
+
+          nextChar(cm, curr);
+        }
+
+        /*
+          Set the position to the first non whitespace character on the last
+          valid line in the case that we reach the beginning of the document.
+        */
+        var line = cm.getLine(last_valid.ln);
+        last_valid.pos = 0;
+        for(var i = 0; i < line.length; ++i) {
+          if (!isWhiteSpaceString(line[i])) {
+            last_valid.pos = i;
+            break;
+          }
+        }
+        return last_valid;
+      }
+
+      var curr_index = {
+        ln: cur.line,
+        pos: cur.ch,
+      };
+
+      while (repeat > 0) {
+        if (dir < 0) {
+          curr_index = reverse(cm, curr_index.ln, curr_index.pos, dir);
+        }
+        else {
+          curr_index = forward(cm, curr_index.ln, curr_index.pos, dir);
+        }
+        repeat--;
+      }
+
+      return new Pos(curr_index.ln, curr_index.pos);
+    }
+
+    // TODO: perhaps this finagling of start and end positions belongs
+    // in codemirror/replaceRange?
+    function selectCompanionObject(cm, head, symb, inclusive) {
+      var cur = head, start, end;
+
+      var bracketRegexp = ({
+        '(': /[()]/, ')': /[()]/,
+        '[': /[[\]]/, ']': /[[\]]/,
+        '{': /[{}]/, '}': /[{}]/,
+        '<': /[<>]/, '>': /[<>]/})[symb];
+      var openSym = ({
+        '(': '(', ')': '(',
+        '[': '[', ']': '[',
+        '{': '{', '}': '{',
+        '<': '<', '>': '<'})[symb];
+      var curChar = cm.getLine(cur.line).charAt(cur.ch);
+      // Due to the behavior of scanForBracket, we need to add an offset if the
+      // cursor is on a matching open bracket.
+      var offset = curChar === openSym ? 1 : 0;
+
+      start = cm.scanForBracket(new Pos(cur.line, cur.ch + offset), -1, undefined, {'bracketRegex': bracketRegexp});
+      end = cm.scanForBracket(new Pos(cur.line, cur.ch + offset), 1, undefined, {'bracketRegex': bracketRegexp});
+
+      if (!start || !end) {
+        return { start: cur, end: cur };
+      }
+
+      start = start.pos;
+      end = end.pos;
+
+      if ((start.line == end.line && start.ch > end.ch)
+          || (start.line > end.line)) {
+        var tmp = start;
+        start = end;
+        end = tmp;
+      }
+
+      if (inclusive) {
+        end.ch += 1;
+      } else {
+        start.ch += 1;
+      }
+
+      return { start: start, end: end };
+    }
+
+    // Takes in a symbol and a cursor and tries to simulate text objects that
+    // have identical opening and closing symbols
+    // TODO support across multiple lines
+    function findBeginningAndEnd(cm, head, symb, inclusive) {
+      var cur = copyCursor(head);
+      var line = cm.getLine(cur.line);
+      var chars = line.split('');
+      var start, end, i, len;
+      var firstIndex = chars.indexOf(symb);
+
+      // the decision tree is to always look backwards for the beginning first,
+      // but if the cursor is in front of the first instance of the symb,
+      // then move the cursor forward
+      if (cur.ch < firstIndex) {
+        cur.ch = firstIndex;
+        // Why is this line even here???
+        // cm.setCursor(cur.line, firstIndex+1);
+      }
+      // otherwise if the cursor is currently on the closing symbol
+      else if (firstIndex < cur.ch && chars[cur.ch] == symb) {
+        end = cur.ch; // assign end to the current cursor
+        --cur.ch; // make sure to look backwards
+      }
+
+      // if we're currently on the symbol, we've got a start
+      if (chars[cur.ch] == symb && !end) {
+        start = cur.ch + 1; // assign start to ahead of the cursor
+      } else {
+        // go backwards to find the start
+        for (i = cur.ch; i > -1 && !start; i--) {
+          if (chars[i] == symb) {
+            start = i + 1;
+          }
+        }
+      }
+
+      // look forwards for the end symbol
+      if (start && !end) {
+        for (i = start, len = chars.length; i < len && !end; i++) {
+          if (chars[i] == symb) {
+            end = i;
+          }
+        }
+      }
+
+      // nothing found
+      if (!start || !end) {
+        return { start: cur, end: cur };
+      }
+
+      // include the symbols
+      if (inclusive) {
+        --start; ++end;
+      }
+
+      return {
+        start: new Pos(cur.line, start),
+        end: new Pos(cur.line, end)
+      };
+    }
+
+    // Search functions
+    defineOption('pcre', true, 'boolean');
+    function SearchState() {}
+    SearchState.prototype = {
+      getQuery: function() {
+        return vimGlobalState.query;
+      },
+      setQuery: function(query) {
+        vimGlobalState.query = query;
+      },
+      getOverlay: function() {
+        return this.searchOverlay;
+      },
+      setOverlay: function(overlay) {
+        this.searchOverlay = overlay;
+      },
+      isReversed: function() {
+        return vimGlobalState.

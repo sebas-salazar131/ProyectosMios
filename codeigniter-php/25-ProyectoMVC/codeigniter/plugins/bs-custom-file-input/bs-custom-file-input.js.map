@@ -1,0 +1,419 @@
+{"version":3,"file":"bs-custom-file-input.js","sources":["../src/selector.js","../src/util.js","../src/eventHandlers.js","../src/index.js"],"sourcesContent":["const Selector = {\n  CUSTOMFILE: '.custom-file input[type=\"file\"]',\n  CUSTOMFILELABEL: '.custom-file-label',\n  FORM: 'form',\n  INPUT: 'input',\n}\n\nexport default Selector\n","import Selector from './selector'\n\nconst textNodeType = 3\nconst getDefaultText = (input) => {\n  let defaultText = ''\n\n  const label = input.parentNode.querySelector(Selector.CUSTOMFILELABEL)\n\n  if (label) {\n    defaultText = label.textContent\n  }\n\n  return defaultText\n}\n\nconst findFirstChildNode = (element) => {\n  if (element.childNodes.length > 0) {\n    const childNodes = [].slice.call(element.childNodes)\n\n    for (let i = 0; i < childNodes.length; i++) {\n      const node = childNodes[i]\n      if (node.nodeType !== textNodeType) {\n        return node\n      }\n    }\n  }\n\n  return element\n}\n\nconst restoreDefaultText = (input) => {\n  const defaultText = input.bsCustomFileInput.defaultText\n  const label = input.parentNode.querySelector(Selector.CUSTOMFILELABEL)\n\n  if (label) {\n    const element = findFirstChildNode(label)\n\n    element.textContent = defaultText\n  }\n}\n\nexport {\n  getDefaultText,\n  findFirstChildNode,\n  restoreDefaultText,\n}\n","import { findFirstChildNode, restoreDefaultText } from './util'\nimport Selector from './selector'\n\nconst fileApi = !!window.File\nconst FAKE_PATH = 'fakepath'\nconst FAKE_PATH_SEPARATOR = '\\\\'\n\nconst getSelectedFiles = (input) => {\n  if (input.hasAttribute('multiple') && fileApi) {\n    return [].slice.call(input.files)\n      .map((file) => file.name)\n      .join(', ')\n  }\n\n  if (input.value.indexOf(FAKE_PATH) !== -1) {\n    const splittedValue = input.value.split(FAKE_PATH_SEPARATOR)\n\n    return splittedValue[splittedValue.length - 1]\n  }\n\n  return input.value\n}\n\nfunction handleInputChange() {\n  const label = this.parentNode.querySelector(Selector.CUSTOMFILELABEL)\n\n  if (label) {\n    const element = findFirstChildNode(label)\n    const inputValue = getSelectedFiles(this)\n\n    if (inputValue.length) {\n      element.textContent = inputValue\n    } else {\n      restoreDefaultText(this)\n    }\n  }\n}\n\nfunction handleFormReset() {\n  const customFileList = [].slice.call(this.querySelectorAll(Selector.INPUT))\n    .filter((input) => !!input.bsCustomFileInput)\n\n  for (let i = 0, len = customFileList.length; i < len; i++) {\n    restoreDefaultText(customFileList[i])\n  }\n}\n\nexport {\n  handleInputChange,\n  handleFormReset,\n}\n","import { getDefaultText, restoreDefaultText } from './util'\nimport { handleFormReset, handleInputChange } from './eventHandlers'\nimport Selector from './selector'\n\nconst customProperty = 'bsCustomFileInput'\nconst Event = {\n  FORMRESET   : 'reset',\n  INPUTCHANGE : 'change',\n}\n\nconst bsCustomFileInput = {\n  init(inputSelector = Selector.CUSTOMFILE, formSelector = Selector.FORM) {\n    const customFileInputList = [].slice.call(document.querySelectorAll(inputSelector))\n    const formList = [].slice.call(document.querySelectorAll(formSelector))\n\n    for (let i = 0, len = customFileInputList.length; i < len; i++) {\n      const input = customFileInputList[i]\n\n      Object.defineProperty(input, customProperty, {\n        value: {\n          defaultText: getDefaultText(input),\n        },\n        writable: true,\n      })\n\n      handleInputChange.call(input)\n      input.addEventListener(Event.INPUTCHANGE, handleInputChange)\n    }\n\n    for (let i = 0, len = formList.length; i < len; i++) {\n      formList[i].addEventListener(Event.FORMRESET, handleFormReset)\n      Object.defineProperty(formList[i], customProperty, {\n        value: true,\n        writable: true,\n      })\n    }\n  },\n\n  destroy() {\n    const formList = [].slice.call(document.querySelectorAll(Selector.FORM))\n      .filter((form) => !!form.bsCustomFileInput)\n    const customFileInputList = [].slice.call(document.querySelectorAll(Selector.INPUT))\n      .filter((input) => !!input.bsCustomFileInput)\n\n    for (let i = 0, len = customFileInputList.length; i < len; i++) {\n      const input = customFileInputList[i]\n\n      restoreDefaultText(input)\n      input[customProperty] = undefined\n\n      input.removeEventListener(Event.INPUTCHANGE, handleInputChange)\n    }\n\n    for (let i = 0, len = formList.length; i < len; i++) {\n      formList[i].removeEventListener(Event.FORMRESET, handleFormReset)\n      formList[i][customProperty] = undefined\n    }\n  },\n}\n\nexport default bsCustomFileInput\n"],"names":["Selector","CUSTOMFILE","CUSTOMFILELABEL","FORM","INPUT","textNodeType","getDefaultText","input","defaultText","label","parentNode","querySelector","textContent","findFirstChildNode","element","childNodes","length","slice","call","i","node","nodeType","restoreDefaultText","bsCustomFileInput","fileApi","window","File","FAKE_PATH","FAKE_PATH_SEPARATOR","getSelectedFiles","hasAttribute","files","map","file","name","join","value","indexOf","splittedValue","split","handleInputChange","inputValue","handleFormReset","customFileList","querySelectorAll","filter","len","customProperty","Event","FORMRESET","INPUTCHANGE","init","inputSelector","formSelector","customFileInputList","document","formList","Object","defineProperty","writable","addEventListener","destroy","form","undefined","removeEventListener"],"mappings":"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"}                                                                                                                                                                                                                                                                                                                                                                                        ‰L$H‰L$3Û‰T$$‹G8ƒø…\  ƒ¿ˆ   6‹D$ DD$‹—@  ‰D$‰T$ƒ¿   …š   ƒ¿Œ   uÿt$PWUVÿT$ ƒÄéE  è¦R=þ‹Èº   ƒù¹   ‹D$DÊº   ÓâRÁàPè¯=þ‰D$ƒÄƒ<$ „|  j ÿ·Œ   Vj ÿt$jÿt$$èT'  ÿt$lWUÿt$(ÿT$<ÿt$,‰D$4è	/=þ‹D$4ƒÄ0éÇ   è(R=þ‹Èº   ƒù¹   ‹D$DÊº   ÓâRÁàPè1=þ‰D$ƒÄƒ|$ „ý   j ÿ·Œ   Vj ÿt$jÿt$$èÕ&  ÿt$lW‹D$,PPÿT$<j ÿ·   Uj ÿt$Djÿt$d‰D$Lè((  ÿt$Pèo.=þ‹D$PƒÄLë0ƒøuS‹—  ÿt$PW‚   ÂŒ   Pÿt$$Rÿt$0UVèIM±ÿƒÄ …Àuh‹D$(C‹T$$4ÆlÕ ;\$LŒJþÿÿ3ÀƒÄ,][_^Ã¸   ƒÄ,][_^Ãƒú…úýÿÿƒ8…ðýÿÿƒø„çýÿÿÿt$Pÿt$Pjÿ·@  UVWè¨  ƒÄƒÄ,][_^Ã¸   ƒÄ,][_^ÃD  U‹ìƒäðVWSì$  ‹E‹U‹]‰D$l‰T$X‹ vø3Ì‰Œ$  ‹ƒü   ÇD$D   ‰D$`‹›   ƒø„y  ƒû„p  3É‹E‹°¨   ‹  ‹ÆÁèÆÑø@‰t$@‰D$d…É…S  ‹|$l‹ó‹L$`Áæ‰t$<Ï‹|$X÷;Î‚1  ;L$`$  ‹\$l;\$X„~  ƒ} ŽW  ‹\$@‹Ë‹óƒáø‹}ƒæü÷Ù÷ÞËó‰L$,3Û‹O8‰t$(ÇD$0   ‰\$\‰\$$ƒù„¸   ƒùt;3Àƒùt‰T$H‰D$h‹û‹\$X‹t$l‹Uéj  ‰T$H‰D$h‹û‹\$X‹t$l‹Ué¥  ‹Š¨   ‰T$H‰D$ ‹û‹\$X‹t$l‹U‰L$èrO=þ‹U‹L$‰D$‹D$ º   À¯Á¹   ƒ|$DÊº   ÓâÁàRP‹Uèh=þ‹U‰D$pƒÄƒ|$h „e  éã   ‹E‹ð‰T$H‹û‹˜D  èO=þ‹È¸   ƒù¹   DÈ¸   Óà‹T$dÁâPRè=þƒÄ…À„  ‰D$h3ÀPÿ¶Œ   ÿt$tPÿt$xjÿt$Xèµ#  ÿuV‹„$Œ   PPÿÓ3ÀPÿ¶   ÿ´$Œ   Pÿ´$¤   jÿ´$¨   èðÐøÿƒÄH‹Ö‹\$X‹t$l‹D$`G\$<4Æ;}|  ‹B8ƒø„,  ƒøuS‹D$H‹ˆ¨   …ÿ„È  ‰|$$Š   ‹º  ÿuRÿt$p‡   ÇŒ   PQW‚Œ   PSV‹|$HèRS±ÿ‹UƒÄ$ë‡ƒø…«  ‹L$H‹¨   ‰D$L‹  ‹ˆ¨   ‰L$T…ÿ„)  ‰t$‹D$hƒ|$T Ž  ÇD$    ŠŒ   ‰|$$‰t$l‰L$P‰\$X‹Ø‹t$‹|$ÿu‹EPT$lR‹  L$PQÂŒ   RÿqSWè8O±ÿƒÄ ‹T$HF‹‚  ‹T$dÁâ¯T$L‹ˆŒ   Ú<Ï;t$T|­‰D$4‹|$$‹\$X‹t$l‹U‹L$4‹D$hƒ¹¨   „á  ƒº   „j  ¸   …ÿ„Ø  ‹D$4ƒ|$L ‹ˆ$  ‰L$8‹D$hŽkþÿÿ‹L$dÇD$    ‰|$$‰\$X‹Ø‰t$l‹ò‹|$‹Áÿuÿt$4ÿt$dÿ¶   jP‹L$LQÿt$Tÿ±   ‹L$l‹‰   Áá¯ÏL$|Q¯D$tPSèøñøÿ‹ÐƒÄ0‹D$d‹ÈÁáÙ…Ò…ú  G;|$L|‹|$$‹Ö‹\$X‹t$léÓýÿÿÿujSVRè™×ÿÿ‹UƒÄ…À„¸ýÿÿé  ‰t$l‹ò‰\$X‹žD  …ÿ…<ýÿÿéüüÿÿ3À|$p¹X  %ÿÿ  Šà‹ÐÁàÂ‹ñÁéó«‹Îƒáóª‹UÇ„$È     ƒz8 Ž©  ‹M‰\$ ‹¹¬   ‹±Œ   ‰´$   D?ÿ‰„$ä  3À3ÿG3É‹œ„ä  ¾à  C¯û\pò‚à  òƒà  D2ðD3ðL2àL3àT2ÐT3Ð\2À\3Àd2°d3°ƒîPuÉ‹œ„È  ‰œü   …ÀuÇ„€      ëœˆþÿÿ‰œ€  ‹]‹[8sÿ;ÆuÇ„„      ë´X  ‰´„  @Áè  ‹’  ;Ã¾  …Àu#‹š¬   tÿ‹šŒ   ‰´$ä  ‰œ„   éÿÿÿ‹²Œ   ‹š¨   K‰œ„ä  ‰´„   …ÀŽñþÿÿ‹œ„à  C¯œ„Ä  ‰œ„È  éÕþÿÿ‹D$d‰D$ éëúÿÿ‹D$h‹Ú…Àt	Pè&'=þƒÄƒ|$\ tÿt$\è'=þƒÄ‹Œ$  3Ìèw¬ö ‹ÃÄ$  [_^‹å]Ã‹Š€  É¯È‰$èJ=þ‹U‹Èƒù¹   º   DÊº   Óâ‹$ÁàRP‹Uè=þ‹U‰D$dƒÄƒ|$\ …Ôüÿÿ‹D$h…Àt	Pè‘&=þƒÄ‹Œ$  3Ìèõ«ö ¸   Ä$  [_^‹å]Ãƒ|$L Fƒ|$T 
+|$@   }ƒ|$@.ƒ|$L'|$T   ~‹L$(¸   ;L$@ÇD$0   MÁéNüÿÿ‹L$,¸   ;L$@ÇD$0   MÁé1üÿÿƒ|$L Ž¶úÿÿÇD$    ‹L$d‰|$$‰\$X‹Ø‰t$l‹Á‹|$‹ò3ÉQÿ¶   ‹T$P‹’   Áâ¯×T$`RQSjPèOËøÿ3ÉƒÄ‹D$d‹ÐÁâGÚ;|$L|Ã‹|$$‹Ö‹\$X‹t$léBúÿÿ‹D$H‹ˆ  ‰L$4éxûÿÿ‹D$L¯D$T‹L$dÉ¯È‰L$è‡H=þ‹U‹Èƒù¹   º   DÊº   Óâ‹D$ÁàRP‹UèŠ=þ‹U‰D$pƒÄƒ|$h …zúÿÿ‹Œ$  3Ìè|ªö ¸   Ä$  [_^‹å]Ã‹Ø‹D$h…Àt	Pèå$=þƒÄƒ|$\ tÿt$\èÒ$=þƒÄ‹Œ$  3Ìè6ªö ‹ÃÄ$  [_^‹å]Ã‹D$h…Àt	Pè¤$=þƒÄƒ|$\ tÿt$\è‘$=þƒÄ‹Œ$  3Ìèõ©ö 3ÀÄ$  [_^‹å]Ã‹]ƒ»   …r÷ÿÿ‹]ƒ»Œ   …b÷ÿÿ‹Ú…Òt‹³   ö;³Œ   …H÷ÿÿ‹›  …Ûuâ;L$`…4÷ÿÿÿuÿuÿt$`ÿt$xÿuèÒÿÿ‹ØƒÄ‹Œ$  3Ìèo©ö ‹ÃÄ$  [_^‹å]Ã‹\$ èG=þ‹È‹U¾   ƒù¹   DÎÕ    º   ¯ÇÓâRPè=þƒÄ…À„ýÿÿ‰D$ƒ} ŽG  ‹L$`ý    ‰\$ 3ö‰$‰|$LÁá‰L$‰D$h‹E‹x8ƒÿ„A  ‹E‹€  À…ÀŽè   ‹L$`Wÿ‰T$,3Û‹T$L¯Î¯Ö‰T$$‰L$‰D$‰t$‹T$‹t$$…ÿŽŠ   ‹t$d‹Ã™6÷ù‹È‹”$   	¯Æ÷ØÃ‹´$È  ¯Ð¯ðT$t$$ƒÿ|Q3À‰T$(‰\$‹Ø‰|$‹Á™‹¼œè  G÷ÿ¯ø÷ßù‹È‹”œ  ¯×¯¼œÌ  C÷T$(;\$,rË‹T$(‹\$‹|$‹D$lCòÐ‹T$hòò;\$‚IÿÿÿfD  ‹t$F;u‚ìþÿÿ‹\$ ‹|$L‹D$hƒ} ÇD$\    Ž™ýÿÿ‹T$@‹Ê‰|$L‹úƒçøƒáü÷ß÷ÙúÊ¾   ;×ÇD$    Oþ¾   ;Ñ‹UOÎÁã‰|$’   ‰\$ ‰T$8ÇD$(   ‰L$‰D$h‹t$‹|$‹\$X‹U‹B8ƒø„Ë  ƒøu7‹Š  „$È  ÿuRÁ   Qÿt$DŒ$Ü  QPSWèF±ÿ‹UƒÄ é¾  ƒø…}  ‹Š  ‰L$<‰L$‹¨   ‰D$$‹  ‹Ï‰D$,‰\$‹€¨   …ÀŽ“   ÇD$    ‰D$H‰t$‰|$‰\$X‹Ù‹D$‹|$‹t$ÿuR   Pÿt$D„$Ü  P„$Ü  PVSèF±ÿ‹UƒÄ ‹„$Ð  GÃ‹D$<‹ˆ  ‹   Áàð;|$H}‹‚  ë§‰L$,‹D$H‹t$‹|$‹\$X‹L$,ƒ¹¨   „Û  ƒº   „i  ¸   …ö„Û  ‹D$,ƒ|$$ ‹€$  Ž¬  3É‰t$‹ò‰|$‹ø‰\$X‹Ùÿuÿt$,ÿt$dÿ¶   ÿt$t‹D$@PWÿ°   ‹T$\‹Š   Áá¯ËL$xQèQãøÿƒÄ$…À…¾  C;\$$|³‹|$‹Ö‹t$‹\$Xé8  ‹Š  ‹E…Ét‹Á‹Ð‹€  …Àuô‹Â‹U‹€¨   ‰D$0ÿuD$tPÿ±$  ÿ²D  L$@QSWèâ$* ‹UƒÄ…À…   ‹‚  ‹€  ÇD$4   ‹J8Iƒù~Y‰t$‹ò‰|$‹û‹ØÿuSÿ³$  VL$DQL$DQWèþ(* ƒÄ…À…£  ‹L$4‹›  A‰L$4‹F8H;È|Ã‹Ã‹ß‹|$‹Ö‹t$‹ˆ  ‹‰¨   ‰L$0ÿuPÿ°$  RD$DPD$DPSè£(* ‹UƒÄ…À…  ë/ÿuRWWÿ’D  3À‹UPÿ²   SPWjÿ´$Œ   èzÄøÿ‹UƒÄ,‹D$LF\$ <Ç;uŒåüÿÿéúÿÿ‹Š€  É¯È‰$è×A=þ‹U‹Èƒù¹   º   DÊº   Óâ‹$ÁàRP‹UèÛ=þ‹U‰D$dƒÄƒ|$\ …Ñýÿÿ‹D$hPè\=þƒÄ‹Œ$  3ÌèÀ£ö ¸   Ä$  [_^‹å]Ãƒ|$$ 5ƒø 
+|$@   }ƒ|$@ƒ|$$=   ~‹D$ÇD$(   é`ýÿÿ‹D$ÇD$(   éOýÿÿ‹Ø‹D$hPèà=þƒÄ‹Œ$  3ÌèD£ö ‹ÃÄ$  [_^‹å]Ã‹Ø‹D$hPè´=þƒÄ‹Œ$  3Ìè£ö ‹ÃÄ$  [_^‹å]Ã‹Ø‹D$hPèˆ=þƒÄ‹Œ$  3Ìèì¢ö ‹ÃÄ$  [_^‹å]Ã‹Ø‹D$hPè\=þƒÄƒ|$\ tÿt$\èI=þƒÄ‹Œ$  3Ìè­¢ö ‹ÃÄ$  [_^‹å]Ã‹E3ÉQÿ°Œ   ‹T$¯ÖT$tRQ‹\$¯Þ\$xSjÿt$Xè)  ƒÄé‚úÿÿ¿   é ùÿÿ‹M3Àƒy8¹+  EÈé|ïÿÿVWSƒì‹t$,‹|$0‹–ü   ‹†¨   ƒú„B  ƒ|$4 Ž  ‰D$ŽŒ   ‰L$H‰L$3Û‰T$‰l$‹F8ƒø…²   ƒ¾ˆ   6‹ï‹D$DD$‰D$ƒ¾Œ   tSèƒ?=þ‹Ð¸   ¹   ƒúDÈº   ÓâRT$ÁâRèŒ=þ‹èƒÄ…í„æ   j ÿ¶Œ   Wj Ujÿt$,è8  ƒÄÿt$8VUUÿ–D  ƒÄ‹–Œ   ƒútLj RWj Ujÿt$‰D$è„  UèÎ=þ‹D$ ƒÄ ë'ƒøuEÿt$8V‹†  Œ   P‹T$RPRWWèA6±ÿƒÄ …Àuq‹D$C<Ç;\$4Œÿÿÿ‹l$3ÀƒÄ[_^Ã‹l$¸   ƒÄ[_^Ãƒ~8…´þÿÿƒø„«þÿÿÿt$8ÿt$8j ÿ¶D  WWVè€•  ƒÄ8[_^Ã‹l$¸   ƒÄ[_^Ã‹l$ƒÄ[_^Ã€    €    U‹ìƒäðVWSìô  ‹U¡ vø3Ä‰„$ä  ‹Šü   ÇD$<   ‹}‹]‰L$‹²   ƒùt	ƒþt3Àë¸+  ‹M‹‘  ‰T$ ‹‘¨   ‹ÊÁéÊÑùA‰T$,‰L$\…À…|  ‹D$óÁàÇ;Â‚h  ‹D$À;ðZ  ;û„Ò  ƒ} Ž¾  ‹E‹P83À‰D$8ƒútWÇD$`    ƒút2ÇD$0    ƒút‰t$4‰D$‰\$@‰|$X‹ué  ‰t$4‹ó‹ØéT  ‰t$4‰D$‰\$@‰|$X‹ué  ‹U‰t$4‰D$‹’@  ‰\$@3.keySeq = null;
+            cm.display.input.reset();
+          }
+        }); }
+      if (dispatchKeyInner(cm, seq + " " + name, e, handle)) { return true }
+    }
+    return dispatchKeyInner(cm, name, e, handle)
+  }
+
+  function dispatchKeyInner(cm, name, e, handle) {
+    var result = lookupKeyForEditor(cm, name, handle);
+
+    if (result == "multi")
+      { cm.state.keySeq = name; }
+    if (result == "handled")
+      { signalLater(cm, "keyHandled", cm, name, e); }
+
+    if (result == "handled" || result == "multi") {
+      e_preventDefault(e);
+      restartBlink(cm);
+    }
+
+    return !!result
+  }
+
+  // Handle a key from the keydown event.
+  function handleKeyBinding(cm, e) {
+    var name = keyName(e, true);
+    if (!name) { return false }
+
+    if (e.shiftKey && !cm.state.keySeq) {
+      // First try to resolve full name (including 'Shift-'). Failing
+      // that, see if there is a cursor-motion command (starting with
+      // 'go') bound to the keyname without 'Shift-'.
+      return dispatchKey(cm, "Shift-" + name, e, function (b) { return doHandleBinding(cm, b, true); })
+          || dispatchKey(cm, name, e, function (b) {
+               if (typeof b == "string" ? /^go[A-Z]/.test(b) : b.motion)
+                 { return doHandleBinding(cm, b) }
+             })
+    } else {
+      return dispatchKey(cm, name, e, function (b) { return doHandleBinding(cm, b); })
+    }
+  }
+
+  // Handle a key from the keypress event
+  function handleCharBinding(cm, e, ch) {
+    return dispatchKey(cm, "'" + ch + "'", e, function (b) { return doHandleBinding(cm, b, true); })
+  }
+
+  var lastStoppedKey = null;
+  function onKeyDown(e) {
+    var cm = this;
+    if (e.target && e.target != cm.display.input.getField()) { return }
+    cm.curOp.focus = activeElt();
+    if (signalDOMEvent(cm, e)) { return }
+    // IE does strange things with escape.
+    if (ie && ie_version < 11 && e.keyCode == 27) { e.returnValue = false; }
+    var code = e.keyCode;
+    cm.display.shift = code == 16 || e.shiftKey;
+    var handled = handleKeyBinding(cm, e);
+    if (presto) {
+      lastStoppedKey = handled ? code : null;
+      // Opera has no cut event... we try to at least catch the key combo
+      if (!handled && code == 88 && !hasCopyEvent && (mac ? e.metaKey : e.ctrlKey))
+        { cm.replaceSelection("", null, "cut"); }
+    }
+    if (gecko && !mac && !handled && code == 46 && e.shiftKey && !e.ctrlKey && document.execCommand)
+      { document.execCommand("cut"); }
+
+    // Turn mouse into crosshair when Alt is held on Mac.
+    if (code == 18 && !/\bCodeMirror-crosshair\b/.test(cm.display.lineDiv.className))
+      { showCrossHair(cm); }
+  }
+
+  function showCrossHair(cm) {
+    var lineDiv = cm.display.lineDiv;
+    addClass(lineDiv, "CodeMirror-crosshair");
+
+    function up(e) {
+      if (e.keyCode == 18 || !e.altKey) {
+        rmClass(lineDiv, "CodeMirror-crosshair");
+        off(document, "keyup", up);
+        off(document, "mouseover", up);
+      }
+    }
+    on(document, "keyup", up);
+    on(document, "mouseover", up);
+  }
+
+  function onKeyUp(e) {
+    if (e.keyCode == 16) { this.doc.sel.shift = false; }
+    signalDOMEvent(this, e);
+  }
+
+  function onKeyPress(e) {
+    var cm = this;
+    if (e.target && e.target != cm.display.input.getField()) { return }
+    if (eventInWidget(cm.display, e) || signalDOMEvent(cm, e) || e.ctrlKey && !e.altKey || mac && e.metaKey) { return }
+    var keyCode = e.keyCode, charCode = e.charCode;
+    if (presto && keyCode == lastStoppedKey) {lastStoppedKey = null; e_preventDefault(e); return}
+    if ((presto && (!e.which || e.which < 10)) && handleKeyBinding(cm, e)) { return }
+    var ch = String.fromCharCode(charCode == null ? keyCode : charCode);
+    // Some browsers fire keypress events for backspace
+    if (ch == "\x08") { return }
+    if (handleCharBinding(cm, e, ch)) { return }
+    cm.display.input.onKeyPress(e);
+  }
+
+  var DOUBLECLICK_DELAY = 400;
+
+  var PastClick = function(time, pos, button) {
+    this.time = time;
+    this.pos = pos;
+    this.button = button;
+  };
+
+  PastClick.prototype.compare = function (time, pos, button) {
+    return this.time + DOUBLECLICK_DELAY > time &&
+      cmp(pos, this.pos) == 0 && button == this.button
+  };
+
+  var lastClick, lastDoubleClick;
+  function clickRepeat(pos, button) {
+    var now = +new Date;
+    if (lastDoubleClick && lastDoubleClick.compare(now, pos, button)) {
+      lastClick = lastDoubleClick = null;
+      return "triple"
+    } else if (lastClick && lastClick.compare(now, pos, button)) {
+      lastDoubleClick = new PastClick(now, pos, button);
+      lastClick = null;
+      return "double"
+    } else {
+      lastClick = new PastClick(now, pos, button);
+      lastDoubleClick = null;
+      return "single"
+    }
+  }
+
+  // A mouse down can be a single click, double click, triple click,
+  // start of selection drag, start of text drag, new cursor
+  // (ctrl-click), rectangle drag (alt-drag), or xwin
+  // middle-click-paste. Or it might be a click on something we should
+  // not interfere with, such as a scrollbar or widget.
+  function onMouseDown(e) {
+    var cm = this, display = cm.display;
+    if (signalDOMEvent(cm, e) || display.activeTouch && display.input.supportsTouch()) { return }
+    display.input.ensurePolled();
+    display.shift = e.shiftKey;
+
+    if (eventInWidget(display, e)) {
+      if (!webkit) {
+        // Briefly turn off draggability, to allow widgets to do
+        // normal dragging things.
+        display.scroller.draggable = false;
+        setTimeout(function () { return display.scroller.draggable = true; }, 100);
+      }
+      return
+    }
+    if (clickInGutter(cm, e)) { return }
+    var pos = posFromMouse(cm, e), button = e_button(e), repeat = pos ? clickRepeat(pos, button) : "single";
+    window.focus();
+
+    // #3261: make sure, that we're not starting a second selection
+    if (button == 1 && cm.state.selectingText)
+      { cm.state.selectingText(e); }
+
+    if (pos && handleMappedButton(cm, button, pos, repeat, e)) { return }
+
+    if (button == 1) {
+      if (pos) { leftButtonDown(cm, pos, repeat, e); }
+      else if (e_target(e) == display.scroller) { e_preventDefault(e); }
+    } else if (button == 2) {
+      if (pos) { extendSelection(cm.doc, pos); }
+      setTimeout(function () { return display.input.focus(); }, 20);
+    } else if (button == 3) {
+      if (captureRightClick) { cm.display.input.onContextMenu(e); }
+      else { delayBlurEvent(cm); }
+    }
+  }
+
+  function handleMappedButton(cm, button, pos, repeat, event) {
+    var name = "Click";
+    if (repeat == "double") { name = "Double" + name; }
+    else if (repeat == "triple") { name = "Triple" + name; }
+    name = (button == 1 ? "Left" : button == 2 ? "Middle" : "Right") + name;
+
+    return dispatchKey(cm,  addModifierNames(name, event), event, function (bound) {
+      if (typeof bound == "string") { bound = commands[bound]; }
+      if (!bound) { return false }
+      var done = false;
+      try {
+        if (cm.isReadOnly()) { cm.state.suppressEdits = true; }
+        done = bound(cm, pos) != Pass;
+      } finally {
+        cm.state.suppressEdits = false;
+      }
+      return done
+    })
+  }
+
+  function configureMouse(cm, repeat, event) {
+    var option = cm.getOption("configureMouse");
+    var value = option ? option(cm, repeat, event) : {};
+    if (value.unit == null) {
+      var rect = chromeOS ? event.shiftKey && event.metaKey : event.altKey;
+      value.unit = rect ? "rectangle" : repeat == "single" ? "char" : repeat == "double" ? "word" : "line";
+    }
+    if (value.extend == null || cm.doc.extend) { value.extend = cm.doc.extend || event.shiftKey; }
+    if (value.addNew == null) { value.addNew = mac ? event.metaKey : event.ctrlKey; }
+    if (value.moveOnDrag == null) { value.moveOnDrag = !(mac ? event.altKey : event.ctrlKey); }
+    return value
+  }
+
+  function leftButtonDown(cm, pos, repeat, event) {
+    if (ie) { setTimeout(bind(ensureFocus, cm), 0); }
+    else { cm.curOp.focus = activeElt(); }
+
+    var behavior = configureMouse(cm, repeat, event);
+
+    var sel = cm.doc.sel, contained;
+    if (cm.options.dragDrop && dragAndDrop && !cm.isReadOnly() &&
+        repeat == "single" && (contained = sel.contains(pos)) > -1 &&
+        (cmp((contained = sel.ranges[contained]).from(), pos) < 0 || pos.xRel > 0) &&
+        (cmp(contained.to(), pos) > 0 || pos.xRel < 0))
+      { leftButtonStartDrag(cm, event, pos, behavior); }
+    else
+      { leftButtonSelect(cm, event, pos, behavior); }
+  }
+
+  // Start a text drag. When it ends, see if any dragging actually
+  // happen, and treat as a click if it didn't.
+  function leftButtonStartDrag(cm, event, pos, behavior) {
+    var display = cm.display, moved = false;
+    var dragEnd = operation(cm, function (e) {
+      if (webkit) { display.scroller.draggable = false; }
+      cm.state.draggingText = false;
+      if (cm.state.delayingBlurEvent) {
+        if (cm.hasFocus()) { cm.state.delayingBlurEvent = false; }
+        else { delayBlurEvent(cm); }
+      }
+      off(display.wrapper.ownerDocument, "mouseup", dragEnd);
+      off(display.wrapper.ownerDocument, "mousemove", mouseMove);
+      off(display.scroller, "dragstart", dragStart);
+      off(display.scroller, "drop", dragEnd);
+      if (!moved) {
+        e_preventDefault(e);
+        if (!behavior.addNew)
+          { extendSelection(cm.doc, pos, null, null, behavior.extend); }
+        // Work around unexplainable focus problem in IE9 (#2127) and Chrome (#3081)
+        if ((webkit && !safari) || ie && ie_version == 9)
+          { setTimeout(function () {display.wrapper.ownerDocument.body.focus({preventScroll: true}); display.input.focus();}, 20); }
+        else
+          { display.input.focus(); }
+      }
+    });
+    var mouseMove = function(e2) {
+      moved = moved || Math.abs(event.clientX - e2.clientX) + Math.abs(event.clientY - e2.clientY) >= 10;
+    };
+    var dragStart = function () { return moved = true; };
+    // Let the drag handler handle this.
+    if (webkit) { display.scroller.draggable = true; }
+    cm.state.draggingText = dragEnd;
+    dragEnd.copy = !behavior.moveOnDrag;
+    on(display.wrapper.ownerDocument, "mouseup", dragEnd);
+    on(display.wrapper.ownerDocument, "mousemove", mouseMove);
+    on(display.scroller, "dragstart", dragStart);
+    on(display.scroller, "drop", dragEnd);
+
+    cm.state.delayingBlurEvent = true;
+    setTimeout(function () { return display.input.focus(); }, 20);
+    // IE's approach to draggable
+    if (display.scroller.dragDrop) { display.scroller.dragDrop(); }
+  }
+
+  function rangeForUnit(cm, pos, unit) {
+    if (unit == "char") { return new Range(pos, pos) }
+    if (unit == "word") { return cm.findWordAt(pos) }
+    if (unit == "line") { return new Range(Pos(pos.line, 0), clipPos(cm.doc, Pos(pos.line + 1, 0))) }
+    var result = unit(cm, pos);
+    return new Range(result.from, result.to)
+  }
+
+  // Normal selection, as opposed to text dragging.
+  function leftButtonSelect(cm, event, start, behavior) {
+    if (ie) { delayBlurEvent(cm); }
+    var display = cm.display, doc = cm.doc;
+    e_preventDefault(event);
+
+    var ourRange, ourIndex, startSel = doc.sel, ranges = startSel.ranges;
+    if (behavior.addNew && !behavior.extend) {
+      ourIndex = doc.sel.contains(start);
+      if (ourIndex > -1)
+        { ourRange = ranges[ourIndex]; }
+      else
+        { ourRange = new Range(start, start); }
+    } else {
+      ourRange = doc.sel.primary();
+      ourIndex = doc.sel.primIndex;
+    }
+
+    if (behavior.unit == "rectangle") {
+      if (!behavior.addNew) { ourRange = new Range(start, start); }
+      start = posFromMouse(cm, event, true, true);
+      ourIndex = -1;
+    } else {
+      var range = rangeForUnit(cm, start, behavior.unit);
+      if (behavior.extend)
+        { ourRange = extendRange(ourRange, range.anchor, range.head, behavior.extend); }
+      else
+        { ourRange = range; }
+    }
+
+    if (!behavior.addNew) {
+      ourIndex = 0;
+      setSelection(doc, new Selection([ourRange], 0), sel_mouse);
+      startSel = doc.sel;
+    } else if (ourIndex == -1) {
+      ourIndex = ranges.length;
+      setSelection(doc, normalizeSelection(cm, ranges.concat([ourRange]), ourIndex),
+                   {scroll: false, origin: "*mouse"});
+    } else if (ranges.length > 1 && ranges[ourIndex].empty() && behavior.unit == "char" && !behavior.extend) {
+      setSelection(doc, normalizeSelection(cm, ranges.slice(0, ourIndex).concat(ranges.slice(ourIndex + 1)), 0),
+                   {scroll: false, origin: "*mouse"});
+      startSel = doc.sel;
+    } else {
+      replaceOneSelection(doc, ourIndex, ourRange, sel_mouse);
+    }
+
+    var lastPos = start;
+    function extendTo(pos) {
+      if (cmp(lastPos, pos) == 0) { return }
+      lastPos = pos;
+
+      if (behavior.unit == "rectangle") {
+        var ranges = [], tabSize = cm.options.tabSize;
+        var startCol = countColumn(getLine(doc, start.line).text, start.ch, tabSize);
+        var posCol = countColumn(getLine(doc, pos.line).text, pos.ch, tabSize);
+        var left = Math.min(startCol, posCol), right = Math.max(startCol, posCol);
+        for (var line = Math.min(start.line, pos.line), end = Math.min(cm.lastLine(), Math.max(start.line, pos.line));
+             line <= end; line++) {
+          var text = getLine(doc, line).text, leftPos = findColumn(text, left, tabSize);
+          if (left == right)
+            { ranges.push(new Range(Pos(line, leftPos), Pos(line, leftPos))); }
+          else if (text.length > leftPos)
+            { ranges.push(new Range(Pos(line, leftPos), Pos(line, findColumn(text, right, tabSize)))); }
+        }
+        if (!ranges.length) { ranges.push(new Range(start, start)); }
+        setSelection(doc, normalizeSelection(cm, startSel.ranges.slice(0, ourIndex).concat(ranges), ourIndex),
+                     {origin: "*mouse", scroll: false});
+        cm.scrollIntoView(pos);
+      } else {
+        var oldRange = ourRange;
+        var range = rangeForUnit(cm, pos, behavior.unit);
+        var anchor = oldRange.anchor, head;
+        if (cmp(range.anchor, anchor) > 0) {
+          head = range.head;
+          anchor = minPos(oldRange.from(), range.anchor);
+        } else {
+          head = range.anchor;
+          anchor = maxPos(oldRange.to(), range.head);
+        }
+        var ranges$1 = startSel.ranges.slice(0);
+        ranges$1[ourIndex] = bidiSimplify(cm, new Range(clipPos(doc, anchor), head));
+        setSelection(doc, normalizeSelection(cm, ranges$1, ourIndex), sel_mouse);
+      }
+    }
+
+    var editorSize = display.wrapper.getBoundingClientRect();
+    // Used to ensure timeout re-tries don't fire when another extend
+    // happened in the meantime (clearTimeout isn't reliable -- at
+    // least on Chrome, the timeouts still happen even when cleared,
+    // if the clear happens after their scheduled firing time).
+    var counter = 0;
+
+    function extend(e) {
+      var curCount = ++counter;
+      var cur = posFromMouse(cm, e, true, behavior.unit == "rectangle");
+      if (!cur) { return }
+      if (cmp(cur, lastPos) != 0) {
+        cm.curOp.focus = activeElt();
+        extendTo(cur);
+        var visible = visibleLines(display, doc);
+        if (cur.line >= visible.to || cur.line < visible.from)
+          { setTimeout(operation(cm, function () {if (counter == curCount) { extend(e); }}), 150); }
+      } else {
+        var outside = e.clientY < editorSize.top ? -20 : e.clientY > editorSize.bottom ? 20 : 0;
+        if (outside) { setTimeout(operation(cm, function () {
+          if (counter != curCount) { return }
+          display.scroller.scrollTop += outside;
+          extend(e);
+        }), 50); }
+      }
+    }
+
+    function done(e) {
+      cm.state.selectingText = false;
+      counter = Infinity;
+      // If e is null or undefined we interpret this as someone trying
+      // to explicitly cancel the selection rather than the user
+      // letting go of the mouse button.
+      if (e) {
+        e_preventDefault(e);
+        display.input.focus();
+      }
+      off(display.wrapper.ownerDocument, "mousemove", move);
+      off(display.wrapper.ownerDocument, "mouseup", up);
+      doc.history.lastSelOrigin = null;
+    }
+
+    var move = operation(cm, function (e) {
+      if (e.buttons === 0 || !e_button(e)) { done(e); }
+      else { extend(e); }
+    });
+    var up = operation(cm, done);
+    cm.state.selectingText = up;
+    on(display.wrapper.ownerDocument, "mousemove", move);
+    on(display

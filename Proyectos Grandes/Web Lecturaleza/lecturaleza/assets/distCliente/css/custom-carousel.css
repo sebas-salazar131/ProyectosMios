@@ -1,0 +1,60 @@
+.custom-carousel {
+    width: 870px;
+    height: 431px;
+    border: 2px solid #8bc34a; /* Color verde claro */
+    border-radius: 5px; /* Opcional: añade bordes redondeados */
+    overflow: hidden;
+}
+
+.custom-carousel .carousel-control-prev,
+    .custom-carousel .carousel-control-next {
+        background-color: transparent;
+        border: none;
+    }
+
+    .custom-carousel .carousel-control-prev-icon,
+    .custom-carousel .carousel-control-next-icon {
+        color: rgba(255, 255, 255, 0.5); /* Color semi-transparente blanco, puedes ajustarlo según tu diseño */
+    }
+
+    .custom-carousel .carousel-control-prev:hover,
+    .custom-carousel .carousel-control-next:hover {
+        background-color: rgba(0, 0, 0, 0.1); /* Cambiar color de fondo al pasar el cursor, opcional */
+    }
+
+    .carousel-caption h5 {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 24px; /* Tamaño del texto del título */
+        color: rgb(110, 215, 110);
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        font-weight: bold;
+    }
+
+    .carousel-caption p {
+        font-size: 18px; /* Tamaño del texto del párrafo */
+        color: rgb(41, 39, 39);
+        font-weight: bold;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    .carousel-caption h5.text-rojo {
+        color: rgb(252, 142, 32);
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+    }
+
+    .carousel-caption p.text-blanco {
+        color: rgb(226, 226, 226);
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+    }
+
+    .carousel-caption h5.text-blue {
+        color: rgb(218, 222, 93);
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 2);
+    }
+
+    .carousel-caption p.text-naranja {
+        color: rgb(182, 243, 182);
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 2);
+    }
+
+    

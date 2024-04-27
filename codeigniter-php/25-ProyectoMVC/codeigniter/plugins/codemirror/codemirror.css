@@ -1,0 +1,785 @@
+/* BASICS */
+
+.CodeMirror {
+  /* Set height, width, borders, and global font properties here */
+  font-family: monospace;
+  height: 300px;
+  color: black;
+  direction: ltr;
+}
+
+/* PADDING */
+
+.CodeMirror-lines {
+  padding: 4px 0; /* Vertical padding around content */
+}
+.CodeMirror pre.CodeMirror-line,
+.CodeMirror pre.CodeMirror-line-like {
+  padding: 0 4px; /* Horizontal padding of content */
+}
+
+.CodeMirror-scrollbar-filler, .CodeMirror-gutter-filler {
+  background-color: white; /* The little square between H and V scrollbars */
+}
+
+/* GUTTER */
+
+.CodeMirror-gutters {
+  border-right: 1px solid #ddd;
+  background-color: #f7f7f7;
+  white-space: nowrap;
+}
+.CodeMirror-linenumbers {}
+.CodeMirror-linenumber {
+  padding: 0 3px 0 5px;
+  min-width: 20px;
+  text-align: right;
+  color: #999;
+  white-space: nowrap;
+}
+
+.CodeMirror-guttermarker { color: black; }
+.CodeMirror-guttermarker-subtle { color: #999; }
+
+/* CURSOR */
+
+.CodeMirror-cursor {
+  border-left: 1px solid black;
+  border-right: none;
+  width: 0;
+}
+/* Shown when moving in bi-directional text */
+.CodeMirror div.CodeMirror-secondarycursor {
+  border-left: 1px solid silver;
+}
+.cm-fat-cursor .CodeMirror-cursor {
+  width: auto;
+  border: 0 !important;
+  background: #7e7;
+}
+.cm-fat-cursor div.CodeMirror-cursors {
+  z-index: 1;
+}
+.cm-fat-cursor .CodeMirror-line::selection,
+.cm-fat-cursor .CodeMirror-line > span::selection, 
+.cm-fat-cursor .CodeMirror-line > span > span::selection { background: transparent; }
+.cm-fat-cursor .CodeMirror-line::-moz-selection,
+.cm-fat-cursor .CodeMirror-line > span::-moz-selection,
+.cm-fat-cursor .CodeMirror-line > span > span::-moz-selection { background: transparent; }
+.cm-fat-cursor { caret-color: transparent; }
+@-moz-keyframes blink {
+  0% {}
+  50% { background-color: transparent; }
+  100% {}
+}
+@-webkit-keyframes blink {
+  0% {}
+  50% { background-color: transparent; }
+  100% {}
+}
+@keyframes blink {
+  0% {}
+  50% { background-color: transparent; }
+  100% {}
+}
+
+/* Can style cursor different in overwrite (non-insert) mode */
+.CodeMirror-overwrite .CodeMirror-cursor {}
+
+.cm-tab { display: inline-block; text-decoration: inherit; }
+
+.CodeMirror-rulers {
+  position: absolute;
+  left: 0; right: 0; top: -50px; bottom: 0;
+  overflow: hidden;
+}
+.CodeMirror-ruler {
+  border-left: 1px solid #ccc;
+  top: 0; bottom: 0;
+  position: absolute;
+}
+
+/* DEFAULT THEME */
+
+.cm-s-default .cm-header {color: blue;}
+.cm-s-default .cm-quote {color: #090;}
+.cm-negative {color: #d44;}
+.cm-positive {color: #292;}
+.cm-header, .cm-strong {font-weight: bold;}
+.cm-em {font-style: italic;}
+.cm-link {text-decoration: underline;}
+.cm-strikethrough {text-decoration: line-through;}
+
+.cm-s-default .cm-keyword {color: #708;}
+.cm-s-default .cm-atom {color: #219;}
+.cm-s-default .cm-number {color: #164;}
+.cm-s-default .cm-def {color: #00f;}
+.cm-s-default .cm-variable,
+.cm-s-default .cm-punctuation,
+.cm-s-default .cm-property,
+.cm-s-default .cm-operator {}
+.cm-s-default .cm-variable-2 {color: #05a;}
+.cm-s-default .cm-variable-3, .cm-s-default .cm-type {color: #085;}
+.cm-s-default .cm-comment {color: #a50;}
+.cm-s-default .cm-string {color: #a11;}
+.cm-s-default .cm-string-2 {color: #f50;}
+.cm-s-default .cm-meta {color: #555;}
+.cm-s-default .cm-qualifier {color: #555;}
+.cm-s-default .cm-builtin {color: #30a;}
+.cm-s-default .cm-bracket {color: #997;}
+.cm-s-default .cm-tag {color: #170;}
+.cm-s-default .cm-attribute {color: #00c;}
+.cm-s-default .cm-hr {color: #999;}
+.cm-s-default .cm-link {color: #00c;}
+
+.cm-s-default .cm-error {color: #f00;}
+.cm-invalidchar {color: #f00;}
+
+.CodeMirror-composing { border-bottom: 2px solid; }
+
+/* Default styles for common addons */
+
+div.CodeMirror span.CodeMirror-matchingbracket {color: #0b0;}
+div.CodeMirror span.CodeMirror-nonmatchingbracket {color: #a22;}
+.CodeMirror-matchingtag { background: rgba(255, 150, 0, .3); }
+.CodeMirror-activeline-background {background: #e8f2ff;}
+
+/* STOP */
+
+/* The rest of this file contains styles related to the mechanics of
+   the editor. You probably shouldn't touch them. */
+
+.CodeMirror {
+  position: relative;
+  overflow: hidden;
+  background: white;
+}
+
+.CodeMirror-scroll {
+  overflow: scroll !important; /* Things will break if this is overridden */
+  /* 50px is the magic margin used to hide the element's real scrollbars */
+  /* See overflow: hidden in .CodeMirror */
+  margin-bottom: -50px; margin-right: -50px;
+  padding-bottom: 50px;
+  height: 100%;
+  outline: none; /* Prevent dragging from highlighting the element */
+  position: relative;
+  z-index: 0;
+}
+.CodeMirror-sizer {
+  position: relative;
+  border-right: 50px solid transparent;
+}
+
+/* The fake, visible scrollbars. Used to force redraw during scrolling
+   before actual scrolling happens, thus preventing shaking and
+   flickering artifacts. */
+.CodeMirror-vscrollbar, .CodeMirror-hscrollbar, .CodeMirror-scrollbar-filler, .CodeMirror-gutter-filler {
+  position: absolute;
+  z-index: 6;
+  display: none;
+  outline: none;
+}
+.CodeMirror-vscrollbar {
+  right: 0; top: 0;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+.CodeMirror-hscrollbar {
+  bottom: 0; left: 0;
+  overflow-y: hidden;
+  overflow-x: scroll;
+}
+.CodeMirror-scrollbar-filler {
+  right: 0; bottom: 0;
+}
+.CodeMirror-gutter-filler {
+  left: 0; bottom: 0;
+}
+
+.CodeMirror-gutters {
+  position: absolute; left: 0; top: 0;
+  min-height: 100%;
+  z-index: 3;
+}
+.CodeMirror-gutter {
+  white-space: normal;
+  height: 100%;
+  display: inline-block;
+  vertical-align: top;
+  margin-bottom: -50px;
+}
+.CodeMirror-gutter-wrapper {
+  position: absolute;
+  z-index: 4;
+  background: none !important;
+  border: none !important;
+}
+.CodeMirror-gutter-background {
+  position: absolute;
+  top: 0; bottom: 0;
+  z-index: 4;
+}
+.CodeMirror-gutter-elt {
+  position: absolute;
+  cursor: default;
+  z-index: 4;
+}
+.CodeMirror-gutter-wrapper ::selection { background-color: transparent }
+.CodeMirror-gutter-wrapper ::-moz-selection { background-color: transparent }
+
+.CodeMirror-lines {
+  cursor: text;
+  min-height: 1px; /* prevents collapsing before first draw */
+}
+.CodeMirror pre.CodeMirror-line,
+.CodeMirror pre.CodeMirror-line-like {
+  /* Reset some styles that the rest of the page might have set */
+  -moz-border-radius: 0; -webkit-border-radius: 0; border-radius: 0;
+  border-width: 0;
+  background: transparent;
+  font-family: inherit;
+  font-size: inherit;
+  margin: 0;
+  white-space: pre;
+  word-wrap: normal;
+  line-height: inherit;
+  color: inherit;
+  z-index: 2;
+  position: relative;
+  overflow: visible;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-font-variant-ligatures: contextual;
+  font-variant-ligatures: contextual;
+}
+.CodeMirror-wrap pre.CodeMirror-line,
+.CodeMirror-wrap pre.CodeMirror-line-like {
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  word-break: normal;
+}
+
+.CodeMirror-linebackground {
+  position: absolute;
+  left: 0; right: 0; top: 0; bottom: 0;
+  z-index: 0;
+}
+
+.CodeMirror-linewidget {
+  position: relative;
+  z-index: 2;
+  padding: 0.1px; /* Force widget margins to stay inside of the container */
+}
+
+.CodeMirror-widget {}
+
+.CodeMirror-rtl pre { direction: rtl; }
+
+.CodeMirror-code {
+  outline: none;
+}
+
+/* Force content-box sizing for the elements where we expect it */
+.CodeMirror-scroll,
+.CodeMirror-sizer,
+.CodeMirror-gutter,
+.CodeMirror-gutters,
+.CodeMirror-linenumber {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+.CodeMirror-measure {
+  position: absolute;
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
+}
+
+.CodeMirror-cursor {
+  position: absolute;
+  pointer-events: none;
+}
+.CodeMirror-measure pre { position: static; }
+
+div.CodeMirror-cursors {
+  visibility: hidden;
+  position: relative;
+  z-index: 3;
+}
+div.CodeMirror-dragcursors {
+  visibility: visible;
+}
+
+.CodeMirror-focused div.CodeMirror-cursors {
+  visibility: visible;
+}
+
+.CodeMirror-selected { background: #d9d9d9; }
+.CodeMirror-focused .CodeMirror-selected { background: #d7d4f0; }
+.CodeMirror-crosshair { cursor: crosshair; }
+.CodeMirror-line::selection, .CodeMirror-line > span::selection, .CodeMirror-line > span > span::selection { background: #d7d4f0; }
+.CodeMirror-line::-moz-selection, .CodeMirror-line > span::-moz-selection, .CodeMirror-line > span > span::-moz-selection { background: #d7d4f0; }
+
+.cm-searching {
+  background-color: #ffa;
+  background-color: rgba(255, 255, 0, .4);
+}
+
+/* Used to force a border model for a node */
+.cm-force-border { padding-right: .1px; }
+
+@media print {
+  /* Hide the cursor when printing */
+  .CodeMirror div.CodeMirror-cursors {
+    visibility: hidden;
+  }
+}
+
+/* See issue #2901 */
+.cm-tab-wrap-hack:after { content: ''; }
+
+/* Help users use markselection to safely style text background */
+span.CodeMirror-selectedtext { background: none; }
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                óØ^ÿ¯ÃWÀ7ÛóÈ)L$`WÀ7ÛÇ¯ÚóØóæòLğèWÀ7ÛóÁÙ)D$)\$@óòóÚòTğàòDğØFş‰\$‹œ$È  ¯Ø¯ÂW=À7ÛWÀ7ÛWÀ7Û)d$ ßÁ‰D$Fıóïóçóú)¼$€   )¬$À   )\$0óéóÚóĞóÈòDóàò|óØ‹œ$È  ¯ØWÀ7ÛW=À7Û)¬$   óèû3Û)L$p)¬$    óÈóÇóïò|÷ØƒÆü¯Â¯ÖW=À7Û)¬$°   óïóÿÁÊ‰D$‹t$‹$‹”$   )¼$Ğ   )¬$à   )´$ğ   ‰Œ$  òlØøB(t$PYõÆí±Yl$ ‹|$òĞõòlßø(¼$   \îòlßøYıÆí±Yl$òtØøòĞı(l$`YîÆö±Yt$@‹L$òĞî(ñXıòlŞø\ïòlŞøYõÆí±Y¬$    ò|ßøòĞõ(ëYïÆÿ±Y¼$€   òĞïò|ØøXõ(ìYïÆÿ±Y¼$À   òĞïò|ÙøXõ(¬$Ğ   \şò|ÙøYïÆÿ±Y¼$à   òtŞøòĞï(¼$°   YşÆö±Yğ‹Œ$  òĞşòtßøXï(|$pYşÆö±YòòĞşòtØøXï(|$0YşÆö±Y´$ğ   òĞşòtÙøXï\õòtÙøK;”$  ‚Šşÿÿéxóÿÿ3ÉWíé/øÿÿ‹Œ$   A;Œ$  ‚ŒôÿÿéTóÿÿÇD$|    éöøÿÿ3ÀWÀWÉWíWÒép¶ÿÿ‹t$F‹\$‹},;ó‚O´ÿÿ‹L$‹<$‹´$„   ‹”$Ì  ‹„$È  ‹ß+Ù‰œ$À  ;ùñòÿÿƒş„¢  ƒş„ü  ƒş„*  3Û…öÌòÿÿ(°7Û<@‰|$<R‰|$<’‰|$<€‰|$WÒ‹},‰L$‰´$„   ‰”$Ì  <Ï‰<$‰„$È  ‹¼$Ì  (ê‹$(â‹u,ÇD$(    ı    ‰D$l+ğ‹„$È  Ú‰L$T‹U$ÁçÅ    +Ñ‰|$`‹|$Áà‰D$d‰L$hú‹|$‰D$‹D$+Œ$È  <şÆå‰\$<Ç<ß‰|$X‹|$<ú‰|$ ‹|$Ê‹L$l+Œ$Ì  ‰T$$<ş<Ç4ÎÆØ‹D$(‰D$,<ß‰|$\‹È‰T$4‹D$T‹T$,òŒÌÀ  AòĞ\ÅóğYñóèÆÉ±YéòĞõò4Ğ”$Ì  ‰T$,;Œ$„   ƒ~  …É³  ƒùŒc  ‹u$‹Ñ‹|$3Àƒâø‰L$(Î‰\$P4Ï‹\$ (ì‹|$$‰t$D‰T$8Ë‰\$@<Ï‰|$<‹È‹t$h‹\$l‹|$PÏ‹|$Tò:f<2‹Ó¯ĞWûƒÀúò7f4óÎYÏóÆÆÿ±YÇ‹|$DòĞÈ<ÏòXéf7‹|$XWÃúò7f4óÎYÈóşÆÀ±Yø‹|$@òĞÏ<Ïò7XÍf47‹|$\WóúT$4ò/f,óÅYÆóıÆö±Yş‹|$<òĞÇ<Ïò7XÁò
+f47fWóóéYîóùÆö±Yş‹”$È  òĞïXèÑ;D$8‚úşÿÿ(ÅÅ‹T$8Xè‹L$(B;È‚9şÿÿ‹Á+Â‰D$0ƒøŒ
+
+  ‹ò‹ú¯t$l¯|$hÆê‹E$t$T‹\$0ƒãş‰\$H3Û‰t$L4È÷3ÿ‰T$83À‰L$(€    ‹L$h>ò
+ƒÃ|$df
+‹T$LWË‹T$lòD$`fóøYùóğÆÉ±YñòĞşXï;\$Hr¯(ÅÅ‹T$8Xè‹L$(‹D$H‹œ$Ì  ‹´$È  ¯Ø¯ğ;D$0ƒbıÿÿ‹Â¯D$l¯T$h‹}$‰L$(D$T<Ï‹L$H×‹|$0òòAòØWÀ7ÛóøYùóğÆÉ±Yñ´$È  òĞşœ$Ì  Xï;ÏrÃ‹L$(éøüÿÿWíéğüÿÿ‹},4Õ    ÷Ş÷ÇD$    Ï‰$<Å    ‹]$+ßòt;òd;òT;<@ÁàòDû<RWÀ7Û<şóø<Ï)|$ ò|W=À7ÛóØóÇ)D$óÇ)D$@òDWÀ7Ûóø)|$0óø)|$`ò¼$À  ‰|$‹úóÇ)D$PóÇ)„$€   ÁçÁâşò„$È  òóø)|$póø<Ï)¼$    Îò¼$Ğ  W5À7ÛW%À7ÛWÀ7ÛóÇ)„$   óÇ)„$À   óÎò„$Ø  )Œ$Ğ   óÎóôóìóâóøóÒ)¼$°   óÀ)¤$ğ   )¬$   )´$à   ‹”$À  ‹L$‹$‹t$ò$ó(ñ(¬$€   YìÆä±Yd$P(¼$    òĞìò,óYõÆí±Y¬$Ğ   ò$÷òĞõ\æ(´$   YüÆä±Yd$pòĞü(d$`ò<÷ò,óYõYçÆí±Æÿ±Y¬$à   Y|$0òĞõòĞçò<ñXô(¬$À   (â\şYïÆÿ±Y¼$   òĞïò,ñò4óYæÆö±Y´$ğ   ò<÷òĞæ(t$@Y÷Æÿ±Y|$òĞ÷(|$ YıXæÆí±YëòĞıò,ğXç\ì(àYåÆí±Y¬$°   òĞåò$ğF;ò‚Èşÿÿéãëÿÿ‹],<Õ    ÷ßûòŒ$À  4Ë‰t$Å    ‹u$+óÁàóÑÇD$    òlò\RÁâßW-À7ÛúWÀ7ÛËòd0óı)¼$€   ÏóõóûóëóÙòŒ$È  W%À7ÛóÁ)t$póô)D$`óä)$ò„$Ğ  )t$@óÑóÈóÀ)d$P)l$0)|$ (4$‹„$À  ‹L$‹t$ò<ñ(æYçÆÿ±Yû(l$pòĞçò$ñYìÆä±Y¤$€   ò<òòĞì(d$0\ı(êYïÆÿ±Y|$`òĞïò,òò<ñYçÆÿ±Y|$ òĞç(|$PYıÆí±Yl$@òĞıò,óXç\ì(àYåÆí±YéòĞåò$óF;ğ‚TÿÿÿéFêÿÿ‹},4Õ    ÷Ş÷ÇD$    Ï‰$<Å    ‹]$+ßòT;òL;ò|;WÀ7ÛWÀ7ÛW=À7ÛóÚ)œ$   ò\; <@óò)´$0  óáó÷)¤$à   )´$    òdû òtû<RWÀ7Û<şóé<Ï‰|$<’)¬$ğ   <şóë<Ï‰|$‹úÁçş)l$0W5À7ÛóÓW%À7Û<Ï‰|$‹øÁçÁàóÇ)”$Ğ   òl óşóÖòtW-À7ÛW5À7ÛóÌ)T$p)L$ óİóÍòTòl )„$°   óÄ)D$PóÆ)„$P  WÀ7ÛW-À7ÛÁâò„$È  ò)Œ$   )|$@)\$`óúÎóİòŒ$À  )¼$p  )œ$À   óİóèóøò„$Ø  óæ)¤$€   óá)¤$  )¼$   óøò¤$Ğ  )¼$`  ò¼$à  óòóÑóÌ)Œ$@  óÌóàóÇóÿ)¼$€  )¤$°  )¬$   )´$  ‹D$‹L$‹\$‹4$‹|$ò4ş(¤$  YæÆö±Yò(¬$   òĞæò$şYìÆä±Y¤$0  ò<øòĞì(¤$à   \ı(¬$   YïÆÿ±Y¼$   òĞï(¼$  ò,øò4şYæYıÆö±Æí±Y´$ğ   Y¬$p  òĞæòĞıò,ûXç(ù\ìYıÆí±Y¬$@  (´$    òĞıò<ûò$şYôÆä±Y¤$°   ò,øòĞô(¤$P  YåÆí±Y¬$€   òĞå(l$pYïXôÆÿ±Y|$@(d$0òĞïò<úXõ(¬$`  \şYïÆÿ±Y¼$°  òĞïò,úò4şYæÆö±Y´$Ğ   ò<øòĞæ(´$   Y÷Æÿ±Y|$`òĞ÷ò<ûXæ(t$PY÷Æÿ±Y|$ òĞ÷(ûYıXæÆí±Y¬$À   òĞıò,ùXç\ì(¤$€  YåÆí±YèòĞåò$ùG;¼$À  ‚şÿÿéûåÿÿ3ÒWíéñõÿÿ‹\$C;œ$À  ‚[óÿÿéÚåÿÿÇD$H    éöÿÿ‹ß+Ù‰œ$À  ;ùäòÿÿéµåÿÿÇD$    é¨¥ÿÿÇD$    éÆ£ÿÿÇD$    éÉÿÿ3ÀWäWíWÛWÒé«ÿÿ‹L$A‹4$‹],;Î‚İ©ÿÿ‹Œ$$  ‹\$‹”$Ì  ‹„$È  ;ËGåÿÿ‹u+ËÇ„$       ‹6ƒş„ğ  ƒş„ì  ƒş„  …öåÿÿ‰t$(<@‰|$<R‰|$<’‰|$<€‰|$WÒ‹},(°7Û‰Œ$$  ‰\$<ß‰<$‰”$Ì  ‰„$È  ‹´$   ‹¼$Ì  (ê‹$(â‹],ÇD$$    ı    ‰D$d+Ø‹„$È  ò‰L$P‹U$ÁçÅ    +Ñ‰|$`‹|$Áà‰D$\‰L$hú‹|$‰D$‹D$+Œ$È  <ûÆå‰´$   <Ç<÷‰|$T‹|$<ú‰|$‹|$Ê‹L$d+Œ$Ì  ‰T$ <û<ÇË‹L$$Ãğ‰D$0<÷‰|$X‹”$Ì  ¯ÑA‹D$PòĞ\ÅòĞ;L$(ƒÊ  …É¸  ƒùŒ¯  ‹|$‹Ñ‹\$3À‹u$ƒâø<Ï‰|$LË‹|$ 4Î‰\$8(ì‰t$<‰L$$<Ï‰|$H‰T$4‹È‹t$h‹\$d‹|$<Ï‹|$Pò:f<2‹Ó¯ĞWûƒÀúò7f4óÎYÏóÆÆÿ±YÇ‹|$8òĞÈ<ÏòXéf7‹|$TWÃúò7f4óÎYÈóşÆÀ±Yø‹|$LòĞÏ<Ïò7XÍf47‹|$XWóúT$0ò/f,óÅYÆóıÆö±Yş‹|$HòĞÇ<Ïò7XÁò
+f47fWóóéYîóùÆö±Yş‹”$È  òĞïXèÑ;D$4‚úşÿÿ(ÅÅ‹T$4Xè‹L$$B;È‚`şÿÿ‹Á+Â‰D$,ƒøŒY  ‹ò‹ú¯t$d¯|$hÆê‹E$t$P‹\$,ƒãş‰\$@3Û‰t$D4È÷3ÿ‰T$43À‰L$$D  €    ‹L$h>ò
+ƒÃ|$\f
+‹T$DWË‹T$dòD$`fóøYùóğÆÉ±YñòĞşXï;\$@r¯(ÅÅ‹T$4Xè‹L$$‹t$@‹œ$Ì  ‹„$È  ¯Ş¯Æ;t$,ƒ„ıÿÿ‹ò¯t$d¯T$h‹}$‰L$$t$P<Ï‹L$@×‹|$,òÂAòŞWÀ7ÛóøYùóğÆÉ±Yñ„$È  òĞşœ$Ì  Xï;ÏrÃ‹L$$éıÿÿWíéıÿÿ‹u,<Õ    ÷ß‰Œ$$  şŞ‰$‹M$4Å    +ÎòT1ò\1òD14@òdñ4RÁà4÷WÀ7Û4Ş‰t$‹òW%À7ÛÁæÁâ÷óèúóü)l$0óì4Ş)|$ òdò|ßWÀ7ÛW%À7ÛWÀ7ÛW=À7ÛóË)L$@óËóØóÄóò)D$óäóÇóÿóÒ‹Œ$$  ‹T$‹$‹¼$   )¼$€   )d$p)l$`)t$Pò$û(êYì(ñÆä±Yd$Pò<şòĞì\ı(¬$€   ò<şò$ûYôYïÆä±Æÿ±Yd$@YøòĞôòĞï(ãXõò,ú\îò,úò4ûYæÆö±Yt$0ò<şòĞæ(t$pY÷Æÿ±Y|$òĞ÷(|$ YıXæÆí±Yl$`òĞıò,øXç\ìò,øG;ù‚:ÿÿÿé7ßÿÿ‹u,<Õ    ÷ß‰Œ$$  şŞ‰$‹M$4Å    +ÎÁàòl1ò\14RÁâ4÷ú4ŞW-À7ÛòDóÍWÀ7ÛßWÀ7ÛóõóëóãóØóĞ‹Œ$$  ‹$‹œ$   )L$D  ò<Ø(D$YÇÆÿ±YşòÚòĞÇ\È(ÄòÚò<ØYÇÆÿ±YıòĞÇ(úYùÆÉ±YËòĞùòŞXÇ\ÈòŞC;ÙrŸé<Şÿÿ‹},4Õ    ÷Ş‰Œ$$  ÷ß‰L$‹M$<Å    +Ïòd9W%À7ÛóìòD9ò\9)l$ òl9 <@WÀ7ÛWÀ7ÛW-À7ÛóĞóó)T$P)´$   óóóÌóİóåòTù òlù<RW-À7Û<şóø<ß‰|$<’óÅ<ş)„$À   <ß‰|$‹úÁçşÁâWÀ7Ûò)|$póı<ß‰|$‹øÁçŞÁà)¼$°   )L$0òDWÀ7Ûóø)\$@)d$`óÊóÚòT)<$òd ò| WÀ7ÛW%À7ÛW=À7Û)Œ$    óÊóìóä)Œ$€   óÈóÇóÿ)„$Ğ   óÒ‹Œ$$  ($‹\$‹D$‹´$   )¼$à   )¤$  )¬$   )´$ğ   ò4ğ(¤$ğ   YæÆö±Y´$   ò,óòĞæ(ğ\ìò,óò<ğ(d$0YçYõÆÿ±Æí±Y|$ YéòĞçòĞõ‹|$Xæò<÷(t$p\üò<÷ò,ğYõÆí±Yl$Pò$óòĞõ(êYìÆä±Y¤$€   òĞì(¤$°   YçXõÆÿ±Y¼$À   ò,òòĞçXô(d$`\îò,òò<ğYçÆÿ±Y|$@ò4óòĞç(¼$  YşÆö±Y´$   òĞşò4÷‹|$Xç(ûYşÆö±Y´$    òĞş(´$à   YõXçÆí±Y¬$Ğ   òĞõò,÷Xæ\ìò,÷F;ñ‚şÿÿéÛÿÿ3ÒWíé¥øÿÿ‹´$   F;´$$  ‚6öÿÿéğÚÿÿÇD$@    éCùÿÿ3ÀWÒWíWäWÛé‹¤ÿÿ‹D$@;D$‚I¢ÿÿ‹L$$‹\$(‹Ö‹„$È  ‹ó+ñ‰´$  …öÚÿÿ‹uÇ„$       ‹6ƒş„/  ƒş„4  ƒş„d  …öjÚÿÿ‰L$$<@‰kName];
+      return mark && mark.find();
+    }
+
+    function getLastEditPos(cm) {
+      var done = cm.doc.history.done;
+      for (var i = done.length; i--;) {
+        if (done[i].changes) {
+          return copyCursor(done[i].changes[0].to);
+        }
+      }
+    }
+
+    var ExCommandDispatcher = function() {
+      this.buildCommandMap_();
+    };
+    ExCommandDispatcher.prototype = {
+      processCommand: function(cm, input, opt_params) {
+        var that = this;
+        cm.operation(function () {
+          cm.curOp.isVimOp = true;
+          that._processCommand(cm, input, opt_params);
+        });
+      },
+      _processCommand: function(cm, input, opt_params) {
+        var vim = cm.state.vim;
+        var commandHistoryRegister = vimGlobalState.registerController.getRegister(':');
+        var previousCommand = commandHistoryRegister.toString();
+        if (vim.visualMode) {
+          exitVisualMode(cm);
+        }
+        var inputStream = new CodeMirror.StringStream(input);
+        // update ": with the latest command whether valid or invalid
+        commandHistoryRegister.setText(input);
+        var params = opt_params || {};
+        params.input = input;
+        try {
+          this.parseInput_(cm, inputStream, params);
+        } catch(e) {
+          showConfirm(cm, e.toString());
+          throw e;
+        }
+        var command;
+        var commandName;
+        if (!params.commandName) {
+          // If only a line range is defined, move to the line.
+          if (params.line !== undefined) {
+            commandName = 'move';
+          }
+        } else {
+          command = this.matchCommand_(params.commandName);
+          if (command) {
+            commandName = command.name;
+            if (command.excludeFromCommandHistory) {
+              commandHistoryRegister.setText(previousCommand);
+            }
+            this.parseCommandArgs_(inputStream, params, command);
+            if (command.type == 'exToKey') {
+              // Handle Ex to Key mapping.
+              for (var i = 0; i < command.toKeys.length; i++) {
+                vimApi.handleKey(cm, command.toKeys[i], 'mapping');
+              }
+              return;
+            } else if (command.type == 'exToEx') {
+              // Handle Ex to Ex mapping.
+              this.processCommand(cm, command.toInput);
+              return;
+            }
+          }
+        }
+        if (!commandName) {
+          showConfirm(cm, 'Not an editor command ":' + input + '"');
+          return;
+        }
+        try {
+          exCommands[commandName](cm, params);
+          // Possibly asynchronous commands (e.g. substitute, which might have a
+          // user confirmation), are responsible for calling the callback when
+          // done. All others have it taken care of for them here.
+          if ((!command || !command.possiblyAsync) && params.callback) {
+            params.callback();
+          }
+        } catch(e) {
+          showConfirm(cm, e.toString());
+          throw e;
+        }
+      },
+      parseInput_: function(cm, inputStream, result) {
+        inputStream.eatWhile(':');
+        // Parse range.
+        if (inputStream.eat('%')) {
+          result.line = cm.firstLine();
+          result.lineEnd = cm.lastLine();
+        } else {
+          result.line = this.parseLineSpec_(cm, inputStream);
+          if (result.line !== undefined && inputStream.eat(',')) {
+            result.lineEnd = this.parseLineSpec_(cm, inputStream);
+          }
+        }
+
+        // Parse command name.
+        var commandMatch = inputStream.match(/^(\w+|!!|@@|[!#&*<=>@~])/);
+        if (commandMatch) {
+          result.commandName = commandMatch[1];
+        } else {
+          result.commandName = inputStream.match(/.*/)[0];
+        }
+
+        return result;
+      },
+      parseLineSpec_: function(cm, inputStream) {
+        var numberMatch = inputStream.match(/^(\d+)/);
+        if (numberMatch) {
+          // Absolute line number plus offset (N+M or N-M) is probably a typo,
+          // not something the user actually wanted. (NB: vim does allow this.)
+          return parseInt(numberMatch[1], 10) - 1;
+        }
+        switch (inputStream.next()) {
+          case '.':
+            return this.parseLineSpecOffset_(inputStream, cm.getCursor().line);
+          case '$':
+            return this.parseLineSpecOffset_(inputStream, cm.lastLine());
+          case '\'':
+            var markName = inputStream.next();
+            var markPos = getMarkPos(cm, cm.state.vim, markName);
+            if (!markPos) throw new Error('Mark not set');
+            return this.parseLineSpecOffset_(inputStream, markPos.line);
+          case '-':
+          case '+':
+            inputStream.backUp(1);
+            // Offset is relative to current line if not otherwise specified.
+            return this.parseLineSpecOffset_(inputStream, cm.getCursor().line);
+          default:
+            inputStream.backUp(1);
+            return undefined;
+        }
+      },
+      parseLineSpecOffset_: function(inputStream, line) {
+        var offsetMatch = inputStream.match(/^([+-])?(\d+)/);
+        if (offsetMatch) {
+          var offset = parseInt(offsetMatch[2], 10);
+          if (offsetMatch[1] == "-") {
+            line -= offset;
+          } else {
+            line += offset;
+          }
+        }
+        return line;
+      },
+      parseCommandArgs_: function(inputStream, params, command) {
+        if (inputStream.eol()) {
+          return;
+        }
+        params.argString = inputStream.match(/.*/)[0];
+        // Parse command-line arguments
+        var delim = command.argDelimiter || /\s+/;
+        var args = trim(params.argString).split(delim);
+        if (args.length && args[0]) {
+          params.args = args;
+        }
+      },
+      matchCommand_: function(commandName) {
+        // Return the command in the command map that matches the shortest
+        // prefix of the passed in command name. The match is guaranteed to be
+        // unambiguous if the defaultExCommandMap's shortNames are set up
+        // correctly. (see @code{defaultExCommandMap}).
+        for (var i = commandName.length; i > 0; i--) {
+          var prefix = commandName.substring(0, i);
+          if (this.commandMap_[prefix]) {
+            var command = this.commandMap_[prefix];
+            if (command.name.indexOf(commandName) === 0) {
+              return command;
+            }
+          }
+        }
+        return null;
+      },
+      buildCommandMap_: function() {
+        this.commandMap_ = {};
+        for (var i = 0; i < defaultExCommandMap.length; i++) {
+          var command = defaultExCommandMap[i];
+          var key = command.shortName || command.name;
+          this.commandMap_[key] = command;
+        }
+      },
+      map: function(lhs, rhs, ctx) {
+        if (lhs != ':' && lhs.charAt(0) == ':') {
+          if (ctx) { throw Error('Mode not supported for ex mappings'); }
+          var commandName = lhs.substring(1);
+          if (rhs != ':' && rhs.charAt(0) == ':') {
+            // Ex to Ex mapping
+            this.commandMap_[commandName] = {
+              name: commandName,
+              type: 'exToEx',
+              toInput: rhs.substring(1),
+              user: true
+            };
+          } else {
+            // Ex to key mapping
+            this.commandMap_[commandName] = {
+              name: commandName,
+              type: 'exToKey',
+              toKeys: rhs,
+              user: true
+            };
+          }
+        } else {
+          if (rhs != ':' && rhs.charAt(0) == ':') {
+            // Key to Ex mapping.
+            var mapping = {
+              keys: lhs,
+              type: 'keyToEx',
+              exArgs: { input: rhs.substring(1) }
+            };
+            if (ctx) { mapping.context = ctx; }
+            defaultKeymap.unshift(mapping);
+          } else {
+            // Key to key mapping
+            var mapping = {
+              keys: lhs,
+              type: 'keyToKey',
+              toKeys: rhs
+            };
+            if (ctx) { mapping.context = ctx; }
+            defaultKeymap.unshift(mapping);
+          }
+        }
+      },
+      unmap: function(lhs, ctx) {
+        if (lhs != ':' && lhs.charAt(0) == ':') {
+          // Ex to Ex or Ex to key mapping
+          if (ctx) { throw Error('Mode not supported for ex mappings'); }
+          var commandName = lhs.substring(1);
+          if (this.commandMap_[commandName] && this.commandMap_[commandName].user) {
+            delete this.commandMap_[commandName];
+            return true;
+          }
+        } else {
+          // Key to Ex or key to key mapping
+          var keys = lhs;
+          for (var i = 0; i < defaultKeymap.length; i++) {
+            if (keys == defaultKeymap[i].keys
+                && defaultKeymap[i].context === ctx) {
+              defaultKeymap.splice(i, 1);
+              return true;
+            }
+          }
+        }
+      }
+    };
+
+    var exCommands = {
+      colorscheme: function(cm, params) {
+        if (!params.args || params.args.length < 1) {
+          showConfirm(cm, cm.getOption('theme'));
+          return;
+        }
+        cm.setOption('theme', params.args[0]);
+      },
+      map: function(cm, params, ctx) {
+        var mapArgs = params.args;
+        if (!mapArgs || mapArgs.length < 2) {
+          if (cm) {
+            showConfirm(cm, 'Invalid mapping: ' + params.input);
+          }
+          return;
+        }
+        exCommandDispatcher.map(mapArgs[0], mapArgs[1], ctx);
+      },
+      imap: function(cm, params) { this.map(cm, params, 'insert'); },
+      nmap: function(cm, params) { this.map(cm, params, 'normal'); },
+      vmap: function(cm, params) { this.map(cm, params, 'visual'); },
+      unmap: function(cm, params, ctx) {
+        var mapArgs = params.args;
+        if (!mapArgs || mapArgs.length < 1 || !exCommandDispatcher.unmap(mapArgs[0], ctx)) {
+          if (cm) {
+            showConfirm(cm, 'No such mapping: ' + params.input);
+          }
+        }
+      },
+      move: function(cm, params) {
+        commandDispatcher.processCommand(cm, cm.state.vim, {
+            type: 'motion',
+            motion: 'moveToLineOrEdgeOfDocument',
+            motionArgs: { forward: false, explicitRepeat: true,
+              linewise: true },
+            repeatOverride: params.line+1});
+      },
+      set: function(cm, params) {
+        var setArgs = params.args;
+        // Options passed through to the setOption/getOption calls. May be passed in by the
+        // local/global versions of the set command
+        var setCfg = params.setCfg || {};
+        if (!setArgs || setArgs.length < 1) {
+          if (cm) {
+            showConfirm(cm, 'Invalid mapping: ' + params.input);
+          }
+          return;
+        }
+        var expr = setArgs[0].split('=');
+        var optionName = expr[0];
+        var value = expr[1];
+        var forceGet = false;
+
+        if (optionName.charAt(optionName.length - 1) == '?') {
+          // If post-fixed with ?, then the set is actually a get.
+          if (value) { throw Error('Trailing characters: ' + params.argString); }
+          optionName = optionName.substring(0, optionName.length - 1);
+          forceGet = true;
+        }
+        if (value === undefined && optionName.substring(0, 2) == 'no') {
+          // To set boolean options to false, the option name is prefixed with
+          // 'no'.
+          optionName = optionName.substring(2);
+          value = false;
+        }
+
+        var optionIsBoolean = options[optionName] && options[optionName].type == 'boolean';
+        if (optionIsBoolean && value == undefined) {
+          // Calling set with a boolean option sets it to true.
+          value = true;
+        }
+        // If no value is provided, then we assume this is a get.
+        if (!optionIsBoolean && value === undefined || forceGet) {
+          var oldValue = getOption(optionName, cm, setCfg);
+          if (oldValue instanceof Error) {
+            showConfirm(cm, oldValue.message);
+          } else if (oldValue === true || oldValue === false) {
+            showConfirm(cm, ' ' + (oldValue ? '' : 'no') + optionName);
+          } else {
+            showConfirm(cm, '  ' + optionName + '=' + oldValue);
+          }
+        } else {
+          var setOptionReturn = setOption(optionName, value, cm, setCfg);
+          if (setOptionReturn instanceof Error) {
+            showConfirm(cm, setOptionReturn.message);
+          }
+        }
+      },
+      setlocal: function (cm, params) {
+        // setCfg is passed through to setOption
+        params.setCfg = {scope: 'local'};
+        this.set(cm, params);
+      },
+      setglobal: function (cm, params) {
+        // setCfg is passed through to setOption
+        params.setCfg = {scope: 'global'};
+        this.set(cm, params);
+      },
+      registers: function(cm, params) {
+        var regArgs = params.args;
+        var registers = vimGlobalState.registerController.registers;
+        var regInfo = '----------Registers----------\n\n';
+        if (!regArgs) {
+          for (var registerName in registers) {
+            var text = registers[registerName].toString();
+            if (text.length) {
+              regInfo += '"' + registerName + '    ' + text + '\n'
+            }
+          }
+        } else {
+          var registerName;
+          regArgs = regArgs.join('');
+          for (var i = 0; i < regArgs.length; i++) {
+            registerName = regArgs.charAt(i);
+            if (!vimGlobalState.registerController.isValidRegister(registerName)) {
+              continue;
+            }
+            var register = registers[registerName] || new Register();
+            regInfo += '"' + registerName + '    ' + register.toString() + '\n'
+          }
+        }
+        showConfirm(cm, regInfo);
+      },
+      sort: function(cm, params) {
+        var reverse, ignoreCase, unique, number, pattern;
+        function parseArgs() {
+          if (params.argString) {
+            var args = new CodeMirror.StringStream(params.argString);
+            if (args.eat('!')) { reverse = true; }
+            if (args.eol()) { return; }
+            if (!args.eatSpace()) { return 'Invalid arguments'; }
+            var opts = args.match(/([dinuox]+)?\s*(\/.+\/)?\s*/);
+            if (!opts && !args.eol()) { return 'Invalid arguments'; }
+            if (opts[1]) {
+              ignoreCase = opts[1].indexOf('i') != -1;
+              unique = opts[1].indexOf('u') != -1;
+              var decimal = opts[1].indexOf('d') != -1 || opts[1].indexOf('n') != -1 && 1;
+              var hex = opts[1].indexOf('x') != -1 && 1;
+              var octal = opts[1].indexOf('o') != -1 && 1;
+              if (decimal + hex + octal > 1) { return 'Invalid arguments'; }
+              number = decimal && 'decimal' || hex && 'hex' || octal && 'octal';
+            }
+            if (opts[2]) {
+              pattern = new RegExp(opts[2].substr(1, opts[2].length - 2), ignoreCase ? 'i' : '');
+            }
+          }
+        }
+        var err = parseArgs();
+        if (err) {
+          showConfirm(cm, err + ': ' + params.argString);
+          return;
+        }
+        var lineStart = params.line || cm.firstLine();
+        var lineEnd = params.lineEnd || params.line || cm.lastLine();
+        if (lineStart == lineEnd) { return; }
+        var curStart = new Pos(lineStart, 0);
+        var curEnd = new Pos(lineEnd, lineLength(cm, lineEnd));
+        var text = cm.getRange(curStart, curEnd).split('\n');
+        var numberRegex = pattern ? pattern :
+           (number == 'decimal') ? /(-?)([\d]+)/ :
+           (number == 'hex') ? /(-?)(?:0x)?([0-9a-f]+)/i :
+           (number == 'octal') ? /([0-7]+)/ : null;
+        var radix = (number == 'decimal') ? 10 : (number == 'hex') ? 16 : (number == 'octal') ? 8 : null;
+        var numPart = [], textPart = [];
+        if (number || pattern) {
+          for (var i = 0; i < text.length; i++) {
+            var matchPart = pattern ? text[i].match(pattern) : null;
+            if (matchPart && matchPart[0] != '') {
+              numPart.push(matchPart);
+            } else if (!pattern && numberRegex.exec(text[i])) {
+              numPart.push(text[i]);
+            } else {
+              textPart.push(text[i]);
+            }
+          }
+        } else {
+          textPart = text;
+        }
+        function compareFn(a, b) {
+          if (reverse) { var tmp; tmp = a; a = b; b = tmp; }
+          if (ignoreCase) { a = a.toLowerCase(); b = b.toLowerCase(); }
+     

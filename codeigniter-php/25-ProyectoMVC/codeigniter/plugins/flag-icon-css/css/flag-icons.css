@@ -1,0 +1,678 @@
+.flag-icon-background {
+  background-size: contain;
+  background-position: 50%;
+  background-repeat: no-repeat;
+}
+.flag-icon {
+  background-size: contain;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  position: relative;
+  display: inline-block;
+  width: 1.33333333em;
+  line-height: 1em;
+}
+.flag-icon:before {
+  content: '\00a0';
+}
+.flag-icon.flag-icon-squared {
+  width: 1em;
+}
+.flag-icon-ad {
+  background-image: url(../flags/4x3/ad.svg);
+}
+.flag-icon-ad.flag-icon-squared {
+  background-image: url(../flags/1x1/ad.svg);
+}
+.flag-icon-ae {
+  background-image: url(../flags/4x3/ae.svg);
+}
+.flag-icon-ae.flag-icon-squared {
+  background-image: url(../flags/1x1/ae.svg);
+}
+.flag-icon-af {
+  background-image: url(../flags/4x3/af.svg);
+}
+.flag-icon-af.flag-icon-squared {
+  background-image: url(../flags/1x1/af.svg);
+}
+.flag-icon-ag {
+  background-image: url(../flags/4x3/ag.svg);
+}
+.flag-icon-ag.flag-icon-squared {
+  background-image: url(../flags/1x1/ag.svg);
+}
+.flag-icon-ai {
+  background-image: url(../flags/4x3/ai.svg);
+}
+.flag-icon-ai.flag-icon-squared {
+  background-image: url(../flags/1x1/ai.svg);
+}
+.flag-icon-al {
+  background-image: url(../flags/4x3/al.svg);
+}
+.flag-icon-al.flag-icon-squared {
+  background-image: url(../flags/1x1/al.svg);
+}
+.flag-icon-am {
+  background-image: url(../flags/4x3/am.svg);
+}
+.flag-icon-am.flag-icon-squared {
+  background-image: url(../flags/1x1/am.svg);
+}
+.flag-icon-ao {
+  background-image: url(../flags/4x3/ao.svg);
+}
+.flag-icon-ao.flag-icon-squared {
+  background-image: url(../flags/1x1/ao.svg);
+}
+.flag-icon-aq {
+  background-image: url(../flags/4x3/aq.svg);
+}
+.flag-icon-aq.flag-icon-squared {
+  background-image: url(../flags/1x1/aq.svg);
+}
+.flag-icon-ar {
+  background-image: url(../flags/4x3/ar.svg);
+}
+.flag-icon-ar.flag-icon-squared {
+  background-image: url(../flags/1x1/ar.svg);
+}
+.flag-icon-as {
+  background-image: url(../flags/4x3/as.svg);
+}
+.flag-icon-as.flag-icon-squared {
+  background-image: url(../flags/1x1/as.svg);
+}
+.flag-icon-at {
+  background-image: url(../flags/4x3/at.svg);
+}
+.flag-icon-at.flag-icon-squared {
+  background-image: url(../flags/1x1/at.svg);
+}
+.flag-icon-au {
+  background-image: url(../flags/4x3/au.svg);
+}
+.flag-icon-au.flag-icon-squared {
+  background-image: url(../flags/1x1/au.svg);
+}
+.flag-icon-aw {
+  background-image: url(../flags/4x3/aw.svg);
+}
+.flag-icon-aw.flag-icon-squared {
+  background-image: url(../flags/1x1/aw.svg);
+}
+.flag-icon-ax {
+  background-image: url(../flags/4x3/ax.svg);
+}
+.flag-icon-ax.flag-icon-squared {
+  background-image: url(../flags/1x1/ax.svg);
+}
+.flag-icon-az {
+  background-image: url(../flags/4x3/az.svg);
+}
+.flag-icon-az.flag-icon-squared {
+  background-image: url(../flags/1x1/az.svg);
+}
+.flag-icon-ba {
+  background-image: url(../flags/4x3/ba.svg);
+}
+.flag-icon-ba.flag-icon-squared {
+  background-image: url(../flags/1x1/ba.svg);
+}
+.flag-icon-bb {
+  background-image: url(../flags/4x3/bb.svg);
+}
+.flag-icon-bb.flag-icon-squared {
+  background-image: url(../flags/1x1/bb.svg);
+}
+.flag-icon-bd {
+  background-image: url(../flags/4x3/bd.svg);
+}
+.flag-icon-bd.flag-icon-squared {
+  background-image: url(../flags/1x1/bd.svg);
+}
+.flag-icon-be {
+  background-image: url(../flags/4x3/be.svg);
+}
+.flag-icon-be.flag-icon-squared {
+  background-image: url(../flags/1x1/be.svg);
+}
+.flag-icon-bf {
+  background-image: url(../flags/4x3/bf.svg);
+}
+.flag-icon-bf.flag-icon-squared {
+  background-image: url(../flags/1x1/bf.svg);
+}
+.flag-icon-bg {
+  background-image: url(../flags/4x3/bg.svg);
+}
+.flag-icon-bg.flag-icon-squared {
+  background-image: url(../flags/1x1/bg.svg);
+}
+.flag-icon-bh {
+  background-image: url(../flags/4x3/bh.svg);
+}
+.flag-icon-bh.flag-icon-squared {
+  background-image: url(../flags/1x1/bh.svg);
+}
+.flag-icon-bi {
+  background-image: url(../flags/4x3/bi.svg);
+}
+.flag-icon-bi.flag-icon-squared {
+  background-image: url(../flags/1x1/bi.svg);
+}
+.flag-icon-bj {
+  background-image: url(../flags/4x3/bj.svg);
+}
+.flag-icon-bj.flag-icon-squared {
+  background-image: url(../flags/1x1/bj.svg);
+}
+.flag-icon-bl {
+  background-image: url(../flags/4x3/bl.svg);
+}
+.flag-icon-bl.flag-icon-squared {
+  background-image: url(../flags/1x1/bl.svg);
+}
+.flag-icon-bm {
+  background-image: url(../flags/4x3/bm.svg);
+}
+.flag-icon-bm.flag-icon-squared {
+  background-image: url(../flags/1x1/bm.svg);
+}
+.flag-icon-bn {
+  background-image: url(../flags/4x3/bn.svg);
+}
+.flag-icon-bn.flag-icon-squared {
+  background-image: url(../flags/1x1/bn.svg);
+}
+.flag-icon-bo {
+  background-image: url(../flags/4x3/bo.svg);
+}
+.flag-icon-bo.flag-icon-squared {
+  background-image: url(../flags/1x1/bo.svg);
+}
+.flag-icon-bq {
+  background-image: url(../flags/4x3/bq.svg);
+}
+.flag-icon-bq.flag-icon-squared {
+  background-image: url(../flags/1x1/bq.svg);
+}
+.flag-icon-br {
+  background-image: url(../flags/4x3/br.svg);
+}
+.flag-icon-br.flag-icon-squared {
+  background-image: url(../flags/1x1/br.svg);
+}
+.flag-icon-bs {
+  background-image: url(../flags/4x3/bs.svg);
+}
+.flag-icon-bs.flag-icon-squared {
+  background-image: url(../flags/1x1/bs.svg);
+}
+.flag-icon-bt {
+  background-image: url(../flags/4x3/bt.svg);
+}
+.flag-icon-bt.flag-icon-squared {
+  background-image: url(../flags/1x1/bt.svg);
+}
+.flag-icon-bv {
+  background-image: url(../flags/4x3/bv.svg);
+}
+.flag-icon-bv.flag-icon-squared {
+  background-image: url(../flags/1x1/bv.svg);
+}
+.flag-icon-bw {
+  background-image: url(../flags/4x3/bw.svg);
+}
+.flag-icon-bw.flag-icon-squared {
+  background-image: url(../flags/1x1/bw.svg);
+}
+.flag-icon-by {
+  background-image: url(../flags/4x3/by.svg);
+}
+.flag-icon-by.flag-icon-squared {
+  background-image: url(../flags/1x1/by.svg);
+}
+.flag-icon-bz {
+  background-image: url(../flags/4x3/bz.svg);
+}
+.flag-icon-bz.flag-icon-squared {
+  background-image: url(../flags/1x1/bz.svg);
+}
+.flag-icon-ca {
+  background-image: url(../flags/4x3/ca.svg);
+}
+.flag-icon-ca.flag-icon-squared {
+  background-image: url(../flags/1x1/ca.svg);
+}
+.flag-icon-cc {
+  background-image: url(../flags/4x3/cc.svg);
+}
+.flag-icon-cc.flag-icon-squared {
+  background-image: url(../flags/1x1/cc.svg);
+}
+.flag-icon-cd {
+  background-image: url(../flags/4x3/cd.svg);
+}
+.flag-icon-cd.flag-icon-squared {
+  background-image: url(../flags/1x1/cd.svg);
+}
+.flag-icon-cf {
+  background-image: url(../flags/4x3/cf.svg);
+}
+.flag-icon-cf.flag-icon-squared {
+  background-image: url(../flags/1x1/cf.svg);
+}
+.flag-icon-cg {
+  background-image: url(../flags/4x3/cg.svg);
+}
+.flag-icon-cg.flag-icon-squared {
+  background-image: url(../flags/1x1/cg.svg);
+}
+.flag-icon-ch {
+  background-image: url(../flags/4x3/ch.svg);
+}
+.flag-icon-ch.flag-icon-squared {
+  background-image: url(../flags/1x1/ch.svg);
+}
+.flag-icon-ci {
+  background-image: url(../flags/4x3/ci.svg);
+}
+.flag-icon-ci.flag-icon-squared {
+  background-image: url(../flags/1x1/ci.svg);
+}
+.flag-icon-ck {
+  background-image: url(../flags/4x3/ck.svg);
+}
+.flag-icon-ck.flag-icon-squared {
+  background-image: url(../flags/1x1/ck.svg);
+}
+.flag-icon-cl {
+  background-image: url(../flags/4x3/cl.svg);
+}
+.flag-icon-cl.flag-icon-squared {
+  background-image: url(../flags/1x1/cl.svg);
+}
+.flag-icon-cm {
+  background-image: url(../flags/4x3/cm.svg);
+}
+.flag-icon-cm.flag-icon-squared {
+  background-image: url(../flags/1x1/cm.svg);
+}
+.flag-icon-cn {
+  background-image: url(../flags/4x3/cn.svg);
+}
+.flag-icon-cn.flag-icon-squared {
+  background-image: url(../flags/1x1/cn.svg);
+}
+.flag-icon-co {
+  background-image: url(../flags/4x3/co.svg);
+}
+.flag-icon-co.flag-icon-squared {
+  background-image: url(../flags/1x1/co.svg);
+}
+.flag-icon-cr {
+  background-image: url(../flags/4x3/cr.svg);
+}
+.flag-icon-cr.flag-icon-squared {
+  background-image: url(../flags/1x1/cr.svg);
+}
+.flag-icon-cu {
+  background-image: url(../flags/4x3/cu.svg);
+}
+.flag-icon-cu.flag-icon-squared {
+  background-image: url(../flags/1x1/cu.svg);
+}
+.flag-icon-cv {
+  background-image: url(../flags/4x3/cv.svg);
+}
+.flag-icon-cv.flag-icon-squared {
+  background-image: url(../flags/1x1/cv.svg);
+}
+.flag-icon-cw {
+  background-image: url(../flags/4x3/cw.svg);
+}
+.flag-icon-cw.flag-icon-squared {
+  background-image: url(../flags/1x1/cw.svg);
+}
+.flag-icon-cx {
+  background-image: url(../flags/4x3/cx.svg);
+}
+.flag-icon-cx.flag-icon-squared {
+  background-image: url(../flags/1x1/cx.svg);
+}
+.flag-icon-cy {
+  background-image: url(../flags/4x3/cy.svg);
+}
+.flag-icon-cy.flag-icon-squared {
+  background-image: url(../flags/1x1/cy.svg);
+}
+.flag-icon-cz {
+  background-image: url(../flags/4x3/cz.svg);
+}
+.flag-icon-cz.flag-icon-squared {
+  background-image: url(../flags/1x1/cz.svg);
+}
+.flag-icon-de {
+  background-image: url(../flags/4x3/de.svg);
+}
+.flag-icon-de.flag-icon-squared {
+  background-image: url(../flags/1x1/de.svg);
+}
+.flag-icon-dj {
+  background-image: url(../flags/4x3/dj.svg);
+}
+.flag-icon-dj.flag-icon-squared {
+  background-image: url(../flags/1x1/dj.svg);
+}
+.flag-icon-dk {
+  background-image: url(../flags/4x3/dk.svg);
+}
+.flag-icon-dk.flag-icon-squared {
+  background-image: url(../flags/1x1/dk.svg);
+}
+.flag-icon-dm {
+  background-image: url(../flags/4x3/dm.svg);
+}
+.flag-icon-dm.flag-icon-squared {
+  background-image: url(../flags/1x1/dm.svg);
+}
+.flag-icon-do {
+  background-image: url(../flags/4x3/do.svg);
+}
+.flag-icon-do.flag-icon-squared {
+  background-image: url(../flags/1x1/do.svg);
+}
+.flag-icon-dz {
+  background-image: url(../flags/4x3/dz.svg);
+}
+.flag-icon-dz.flag-icon-squared {
+  background-image: url(../flags/1x1/dz.svg);
+}
+.flag-icon-ec {
+  background-image: url(../flags/4x3/ec.svg);
+}
+.flag-icon-ec.flag-icon-squared {
+  background-image: url(../flags/1x1/ec.svg);
+}
+.flag-icon-ee {
+  background-image: url(../flags/4x3/ee.svg);
+}
+.flag-icon-ee.flag-icon-squared {
+  background-image: url(../flags/1x1/ee.svg);
+}
+.flag-icon-eg {
+  background-image: url(../flags/4x3/eg.svg);
+}
+.flag-icon-eg.flag-icon-squared {
+  background-image: url(../flags/1x1/eg.svg);
+}
+.flag-icon-eh {
+  background-image: url(../flags/4x3/eh.svg);
+}
+.flag-icon-eh.flag-icon-squared {
+  background-image: url(../flags/1x1/eh.svg);
+}
+.flag-icon-er {
+  background-image: url(../flags/4x3/er.svg);
+}
+.flag-icon-er.flag-icon-squared {
+  background-image: url(../flags/1x1/er.svg);
+}
+.flag-icon-es {
+  background-image: url(../flags/4x3/es.svg);
+}
+.flag-icon-es.flag-icon-squared {
+  background-image: url(../flags/1x1/es.svg);
+}
+.flag-icon-et {
+  background-image: url(../flags/4x3/et.svg);
+}
+.flag-icon-et.flag-icon-squared {
+  background-image: url(../flags/1x1/et.svg);
+}
+.flag-icon-fi {
+  background-image: url(../flags/4x3/fi.svg);
+}
+.flag-icon-fi.flag-icon-squared {
+  background-image: url(../flags/1x1/fi.svg);
+}
+.flag-icon-fj {
+  background-image: url(../flags/4x3/fj.svg);
+}
+.flag-icon-fj.flag-icon-squared {
+  background-image: url(../flags/1x1/fj.svg);
+}
+.flag-icon-fk {
+  background-image: url(../flags/4x3/fk.svg);
+}
+.flag-icon-fk.flag-icon-squared {
+  background-image: url(../flags/1x1/fk.svg);
+}
+.flag-icon-fm {
+  background-image: url(../flags/4x3/fm.svg);
+}
+.flag-icon-fm.flag-icon-squared {
+  background-image: url(../flags/1x1/fm.svg);
+}
+.flag-icon-fo {
+  background-image: url(../flags/4x3/fo.svg);
+}
+.flag-icon-fo.flag-icon-squared {
+  background-image: url(../flags/1x1/fo.svg);
+}
+.flag-icon-fr {
+  background-image: url(../flags/4x3/fr.svg);
+}
+.flag-icon-fr.flag-icon-squared {
+  background-image: url(../flags/1x1/fr.svg);
+}
+.flag-icon-ga {
+  background-image: url(../flags/4x3/ga.svg);
+}
+.flag-icon-ga.flag-icon-squared {
+  background-image: url(../flags/1x1/ga.svg);
+}
+.flag-icon-gb {
+  background-image: url(../flags/4x3/gb.svg);
+}
+.flag-icon-gb.flag-icon-squared {
+  background-image: url(../flags/1x1/gb.svg);
+}
+.flag-icon-gd {
+  background-image: url(../flags/4x3/gd.svg);
+}
+.flag-icon-gd.flag-icon-squared {
+  background-image: url(../flags/1x1/gd.svg);
+}
+.flag-icon-ge {
+  background-image: url(../flags/4x3/ge.svg);
+}
+.flag-icon-ge.flag-icon-squared {
+  background-image: url(../flags/1x1/ge.svg);
+}
+.flag-icon-gf {
+  background-image: url(../flags/4x3/gf.svg);
+}
+.flag-icon-gf.flag-icon-squared {
+  background-image: url(../flags/1x1/gf.svg);
+}
+.flag-icon-gg {
+  background-image: url(../flags/4x3/gg.svg);
+}
+.flag-icon-gg.flag-icon-squared {
+  background-image: url(../flags/1x1/gg.svg);
+}
+.flag-icon-gh {
+  background-image: url(../flags/4x3/gh.svg);
+}
+.flag-icon-gh.flag-icon-squared {
+  background-image: url(../flags/1x1/gh.svg);
+}
+.flag-icon-gi {
+  background-image: url(../flags/4x3/gi.svg);
+}
+.flag-icon-gi.flag-icon-squared {
+  background-image: url(../flags/1x1/gi.svg);
+}
+.flag-icon-gl {
+  background-image: url(../flags/4x3/gl.svg);
+}
+.flag-icon-gl.flag-icon-squared {
+  background-image: url(../flags/1x1/gl.svg);
+}
+.flag-icon-gm {
+  background-image: url(../flags/4x3/gm.svg);
+}
+.flag-icon-gm.flag-icon-squared {
+  background-image: url(../flags/1x1/gm.svg);
+}
+.flag-icon-gn {
+  background-image: url(../flags/4x3/gn.svg);
+}
+.flag-icon-gn.flag-icon-squared {
+  background-image: url(../flags/1x1/gn.svg);
+}
+.flag-icon-gp {
+  background-image: url(../flags/4x3/gp.svg);
+}
+.flag-icon-gp.flag-icon-squared {
+  background-image: url(../flags/1x1/gp.svg);
+}
+.flag-icon-gq {
+  background-image: url(../flags/4x3/gq.svg);
+}
+.flag-icon-gq.flag-icon-squared {
+  background-image: url(../flags/1x1/gq.svg);
+}
+.flag-icon-gr {
+  background-image: url(../flags/4x3/gr.svg);
+}
+.flag-icon-gr.flag-icon-squared {
+  background-image: url(../flags/1x1/gr.svg);
+}
+.flag-icon-gs {
+  background-image: url(../flags/4x3/gs.svg);
+}
+.flag-icon-gs.flag-icon-squared {
+  background-image: url(../flags/1x1/gs.svg);
+}
+.flag-icon-gt {
+  background-image: url(../flags/4x3/gt.svg);
+}
+.flag-icon-gt.flag-icon-squared {
+  background-image: url(../flags/1x1/gt.svg);
+}
+.flag-icon-gu {
+  background-image: url(../flags/4x3/gu.svg);
+}
+.flag-icon-gu.flag-icon-squared {
+  background-image: url(../flags/1x1/gu.svg);
+}
+.flag-icon-gw {
+  background-image: url(../flags/4x3/gw.svg);
+}
+.flag-icon-gw.flag-icon-squared {
+  background-image: url(../flags/1x1/gw.svg);
+}
+.flag-icon-gy {
+  background-image: url(../flags/4x3/gy.svg);
+}
+.flag-icon-gy.flag-icon-squared {
+  background-image: url(../flags/1x1/gy.svg);
+}
+.flag-icon-hk {
+  background-image: url(../flags/4x3/hk.svg);
+}
+.flag-icon-hk.flag-icon-squared {
+  background-image: url(../flags/1x1/hk.svg);
+}
+.flag-icon-hm {
+  background-image: url(../flags/4x3/hm.svg);
+}
+.flag-icon-hm.flag-icon-squared {
+  background-image: url(../flags/1x1/hm.svg);
+}
+.flag-icon-hn {
+  background-image: url(../flags/4x3/hn.svg);
+}
+.flag-icon-hn.flag-icon-squared {
+  background-image: url(../flags/1x1/hn.svg);
+}
+.flag-icon-hr {
+  background-image: url(../flags/4x3/hr.svg);
+}
+.flag-icon-hr.flag-icon-squared {
+  background-image: url(../flags/1x1/hr.svg);
+}
+.flag-icon-ht {
+  background-image: url(../flags/4x3/ht.svg);
+}
+.flag-icon-ht.flag-icon-squared {
+  background-image: url(../flags/1x1/ht.svg);
+}
+.flag-icon-hu {
+  background-image: url(../flags/4x3/hu.svg);
+}
+.flag-icon-hu.flag-icon-squared {
+  background-image: url(../flags/1x1/hu.svg);
+}
+.flag-icon-id {
+  background-image: url(../flags/4x3/id.svg);
+}
+.flag-icon-id.flag-icon-squared {
+  background-image: url(../flags/1x1/id.svg);
+}
+.flag-icon-ie {
+  background-image: url(../flags/4x3/ie.svg);
+}
+.flag-icon-ie.flag-icon-squared {
+  background-image: url(../flags/1x1/ie.svg);
+}
+.flag-icon-il {
+  background-image: url(../flags/4x3/il.svg);
+}
+.flag-icon-il.flag-icon-squared {
+  background-image: url(../flags/1x1/il.svg);
+}
+.flag-icon-im {
+  background-image: url(../flags/4x3/im.svg);
+}
+.flag-icon-im.flag-icon-squared {
+  background-image: url(../flags/1x1/im.svg);
+}
+.flag-icon-in {
+  background-image: url(../flags/4x3/in.svg);
+}
+.flag-icon-in.flag-icon-squared {
+  background-image: url(../flags/1x1/in.svg);
+}
+.flag-icon-io {
+  background-image: url(../flags/4x3/io.svg);
+}
+.flag-icon-io.flag-icon-squared {
+  background-image: url(../flags/1x1/io.svg);
+}
+.flag-icon-iq {
+  background-image: url(../flags/4x3/iq.svg);
+}
+.flag-icon-iq.flag-icon-squared {
+  background-image: url(../flags/1x1/iq.svg);
+}
+.flag-icon-ir {
+  background-image: url(../flags/4x3/ir.svg);
+}
+.flag-icon-ir.flag-icon-squared {
+  background-image: url(../flags/1x1/ir.svg);
+}
+.flag-icon-is {
+  background-image: url(../flags/4x3/is.svg);
+}
+.flag-icon-is.flag-icon-squared {
+  background-image: url(../flags/1x1/is.svg);
+}
+.flag-icon-it {
+  background-image: url(../flags/4x3/it.svg);
+}
+.flag-iconis-warning):not(.is-valid),\n.accent-light .custom-select:focus,\n.accent-light .custom-control-input:focus:not(:checked) ~ .custom-control-label::before,\n.accent-light .custom-file-input:focus ~ .custom-file-label {\n  border-color: white;\n}\n\n.accent-light .page-item .page-link {\n  color: #f8f9fa;\n}\n\n.accent-light .page-item.active a,\n.accent-light .page-item.active .page-link {\n  background-color: #f8f9fa;\n  border-color: #f8f9fa;\n  color: #fff;\n}\n\n.accent-light .page-item.disabled a,\n.accent-light .page-item.disabled .page-link {\n  background-color: #fff;\n  border-color: #dee2e6;\n  color: #6c757d;\n}\n\n.accent-light [class*=\"sidebar-dark-\"] .sidebar a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link) {\n  color: #c2c7d0;\n}\n\n.accent-light [class*=\"sidebar-dark-\"] .sidebar a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):hover {\n  color: #fff;\n}\n\n.accent-light [class*=\"sidebar-light-\"] .sidebar a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link) {\n  color: #343a40;\n}\n\n.accent-light [class*=\"sidebar-light-\"] .sidebar a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):hover {\n  color: #212529;\n}\n\n.dark-mode.accent-light .page-item .page-link:hover, .dark-mode.accent-light .page-item .page-link:focus {\n  color: white;\n}\n\n.accent-dark .btn-link,\n.accent-dark a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn),\n.accent-dark .nav-tabs .nav-link {\n  color: #343a40;\n}\n\n.accent-dark .btn-link:hover,\n.accent-dark a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover,\n.accent-dark .nav-tabs .nav-link:hover {\n  color: #121416;\n}\n\n.accent-dark .dropdown-item:active, .accent-dark .dropdown-item.active {\n  background-color: #343a40;\n  color: #fff;\n}\n\n.accent-dark .custom-control-input:checked ~ .custom-control-label::before {\n  background-color: #343a40;\n  border-color: #060708;\n}\n\n.accent-dark .custom-control-input:checked ~ .custom-control-label::after {\n  background-image: url(\"data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3E%3C/svg%3E\");\n}\n\n.accent-dark .form-control:focus:not(.is-invalid):not(.is-warning):not(.is-valid),\n.accent-dark .custom-select:focus,\n.accent-dark .custom-control-input:focus:not(:checked) ~ .custom-control-label::before,\n.accent-dark .custom-file-input:focus ~ .custom-file-label {\n  border-color: #6d7a86;\n}\n\n.accent-dark .page-item .page-link {\n  color: #343a40;\n}\n\n.accent-dark .page-item.active a,\n.accent-dark .page-item.active .page-link {\n  background-color: #343a40;\n  border-color: #343a40;\n  color: #fff;\n}\n\n.accent-dark .page-item.disabled a,\n.accent-dark .page-item.disabled .page-link {\n  background-color: #fff;\n  border-color: #dee2e6;\n  color: #6c757d;\n}\n\n.accent-dark [class*=\"sidebar-dark-\"] .sidebar a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link) {\n  color: #c2c7d0;\n}\n\n.accent-dark [class*=\"sidebar-dark-\"] .sidebar a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):hover {\n  color: #fff;\n}\n\n.accent-dark [class*=\"sidebar-light-\"] .sidebar a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link) {\n  color: #343a40;\n}\n\n.accent-dark [class*=\"sidebar-light-\"] .sidebar a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):hover {\n  color: #212529;\n}\n\n.dark-mode.accent-dark .page-item .page-link:hover, .dark-mode.accent-dark .page-item .page-link:focus {\n  color: #3f474e;\n}\n\n.accent-lightblue .btn-link,\n.accent-lightblue a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn),\n.accent-lightblue .nav-tabs .nav-link {\n  color: #3c8dbc;\n}\n\n.accent-lightblue .btn-link:hover,\n.accent-lightblue a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover,\n.accent-lightblue .nav-tabs .nav-link:hover {\n  color: #296282;\n}\n\n.accent-lightblue .dropdown-item:active, .accent-lightblue .dropdown-item.active {\n  background-color: #3c8dbc;\n  color: #fff;\n}\n\n.accent-lightblue .custom-control-input:checked ~ .custom-control-label::before {\n  background-color: #3c8dbc;\n  border-color: #23536f;\n}\n\n.accent-lightblue .custom-control-input:checked ~ .custom-control-label::after {\n  background-image: url(\"data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3E%3C/svg%3E\");\n}\n\n.accent-lightblue .form-control:focus:not(.is-invalid):not(.is-warning):not(.is-valid),\n.accent-lightblue .custom-select:focus,\n.accent-lightblue .custom-control-input:focus:not(:checked) ~ .custom-control-label::before,\n.accent-lightblue .custom-file-input:focus ~ .custom-file-label {\n  border-color: #99c5de;\n}\n\n.accent-lightblue .page-item .page-link {\n  color: #3c8dbc;\n}\n\n.accent-lightblue .page-item.active a,\n.accent-lightblue .page-item.active .page-link {\n  background-color: #3c8dbc;\n  border-color: #3c8dbc;\n  color: #fff;\n}\n\n.accent-lightblue .page-item.disabled a,\n.accent-lightblue .page-item.disabled .page-link {\n  background-color: #fff;\n  border-color: #dee2e6;\n  color: #6c757d;\n}\n\n.accent-lightblue [class*=\"sidebar-dark-\"] .sidebar a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link) {\n  color: #c2c7d0;\n}\n\n.accent-lightblue [class*=\"sidebar-dark-\"] .sidebar a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):hover {\n  color: #fff;\n}\n\n.accent-lightblue [class*=\"sidebar-light-\"] .sidebar a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link) {\n  color: #343a40;\n}\n\n.accent-lightblue [class*=\"sidebar-light-\"] .sidebar a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):hover {\n  color: #212529;\n}\n\n.dark-mode.accent-lightblue .page-item .page-link:hover, .dark-mode.accent-lightblue .page-item .page-link:focus {\n  color: #4c99c6;\n}\n\n.accent-navy .btn-link,\n.accent-navy a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn),\n.accent-navy .nav-tabs .nav-link {\n  color: #001f3f;\n}\n\n.accent-navy .btn-link:hover,\n.accent-navy a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover,\n.accent-navy .nav-tabs .nav-link:hover {\n  color: black;\n}\n\n.accent-navy .dropdown-item:active, .accent-navy .dropdown-item.active {\n  background-color: #001f3f;\n  color: #fff;\n}\n\n.accent-navy .custom-control-input:checked ~ .custom-control-label::before {\n  background-color: #001f3f;\n  border-color: black;\n}\n\n.accent-navy .custom-control-input:checked ~ .custom-control-label::after {\n  background-image: url(\"data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3E%3C/svg%3E\");\n}\n\n.accent-navy .form-control:focus:not(.is-invalid):not(.is-warning):not(.is-valid),\n.accent-navy .custom-select:focus,\n.accent-navy .custom-control-input:focus:not(:checked) ~ .custom-control-label::before,\n.accent-navy .custom-file-input:focus ~ .custom-file-label {\n  border-color: #005ebf;\n}\n\n.accent-navy .page-item .page-link {\n  color: #001f3f;\n}\n\n.accent-navy .page-item.active a,\n.accent-navy .page-item.active .page-link {\n  background-color: #001f3f;\n  border-color: #001f3f;\n  color: #fff;\n}\n\n.accent-navy .page-item.disabled a,\n.accent-navy .page-item.disabled .page-link {\n  background-color: #fff;\n  border-color: #dee2e6;\n  color: #6c757d;\n}\n\n.accent-navy [class*=\"sidebar-dark-\"] .sidebar a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link) {\n  color: #c2c7d0;\n}\n\n.accent-navy [class*=\"sidebar-dark-\"] .sidebar a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):hover {\n  color: #fff;\n}\n\n.accent-navy [class*=\"sidebar-light-\"] .sidebar a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link) {\n  color: #343a40;\n}\n\n.accent-navy [class*=\"sidebar-light-\"] .sidebar a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):hover {\n  color: #212529;\n}\n\n.dark-mode.accent-navy .page-item .page-link:hover, .dark-mode.accent-navy .page-item .page-link:focus {\n  color: #002c59;\n}\n\n.accent-olive .btn-link,\n.accent-olive a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn),\n.accent-olive .nav-tabs .nav-link {\n  color: #3d9970;\n}\n\n.accent-olive .btn-link:hover,\n.accent-olive a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover,\n.accent-olive .nav-tabs .nav-link:hover {\n  color: #276248;\n}\n\n.accent-olive .dropdown-item:active, .accent-olive .dropdown-item.active {\n  background-color: #3d9970;\n  color: #fff;\n}\n\n.accent-olive .custom-control-input:checked ~ .custom-control-label::before {\n  background-color: #3d9970;\n  border-color: #20503b;\n}\n\n.accent-olive .custom-control-input:checked ~ .custom-control-label::after {\n  background-image: url(\"data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3E%3C/svg%3E\");\n}\n\n.accent-olive .form-control:focus:not(.is-invalid):not(.is-warning):not(.is-valid),\n.accent-olive .custom-select:focus,\n.accent-olive .custom-control-input:focus:not(:checked) ~ .custom-control-label::before,\n.accent-olive .custom-file-input:focus ~ .custom-file-label {\n  border-color: #87cfaf;\n}\n\n.accent-olive .page-item .page-link {\n  color: #3d9970;\n}\n\n.accent-olive .page-item.active a,\n.accent-olive .page-item.active .page-link {\n  background-color: #3d9970;\n  border-color: #3d9970;\n  color: #fff;\n}\n\n.accent-olive .page-item.disabled a,\n.accent-olive .page-item.disabled .page-link {\n  background-color: #fff;\n  border-color: #dee2e6;\n  color: #6c757d;\n}\n\n.accent-olive [class*=\"sidebar-dark-\"] .sidebar a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link) {\n  color: #c2c7d0;\n}\n\n.accent-olive [class*=\"sidebar-dark-\"] .sidebar a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):hover {\n  color: #fff;\n}\n\n.accent-olive [class*=\"sidebar-light-\"] .sidebar a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link) {\n  color: #343a40;\n}\n\n.accent-olive [class*=\"sidebar-light-\"] .sidebar a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):hover {\n  color: #212529;\n}\n\n.dark-mode.accent-olive .page-item .page-link:hover, .dark-mode.accent-olive .page-item .page-link:focus {\n  color: #44ab7d;\n}\n\n.accent-lime .btn-link,\n.accent-lime a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn),\n.accent-lime .nav-tabs .nav-link {\n  color: #01ff70;\n}\n\n.accent-lime .btn-link:hover,\n.accent-lime a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover,\n.accent-lime .nav-tabs .nav-link:hover {\n  color: #00b44e;\n}\n\n.accent-lime .dropdown-item:active, .accent-lime .dropdown-item.active {\n  background-color: #01ff70;\n  color: #1f2d3d;\n}\n\n.accent-lime .custom-control-input:checked ~ .custom-control-label::before {\n  background-color: #01ff70;\n  border-color: #009a43;\n}\n\n.accent-lime .custom-control-input:checked ~ .custom-control-label::after {\n  background-image: url(\"data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath fill='%231f2d3d' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3E%3C/svg%3E\");\n}\n\n.accent-lime .form-control:focus:not(.is-invalid):not(.is-warning):not(.is-valid),\n.accent-lime .custom-select:focus,\n.accent-lime .custom-control-input:focus:not(:checked) ~ .custom-control-label::before,\n.accent-lime .custom-file-input:focus ~ .custom-file-label {\n  border-color: #81ffb8;\n}\n\n.accent-lime .page-item .page-link {\n  color: #01ff70;\n}\n\n.accent-lime .page-item.active a,\n.accent-lime .page-item.active .page-link {\n  background-color: #01ff70;\n  border-color: #01ff70;\n  color: #fff;\n}\n\n.accent-lime .page-item.disabled a,\n.accent-lime .page-item.disabled .page-link {\n  background-color: #fff;\n  border-color: #dee2e6;\n  color: #6c757d;\n}\n\n.accent-lime [class*=\"sidebar-dark-\"] .sidebar a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link) {\n  color: #c2c7d0;\n}\n\n.accent-lime [class*=\"sidebar-dark-\"] .sidebar a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):hover {\n  color: #fff;\n}\n\n.accent-lime [class*=\"sidebar-light-\"] .sidebar a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link) {\n  color: #343a40;\n}\n\n.accent-lime [class*=\"sidebar-light-\"] .sidebar a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):hover {\n  color: #212529;\n}\n\n.dark-mode.accent-lime .page-item .page-link:hover, .dark-mode.accent-lime .page-item .page-link:focus {\n  color: #1bff7e;\n}\n\n.accent-fuchsia .btn-link,\n.accent-fuchsia a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn),\n.accent-fuchsia .nav-tabs .nav-link {\n  color: #f012be;\n}\n\n.accent-fuchsia .btn-link:hover,\n.accent-fuchsia a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover,\n.accent-fuchsia .nav-tabs .nav-link:hover {\n  color: #ab0b87;\n}\n\n.accent-fuchsia .dropdown-item:active, .accent-fuchsia .dropdown-item.active {\n  background-color: #f012be;\n  color: #fff;\n}\n\n.accent-fuchsia .custom-control-input:checked ~ .custom-control-label::before {\n  background-color: #f012be;\n  border-color: #930974;\n}\n\n.accent-fuchsia .custom-control-input:checked ~ .custom-control-label::after {\n  background-image: url(\"data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3E%3C/svg%3E\");\n}\n\n.accent-fuchsia .form-control:focus:not(.is-invalid):not(.is-warning):not(.is-valid),\n.accent-fuchsia .custom-select:focus,\n.accent-fuchsia .custom-control-input:focus:not(:checked) ~ .custom-control-label::before,\n.accent-fuchsia .custom-file-input:focus ~ .custom-file-label {\n  border-color: #f88adf;\n}\n\n.accent-fuchsia .page-item .page-link {\n  color: #f012be;\n}\n\n.accent-fuchsia .page-item.active a,\n.accent-fuchsia .page-item.active .page-link {\n  background-color: #f012be;\n  border-color: #f012be;\n  color: #fff;\n}\n\n.accent-fuchsia .page-item.disabled a,\n.accent-fuchsia .page-item.disabled .page-link {\n  background-color: #fff;\n  border-color: #dee2e6;\n  color: #6c757d;\n}\n\n.accent-fuchsia [class*=\"sidebar-dark-\"] .sidebar a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link) {\n  color: #c2c7d0;\n}\n\n.accent-fuchsia [class*=\"sidebar-dark-\"] .sidebar a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):hover {\n  color: #fff;\n}\n\n.accent-fuchsia [class*=\"sidebar-light-\"] .sidebar a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link) {\n  color: #343a40;\n}\n\n.accent-fuchsia [class*=\"sidebar-light-\"] .sidebar a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):hover {\n  color: #212529;\n}\n\n.dark-mode.accent-fuchsia .page-item .page-link:hover, .dark-mode.accent-fuchsia .page-item .page-link:focus {\n  color: #f22ac5;\n}\n\n.accent-maroon .btn-link,\n.accent-maroon a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn),\n.accent-maroon .nav-tabs .nav-link {\n  color: #d81b60;\n}\n\n.accent-maroon .btn-link:hover,\n.accent-maroon a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover,\n.accent-maroon .nav-tabs .navp !important;\n  }\n  .flex-md-nowrap {\n    flex-wrap: nowrap !important;\n  }\n  .flex-md-wrap-reverse {\n    flex-wrap: wrap-reverse !important;\n  }\n  .flex-md-fill {\n    flex: 1 1 auto !important;\n  }\n  .flex-md-grow-0 {\n    flex-grow: 0 !important;\n  }\n  .flex-md-grow-1 {\n    flex-grow: 1 !important;\n  }\n  .flex-md-shrink-0 {\n    flex-shrink: 0 !important;\n  }\n  .flex-md-shrink-1 {\n    flex-shrink: 1 !important;\n  }\n  .justify-content-md-start {\n    justify-content: flex-start !important;\n  }\n  .justify-content-md-end {\n    justify-content: flex-end !important;\n  }\n  .justify-content-md-center {\n    justify-content: center !important;\n  }\n  .justify-content-md-between {\n    justify-content: space-between !important;\n  }\n  .justify-content-md-around {\n    justify-content: space-around !important;\n  }\n  .align-items-md-start {\n    align-items: flex-start !important;\n  }\n  .align-items-md-end {\n    align-items: flex-end !important;\n  }\n  .align-items-md-center {\n    align-items: center !important;\n  }\n  .align-items-md-baseline {\n    align-items: baseline !important;\n  }\n  .align-items-md-stretch {\n    align-items: stretch !important;\n  }\n  .align-content-md-start {\n    align-content: flex-start !important;\n  }\n  .align-content-md-end {\n    align-content: flex-end !important;\n  }\n  .align-content-md-center {\n    align-content: center !important;\n  }\n  .align-content-md-between {\n    align-content: space-between !important;\n  }\n  .align-content-md-around {\n    align-content: space-around !important;\n  }\n  .align-content-md-stretch {\n    align-content: stretch !important;\n  }\n  .align-self-md-auto {\n    align-self: auto !important;\n  }\n  .align-self-md-start {\n    align-self: flex-start !important;\n  }\n  .align-self-md-end {\n    align-self: flex-end !important;\n  }\n  .align-self-md-center {\n    align-self: center !important;\n  }\n  .align-self-md-baseline {\n    align-self: baseline !important;\n  }\n  .align-self-md-stretch {\n    align-self: stretch !important;\n  }\n}\n\n@media (min-width: 992px) {\n  .flex-lg-row {\n    flex-direction: row !important;\n  }\n  .flex-lg-column {\n    flex-direction: column !important;\n  }\n  .flex-lg-row-reverse {\n    flex-direction: row-reverse !important;\n  }\n  .flex-lg-column-reverse {\n    flex-direction: column-reverse !important;\n  }\n  .flex-lg-wrap {\n    flex-wrap: wrap !important;\n  }\n  .flex-lg-nowrap {\n    flex-wrap: nowrap !important;\n  }\n  .flex-lg-wrap-reverse {\n    flex-wrap: wrap-reverse !important;\n  }\n  .flex-lg-fill {\n    flex: 1 1 auto !important;\n  }\n  .flex-lg-grow-0 {\n    flex-grow: 0 !important;\n  }\n  .flex-lg-grow-1 {\n    flex-grow: 1 !important;\n  }\n  .flex-lg-shrink-0 {\n    flex-shrink: 0 !important;\n  }\n  .flex-lg-shrink-1 {\n    flex-shrink: 1 !important;\n  }\n  .justify-content-lg-start {\n    justify-content: flex-start !important;\n  }\n  .justify-content-lg-end {\n    justify-content: flex-end !important;\n  }\n  .justify-content-lg-center {\n    justify-content: center !important;\n  }\n  .justify-content-lg-between {\n    justify-content: space-between !important;\n  }\n  .justify-content-lg-around {\n    justify-content: space-around !important;\n  }\n  .align-items-lg-start {\n    align-items: flex-start !important;\n  }\n  .align-items-lg-end {\n    align-items: flex-end !important;\n  }\n  .align-items-lg-center {\n    align-items: center !important;\n  }\n  .align-items-lg-baseline {\n    align-items: baseline !important;\n  }\n  .align-items-lg-stretch {\n    align-items: stretch !important;\n  }\n  .align-content-lg-start {\n    align-content: flex-start !important;\n  }\n  .align-content-lg-end {\n    align-content: flex-end !important;\n  }\n  .align-content-lg-center {\n    align-content: center !important;\n  }\n  .align-content-lg-between {\n    align-content: space-between !important;\n  }\n  .align-content-lg-around {\n    align-content: space-around !important;\n  }\n  .align-content-lg-stretch {\n    align-content: stretch !important;\n  }\n  .align-self-lg-auto {\n    align-self: auto !important;\n  }\n  .align-self-lg-start {\n    align-self: flex-start !important;\n  }\n  .align-self-lg-end {\n    align-self: flex-end !important;\n  }\n  .align-self-lg-center {\n    align-self: center !important;\n  }\n  .align-self-lg-baseline {\n    align-self: baseline !important;\n  }\n  .align-self-lg-stretch {\n    align-self: stretch !important;\n  }\n}\n\n@media (min-width: 1200px) {\n  .flex-xl-row {\n    flex-direction: row !important;\n  }\n  .flex-xl-column {\n    flex-direction: column !important;\n  }\n  .flex-xl-row-reverse {\n    flex-direction: row-reverse !important;\n  }\n  .flex-xl-column-reverse {\n    flex-direction: column-reverse !important;\n  }\n  .flex-xl-wrap {\n    flex-wrap: wrap !important;\n  }\n  .flex-xl-nowrap {\n    flex-wrap: nowrap !important;\n  }\n  .flex-xl-wrap-reverse {\n    flex-wrap: wrap-reverse !important;\n  }\n  .flex-xl-fill {\n    flex: 1 1 auto !important;\n  }\n  .flex-xl-grow-0 {\n    flex-grow: 0 !important;\n  }\n  .flex-xl-grow-1 {\n    flex-grow: 1 !important;\n  }\n  .flex-xl-shrink-0 {\n    flex-shrink: 0 !important;\n  }\n  .flex-xl-shrink-1 {\n    flex-shrink: 1 !important;\n  }\n  .justify-content-xl-start {\n    justify-content: flex-start !important;\n  }\n  .justify-content-xl-end {\n    justify-content: flex-end !important;\n  }\n  .justify-content-xl-center {\n    justify-content: center !important;\n  }\n  .justify-content-xl-between {\n    justify-content: space-between !important;\n  }\n  .justify-content-xl-around {\n    justify-content: space-around !important;\n  }\n  .align-items-xl-start {\n    align-items: flex-start !important;\n  }\n  .align-items-xl-end {\n    align-items: flex-end !important;\n  }\n  .align-items-xl-center {\n    align-items: center !important;\n  }\n  .align-items-xl-baseline {\n    align-items: baseline !important;\n  }\n  .align-items-xl-stretch {\n    align-items: stretch !important;\n  }\n  .align-content-xl-start {\n    align-content: flex-start !important;\n  }\n  .align-content-xl-end {\n    align-content: flex-end !important;\n  }\n  .align-content-xl-center {\n    align-content: center !important;\n  }\n  .align-content-xl-between {\n    align-content: space-between !important;\n  }\n  .align-content-xl-aro

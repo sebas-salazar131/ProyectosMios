@@ -1,0 +1,34 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-image: url("../img/fondo3.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.formulario{
+    text-align: center;
+    margin-top: 10%;
+    
+    
+}
+.margen{
+    padding: 2em;
+    background: linear-gradient(rgba(30, 151, 131, 0.459), rgb(0, 255, 170));
+}
+
+.modal-footer .modal-title{
+    display: flex;
+    justify-content: center;
+  }
+
+.feme .mascu .perso{
+    padding-left: 2px;
+    background: rgb(30, 151, 131);
+}
+.modal-content {
+    background: linear-gradient(rgb(30, 151, 131), rgb(0, 255, 170));
+}
+

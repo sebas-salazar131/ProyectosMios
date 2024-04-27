@@ -1,0 +1,44 @@
+// CodeMirror, copyright (c) by Marijn Haverbeke and others
+// Distributed under an MIT license: https://codemirror.net/LICENSE
+
+(function(mod) {
+  if (typeof exports == "object" && typeof module == "object") // CommonJS
+    mod(require("../../lib/codemirror"));
+  else if (typeof define == "function" && define.amd) // AMD
+    define(["../../lib/codemirror"], mod);
+  else // Plain browser env
+    mod(CodeMirror);
+})(function(CodeMirror) {
+"use strict";
+
+var rfc2822 = [
+  "From", "Sender", "Reply-To", "To", "Cc", "Bcc", "Message-ID",
+  "In-Reply-To", "References", "Resent-From", "Resent-Sender", "Resent-To",
+  "Resent-Cc", "Resent-Bcc", "Resent-Message-ID", "Return-Path", "Received"
+];
+var rfc2822NoEmail = [
+  "Date", "Subject", "Comments", "Keywords", "Resent-Date"
+];
+
+CodeMirror.registerHelper("hintWords", "mbox", rfc2822.concat(rfc2822NoEmail));
+
+var whitespace = /^[ \t]/;
+var separator = /^From /; // See RFC 4155
+var rfc2822Header = new RegExp("^(" + rfc2822.join("|") + "): ");
+var rfc2822HeaderNoEmail = new RegExp("^(" + rfc2822NoEmail.join("|") + "): ");
+var header = /^[^:]+:/; // Optional fields defined in RFC 2822
+var email = /^[^ ]+@[^ ]+/;
+var untilEmail = /^.*?(?=[^ ]+?@[^ ]+)/;
+var bracketedEmail = /^<.*?>/;
+var untilBracketedEmail = /^.*?(?=<.*>)/;
+
+function styleForHeader(header) {
+  if (header === "Subject") return "header";
+  return "string";
+}
+
+function readToken(stream, state) {
+  if (stream.sol()) {
+    // From last line
+    state.inSeparator = false;
+    if (state.inHeader && stream.match(whitespace

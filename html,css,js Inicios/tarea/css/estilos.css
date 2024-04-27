@@ -1,0 +1,90 @@
+nav{
+    background-image: url(../img/img2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: aqua;
+}
+.clase1{
+    padding-top: 4em;
+}
+.logo{
+    padding-left: 2em;
+}
+.log{
+    padding-right: 2em;
+}
+.home{
+    background: rgb(2, 2, 107);
+}
+.parrafo{
+    padding: 1.5em;
+}
+.boton{
+    background: rgb(2, 2, 107) ;
+    color: aliceblue;
+    font-size: 12px;
+}
+.boton1{
+    padding-bottom: 4em;
+}
+.flecha{
+    color: aliceblue;
+    font-size: 20px;
+    padding-bottom: 2em;
+}
+.titu{
+    padding-top: 4em;
+    padding-left: 3em;
+    padding-right: 3em;
+    padding-bottom: 6em;
+}
+.parra{
+    font-size: 12px;
+}
+.line{
+    color: yellow;
+    font-size: 50px;
+}
+.icono{
+    font-size: 30px;
+    color: rgb(2, 2, 107);
+}
+.titulo{
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+.piepagina{
+    margin-left: 3em;
+    margin-right: 2em;
+    background: rgb(2, 2, 107); 
+}
+.parrafo2{
+    margin-top: 1.2em;
+}
+.tabla{
+    font-size: 10px;
+}
+.horas{
+    padding-right: 5em;
+}
+.open{
+    padding-bottom: 0.5em;
+}
+.margen{
+    padding-left: 2em;
+}
+.parrafo3{
+    padding-top: 2em;
+    padding-left: 3em;
+}
+.heal{
+    padding-top: 0.3em;
+}
+.medi{
+    font-family: 'Abel', sans-serif;
+    font-size: 25px;
+}
+.mediland{
+    font-family: 'Abel', sans-serif;
+    font-size: 50px;
+}

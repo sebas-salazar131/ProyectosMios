@@ -1,0 +1,33 @@
+
+*{
+    margin: 0;
+    padding: 0;
+}
+.body_inicio{
+    background-image: url(img/fondo.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+
+.formulario{
+    text-align: center;
+    margin-top: 15%; 
+    padding: 2em;
+}
+
+.margen{
+    padding: 1.5em;
+    background: white;
+}
+.cont{
+    background: white;
+}
+.sele{
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    width: 150px;
+}

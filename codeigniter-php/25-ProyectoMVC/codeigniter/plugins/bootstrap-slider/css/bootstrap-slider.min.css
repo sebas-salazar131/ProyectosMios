@@ -1,0 +1,449 @@
+/*! =======================================================
+                      VERSION  11.0.2              
+========================================================= */
+/*! =========================================================
+ * bootstrap-slider.js
+ *
+ * Maintainers:
+ *		Kyle Kemp
+ *			- Twitter: @seiyria
+ *			- Github:  seiyria
+ *		Rohit Kalkur
+ *			- Twitter: @Rovolutionary
+ *			- Github:  rovolution
+ *
+ * =========================================================
+ *
+ * bootstrap-slider is released under the MIT License
+ * Copyright (c) 2019 Kyle Kemp, Rohit Kalkur, and contributors
+ * 
+ * Permission is hereby granted, free of charge, to any person
+ * obtaining a copy of this software and associated documentation
+ * files (the "Software"), to deal in the Software without
+ * restriction, including without limitation the rights to use,
+ * copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the
+ * Software is furnished to do so, subject to the following
+ * conditions:
+ * 
+ * The above copyright notice and this permission notice shall be
+ * included in all copies or substantial portions of the Software.
+ * 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+ * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+ * OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+ * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+ * HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+ * WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+ * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+ * OTHER DEALINGS IN THE SOFTWARE.
+ *
+ * ========================================================= */.slider{display:inline-block;vertical-align:middle;position:relative}.slider.slider-horizontal{width:210px;height:20px}.slider.slider-horizontal .slider-track{height:10px;width:100%;margin-top:-5px;top:50%;left:0}.slider.slider-horizontal .slider-selection,.slider.slider-horizontal .slider-track-low,.slider.slider-horizontal .slider-track-high{height:100%;top:0;bottom:0}.slider.slider-horizontal .slider-tick,.slider.slider-horizontal .slider-handle{margin-left:-10px}.slider.slider-horizontal .slider-tick.triangle,.slider.slider-horizontal .slider-handle.triangle{position:relative;top:50%;transform:translateY(-50%);border-width:0 10px 10px 10px;width:0;height:0;border-bottom-color:#036fa5;margin-top:0}.slider.slider-horizontal .slider-tick-container{white-space:nowrap;position:absolute;top:0;left:0;width:100%}.slider.slider-horizontal .slider-tick-label-container{white-space:nowrap;margin-top:20px}.slider.slider-horizontal .slider-tick-label-container .slider-tick-label{display:inline-block;text-align:center}.slider.slider-horizontal.slider-rtl .slider-track{left:initial;right:0}.slider.slider-horizontal.slider-rtl .slider-tick,.slider.slider-horizontal.slider-rtl .slider-handle{margin-left:initial;margin-right:-10px}.slider.slider-horizontal.slider-rtl .slider-tick-container{left:initial;right:0}.slider.slider-vertical{height:210px;width:20px}.slider.slider-vertical .slider-track{width:10px;height:100%;left:25%;top:0}.slider.slider-vertical .slider-selection{width:100%;left:0;top:0;bottom:0}.slider.slider-vertical .slider-track-low,.slider.slider-vertical .slider-track-high{width:100%;left:0;right:0}.slider.slider-vertical .slider-tick,.slider.slider-vertical .slider-handle{margin-top:-10px}.slider.slider-vertical .slider-tick.triangle,.slider.slider-vertical .slider-handle.triangle{border-width:10px 0 10px 10px;width:1px;height:1px;border-left-color:#036fa5;margin-left:0}.slider.slider-vertical .slider-tick-label-container{white-space:nowrap}.slider.slider-vertical .slider-tick-label-container .slider-tick-label{padding-left:4px}.slider.slider-vertical.slider-rtl .slider-track{left:initial;right:25%}.slider.slider-vertical.slider-rtl .slider-selection{left:initial;right:0}.slider.slider-vertical.slider-rtl .slider-tick.triangle,.slider.slider-vertical.slider-rtl .slider-handle.triangle{border-width:10px 10px 10px 0}.slider.slider-vertical.slider-rtl .slider-tick-label-container .slider-tick-label{padding-left:initial;padding-right:4px}.slider.slider-disabled .slider-handle{background-color:#cfcfcf;background-image:-moz-linear-gradient(top, #DFDFDF, #BEBEBE);background-image:-webkit-gradient(linear, 0 0, 0 100%, from(#DFDFDF), to(#BEBEBE));background-image:-webkit-linear-gradient(top, #DFDFDF, #BEBEBE);background-image:-o-linear-gradient(top, #DFDFDF, #BEBEBE);background-image:linear-gradient(to bottom, #DFDFDF, #BEBEBE);background-repeat:repeat-x;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#DFDFDF', endColorstr='#BEBEBE',GradientType=0)}.slider.slider-disabled .slider-track{background-color:#e7e7e7;background-image:-moz-linear-gradient(top, #E5E5E5, #E9E9E9);background-image:-webkit-gradient(linear, 0 0, 0 100%, from(#E5E5E5), to(#E9E9E9));background-image:-webkit-linear-gradient(top, #E5E5E5, #E9E9E9);background-image:-o-linear-gradient(top, #E5E5E5, #E9E9E9);background-image:linear-gradient(to bottom, #E5E5E5, #E9E9E9);background-repeat:repeat-x;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#E5E5E5', endColorstr='#E9E9E9',GradientType=0);cursor:not-allowed}.slider input{display:none}.slider .tooltip-inner{white-space:nowrap;max-width:none}.slider .bs-tooltip-top .tooltip-inner,.slider .bs-tooltip-bottom .tooltip-inner{position:relative;left:-50%}.slider.bs-tooltip-left .tooltip-inner,.slider.bs-tooltip-right .tooltip-inner{position:relative;top:-100%}.slider .tooltip{pointer-events:none}.slider .tooltip.bs-tooltip-top .arrow,.slider .tooltip.bs-tooltip-bottom .arrow{left:-.4rem}.slider .tooltip.bs-tooltip-top{margin-top:-44px}.slider .tooltip.bs-tooltip-bottom{margin-top:2px}.slider .tooltip.bs-tooltip-left,.slider .tooltip.bs-tooltip-right{margin-top:-14px}.slider .tooltip.bs-tooltip-left .arrow,.slider .tooltip.bs-tooltip-right .arrow{top:8px}.slider .hide{display:none}.slider-track{background-color:#f7f7f7;background-image:-moz-linear-gradient(top, #f5f5f5, #F9F9F9);background-image:-webkit-gradient(linear, 0 0, 0 100%, from(#f5f5f5), to(#F9F9F9));background-image:-webkit-linear-gradient(top, #f5f5f5, #F9F9F9);background-image:-o-linear-gradient(top, #f5f5f5, #F9F9F9);background-image:linear-gradient(to bottom, #f5f5f5, #F9F9F9);background-repeat:repeat-x;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f5f5f5', endColorstr='#F9F9F9',GradientType=0);-webkit-box-shadow:inset 0 1px 2px rgba(0,0,0,0.1);-moz-box-shadow:inset 0 1px 2px rgba(0,0,0,0.1);box-shadow:inset 0 1px 2px rgba(0,0,0,0.1);-webkit-border-radius:4px;-moz-border-radius:4px;border-radius:4px;position:absolute;cursor:pointer}.slider-selection{background-color:#f7f7f7;background-image:-moz-linear-gradient(top, #F9F9F9, #f5f5f5);background-image:-webkit-gradient(linear, 0 0, 0 100%, from(#F9F9F9), to(#f5f5f5));background-image:-webkit-linear-gradient(top, #F9F9F9, #f5f5f5);background-image:-o-linear-gradient(top, #F9F9F9, #f5f5f5);background-image:linear-gradient(to bottom, #F9F9F9, #f5f5f5);background-repeat:repeat-x;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#F9F9F9', endColorstr='#f5f5f5',GradientType=0);-webkit-box-shadow:inset 0 -1px 0 rgba(0,0,0,0.15);-moz-box-shadow:inset 0 -1px 0 rgba(0,0,0,0.15);box-shadow:inset 0 -1px 0 rgba(0,0,0,0.15);-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;-webkit-border-radius:4px;-moz-border-radius:4px;border-radius:4px;position:absolute}.slider-selection.tick-slider-selection{background-color:#46c1fe;background-image:-moz-linear-gradient(top, #52c5ff, #3abcfd);background-image:-webkit-gradient(linear, 0 0, 0 100%, from(#52c5ff), to(#3abcfd));background-image:-webkit-linear-gradient(top, #52c5ff, #3abcfd);background-image:-o-linear-gradient(top, #52c5ff, #3abcfd);background-image:linear-gradient(to bottom, #52c5ff, #3abcfd);background-repeat:repeat-x;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#52c5ff', endColorstr='#3abcfd',GradientType=0)}.slider-track-low,.slider-track-high{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;-webkit-border-radius:4px;-moz-border-radius:4px;border-radius:4px;position:absolute;background:transparent}.slider-handle{background-color:#0478b2;background-image:-moz-linear-gradient(top, #0480BE, #036fa5);background-image:-webkit-gradient(linear, 0 0, 0 100%, from(#0480BE), to(#036fa5));background-image:-webkit-linear-gradient(top, #0480BE, #036fa5);background-image:-o-linear-gradient(top, #0480BE, #036fa5);background-image:linear-gradient(to bottom, #0480BE, #036fa5);background-repeat:repeat-x;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#0480BE', endColorstr='#036fa5',GradientType=0);-webkit-box-shadow:inset 0 1px 0 rgba(255,255,255,0.2),0 1px 2px rgba(0,0,0,0.05);-moz-box-shadow:inset 0 1px 0 rgba(255,255,255,0.2),0 1px 2px rgba(0,0,0,0.05);box-shadow:inset 0 1px 0 rgba(255,255,255,0.2),0 1px 2px rgba(0,0,0,0.05);position:absolute;top:0;width:20px;height:20px;background-color:#0480BE;border:0px solid transparent}.slider-handle:hover{cursor:pointer}.slider-handle.round{-webkit-border-radius:20px;-moz-border-radius:20px;border-radius:20px}.slider-handle.triangle{background:transparent none}.slider-handle.custom{background:transparent none}.slider-handle.custom::before{line-height:20px;font-size:20px;content:'\2605';color:#726204}.slider-tick{background-color:#f7f7f7;background-image:-moz-linear-gradient(top, #f5f5f5, #F9F9F9);background-image:-webkit-gradient(linear, 0 0, 0 100%, from(#f5f5f5), to(#F9F9F9));background-image:-webkit-linear-gradient(top, #f5f5f5, #F9F9F9);background-image:-o-linear-gradient(top, #f5f5f5, #F9F9F9);background-image:linear-gradient(to bottom, #f5f5f5, #F9F9F9);background-repeat:repeat-x;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f5f5f5', endColorstr='#F9F9F9',GradientType=0);-webkit-box-shadow:inset 0 -1px 0 rgba(0,0,0,0.15);-moz-box-shadow:inset 0 -1px 0 rgba(0,0,0,0.15);box-shadow:inset 0 -1px 0 rgba(0,0,0,0.15);-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;position:absolute;cursor:pointer;width:20px;height:20px;filter:none;opacity:0.8;border:0px solid transparent}.slider-tick.round{border-radius:50%}.slider-tick.triangle{background:transparent none}.slider-tick.custom{background:transparent none}.slider-tick.custom::before{line-height:20px;font-size:20px;content:'\2605';color:#726204}.slider-tick.in-selection{background-color:#46c1fe;background-image:-moz-linear-gradient(top, #52c5ff, #3abcfd);background-image:-webkit-gradient(linear, 0 0, 0 100%, from(#52c5ff), to(#3abcfd));background-image:-webkit-linear-gradient(top, #52c5ff, #3abcfd);background-image:-o-linear-gradient(top, #52c5ff, #3abcfd);background-image:linear-gradient(to bottom, #52c5ff, #3abcfd);background-repeat:repeat-x;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#52c5ff', endColorstr='#3abcfd',GradientType=0);opacity:1}
+
+/*# sourceMappingURL=bootstrap-slider.min.css.map */                                                                                T][_^√Ω   ÎæUãÏÉ‰VWSÅÏT  ãEfÔ¿ãUâD$(âT$Pã†v¯3Ãâå$H  )Ñ$0  f÷Ñ$@  f~Ñ$H  )Ñ$   f÷Ñ$   f~Ñ$  )Ñ$  f÷Ñ$   f~Ñ$(  )Ñ$ê   f÷Ñ$†   f~Ñ$®   )Ñ$–   f÷Ñ$‡   f~Ñ$Ë   )Ñ$∞   f÷Ñ$¿   f~Ñ$»   Ë/êC˛ã»fÔ¿ã]æ   É˘π   ãEDŒø   âD$4ãUãÉ®   ”Áâ|$âT$LâD$8ã≥¸   ãª   É{x*Ñ%  ãC8É˛ÑØ  É¯Ñ·  É¯ãã  ãì$  âT$@ãë$  âL$âT$$Ñ#  É¯åç	  É|$4 éÇ	  ¡Êçî$0  ¡Áçå$P  + âL$˜Ÿ«D$    âL$â|$0ât$,Ö¿é‡   ã≥å   ãL$8â¥$ê   ã≥ê   ãªå   çQˇâ¥$–   âî$0  Ø˙Øìê   âº$   çxˇâî$  É¯âå$∞   ãt$Çß  âD$3“â|$Dâ\$< Ä    ãû®   ãæå   âºîî   ãæå   çCˇØ¯ØÀâºîÙ   ãæê   âºî‘   ãæê   Ø¯âÑî4  âºî  âåî¥   Bã∂  ;T$DrüãD$Ö¿ã\$<«D$    ~>ãå$–   3“ã|$â\$<ãúî0  Cã¥î∞   Øúî–   ØÒ;ﬁuBã˙;–r€â|$ã\$<ãL$3“IH É¯âL$~8çHˇÉ˘é·   çÖ¸ˇˇˇ3¿çº$T  %ˇˇ  ä‡ã–¡‡¬ãÒ¡ÈÛ´ãŒÉ·Û™ãD$ãº$ÿ   ˜ﬂâ<$ãà®   ã|$8Ø˘ãÉ  ô˜ˇã–ø   ã¥$ò   â\$<˜ﬁ«Ñ$X  ˇˇˇˇâå$T  ãÑ$4  ã$âT$ ãå$T  ;»çQâî$T  |ÎâD$Hπ   AãÑåP  ;Ñå0  çP|zÉ˘t«ÑåP      +¥å   +úå  ÎÃâîåP  Î√É˘|HÉ‡∫   ˜ÿfÔ¿«Ñ$\      ¡fÑîT  É¬;–r;¡Éˇˇˇ«ÑÑT      @;¡rÈ˛˛ˇˇ3¿ÎﬂãD$HÉ˘âîåP  Ñ@ˇˇˇ¥åê   úå–   ˇt$Lˇt$@ˇt$,ˇt$LçÑ$‰   Pçî$‰   Rã”çå$¨   Q¡‚çÑ$¨   Pã∆Qº¡‡AîRPË”∆∂ˇÉƒ(Ö¿Ö9  ;|$ tãÑ$4  GÈÕ˛ˇˇã\$<âD$TãÉ  ã≥Ä  ãŒ¡·ãê  ¡ÊÉº$–   âT$|ˇt$EÒVËJXC˛ãÉƒÖˆÑ  ãK8É˘éY  ãî$–   ∏   âT$`ât$Xâ\$<ãÿã|$|çsˇãT$;ÚMÚÖ…ãó$  ât$lâT$\~1É˘éo  ¡·çº$P  3¿%ˇˇ  ä‡ã–¡‡¬ãÒ¡ÈÛ´ãŒÉ·Û™ãt$<ãT$|«Ñ$P  ˇˇˇˇãÜ  ã∫®   ô˜ˇãt$lâºúP  3ˇâD$h3¿â|$dçµ   ãL$`çvâ¥$Ä   ÉÊ¸;T$ât$xæ   L∆˜Ÿ;T$âT$pL˛«âD$tâú$Ñ   ãŸãî$P  ;î$0  çBâÑ$P  åt  ãå$Ñ   3“∏ˇˇˇˇ@B;»t«ÑîL      +úî  ãºîP  ;ºî0  çwâ¥îP  }Œ;î$Ñ   tôãD$|úî–   É∏®   t^ˇt$Ljˇt$`ˇt$lãÛãD$|¡Êˇ¥Ñ¿   ˇ¥$ê   ˇt$tãî$†   ˇ¥îÏ   t$pVË˚Å  âD$xÉƒ$É|$T Öò  ãÑ$–   âD$`É|$l |9Éº$Ä   éj  É|$t Ñ  ãL$pçº$P  ç¥$0  ã¡¡ÈÛ•ã»É·Û§ãD$lã|$dã¥Ñ∞   ˛â|$dçVˇØT$`⁄;|$hÖæ˛ˇˇãT$|ãt$<ãú$Ñ   ãä  CâL$|ãN8;Ÿå…˝ˇˇãt$Xã\$<VËrfC˛ÉƒÉ|$T Ö"  ãD$(ãT$PãL$AD$,T$0âD$(âT$PâL$;L$4ç^  ãÉ®   ãì  âD$8ãC8âT$È˘ˇˇÉ˘|8ãÒ3“ÉÊ¸fÔ¿fÑîP  É¬;÷r;ÒÉë˝ˇˇ«Ñ¥P      F;ÒrÈ|˝ˇˇ3ˆÎﬂãD$x3“ãfoÑî0  fÑîP  É¬;÷rÁ;Ñ$Ä   É‡˛ˇˇã¥$Ä   ãîÑ0  âîÑP  @;∆rÌÈ¡˛ˇˇÉº$Ä   }©3¿Î∆ãT$XãÿRËueC˛Éƒãå$H  3ÃËŸÍ¸ ã√ÅƒT  [_^ãÂ]√3“È≈˝ˇˇÉ|$4 éh  ¡Ê3¿¡Áçãê   â$çìå   â|$0ât$,âT$â\$<ãÿã|$Pãt$(ãL$ˇt$Lˇt$@ˇt$,ˇt$Lçëê   Å¡å   Rˇt$Qˇt$ WVËq¬∂ˇÉƒ(Ö¿Ö◊	  Ct$,|$0;\$4çË  ãT$<ãä  Î©ãã$  3¿ãìå   É˙âL$ ããƒ  D¬É·¡È#»∏   Å|$8   â$∫   L–âT$$Éªê   Ññ  É˘Ö°  ãD$4+D$$âD$∏    â$à‘   ã÷¡‚ãL$$âT$Ø ã◊¡‚ØT$$â|$0ât$,â\$<âL$âT$âD$ãt$Pã|$(ã$3¿ât$Pãâ|$(ã¯ˇt$Lˇt$@ãL$0œQQˇT$0ÉƒFÿ|$;t$$|‹ãt$PÖ€ã|$(Ö&	  ˇt$0ãD$@ˇ∞ê   Vˇt$8Wˇt$8ˇt$PËıW  ÉƒãD$D$$|$t$âD$;D$~Äât$Pâ|$(â$ã|$0ãt$,ã\$<;D$4çå   ¡Êã÷¡Á˜⁄ãœ÷)D$43¿˜ŸT$(œâ|$0L$Pã¯ât$,ãâ\$<ãÿˇt$Lˇt$@ãL$0ÀâL$QQˇT$0Éƒ	$Öë  3¿PãL$@ˇ±ê   ãL$XœQPˇt$jˇt$PË=W  ÉƒF\$,|$0;t$4r¶ãå$H  3ÃËBË¸ 3¿ÅƒT  [_^ãÂ]√ˇt$ãD$<ã ¡·çPÉ‚¸Ø âT$QË˛QC˛âD$ ÉƒÉ|$ ÑÃ  ãD$4«D$    +D$$âD$à  ã÷ã«¡‚¡‡ãL$$Ø—Ø¡«$    ãL$¡·â|$0ât$,â\$<âL$âD$âT$ãt$Pã|$(ã$ˇt$,ãD$@ˇ∞å   Wˇt$ ˇt$(ˇt$8ˇt$PËy4  Éƒ3¿ât$Pãâ|$(ã¯ˇt$Lˇt$@ãL$ œQQˇT$0ÉƒFÿ|$;t$$|‹ãt$PÖ€ã|$(Öb  ˇt$0ãD$@ˇ∞ê   Vˇt$ ˇt$(ˇt$8ˇt$PËU  ÉƒãD$D$$|$t$âD$;D$éRˇˇˇât$Pâ|$(ã|$0ãt$,ã\$<ãD$4;D$~~¡Ê¡Áâ|$0ât$,ã|$Pãt$(3¿Pˇ≥å   VPˇt$(jˇt$PË°3  ˇt$hSãD$<PPˇT$LÉƒ,Ö¿Ö  3¿Pˇ≥ê   WPˇt$(jˇt$PËMU  ÉƒãD$@t$,|$0âD$;D$4|òˇt$Ë⁄`C˛ÉƒÈ˜˝ˇˇÉ<$ÑU  ãD$4«D$    +D$$âD$àŒ   ã∆ãœ¡‡¡·Ø¬Ø—«$    â|$0ât$,â\$<âD$âL$âT$ãt$Pã|$(ã$ˇt$,ãD$@ˇ∞å   Wˇt$<Vˇt$8ˇt$PË√2  Éƒ3¿ât$Pãâ|$(ã¯ˇt$Lˇt$@ãL$XœQQˇT$0ÉƒFÿ|$;t$$|‹ãt$PÖ€ã|$(Ö.  ãD$D$$|$t$âD$;D$~Äât$Pâ|$(ã|$0ãt$,ã\$<ãD$;D$4ç˜¸ˇˇ¡Ê¡Áâ|$0ât$,ã|$Pãt$(3¿Pˇ≥å   VPWjˇt$PË2  ˇt$hSWWˇT$LÉƒ,Ö¿Öê  ãD$@t$,|$0âD$;D$4|ºÈò¸ˇˇÉªú   1Ñû˛ˇˇÉ|$4 éÄ¸ˇˇ¡Ê3¿ã÷¡Á˜⁄ãL$( ã◊˜⁄ŒâL$(ãL$P œâL$Pâ|$0ât$,â\$<ãÿã˘ãt$(ˇt$Lˇt$@WVˇT$0ÉƒÖ¿Ö  C|$0t$,;\$4rÿÈ¸ˇˇÉˇÖHÚˇˇÉ¯Ñ  É¯ÖBÚˇˇÉ|$8Ñ4ÚˇˇãÉ  É∏®    é‹   ãt$43ˇãœ¡·ãêê   Ø—Øàå   ˇt$LVˇ≥$  T$\RL$8QSËìÉ  ã–ÉƒãÉ  G;∏®   |ºâ$ãç|$`πË  ã¡¡ÈÛ•ã»É·Û§ãÉ  Éª®    ãÄê   ~CâÑ$Ï   3ˇãt$LãÉê   ¡‡Ø«Vˇt$8ˇ¥$å  D$\PçT$pRËâ  ÉƒG;ª®   |Õâ$ãå$H  3ÃËb„¸ ã$ÅƒT  [_^ãÂ]√«$    ÈeˇˇˇÉ|$8Ñ˘ˇˇˇt$Lˇt$8ˇ≥$  ˇt$\ˇt$8SË∫Ç  ãÿÉƒãå$H  3ÃË„¸ ã√ÅƒT  [_^ãÂ]√É{8t ãå$H  3ÃËÈ‚¸ ∏   ÅƒT  [_^ãÂ]√ãT$(Éªê   ããJãT$PâD$âL$ããJâD$âL$ Ñ+  ãD$PãT$<¡‚–RËLC˛ÉƒÖ¿ÑT  ãT$ãL$8âD$â$¬Jç»˜“#¬∫   âD$ãD$ãã$  âL$$É|$4 é^  ãL$âL$ãL$«D$    âT$(â|$0âD$ât$,ã|$ã—ãL$É|$( uUãÉå   É¯ÑD  3ˆVPQVRjˇt$PË≥„	 3¿Pˇ≥å   ˇt$<Pˇt$Ljˇt$lËñ„	 çD$Tˇp0SPPˇPãÉƒHÈâ   3¿Pˇ≥å   QPˇt$jˇt$PËe„	 3¿Pˇ≥å   ˇt$<Pˇt$0jˇt$lËH„	 çD$8ˇpLSPPˇP$ã3“Rˇ≥ê   ˇt$lRˇt$Xjˇ¥$ò   Ëô‰	 Éƒd3“Rˇ≥ê   ˇt$(Rˇt$jˇt$PËy‰	 ÉƒÖˆÖà   ãL$Gãt$,ãT$ãD$0;|$4çÒâL$çÚãt$âT$ç∆ãt$ âT$ç∆âD$ å‘˛ˇˇãD$Ö¿t	PËq[C˛Éƒãå$H  3ÃË’‡¸ 3¿ÅƒT  [_^ãÂ]√çT$çD$ˇp0SPRˇPãÉƒÈpˇˇˇãD$Ö¿t	PË([C˛Éƒãå$H  3ÃËå‡¸ ã∆ÅƒT  [_^ãÂ]√3¿3“È˛ˇˇãå$H  ãÿ3ÃËd‡¸ ã√ÅƒT  [_^ãÂ]√â$ãå$H  3ÃËD‡¸ ã√ÅƒT  [_^ãÂ]√ãå$H  3ÃË'‡¸ ∏   ÅƒT  [_^ãÂ]√â$ãå$H  3ÃË‡¸ ã√ÅƒT  [_^ãÂ]√ãå$H  3ÃËÁﬂ¸ ã$ÅƒT  [_^ãÂ]√â$ãå$H  3ÃË∆ﬂ¸ ã√ÅƒT  [_^ãÂ]√ãå$H  3Ãã\$TË•ﬂ¸ ã√ÅƒT  [_^ãÂ]√Ö¿È’Óˇˇ Ä    UãÏÉ‰VWSÅÏT  ãEfÔ¿ãUâD$(âT$Pã†v¯3Ãâå$H  .x+m),t.y+h/2),t.y+=h+c},y=b.textAlign(f);for(n.textAlign=f,n.textBaseline="middle",n.font=H.fontString(h,e._bodyFontStyle,e._bodyFontFamily),t.x=He(e,y),n.fillStyle=e.bodyFontColor,H.each(e.beforeBody,x),m=p&&"right"!==y?"center"===f?h/2+1:h+2:0,s=0,u=g.length;s<u;++s){for(i=g[s],a=e.labelTextColors[s],r=e.labelColors[s],n.fillStyle=a,H.each(i.before,x),l=0,d=(o=i.lines).length;l<d;++l){if(p){var _=b.x(v);n.fillStyle=e.legendColorBackground,n.fillRect(b.leftForLtr(_,h),t.y,h,h),n.lineWidth=1,n.strokeStyle=r.borderColor,n.strokeRect(b.leftForLtr(_,h),t.y,h,h),n.fillStyle=r.backgroundColor,n.fillRect(b.leftForLtr(b.xPlus(_,1),h-2),t.y+1,h-2,h-2),n.fillStyle=a}x(o[l])}H.each(i.after,x)}m=0,H.each(e.afterBody,x),t.y-=c},drawFooter:function(t,e,n){var i,a,r=e.footer,o=r.length;if(o){var s=Ne(e.rtl,e.x,e.width);for(t.x=He(e,e._footerAlign),t.y+=e.footerMarginTop,n.textAlign=s.textAlign(e._footerAlign),n.textBaseline="middle",i=e.footerFontSize,n.fillStyle=e.footerFontColor,n.font=H.fontString(i,e._footerFontStyle,e._footerFontFamily),a=0;a<o;++a)n.fillText(r[a],s.x(t.x),t.y+i/2),t.y+=i+e.footerSpacing}},drawBackground:function(t,e,n,i){n.fillStyle=e.backgroundColor,n.strokeStyle=e.borderColor,n.lineWidth=e.borderWidth;var a=e.xAlign,r=e.yAlign,o=t.x,s=t.y,l=i.width,u=i.height,d=e.cornerRadius;n.beginPath(),n.moveTo(o+d,s),"top"===r&&this.drawCaret(t,i),n.lineTo(o+l-d,s),n.quadraticCurveTo(o+l,s,o+l,s+d),"center"===r&&"right"===a&&this.drawCaret(t,i),n.lineTo(o+l,s+u-d),n.quadraticCurveTo(o+l,s+u,o+l-d,s+u),"bottom"===r&&this.drawCaret(t,i),n.lineTo(o+d,s+u),n.quadraticCurveTo(o,s+u,o,s+u-d),"center"===r&&"left"===a&&this.drawCaret(t,i),n.lineTo(o,s+d),n.quadraticCurveTo(o,s,o+d,s),n.closePath(),n.fill(),e.borderWidth>0&&n.stroke()},draw:function(){var t=this._chart.ctx,e=this._view;if(0!==e.opacity){var n={width:e.width,height:e.height},i={x:e.x,y:e.y},a=Math.abs(e.opacity<.001)?0:e.opacity,r=e.title.length||e.beforeBody.length||e.body.length||e.afterBody.length||e.footer.length;this._options.enabled&&r&&(t.save(),t.globalAlpha=a,this.drawBackground(i,e,t,n),i.y+=e.yPadding,H.rtl.overrideTextDirection(t,e.textDirection),this.drawTitle(i,e,t),this.drawBody(i,e,t),this.drawFooter(i,e,t),H.rtl.restoreTextDirection(t,e.textDirection),t.restore())}},handleEvent:function(t){var e,n=this,i=n._options;return n._lastActive=n._lastActive||[],"mouseout"===t.type?n._active=[]:(n._active=n._chart.getElementsAtEventForMode(t,i.mode,i),i.reverse&&n._active.reverse()),(e=!H.arrayEquals(n._active,n._lastActive))&&(n._lastActive=n._active,(i.enabled||i.custom)&&(n._eventPosition={x:t.x,y:t.y},n.update(!0),n.pivot())),e}}),Ue=Be,Ye=qe;Ye.positioners=Ue;var Ge=H.valueOrDefault;function Xe(){return H.merge(Object.create(null),[].slice.call(arguments),{merger:function(t,e,n,i){if("xAxes"===t||"yAxes"===t){var a,r,o,s=n[t].length;for(e[t]||(e[t]=[]),a=0;a<s;++a)o=n[t][a],r=Ge(o.type,"xAxes"===t?"category":"linear"),a>=e[t].length&&e[t].push({}),!e[t][a].type||o.type&&o.type!==e[t][a].type?H.merge(e[t][a],[Re.getScaleDefaults(r),o]):H.merge(e[t][a],o)}else H._merger(t,e,n,i)}})}function Ke(){return H.merge(Object.create(null),[].slice.call(arguments),{merger:function(t,e,n,i){var a=e[t]||Object.create(null),r=n[t];"scales"===t?e[t]=Xe(a,r):"scale"===t?e[t]=H.merge(a,[Re.getScaleDefaults(r.type),r]):H._merger(t,e,n,i)}})}function Ze(t){var e=t.options;H.each(t.scales,(function(e){pe.removeBox(t,e)})),e=Ke(N.global,N[t.config.type],e),t.options=t.config.options=e,t.ensureScalesHaveIDs(),t.buildOrUpdateScales(),t.tooltip._options=e.tooltips,t.tooltip.initialize()}function $e(t,e,n){var i,a=function(t){return t.id===i};do{i=e+n++}while(H.findIndex(t,a)>=0);return i}function Je(t){return"top"===t||"bottom"===t}function Qe(t,e){return function(n,i){return n[t]===i[t]?n[e]-i[e]:n[t]-i[t]}}N._set("global",{elements:{},events:["mousemove","mouseout","click","touchstart","touchmove"],hover:{onHover:null,mode:"nearest",intersect:!0,animationDuration:400},onClick:null,maintainAspectRatio:!0,responsive:!0,responsiveAnimationDuration:0});var tn=function(t,e){return this.construct(t,e),this};H.extend(tn.prototype,{construct:function(t,e){var n=this;e=function(t){var e=(t=t||Object.create(null)).data=t.data||{};return e.datasets=e.datasets||[],e.labels=e.labels||[],t.options=Ke(N.global,N[t.type],t.options||{}),t}(e);var i=Oe.acquireContext(t,e),a=i&&i.canvas,r=a&&a.height,o=a&&a.width;n.id=H.uid(),n.ctx=i,n.canvas=a,n.config=e,n.width=o,n.height=r,n.aspectRatio=r?o/r:null,n.options=e.options,n._bufferedRender=!1,n._layers=[],n.chart=n,n.controller=n,tn.instances[n.id]=n,Object.defineProperty(n,"data",{get:function(){return n.config.data},set:function(t){n.config.data=t}}),i&&a?(n.initialize(),n.update()):console.error("Failed to create chart: can't acquire context from the given item")},initialize:function(){var t=this;return Le.notify(t,"beforeInit"),H.retinaScale(t,t.options.devicePixelRatio),t.bindEvents(),t.options.responsive&&t.resize(!0),t.initToolTip(),Le.notify(t,"afterInit"),t},clear:function(){return H.canvas.clear(this),this},stop:function(){return J.cancelAnimation(this),this},resize:function(t){var e=this,n=e.options,i=e.canvas,a=n.maintainAspectRatio&&e.aspectRatio||null,r=Math.max(0,Math.floor(H.getMaximumWidth(i))),o=Math.max(0,Math.floor(a?r/a:H.getMaximumHeight(i)));if((e.width!==r||e.height!==o)&&(i.width=e.width=r,i.height=e.height=o,i.style.width=r+"px",i.style.height=o+"px",H.retinaScale(e,n.devicePixelRatio),!t)){var s={width:r,height:o};Le.notify(e,"resize",[s]),n.onResize&&n.onResize(e,s),e.stop(),e.update({duration:n.responsiveAnimationDuration})}},ensureScalesHaveIDs:function(){var t=this.options,e=t.scales||{},n=t.scale;H.each(e.xAxes,(function(t,n){t.id||(t.id=$e(e.xAxes,"x-axis-",n))})),H.each(e.yAxes,(function(t,n){t.id||(t.id=$e(e.yAxes,"y-axis-",n))})),n&&(n.id=n.id||"scale")},buildOrUpdateScales:function(){var t=this,e=t.options,n=t.scales||{},i=[],a=Object.keys(n).reduce((function(t,e){return t[e]=!1,t}),{});e.scales&&(i=i.concat((e.scales.xAxes||[]).map((function(t){return{options:t,dtype:"category",dposition:"bottom"}})),(e.scales.yAxes||[]).map((function(t){return{options:t,dtype:"linear",dposition:"left"}})))),e.scale&&i.push({options:e.scale,dtype:"radialLinear",isDefault:!0,dposition:"chartArea"}),H.each(i,(function(e){var i=e.options,r=i.id,o=Ge(i.type,e.dtype);Je(i.position)!==Je(e.dposition)&&(i.position=e.dposition),a[r]=!0;var s=null;if(r in n&&n[r].type===o)(s=n[r]).options=i,s.ctx=t.ctx,s.chart=t;else{var l=Re.getScaleConstructor(o);if(!l)return;s=new l({id:r,type:o,options:i,ctx:t.ctx,chart:t}),n[s.id]=s}s.mergeTicksOptions(),e.isDefault&&(t.scale=s)})),H.each(a,(function(t,e){t||delete n[e]})),t.scales=n,Re.addScalesToLayout(this)},buildOrUpdateControllers:function(){var t,e,n=this,i=[],a=n.data.datasets;for(t=0,e=a.length;t<e;t++){var r=a[t],o=n.getDatasetMeta(t),s=r.type||n.config.type;if(o.type&&o.type!==s&&(n.destroyDatasetMeta(t),o=n.getDatasetMeta(t)),o.type=s,o.order=r.order||0,o.index=t,o.controller)o.controller.updateIndex(t),o.controller.linkScales();else{var l=Jt[o.type];if(void 0===l)throw new Error('"'+o.type+'" is not a chart type.');o.controller=new l(n,t),i.push(o.controller)}}return i},resetElements:function(){var t=this;H.each(t.data.datasets,(function(e,n){t.getDatasetMeta(n).controller.reset()}),t)},reset:function(){this.resetElements(),this.tooltip.initialize()},update:function(t){var e,n,i=this;if(t&&"object"==typeof t||(t={duration:t,lazy:arguments[1]}),Ze(i),Le._invalidate(i),!1!==Le.notify(i,"beforeUpdate")){i.tooltip._data=i.data;var a=i.buildOrUpdateControllers();for(e=0,n=i.data.datasets.length;e<n;e++)i.getDatasetMeta(e).controller.buildOrUpdateElements();i.updateLayout(),i.options.animation&&i.options.animation.duration&&H.each(a,(function(t){t.reset()})),i.updateDatasets(),i.tooltip.initialize(),i.lastActive=[],Le.notify(i,"afterUpdate"),i._layers.sort(Qe("z","_idx")),i._bufferedRender?i._bufferedRequest={duration:t.duration,easing:t.easing,lazy:t.lazy}:i.render(t)}},updateLayout:function(){var t=this;!1!==Le.notify(t,"beforeLayout")&&(pe.update(this,this.width,this.height),t._layers=[],H.each(t.boxes,(function(e){e._configure&&e._configure(),t._layers.push.apply(t._layers,e._layers())}),t),t._layers.forEach((function(t,e){t._idx=e})),Le.notify(t,"afterScaleUpdate"),Le.notify(t,"afterLayout"))},updateDatasets:function(){if(!1!==Le.notify(this,"beforeDatasetsUpdate")){for(var t=0,e=this.data.datasets.length;t<e;++t)this.updateDataset(t);Le.notify(this,"afterDatasetsUpdate")}},updateDataset:function(t){var e=this.getDatasetMeta(t),n={meta:e,index:t};!1!==Le.notify(this,"beforeDatasetUpdate",[n])&&(e.controller._update(),Le.notify(this,"afterDatasetUpdate",[n]))},render:function(t){var e=this;t&&"object"==typeof t||(t={duration:t,lazy:arguments[1]});var n=e.options.animation,i=Ge(t.duration,n&&n.duration),a=t.lazy;if(!1!==Le.notify(e,"beforeRender")){var r=function(t){Le.notify(e,"afterRender"),H.callback(n&&n.onComplete,[t],e)};if(n&&i){var o=new $({numSteps:i/16.66,easing:t.easing||n.easing,render:function(t,e){var n=H.easing.effects[e.easing],i=e.currentStep,a=i/e.numSteps;t.draw(n(a),a,i)},onAnimationProgress:n.onProgress,onAnimationComplete:r});J.addAnimation(e,o,i,a)}else e.draw(),r(new $({numSteps:0,chart:e}));return e}},draw:function(t){var e,n,i=this;if(i.clear(),H.isNullOrUndef(t)&&(t=1),i.transition(t),!(i.width<=0||i.height<=0)&&!1!==Le.notify(i,"beforeDraw",[t])){for(n=i._layers,e=0;e<n.length&&n[e].z<=0;++e)n[e].draw(i.chartArea);for(i.drawDatasets(t);e<n.length;++e)n[e].draw(i.chartArea);i._drawTooltip(t),Le.notify(i,"afterDraw",[t])}},transition:function(t){for(var e=0,n=(this.data.datasets||[]).length;e<n;++e)this.isDatasetVisible(e)&&this.getDatasetMeta(e).controller.transition(t);this.tooltip.transition(t)},_getSortedDatasetMetas:function(t){var e,n,i=[];for(e=0,n=(this.data.datasets||[]).length;e<n;++e)t&&!this.isDatasetVisible(e)||i.push(this.getDatasetMeta(e));return i.sort(Qe("order","index")),i},_getSortedVisibleDatasetMetas:function(){return this._getSortedDatasetMetas(!0)},drawDatasets:function(t){var e,n;if(!1!==Le.notify(this,"beforeDatasetsDraw",[t])){for(n=(e=this._getSortedVisibleDatasetMetas()).length-1;n>=0;--n)this.drawDataset(e[n],t);Le.notify(this,"afterDatasetsDraw",[t])}},drawDataset:function(t,e){var n={meta:t,index:t.index,easingValue:e};!1!==Le.notify(this,"beforeDatasetDraw",[n])&&(t.controller.draw(e),Le.notify(this,"afterDatasetDraw",[n]))},_drawTooltip:function(t){var e=this.tooltip,n={tooltip:e,easingValue:t};!1!==Le.notify(this,"beforeTooltipDraw",[n])&&(e.draw(),Le.notify(this,"afterTooltipDraw",[n]))},getElementAtEvent:function(t){return re.modes.single(this,t)},getElementsAtEvent:function(t){return re.modes.label(this,t,{intersect:!0})},getElementsAtXAxis:function(t){return re.modes["x-axis"](this,t,{intersect:!0})},getElementsAtEventForMode:function(t,e,n){var i=re.modes[e];return"function"==typeof i?i(this,t,n):[]},getDatasetAtEvent:function(t){return re.modes.dataset(this,t,{intersect:!0})},getDatasetMeta:function(t){var e=this.data.datasets[t];e._meta||(e._meta={});var n=e._meta[this.id];return n||(n=e._meta[this.id]={type:null,data:[],dataset:null,controller:null,hidden:null,xAxisID:null,yAxisID:null,order:e.order||0,index:t}),n},getVisibleDatasetCount:function(){for(var t=0,e=0,n=this.data.datasets.length;e<n;++e)this.isDatasetVisible(e)&&t++;return t},isDatasetVisible:function(t){var e=this.getDatasetMeta(t);return"boolean"==typeof e.hidden?!e.hidden:!this.data.datasets[t].hidden},generateLegend:function(){return this.options.legendCallback(this)},destroyDatasetMeta:function(t){var e=this.id,n=this.data.datasets[t],i=n._meta&&n._meta[e];i&&(i.controller.destroy(),delete n._meta[e])},destroy:function(){var t,e,n=this,i=n.canvas;for(n.stop(),t=0,e=n.data.datasets.length;t<e;++t)n.destroyDatasetMeta(t);i&&(n.unbindEvents(),H.canvas.clear(n),Oe.releaseContext(n.ctx),n.canvas=null,n.ctx=null),Le.notify(n,"destroy"),delete tn.instances[n.id]},toBase64Image:function(){return this.canvas.toDataURL.apply(this.canvas,arguments)},initToolTip:function(){var t=this;t.tooltip=new Ye({_chart:t,_chartInstance:t,_data:t.data,_options:t.options.tooltips},t)},bindEvents:function(){var t=this,e=t._listeners={},n=function(){t.eventHandler.apply(t,arguments)};H.each(t.options.events,(function(i){Oe.addEventListener(t,i,n),e[i]=n})),t.options.responsive&&(n=function(){t.resize()},Oe.addEventListener(t,"resize",n),e.resize=n)},unbindEvents:function(){var t=this,e=t._listeners;e&&(delete t._listeners,H.each(e,(function(e,n){Oe.removeEventListener(t,n,e)})))},updateHoverStyle:function(t,e,n){var i,a,r,o=n?"set":"remove";for(a=0,r=t.length;a<r;++a)(i=t[a])&&this.getDatasetMeta(i._datasetIndex).controller[o+"HoverStyle"](i);"dataset"===e&&this.getDatasetMeta(t[0]._datasetIndex).controller["_"+o+"DatasetHoverStyle"]()},eventHandler:function(t){var e=this,n=e.tooltip;if(!1!==Le.notify(e,"beforeEvent",[t])){e._bufferedRender=!0,e._bufferedRequest=null;var i=e.handleEvent(t);n&&(i=n._start?n.handleEvent(t):i|n.handleEvent(t)),Le.notify(e,"afterEvent",[t]);var a=e._bufferedRequest;return a?e.render(a):i&&!e.animating&&(e.stop(),e.render({duration:e.options.hover.animationDuration,lazy:!0})),e._bufferedRender=!1,e._bufferedRequest=null,e}},handleEvent:function(t){var e,n=this,i=n.options||{},a=i.hover;return n.lastActive=n.lastActive||[],"mouseout"===t.type?n.active=[]:n.active=n.getElementsAtEventForMode(t,a.mode,a),H.callback(i.onHover||i.hover.onHover,[t.native,n.active],n),"mouseup"!==t.type&&"click"!==t.type||i.onClick&&i.onClick.call(n,t.native,n.active),n.lastActive.length&&n.updateHoverStyle(n.lastActive,a.mode,!1),n.active.length&&a.mode&&n.updateHoverStyle(n.active,a.mode,!0),e=!H.arrayEquals(n.active,n.lastActive),n.lastActive=n.active,e}}),tn.instances={};var en=tn;tn.Controller=tn,tn.types={},H.configMerge=Ke,H.scaleMerge=Xe;function nn(){throw new Error("This method is not implemented: either no adapter can be found or an incomplete integration was provided.")}function an(t){this.options=t||{}}H.extend(an.prototype,{formats:nn,parse:nn,format:nn,add:nn,diff:nn,startOf:nn,endOf:nn,_create:function(t){return t}}),an.override=function(t){H.extend(an.prototype,t)};var rn={_date:an},on={formatters:{values:function(t){return H.isArray(t)?t:""+t},linear:function(t,e,n){var i=n.length>3?n[2]-n[1]:n[1]-n[0];Math.abs(i)>1&&t!==Math.floor(t)&&(i=t-Math.floor(t));var a=H.log10(Math.abs(i)),r="";if(0!==t)if(Math.max(Math.abs(n[0]),Math.abs(n[n.length-1]))<1e-4){var o=H.log10(Math.abs(t)),s=Math.floor(o)-Math.floor(a);s=Math.max(Math.min(s,20),0),r=t.toExponential(s)}else{var l=-1*Math.floor(a);l=Math.max(Math.min(l,20),0),r=t.toFixed(l)}else r="0";return r},logarithmic:function(t,e,n){var i=t/Math.pow(10,Math.floor(H.log10(t)));return 0===t?"0":1===i||2===i||5===i||0===e||e===n.length-1?t.toExponential():""}}},sn=H.isArray,ln=H.isNullOrUndef,un=H.valueOrDefault,dn=H.valueAtIndexOrDefault;function hn(t,e,n){var i,a=t.getTicks().length,r=Math.min(e,a-1),o=t.getPixelForTick(r),s=t._startPixel,l=t._endPixel;if(!(n&&(i=1===a?Math.max(o-s,l-o):0===e?(t.getPixelForTick(1)-o)/2:(o-t.getPixelForTick(r-1))/2,(o+=r<e?i:-i)<s-1e-6||o>l+1e-6)))return o}function cn(t,e,n,i){var a,r,o,s,l,u,d,h,c,f,g,p,m,v=n.length,b=[],x=[],y=[],_=0,k=0;for(a=0;a<v;++a){if(s=n[a].label,l=n[a].major?e.major:e.minor,t.font=u=l.string,d=i[u]=i[u]||{data:{},gc:[]},h=l.lineHeight,c=f=0,ln(s)||sn(s)){if(sn(s))for(r=0,o=s.length;r<o;++r)g=s[r],ln(g)||sn(g)||(c=H.measureText(t,d.data,d.gc,c,g),f+=h)}else c=H.measureText(t,d.data,d.gc,c,s),f=h;b.push(c),x.push(f),y.push(h/2),_=Math.max(c,_),k=Math.max(f,k)}function w(t){return{width:b[t]||0,height:x[t]||0,offset:y[t]||0}}return function(t,e){H.each(t,(function(t){var n,i=t.gc,a=i.length/2;if(a>e){for(n=0;n<a;++n)delete t.data[i[n]];i.splice(0,a)}}))}(i,v),p=b.indexOf(_),m=x.indexOf(k),{first:w(0),last:w(v-1),widest:w(p),highest:w(m)}}function fn(t){return t.drawTicks?t.tickMarkLength:0}function gn(t){var e,n;return t.display?(e=H.options._parseFont(t),n=H.options.toPadding(t.padding),e.lineHeight+n.height):0}function pn(t,e){return H.extend(H.options._parseFont({fontFamily:un(e.fontFamily,t.fontFamily),fontSize:un(e.fontSize,t.fontSize),fontStyle:un(e.fontStyle,t.fontStyle),lineHeight:un(e.lineHeighttion = (motionArgs.forward) ?
+              cursorIsBefore(mark, cursor) : cursorIsBefore(cursor, mark);
+
+            if (isWrongDirection) {
+              continue;
+            }
+            if (motionArgs.linewise && (mark.line == cursor.line)) {
+              continue;
+            }
+
+            var equal = cursorEqual(cursor, best);
+            var between = (motionArgs.forward) ?
+              cursorIsBetween(cursor, mark, best) :
+              cursorIsBetween(best, mark, cursor);
+
+            if (equal || between) {
+              best = mark;
+            }
+          }
+        }
+
+        if (motionArgs.linewise) {
+          // Vim places the cursor on the first non-whitespace character of
+          // the line if there is one, else it places the cursor at the end
+          // of the line, regardless of whether a mark was found.
+          best = new Pos(best.line, findFirstNonWhiteSpaceCharacter(cm.getLine(best.line)));
+        }
+        return best;
+      },
+      moveByCharacters: function(_cm, head, motionArgs) {
+        var cur = head;
+        var repeat = motionArgs.repeat;
+        var ch = motionArgs.forward ? cur.ch + repeat : cur.ch - repeat;
+        return new Pos(cur.line, ch);
+      },
+      moveByLines: function(cm, head, motionArgs, vim) {
+        var cur = head;
+        var endCh = cur.ch;
+        // Depending what our last motion was, we may want to do different
+        // things. If our last motion was moving vertically, we want to
+        // preserve the HPos from our last horizontal move.  If our last motion
+        // was going to the end of a line, moving vertically we should go to
+        // the end of the line, etc.
+        switch (vim.lastMotion) {
+          case this.moveByLines:
+          case this.moveByDisplayLines:
+          case this.moveByScroll:
+          case this.moveToColumn:
+          case this.moveToEol:
+            endCh = vim.lastHPos;
+            break;
+          default:
+            vim.lastHPos = endCh;
+        }
+        var repeat = motionArgs.repeat+(motionArgs.repeatOffset||0);
+        var line = motionArgs.forward ? cur.line + repeat : cur.line - repeat;
+        var first = cm.firstLine();
+        var last = cm.lastLine();
+        var posV = cm.findPosV(cur, (motionArgs.forward ? repeat : -repeat), 'line', vim.lastHSPos);
+        var hasMarkedText = motionArgs.forward ? posV.line > line : posV.line < line;
+        if (hasMarkedText) {
+          line = posV.line;
+          endCh = posV.ch;
+        }
+        // Vim go to line begin or line end when cursor at first/last line and
+        // move to previous/next line is triggered.
+        if (line < first && cur.line == first){
+          return this.moveToStartOfLine(cm, head, motionArgs, vim);
+        } else if (line > last && cur.line == last){
+            return moveToEol(cm, head, motionArgs, vim, true);
+        }
+        if (motionArgs.toFirstChar){
+          endCh=findFirstNonWhiteSpaceCharacter(cm.getLine(line));
+          vim.lastHPos = endCh;
+        }
+        vim.lastHSPos = cm.charCoords(new Pos(line, endCh),'div').left;
+        return new Pos(line, endCh);
+      },
+      moveByDisplayLines: function(cm, head, motionArgs, vim) {
+        var cur = head;
+        switch (vim.lastMotion) {
+          case this.moveByDisplayLines:
+          case this.moveByScroll:
+          case this.moveByLines:
+          case this.moveToColumn:
+          case this.moveToEol:
+            break;
+          default:
+            vim.lastHSPos = cm.charCoords(cur,'div').left;
+        }
+        var repeat = motionArgs.repeat;
+        var res=cm.findPosV(cur,(motionArgs.forward ? repeat : -repeat),'line',vim.lastHSPos);
+        if (res.hitSide) {
+          if (motionArgs.forward) {
+            var lastCharCoords = cm.charCoords(res, 'div');
+            var goalCoords = { top: lastCharCoords.top + 8, left: vim.lastHSPos };
+            var res = cm.coordsChar(goalCoords, 'div');
+          } else {
+            var resCoords = cm.charCoords(new Pos(cm.firstLine(), 0), 'div');
+            resCoords.left = vim.lastHSPos;
+            res = cm.coordsChar(resCoords, 'div');
+          }
+        }
+        vim.lastHPos = res.ch;
+        return res;
+      },
+      moveByPage: function(cm, head, motionArgs) {
+        // CodeMirror only exposes functions that move the cursor page down, so
+        // doing this bad hack to move the cursor and move it back. evalInput
+        // will move the cursor to where it should be in the end.
+        var curStart = head;
+        var repeat = motionArgs.repeat;
+        return cm.findPosV(curStart, (motionArgs.forward ? repeat : -repeat), 'page');
+      },
+      moveByParagraph: function(cm, head, motionArgs) {
+        var dir = motionArgs.forward ? 1 : -1;
+        return findParagraph(cm, head, motionArgs.repeat, dir);
+      },
+      moveBySentence: function(cm, head, motionArgs) {
+        var dir = motionArgs.forward ? 1 : -1;
+        return findSentence(cm, head, motionArgs.repeat, dir);
+      },
+      moveByScroll: function(cm, head, motionArgs, vim) {
+        var scrollbox = cm.getScrollInfo();
+        var curEnd = null;
+        var repeat = motionArgs.repeat;
+        if (!repeat) {
+          repeat = scrollbox.clientHeight / (2 * cm.defaultTextHeight());
+        }
+        var orig = cm.charCoords(head, 'local');
+        motionArgs.repeat = repeat;
+        var curEnd = motions.moveByDisplayLines(cm, head, motionArgs, vim);
+        if (!curEnd) {
+          return null;
+        }
+        var dest = cm.charCoords(curEnd, 'local');
+        cm.scrollTo(null, scrollbox.top + dest.top - orig.top);
+        return curEnd;
+      },
+      moveByWords: function(cm, head, motionArgs) {
+        return moveToWord(cm, head, motionArgs.repeat, !!motionArgs.forward,
+            !!motionArgs.wordEnd, !!motionArgs.bigWord);
+      },
+      moveTillCharacter: function(cm, _head, motionArgs) {
+        var repeat = motionArgs.repeat;
+        var curEnd = moveToCharacter(cm, repeat, motionArgs.forward,
+            motionArgs.selectedCharacter);
+        var increment = motionArgs.forward ? -1 : 1;
+        recordLastCharacterSearch(increment, motionArgs);
+        if (!curEnd) return null;
+        curEnd.ch += increment;
+        return curEnd;
+      },
+      moveToCharacter: function(cm, head, motionArgs) {
+        var repeat = motionArgs.repeat;
+        recordLastCharacterSearch(0, motionArgs);
+        return moveToCharacter(cm, repeat, motionArgs.forward,
+            motionArgs.selectedCharacter) || head;
+      },
+      moveToSymbol: function(cm, head, motionArgs) {
+        var repeat = motionArgs.repeat;
+        return findSymbol(cm, repeat, motionArgs.forward,
+            motionArgs.selectedCharacter) || head;
+      },
+      moveToColumn: function(cm, head, motionArgs, vim) {
+        var repeat = motionArgs.repeat;
+        // repeat is equivalent to which column we want to move to!
+        vim.lastHPos = repeat - 1;
+        vim.lastHSPos = cm.charCoords(head,'div').left;
+        return moveToColumn(cm, repeat);
+      },
+      moveToEol: function(cm, head, motionArgs, vim) {
+        return moveToEol(cm, head, motionArgs, vim, false);
+      },
+      moveToFirstNonWhiteSpaceCharacter: function(cm, head) {
+        // Go to the start of the line where the text begins, or the end for
+        // whitespace-only lines
+        var cursor = head;
+        return new Pos(cursor.line,
+                   findFirstNonWhiteSpaceCharacter(cm.getLine(cursor.line)));
+      },
+      moveToMatchedSymbol: function(cm, head) {
+        var cursor = head;
+        var line = cursor.line;
+        var ch = cursor.ch;
+        var lineText = cm.getLine(line);
+        var symbol;
+        for (; ch < lineText.length; ch++) {
+          symbol = lineText.charAt(ch);
+          if (symbol && isMatchableSymbol(symbol)) {
+            var style = cm.getTokenTypeAt(new Pos(line, ch + 1));
+            if (style !== "string" && style !== "comment") {
+              break;
+            }
+          }
+        }
+        if (ch < lineText.length) {
+          // Only include angle brackets in analysis if they are being matched.
+          var re = (ch === '<' || ch === '>') ? /[(){}[\]<>]/ : /[(){}[\]]/;
+          var matched = cm.findMatchingBracket(new Pos(line, ch), {bracketRegex: re});
+          return matched.to;
+        } else {
+          return cursor;
+        }
+      },
+      moveToStartOfLine: function(_cm, head) {
+        return new Pos(head.line, 0);
+      },
+      moveToLineOrEdgeOfDocument: function(cm, _head, motionArgs) {
+        var lineNum = motionArgs.forward ? cm.lastLine() : cm.firstLine();
+        if (motionArgs.repeatIsExplicit) {
+          lineNum = motionArgs.repeat - cm.getOption('firstLineNumber');
+        }
+        return new Pos(lineNum,
+                   findFirstNonWhiteSpaceCharacter(cm.getLine(lineNum)));
+      },
+      moveToStartOfDisplayLine: function(cm) {
+        cm.execCommand("goLineLeft");
+        return cm.getCursor();
+      },
+      moveToEndOfDisplayLine: function(cm) {
+        cm.execCommand("goLineRight");
+        var head = cm.getCursor();
+        if (head.sticky == "before") head.ch--;
+        return head;
+      },
+      textObjectManipulation: function(cm, head, motionArgs, vim) {
+        // TODO: lots of possible exceptions that can be thrown here. Try da(
+        //     outside of a () block.
+        var mirroredPairs = {'(': ')', ')': '(',
+                             '{': '}', '}': '{',
+                             '[': ']', ']': '[',
+                             '<': '>', '>': '<'};
+        var selfPaired = {'\'': true, '"': true, '`': true};
+
+        var character = motionArgs.selectedCharacter;
+        // 'b' refers to  '()' block.
+        // 'B' refers to  '{}' block.
+        if (character == 'b') {
+          character = '(';
+        } else if (character == 'B') {
+          character = '{';
+        }
+
+        // Inclusive is the difference between a and i
+        // TODO: Instead of using the additional text object map to perform text
+        //     object operations, merge the map into the defaultKeyMap and use
+        //     motionArgs to define behavior. Define separate entries for 'aw',
+        //     'iw', 'a[', 'i[', etc.
+        var inclusive = !motionArgs.textObjectInner;
+
+        var tmp;
+        if (mirroredPairs[character]) {
+          tmp = selectCompanionObject(cm, head, character, inclusive);
+        } else if (selfPaired[character]) {
+          tmp = findBeginningAndEnd(cm, head, character, inclusive);
+        } else if (character === 'W') {
+          tmp = expandWordUnderCursor(cm, inclusive, true /** forward */,
+                                                     true /** bigWord */);
+        } else if (character === 'w') {
+          tmp = expandWordUnderCursor(cm, inclusive, true /** forward */,
+                                                     false /** bigWord */);
+        } else if (character === 'p') {
+          tmp = findParagraph(cm, head, motionArgs.repeat, 0, inclusive);
+          motionArgs.linewise = true;
+          if (vim.visualMode) {
+            if (!vim.visualLine) { vim.visualLine = true; }
+          } else {
+            var operatorArgs = vim.inputState.operatorArgs;
+            if (operatorArgs) { operatorArgs.linewise = true; }
+            tmp.end.line--;
+          }
+        } else if (character === 't') {
+          tmp = expandTagUnderCursor(cm, head, inclusive);
+        } else {
+          // No text object defined for this, don't move.
+          return null;
+        }
+
+        if (!cm.state.vim.visualMode) {
+          return [tmp.start, tmp.end];
+        } else {
+          return expandSelection(cm, tmp.start, tmp.end);
+        }
+      },
+
+      repeatLastCharacterSearch: function(cm, head, motionArgs) {
+        var lastSearch = vimGlobalState.lastCharacterSearch;
+        var repeat = motionArgs.repeat;
+        var forward = motionArgs.forward === lastSearch.forward;
+        var increment = (lastSearch.increment ? 1 : 0) * (forward ? -1 : 1);
+        cm.moveH(-increment, 'char');
+        motionArgs.inclusive = forward ? true : false;
+        var curEnd = moveToCharacter(cm, repeat, forward, lastSearch.selectedCharacter);
+        if (!curEnd) {
+          cm.moveH(increment, 'char');
+          return head;
+        }
+        curEnd.ch += increment;
+        return curEnd;
+      }
+    };
+
+    function defineMotion(name, fn) {
+      motions[name] = fn;
+    }
+
+    function fillArray(val, times) {
+      var arr = [];
+      for (var i = 0; i < times; i++) {
+        arr.push(val);
+      }
+      return arr;
+    }
+    /**
+     * An operator acts on a text selection. It receives the list of selections
+     * as input. The corresponding CodeMirror selection is guaranteed to
+    * match the input selection.
+     */
+    var operators = {
+      change: function(cm, args, ranges) {
+        var finalHead, text;
+        var vim = cm.state.vim;
+        var anchor = ranges[0].anchor,
+            head = ranges[0].head;
+        if (!vim.visualMode) {
+          text = cm.getRange(anchor, head);
+          var lastState = vim.lastEditInputState || {};
+          if (lastState.motion == "moveByWords" && !isWhiteSpaceString(text)) {
+            // Exclude trailing whitespace if the range is not all whitespace.
+            var match = (/\s+$/).exec(text);
+            if (match && lastState.motionArgs && lastState.motionArgs.forward) {
+              head = offsetCursor(head, 0, - match[0].length);
+              text = text.slice(0, - match[0].length);
+            }
+          }
+          var prevLineEnd = new Pos(anchor.line - 1, Number.MAX_VALUE);
+          var wasLastLine = cm.firstLine() == cm.lastLine();
+          if (head.line > cm.lastLine() && args.linewise && !wasLastLine) {
+            cm.replaceRange('', prevLineEnd, head);
+          } else {
+            cm.replaceRange('', anchor, head);
+          }
+          if (args.linewise) {
+            // Push the next line back down, if there is a next line.
+            if (!wasLastLine) {
+              cm.setCursor(prevLineEnd);
+              CodeMirror.commands.newlineAndIndent(cm);
+            }
+            // make sure cursor ends up at the end of the line.
+            anchor.ch = Number.MAX_VALUE;
+          }
+          finalHead = anchor;
+        } else if (args.fullLine) {
+            head.ch = Number.MAX_VALUE;
+            head.line--;
+            cm.setSelection(anchor, head)
+            text = cm.getSelection();
+            cm.replaceSelection("");
+            finalHead = anchor;
+        } else {
+          text = cm.getSelection();
+          var replacement = fillArray('', ranges.length);
+          cm.replaceSelections(replacement);
+          finalHead = cursorMin(ranges[0].head, ranges[0].anchor);
+        }
+        vimGlobalState.registerController.pushText(
+            args.registerName, 'change', text,
+            args.linewise, ranges.length > 1);
+        actions.enterInsertMode(cm, {head: finalHead}, cm.state.vim);
+      },
+      // delete is a javascript keyword.
+      'delete': function(cm, args, ranges) {
+        var finalHead, text;
+        var vim = cm.state.vim;
+        if (!vim.visualBlock) {
+          var anchor = ranges[0].anchor,
+              head = ranges[0].head;
+          if (args.linewise &&
+              head.line != cm.firstLine() &&
+              anchor.line == cm.lastLine() &&
+              anchor.line == head.line - 1) {
+            // Special case for dd on last line (and first line).
+            if (anchor.line == cm.firstLine()) {
+              anchor.ch = 0;
+            } else {
+              anchor = new Pos(anchor.line - 1, lineLength(cm, anchor.line - 1));
+            }
+          }
+          text = cm.getRange(anchor, head);
+          cm.replaceRange('', anchor, head);
+          finalHead = anchor;
+          if (args.linewise) {
+            finalHead = motions.moveToFirstNonWhiteSpaceCharacter(cm, anchor);
+          }
+        } else {
+          text = cm.getSelection();
+          var replacement = fillArray('', ranges.length);
+          cm.replaceSelections(replacement);
+          finalHead = cursorMin(ranges[0].head, ranges[0].anchor);
+        }
+        vimGlobalState.registerController.pushText(
+            args.registerName, 'delete', text,
+            args.linewise, vim.visualBlock);
+        return clipCursorToContent(cm, finalHead);
+      },
+      indent: function(cm, args, ran

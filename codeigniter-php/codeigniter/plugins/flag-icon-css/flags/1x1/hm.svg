@@ -1,0 +1,43 @@
+<?php
+    $dataHeader['titulo']= "Mostrar usuarios";
+    $this->load->view('layouts/header', $dataHeader);
+?>
+
+<?php
+    $dataSidebar['session']= "session";
+    $this->load->view('layouts/sidebar');
+?>
+
+<div class="content-wrapper">
+    <div class="col-12 m-0 p-3">
+            <h1 class="text-primary text-center">VER PERSONAS</h1>
+        <form action="<?= base_url('index.php/Inicio/Mostrar')?>" method="POST">
+            <div class="input-group">
+                <input type="text" class="" name="buscador" placeholder="Buscar por cedula" aria-label="Buscar" aria-describedby="basic-addon2">
+                <div class="input-group-append">
+                    <button class="btn btn-primary" type="submit">Buscar</button>
+                </div>
+            </div>
+        </form>
+        <br>
+        <?php
+        if(isset($er)){
+            echo "lol";
+        }
+        if(isset($buscador)){
+            
+            ?>
+            <table class="table table-striped">
+                <tr>
+                    <th>Cedula</th>
+                    <th>Nombres</th>
+                    <th>Email</th>
+                    <th>Estado</th>
+                    <th>Tipo</th>
+                    
+                </tr>
+                    <?php foreach($buscador as $busca): ?>
+                    <tr>
+                        <td><?php echo $busca['cedula']; ?></td>
+                        <td><?php echo $busca['nombres']; ?></td>
+  

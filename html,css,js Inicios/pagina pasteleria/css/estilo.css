@@ -1,0 +1,109 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+header{
+    background-image: url("../img/R.jfif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-bottom: 6em;
+}
+nav{
+    padding: 1em;
+    border-bottom: 1px solid black;
+}
+.izquierda, .derecha{
+    width: 49%;
+    display: inline-block;
+}
+.derecha ul li{
+    display: inline-block;
+    margin-left: 1,6em;
+}
+ul{
+    margin-left: auto;
+    display: block;
+    width: 70%;
+}
+.derecha ul li a, .logo{
+    color: rgb(12, 7, 7);
+    text-decoration: none;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.tituloprincipal{
+    width: 35%;
+    margin: 7em auto;
+    text-align: center;
+    color: aliceblue;
+}
+h1{
+    margin-bottom: 1em;
+}
+.rosado, .crema{
+    width: 46%;
+    text-align: center;
+    display: inline-block;
+    padding: 1em;
+}
+.rosado, .rosado2{
+    background: rgb(192, 118, 118);
+}
+.crema, .crema2{
+    background: rgb(182, 165, 165);
+}
+.fondo{
+    background: linear-gradient(to right,rgb(192, 118, 118) 0%,rgb(192, 118, 118) 50%,  rgb(182, 165, 165) 50%, rgb(182, 165, 165) 100% )
+}
+.cuadro2{
+    background-image: url(../img/este\ fue.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-bottom: 6em;
+}
+.letra2{
+    width: 35%;
+    margin: 7em auto;
+    text-align: center;
+    color: rgb(1, 2, 10);
+}
+table tr td{
+   width: 38%;
+    border: 3px solid rgb(5, 5, 10);
+    color: aliceblue;
+}
+.rosacrema{
+    background-image: url(../img/beige.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.bombon{
+    border-radius: 50%;
+    width: 20%;
+}
+.hijo{
+    width: 45%;
+    display: inline-block;
+    padding: 1em;
+    text-align: center;
+}
+.negro{
+    background-image: url(../img/R.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.parra{
+    color: aliceblue;
+    text-align: center;
+}
+.crema2, .rosado2{
+    width: 46%;
+    text-align: center;
+    display: inline-block;
+    padding: 1em;
+}
+.fondo2{
+    background: linear-gradient(to right,rgb(192, 118, 118) 0%,rgb(192, 118, 118) 50%,  rgb(182, 165, 165) 50%, rgb(182, 165, 165) 100% )  
+}

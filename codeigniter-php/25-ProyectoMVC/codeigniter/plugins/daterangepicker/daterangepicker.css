@@ -1,0 +1,457 @@
+.daterangepicker {
+  position: absolute;
+  color: inherit;
+  background-color: #fff;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  width: 278px;
+  max-width: none;
+  padding: 0;
+  margin-top: 7px;
+  top: 100px;
+  left: 20px;
+  z-index: 3001;
+  display: none;
+  font-family: arial;
+  font-size: 15px;
+  line-height: 1em;
+}
+
+.daterangepicker:before, .daterangepicker:after {
+  position: absolute;
+  display: inline-block;
+  border-bottom-color: rgba(0, 0, 0, 0.2);
+  content: '';
+}
+
+.daterangepicker:before {
+  top: -7px;
+  border-right: 7px solid transparent;
+  border-left: 7px solid transparent;
+  border-bottom: 7px solid #ccc;
+}
+
+.daterangepicker:after {
+  top: -6px;
+  border-right: 6px solid transparent;
+  border-bottom: 6px solid #fff;
+  border-left: 6px solid transparent;
+}
+
+.daterangepicker.opensleft:before {
+  right: 9px;
+}
+
+.daterangepicker.opensleft:after {
+  right: 10px;
+}
+
+.daterangepicker.openscenter:before {
+  left: 0;
+  right: 0;
+  width: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.daterangepicker.openscenter:after {
+  left: 0;
+  right: 0;
+  width: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.daterangepicker.opensright:before {
+  left: 9px;
+}
+
+.daterangepicker.opensright:after {
+  left: 10px;
+}
+
+.daterangepicker.drop-up {
+  margin-top: -7px;
+}
+
+.daterangepicker.drop-up:before {
+  top: initial;
+  bottom: -7px;
+  border-bottom: initial;
+  border-top: 7px solid #ccc;
+}
+
+.daterangepicker.drop-up:after {
+  top: initial;
+  bottom: -6px;
+  border-bottom: initial;
+  border-top: 6px solid #fff;
+}
+
+.daterangepicker.single .daterangepicker .ranges, .daterangepicker.single .drp-calendar {
+  float: none;
+}
+
+.daterangepicker.single .drp-selected {
+  display: none;
+}
+
+.daterangepicker.show-calendar .drp-calendar {
+  display: block;
+}
+
+.daterangepicker.show-calendar .drp-buttons {
+  display: block;
+}
+
+.daterangepicker.auto-apply .drp-buttons {
+  display: none;
+}
+
+.daterangepicker .drp-calendar {
+  display: none;
+  max-width: 270px;
+}
+
+.daterangepicker .drp-calendar.left {
+  padding: 8px 0 8px 8px;
+}
+
+.daterangepicker .drp-calendar.right {
+  padding: 8px;
+}
+
+.daterangepicker .drp-calendar.single .calendar-table {
+  border: none;
+}
+
+.daterangepicker .calendar-table .next span, .daterangepicker .calendar-table .prev span {
+  color: #fff;
+  border: solid black;
+  border-width: 0 2px 2px 0;
+  border-radius: 0;
+  display: inline-block;
+  padding: 3px;
+}
+
+.daterangepicker .calendar-table .next span {
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+
+.daterangepicker .calendar-table .prev span {
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+}
+
+.daterangepicker .calendar-table th, .daterangepicker .calendar-table td {
+  white-space: nowrap;
+  text-align: center;
+  vertical-align: middle;
+  min-width: 32px;
+  width: 32px;
+  height: 24px;
+  line-height: 24px;
+  font-size: 12px;
+  border-radius: 4px;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.daterangepicker .calendar-table {
+  border: 1px solid #fff;
+  border-radius: 4px;
+  background-color: #fff;
+}
+
+.daterangepicker .calendar-table table {
+  width: 100%;
+  margin: 0;
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+.daterangepicker td.available:hover, .daterangepicker th.available:hover {
+  background-color: #eee;
+  border-color: transparent;
+  color: inherit;
+}
+
+.daterangepicker td.week, .daterangepicker th.week {
+  font-size: 80%;
+  color: #ccc;
+}
+
+.daterangepicker td.off, .daterangepicker td.off.in-range, .daterangepicker td.off.start-date, .daterangepicker td.off.end-date {
+  background-color: #fff;
+  border-color: transparent;
+  color: #999;
+}
+
+.daterangepicker td.in-range {
+  background-color: #ebf4f8;
+  border-color: transparent;
+  color: #000;
+  border-radius: 0;
+}
+
+.daterangepicker td.start-date {
+  border-radius: 4px 0 0 4px;
+}
+
+.daterangepicker td.end-date {
+  border-radius: 0 4px 4px 0;
+}
+
+.daterangepicker td.start-date.end-date {
+  border-radius: 4px;
+}
+
+.daterangepicker td.active, .daterangepicker td.active:hover {
+  background-color: #357ebd;
+  border-color: transparent;
+  color: #fff;
+}
+
+.daterangepicker th.month {
+  width: auto;
+}
+
+.daterangepicker td.disabled, .daterangepicker option.disabled {
+  color: #999;
+  cursor: not-allowed;
+  text-decoration: line-through;
+}
+
+.daterangepicker select.monthselect, .daterangepicker select.yearselect {
+  font-size: 12px;
+  padding: 1px;
+  height: auto;
+  margin: 0;
+  cursor: default;
+}
+
+.daterangepicker select.monthselect {
+  margin-right: 2%;
+  width: 56%;
+}
+
+.daterangepicker select.yearselect {
+  width: 40%;
+}
+
+.daterangepicker select.hourselect, .daterangepicker select.minuteselect, .daterangepicker select.secondselect, .daterangepicker select.ampmselect {
+  width: 50px;
+  margin: 0 auto;
+  background: #eee;
+  border: 1px solid #eee;
+  padding: 2px;
+  outline: 0;
+  font-size: 12px;
+}
+
+.daterangepicker .calendar-time {
+  text-align: center;
+  margin: 4px auto 0 auto;
+  line-height: 30px;
+  position: relative;
+}
+
+.daterangepicker .calendar-time select.disabled {
+  color: #ccc;
+  cursor: not-allowed;
+}
+
+.daterangepicker .drp-buttons {
+  clear: both;
+  text-align: right;
+  padding: 8px;
+  border-top: 1px solid #ddd;
+  display: none;
+  line-height: 12px;
+  vertical-align: middle;
+}
+
+.daterangepicker .drp-selected {
+  display: inline-block;
+  font-size: 12px;
+  padding-right: 8px;
+}
+
+.daterangepicker .drp-buttons .btn {
+  margin-left: 8px;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 4px 8px;
+}
+
+.daterangepicker.show-ranges.single.rtl .drp-calendar.left {
+  border-right: 1px solid #ddd;
+}
+
+.daterangepicker.show-ranges.single.ltr .drp-calendar.left {
+  border-left: 1px solid #ddd;
+}
+
+.daterangepicker.show-ranges.rtl .drp-calendar.right {
+  border-right: 1px solid #ddd;
+}
+
+.daterangepicker.show-ranges.ltr .drp-calendar.left {
+  border-left: 1px solid #ddd;
+}
+
+.daterangepicker .ranges {
+  float: none;
+  text-align: left;
+  margin: 0;
+}
+
+.daterangepicker.show-calendar .ranges {
+  margin-top: 8px;
+}
+
+.daterangepicker .ranges ul {
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+  width: 100%;
+}
+
+.daterangepicker .ranges li {
+  font-size: 12px;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.daterangepicker .ranges li:hover {
+  background-color: #eee;
+}
+
+.daterangepicker .ranges li.active {
+  background-color: #08c;
+  color: #fff;
+}
+
+/*  Larger Screen Styling */
+@media (min-width: 564px) {
+  .daterangepicker {
+    width: auto;
+  }
+
+  .daterangepicker .ranges ul {
+    width: 140px;
+  }
+
+  .daterangepicker.single .ranges ul {
+    width: 100%;
+  }
+
+  .daterangepicker.single .drp-calendar.left {
+    clear: none;
+  }
+
+  .daterangepicker.single .ranges, .daterangepicker.single .drp-calendar {
+    float: left;
+  }
+
+  .daterangepicker {
+    direction: ltr;
+    text-align: left;
+  }
+
+  .daterangepicker .drp-calendar.left {
+    clear: left;
+    margin-right: 0;
+  }
+
+  .daterangepicker .drp-calendar.left .calendar-table {
+    border-right: none;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  .daterangepicker .drp-calendar.right {
+    margin-left: 0;
+  }
+
+  .daterangepicker .drp-calendar.right .calendar-table {
+    border-left: none;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
+  .daterangepicker .drp-calendar.left .calendar-table {
+    padding-right: 8px;
+  }
+
+  .daterangepicker .ranges, .daterangepicker .drp-calendar {
+    float: left;
+  }
+}
+
+@media (min-width: 730px) {
+  .daterangepicker .ranges {
+    width: auto;
+  }
+
+  .daterangepicker .ranges {
+    float: left;
+  }
+
+  .daterangepicker.rtl .ranges {
+    float: right;
+  }
+
+  .daterangepicker .drp-calendar.left {
+    clear: none !important;
+  }
+}
+                                                                                                                           ÇEà    ÇEä    ÇEè    EàÇEü    P‹ÏèÈ/  PMìèoïüÿ‹Mä¸«ªª*+Mà÷éj Áúj j ‹ÂÆEüÁèÂjÿ•À3Éj „ÀEÀEMàQjSÿuğPhû   j EìPEĞPèà]àÿ‹EÔƒÄ8™‰E¨‹EĞ‰U¬™‰E ‹EÜ‰U¤óoE ™‰E¸‹EØ‰U¼™óGH‰E°‰U´óoE°ÆEü óGXMìè%<àÿ‹Eà[…Àt	Pèî/ ƒÄóoGH‹E‹Môó óoGX_^ó@d‰    ‹å]Â ÌÌÌÌÌÌÌÌÌÌÌÌU‹ì‹A‹P<…Òt‹EóoBó óoBó@]Â Vj èa  ‹Èèº¸Éÿ‹u‹È‹A™‰F‹‰V™‰‹A‰V™‰F‹A‰V™‰F‹Æ‰V^]Â ÌÌÌÌÌÌÌÌU‹ìÿuÁ   è_å ‹E]Â ÌÌÌÌÌÌÌÌU‹ì‹Iÿu‹ÿR‹E]Â ÌÌÌÌÌÌÌÌÌÌÌU‹ì‹AVW‹H‹@™‹ğ‹ú‹Á‹M™‰y_‰A‹Á‰qÇ    ÇA    ÇA    ÇA    ‰Q^]Â ÌÌÌÌÌÌÌÌ‹Q‹‹RÃÌÌÌÌÌÌÌU‹ìjÿhè@Âd¡    Pd‰%    Q‹ASVWƒx0 uYj èT  ‹Ø‹Ëè1ÊÿPMğèBíüÿMğÇEü    èsùüÿ‹ø3ö…ÿ~VMğèñüÿP‹ËèjVÊÿ„Àu(F;÷|æMğÇEüÿÿÿÿèbíüÿ_^ƒÈÿ[‹Môd‰    ‹å]ÃMğÇEüÿÿÿÿè?íüÿ‹Mô‹Æ_^[d‰    ‹å]ÃÌÌÌÌÌÌÌÌÌÌÌÌU‹ìQ‹IÿuÇEü    ‹ÿR‹E‹å]Â ÌU‹ìjÿhcAÂd¡    Pd‰%    ì¸   SV‹ñ3Û‰]ä‹N‹A<…ÀtH9XTtC‹u‹HT‰…Ét#A‰Eè‹Uè¸   ğÁ‰Eğ‹Eğ@ƒøu‹ÿR‹Æ^[‹Môd‰    ‹å]Â W9Y8„-  9™Ø  …‘   hÀ   èOë/ ‹øƒÄ‰}ìÇEü   …ÿt7‹N…<ÿÿÿP‹I8èÂ  ‹N»   Pj ÆEü‹I8‰]äèR PV‹Ïè¯Oÿÿë3À‹NÁØ  ÇEğ    Pè¥   Mğèı¾ÿÿÇEü    öÃtƒãı<ÿÿÿ‰]äèàÁ¤ÿ‹Fÿ°Ø  EìPè- ƒÄ‹u‹ÇEü   ‰…Ét#A‰Eğ‹Uğ¸   ğÁ‰Eè‹Eè@ƒøu‹ÿP‹MìƒË‰]äÆEü …ÉtgA‰Eğ‹Uğ¸ÿÿÿÿğÁ‰Eè‹EèHuL‹ÿR_‹Æ^[‹Môd‰    ‹å]Â ‹‰Ü  …Ét=‹uA‰Eì‰‹Uì¸   ğÁ‰Eè‹Eè@ƒøu‹ÿR_‹Æ^[‹Môd‰    ‹å]Â j ‹Îè   ‹ØMÔSè¥8ÃÿhÀ   ÇEü   èÌé/ ‹øƒÄ‰}ìÆEü…ÿt‹Ëè­ÊÿPEÔ‹ÎPè  P‹ÏèiUÿÿ‹ğë3ö‰uè‹}ÆEü‰7…öt%F‰Eì‹Uì¸   ğÁ‰Eğ‹Eğ@ƒøu‹‹ÎÿPÇEä   ÆEü…öt"F‰Eì‹Uì¸ÿÿÿÿğÁ‰Eğ‹EğHu‹‹ÎÿRMÔÆEü è¡>Ãÿ‹Mô‹Ç_^[d‰    ‹å]Â ÌÌÌÌÌÌÌÌÌÌÌÌU‹ìjÿh´AÂd¡    Pd‰%    ƒìV‹ñÇEè    W‹}W   ÇEü    èê ‹NÇEü    ÇEè   èî<  …À„º   ‹èaÿÿ„À„«   ‹EàPè^ÿÿ‹MàÇEü   …É„‚   è%;Éÿ„ÀuyhÀ   èoè/ ‹ğƒÄ‰uì…öt'ƒì‹Ä‰eğÇ     ‹ÆEüèÂª£ÿP‹ÎÆEüèVUÿÿë3À‰EìEìÆEüPMğèoBÙÿEğÆEüP‹Ïè ÆÿÿMğÆEüè4ûÆÿMìÆEüè(ûÆÿMàÆEü èlıÿ‹Mô‹Ç_d‰    ^‹å]Â ÌÌÌÌÌÌÌÌU‹ìƒì‹IÇEø    V‹u‰…Ét#A‰E‹U¸   ğÁ‰Eü‹UüBƒúu‹ÿR‹Æ^‹å]Â ÌÌÌÌÌÌÌÌÌÌU‹ìjÿhìAÂd¡    Pd‰%    ƒìVWhÀ   ‹ùÇEè    èXç/ ‹ğƒÄ‰uìÇEü   …öt‹OƒìTèqKÙÿj‹ÎèHTÿÿ‹ğë3ö‰uä‹}ÇEü   ‰7…öt%F‰Eğ‹Uğ¸   ğÁ‰Eì‹Eì@ƒøu‹‹ÎÿPÇEè   ÆEü …öt"F‰Eì‹Uì¸ÿÿÿÿğÁ‰Eğ‹UğJu‹‹ÎÿR‹Mô‹Ç_d‰    ^‹å]Â ÌÌÌÌÌU‹ìjÿh[¼d¡    Pd‰%    ƒìVWhH  ‹ùÇEğ    èxæ/ ‹ğƒÄ‰uìÇEü    …öt-Q‹ÌWQè3) ƒÄ‹Îè¹¸ ‹È‹E‰‹Môd‰    _^‹å]Â ‹E‹Mô_^Ç     d‰    ‹å]Â ÌÌÌÌÌU‹ìjÿhxÀd¡    Pd‰%    Q‹AVÇEğ    ‹@8…ÀtBWj‹ÈèÛL ‹}‹ğ‹‰‹Ïè{	ıÿ‹VOÇEü    ‰èg	ıÿ‹Ç_^‹Môd‰    ‹å]Â j è\  ‹MPèc4Ãÿ‹E‹Mô^d‰    ‹å]Â ÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌU‹ìd¡    jÿhBÂPd‰%    ƒì‹A‹@8…Àt‹Èè”M ‹Môd‰    ‹å]ÃVWj èí  PMÜèô3Ãÿ‹MÜÇEü    …Étè`Éÿ™‹ğ‹úëWÀfEì‹}ğ‹uìMÜÇEüÿÿÿÿèm:Ãÿ‹Mô‹×_‹Æd‰    ^‹å]ÃÌÌÌÌÌÌÌÌÌU‹ìjÿhÛBÂd¡    Pd‰%    ƒì`S‹ÙM VW‰]Ø‹C˜
+  PèLÔÿ‹CMĞÇEü    ‹€¤
+  ‰EĞè1ıÿ‹uÆEüƒşuU‹Ëè÷ÿÿ‹K;
+  u;‘”
+  tYÇE¬    ÇE°    ÇE´    E¬ÆEüPM èV”ÿ‹E¬ÆEü…Àt9Pè3ä/ ƒÄë.…öu*‹ËèE÷ÿÿ‹K;ˆ
+  u;‘Œ
+  u‹} éO  MĞè’ıÿ‹ËèÛ  ‹ø‹Ëj ‰}ìè  ‹C‹H…´  ˆà  èt8Ëÿ„À„¡  ‹Cƒx( „”  jè°ã/ ‹ğƒÄ‰uØÆEü…öt‹SQƒÂ(‹ÌRèÙ=Ùÿ‹Îè’°ÿÿ‹Èë3ÉQ‹ÄÆEüÇEè    ‰è‡)Ùÿ‹ğƒÄ‰uğMèÆEüèc`›ÿ‹Eƒøu[WM¬èB”ÿPM ÆEüèU”ÿM¬ÆEüèYÿ3ö…ÿğ   ‹} ÿuğ‹KVÁà  èú1Ëÿ‰·F;uì|åMğÆEüè• ÿéè  …À…¹   PPE°jPèËãíÿƒÄÿ0MĞÆEüèÚıÿM°ÆEüè>ıÿ‹EĞƒì‹Ì‰è_ıÿèªåÔÿƒÄj Q‹ÌÆEü	ÇEà    ‰è`Ã›ÿ‹øƒÄ‰}ä‹KEèVPÁà  ÆEü
+èÑXËÿ‹0Ç     ‰uìMèÆEüèúH¢ÿVèä<şÿƒÄ‹Ïÿ6Pèç-ÙÿMìèßH¢ÿMäèW_›ÿMàè?_›ÿ‹} MğÆEüèÀ ÿé  ‹Ëè$L  „À„  ‹Ëèµa  j‹Ëè¼
+  j‹Ë‰Eğè°
+  j ÿuğM”è£´ãÿ‹MğÆEüè×@Êÿ„À„r  ‹Mğèw1Êÿ‹ÈèĞ³ ƒx Y  …öu{jVE°jPè”âíÿƒÄÿ0MĞÆEüè£ıÿM°ÆEüèıÿ‹EĞƒì‹Ì‰è(ıÿèsäÔÿƒÄVQ‹ÌÆEü‰uä‰è.Â›ÿ‰EàPÿuğÆEüèÎçÿƒÄMàèc^›ÿMäÆEüèG^›ÿWM¬è.”ÿPM ÆEüèA”ÿM¬ÆEüèEœÿjEè‹ËPèè$  3öÆEü…ÿ‹} X  ‹]ìd$ EèVPèNàÿƒÄMÀ‹ ‰EÀè†ıÿ‹MÀEÈPÆEüè†7Üÿ‹MÈÆEü…É„í   ‹ÿ˜   ƒø…Ü   PhÄTh¤Tj ÿuÈè¯é/ ƒÄMğQ‹Èè#âÿ‹MğE°PÆEüèóKæÿ‰Eà‹MğE¸PÆEüèàKæÿ‰EìÆEüè„… ‹Mì9uèøß ‹Eìÿuà‹Hèª ‹Èèó± M¸‰·ÆEüè¤uÁÿ‰Eà‹Uà¸ÿÿÿÿğÁ‰Eä‹EäHuM¸èdaâÿM°ÆEüèxuÁÿ‰Eà‹Uà¸ÿÿÿÿğÁ‰EÜ‹EÜHuM°è8aâÿMğÆEüèLıÿëÇ·ÿÿÿÿMÈÆEüè7ıÿMÀÆEüè+ıÿF;óŒ²şÿÿ‹]Ø‹ËèÈòÿÿ‹K‰
+  E ‰‘”
+  ‹KPÁ˜
+  ègâÿMèÆEüè{-àÿM”ÆEüèo<äÿëUÇE¬    ÇE°    ÇE´    E¬ÆEüPM èXÿ“ÿ‹E¬ÆEü…Àt	Pè5ß/ ƒÄMĞè¼ıÿ‹} M”ÆEüè<äÿë‹} ‹Eƒøu*‹Ëè)òÿÿ‹K‰
+  E ‰‘”
+  ‹KPÁ˜
+  èÈáÿë+…Àu'‹Ëèûñÿÿ‹K‰ˆ
+  ‰‘Œ
+  ‹KÿuĞÁ¤
+  è»ıÿMĞÆEü èıÿ…ÿt	Wè£Ş/ ƒÄ‹Mô_^d‰    [‹å]Â ÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌ‹I‹ÿ`ÌÌÌÌÌÌÌÌ‹A‹@<…Àt‹@(Ãj è  ¿@pÃÌÌÌÌÌÌÁ   éeâ ÌÌÌÌÌU‹ìjÿhJCÂd¡    Pd‰%    ƒì$SVWj‹ñÇEü    ÇEì    èŞ/ ƒÄ‰EØÇEü   …Àtj j ‹ÈèO_ÿÿë3À‹}‰‹FÇEü    ÇEì   ƒx0 …F  h*  hMIB8Eğ‹ÎPè6  ‹0Ç     ‰uØMğÇEü   è,D¢ÿ…ö„  j VèÌ$Ùÿ‹ğƒÄ‰uÜ‹ÎÆEüè‰!Ùÿ‹·À˜Ph¬ïÆè¸vÿÿ‹Îèq!Ùÿ‹·À‰Eğ˜PhLÇèvÿÿjè>İ/ ƒÄ‰EàÆEü…Àt‹Èè±/ÿÿ‹Øë3Û‰]Ô‹Eğ3ÉÆEüf;È  ·À‰Eğjèİ/ ƒÄ‰EèÆEü…Àtj j ‹ÈèP^ÿÿ‹øë3ÿ‰}Ğ‹ÎÆEüèì Ùÿ·À‹Ï˜Ph(¿Èèvÿÿ‹ÎèÔ Ùÿ·À‹Ï˜Phè7Éèvÿÿ‹Îè¼ Ùÿ·À‹Ï˜PhÄzÛèëuÿÿ‹Îè¤ Ùÿ·À‹Ï˜Ph ¡ÛèÓuÿÿ‹ÎèŒ ÙÿQ‹Ä‰8…ÿt%G‰Eè‹Uè¸   ğÁ‰Eä‹Eä@ƒøu‹‹ÏÿP‹Ëèg5ÿÿÆEü…ÿt"G‰Eè‹Uè¸ÿÿÿÿğÁ‰Eà‹EàHu‹‹ÏÿPÿMğ…ÿÿÿ‹}Q‹Ä‰…Ût%C‰Eà‹Uà¸   ğÁ‰Eä‹Eä@ƒøu‹‹ËÿP‹h.Éè7pÿÿ‹ÎèàÙÿ·À‹Î˜@™RPèÿ3ÙÿÆEü…Ût"C‰Eà‹Uà¸ÿÿÿÿğÁ‰Eä‹EäHu‹‹ËÿRMÜèşŸÿMØèB¢ÿ‹Mô‹Ç_^d‰    [‹å]Â U‹ìd¡    jÿhZ¼Pd‰%    ƒìV‹ñMìèœÿj ‹Îè!D  „Àt4j ‹Îèä  PEäPèŠ¬ÿƒÄ‹MäÇEüÿÿÿÿ‹A(‰Eì‹A,Mä‰Eğèyşüÿ‹E‹Mì^‰‹Mğ‰H‹Môd‰    ‹å]Â ÌÌÌÌÌÌÌÌÌÌU‹ìƒìPSV‹ñ2Û‹V‹B…  è „À„  j ‹Îè`  ‹NEĞPEàWÀPEğÁà  PÿuóEğóEàóEĞè¡-Ëÿ„À„Ğ   ‹M…Ét;‹Eô™‰E¸‹Eğ‰U¼™‰E°‹Eü‰U´óoE°™‰EÈ‹Eø‰UÌ™ó‰EÀ‰UÄóoEÀóA‹M…Ét;‹Eä™‰E¸‹Eà‰U¼™‰E°‹Eì‰U´óoE°™‰EÈ‹Eè‰UÌ™ó‰EÀ‰UÄóoEÀóA‹M…Ét;‹EÔ™‰E¸‹EĞ‰U¼™‰E°‹EÜ‰U´óoE°™‰EÈ‹EØ‰UÌ™ó‰EÀ‰UÄóoEÀóA^°[‹å]Â ^ŠÃ[‹å]Â ÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌU‹ìWj ‹ù‹Mj èî/ÙÿÿuO(èÓàéÿ_„Àt	¸FFIT]Â hàÍjÿè	¤§ÿÌÌÌÌÌÌÌÌÌU‹ìjÿh˜1Àd¡    Pd‰%    ƒìVEğÇEğX  PEìÇEì   ‹ñMäPèÔ{œÿ‹F‹@8…Àt‹ˆ8  ‰Mä‹<  ë9j ‹Îè   PEÜPèF¬ÿƒÄ‹ÇEüÿÿÿÿ‹A‰Eä‹AMÜ‰Eèè6üüÿ‹Uè‹Mä‹E^‰‹Mô‰Pd‰    ‹å]Â ÌÌÌÌÌÌÌU‹ìƒìEøPèAÿÿÿ‹E‹Mü‰‹Mø‰H‹å]Â ÌÌÌÌÌÌÌÌÌÌÌÌÌU‹ìjÿhkCÂd¡    Pd‰%    QV‹uW‹ùÇEğ    N`‹GP‰‡°   òGXòFòG`òFòGhòFòGpòF òGxòF(ò‡€   òF0ò‡ˆ   òF8ò‡   òF@ò‡˜   òFHò‡    òFPò‡¨   PòFXè.áÿÈ   ÇEü    QNxè¿.ğÿ¶ä   ‹Æˆ”   ¶å   ˆ•   ‹Mô_^d‰    ‹å]Â Ì‹Ø  ÃÌÌÌÌÌÌÌÌÌ‹‰Ø  éÅ  ÌÌÌÌÌU‹ìjÿhÈCÂd¡    Pd‰%    ì8  SV‹ñÇEÜ    2ÛW‹}‹Fƒx …  MÄè©ÿÿ‹FÇEü    ‹H(…É”Çƒx  ˆ}„  èXÿÿ‹N‹Øj ƒÁ jQ‹Ä‹	‰…Ét#A‰Eä‹Uä¸   ğÁ‰Eğ‹Eğ@ƒøu‹ÿPèyS  ‹ƒÄ‹ËPjÿ’à   ‹NƒÁÇEğ    Pè&r®ÿMğèn¦ÿ‹Nè–n  ‹F‹X‹ËŠ@AˆEğ‰]àèPÊÿÿuğ‹ËˆEäè“ÈÊÿÇEè    ‹FUèj j R‹Hj ÆEü‹ÿ„   MèèHõ­ÿÆEü …Ût
+ÿuä‹ËèVÈÊÿŠ}‹F‹H…É„Î  ƒyt…Ä  èÆÊÿPEìPèlEÂÿƒÄ¹   ƒ8 …§  ŠÙé¢  …ÉtGè;ÿÿj jj ‹‹Èjÿ’à   ‹NƒÁÇE    PèFq®ÿMè¦ÿ‹Nè¶m  W‹Îè^Y  évÿÿÿ‹H4…É„3  EèPèåÿÿ‹FÆEü‹ˆÜ  …Ét7èÏ—£ÿPèù—ØÿƒÄMèPh  dMèØšÿ‹Èè1ø¹ÿh¨ÇMèèÄšÿ‹Èè­–¹ÿÇEà    ‹FÆEü‹ˆÜ  …ÉtGèğMÿÿ„Àt>‹F‹ˆÜ  èşMÿÿ„Àu,‹FMìQ‹ˆÜ  èhJÿÿÿ0MàÆEüèÚøüÿMìÆEüè>øüÿ‹Eàjƒì‹Ì‰è]øüÿEèPèÇÉÿ‹NƒÄƒÁÇEğ    Pè>p®ÿMğè†¦ÿ‹Nè®l  ‹N‹Yƒ{tu‹‰Ü  …Étè³HÿÿƒÀ‹ËPèøŸÊÿMàÆEüèÌ÷üÿMèÆEü è y¹ÿé5şÿÿ‹Îè$Âÿÿ‹Nè\l  é$şÿÿ‹MÜ2ÛöÁtMìè•÷üÿ„Û„“   ‹Fƒì‹HTè>ÊÿEàPè5iÂÿ…¼üÿÿÆEüPè5ÄÿƒÄEìP‹Eàƒì‹Ì‰è÷üÿ…¼üÿÿPEØPè_gÂÿƒÄ‹ÈÆEüè‘2Âÿ‹FMìQÆEü‹Hè>ŸÊÿMìÆEüè÷üÿMØÆEüè÷üÿMàÆEü èúöüÿ„ÿt‹NjÁà  èFËÿ‹NjÁà  è&Ëÿ‹NŠØj ƒÁ0è§ˆ  ‹N‹I‹‰„   …Éth(  hMIB8èø[Ìÿ„Àt¹   ë3É‹FjˆH@‹FÿpèXDÿƒÄÇEüÿÿÿÿMÄèö¯ÿÿ‹NjÁà  è¶Ëÿ„Àu
+ƒÿuGùë3À‹N
+Øƒy( tWÁà  èËÿ„ÀuW‹Îè“V  ‹F„ÛtÿpèÔ°Ğÿ‹FƒÄ‹@‹Mô_^d‰    [‹å]Â ÌÌÌÌÌÌÌÌU‹ìjÿhøCÂd¡    Pd‰%    QV‹ñ‹V‹B…š   jèûÿÿ‹F‹HƒÀHPèp
+ÊÿÇEğ    ‹NEğPƒÁ8ÇEü    è“1Ùÿj MğÇEüÿÿÿÿè} ‹NPƒÁ(ÇEü   è¿} MğÇEüÿÿÿÿè0} ÇEğ    ‹NEğPƒÁ<ÇEü   èÃ¯ÿÿ‹Fj ÇEüÿÿÿÿÿpèCÿƒÄ‹F‹Môƒ ƒP ‹F^‹@d‰    ‹å]ÃÌÌÌÌÌÌÌÌÌÌÌÌÌ‹A‹@<…Àt‹@,Ãj è;úÿÿ‹@tÃÌÌÌÌÌÌÌU‹ìì  ‹AVÇEô    ƒx0 t!‹uMÇE    Ç    èŞ7¢ÿ‹Æ^‹å]Â Sj èíùÿÿ‹ˆ„   fÇ…ìşÿÿ  …Ét&…ìşÿÿPÿuÿuè˜QÌÿÇEü    M‰E»   ëÇEø    MÇE    »   ‹uƒË‹Ç    ‰öÃtMƒãïè^7¢ÿöÃtMøƒã÷èN7¢ÿöÃtMƒãûè>7¢ÿöÃ[tMüè07¢ÿ‹Æ^‹å]Â ÌÌÌÌÌÌÌU‹ìjÿh<DÂd¡    Pd‰%    ƒìSVW‹ÙÇEì    èD  ‹}…ÿˆÃ   ;ø»   j WEä‹ËPèC  ‹Eä‹sÇEü   ‹€  ‰EğNEğPEPèn»ÿ‹E;FunjDèĞ/ ƒÄ‰EÆEü…ÀtSW‹Èèç±  ‹ğë3ö‹KEğPƒÁÆEüè¾°ÿÿV‰0‹uVè¢ ƒÄMäÇEì   ÆEü è,óüÿ‹Mô‹Æ_^[d‰    ‹å]Â ÿp‹uVèk ƒÄëÇhÍjÿè:š§ÿÌÌÌÌÌÌÌÌÌÌU‹ìjÿh•DÂd¡    Pd‰%    ƒì(S‹ÙÇEğ    ‹MVW‹{‰]è‹G‹ğ‹P€z u‹ÿ9Js‹Rë‹ò‹€z tì;ğt‰uì;Ns‰EìEì‹ ;G…  ‹G0…Àt,UìRQPè<àÿƒÄMÜ‹ ‰EÜè.7zm77.8 3.2c-.7-.5.6-3 1.5-2 2.3 2.7 3.4 11.6 4.1 18.3 0 0-1 .9-1 .7 0-3.5-1.5-14.4-4.6-17zm-53.1-8.6c-.8-1.8 1.1-2.4 1.4-1.2 1.3 5.8 4.5 10.2 7 14.1.7 1.2 0 2-1.7.8-1.2-.8-2.5-3.9-3-4-1.2-.2-3.8 5-9.1 3.5-1.4-.4-1.3-4.5-1.4-6.3 0-.9 1-1 1 0 0 1.7 0 5.2 2.1 5.4 1.8 0 5.6-2.4 6.4-4.4.8-2-1.9-5.9-2.7-8z"/>
+      <path d="M344.6 138.4c.4-1.2 6.1-10.8 6.9-12.9.4-1 2 1.8.4 3.3-1.4 1.2-5.5 8-6.3 10.4-.4 1-1.4.5-1-.8z"/>
+      <path d="M354.3 129.3c1-4 3.6.6 1.3 2.8-3.4 3.4-4.5 9.9-10 10.9-1.4.3-4-.7-4.8-1.3-.3-.2.2-1.6 1.1-.9 1.3 1 4.1 1.3 5.6.1a25.4 25.4 0 0 0 6.8-11.6zm-57 12.7c-.3.3-1 .3-1.1.7-.3 1.4 0 2.2-.3 3.6s-1.3 1.4-1.2.3c0-1.4 1.3-3.5.4-3.6-.6-.1-1-.9-.4-1.3 1.1-.7 1.7-.6 2.4-.4.3.1.4.5.2.7z"/>
+      <path d="M296.5 140c-1.4 1.4-2.8 1.9-4.1 3.5-.6.6-.5 1.5-.9 2.4-.3.9-1.4 1-1.7.9-.5-.4-.4-2-1-1.2-.6.9-.9 2-1.7 2-.7 0-2-1.5-1.3-1.5 2.3-.3 2.2-2 3-2.2 1-.1 1 1.5 1.7 1.2.4-.2.7-2.1 1.2-2.6 1.5-1.6 2.7-2.4 4.3-3.6.7-.6 1.3.5.5 1.2zm5.3 5c-1.2.2-1 1.7-.6 1.8.5.3 1.4.4 1.7-1.3.2-.7.3 3.5 1.8 1.9 1-1 3.1.2 4-1 .7-.9 1-1.5.4-2.7-.2-.3-1-.2-1 .7 0 .8-.5 1.7-1.3 1.6-.4-.1.2-1.9-.2-2.4a.5.5 0 0 0-.7 0c-.3.4.3 2.2-.6 2.4-1.2.2-.6-1.2-1-1.4-1.7-.8-1.8.2-2.5.3zm9-3c.9-.2.6-.2 2-1.3.5-.4.6.8.5 1.3 0 .7-1 .2-1.3.9-.4.9-.2 3-.4 3.8 0 .4-.8.4-.8 0-.2-1 .1-2 0-3.3 0-.4-.5-1.1 0-1.3zm-5-2.5c-.2.9-.2 1.6-.2 2.3 0 .5 1 .2 1 .1 0-.8.2-2 0-2.3-.2-.1-.7-.3-.8-.1z"/>
+      <path d="m299.5 130.2-1.4 5.6-2-3.8v3.9l-4.4-5.2 1.5 5.6-4-3.4 2.2 3.8-7-4.5 4.4 5.2-5.6-2.8 4 3.4-9-3.4 8.7 4.3a29 29 0 0 1 12.6-2.6c4.9 0 9.3 1 12.5 2.6l8.8-4.3-9 3.4 4-3.4-5.5 2.8 4.3-5.2-7 4.5 2.2-3.8-4 3.3 1.5-5.5-4.3 5.2V132l-2 3.8-1.5-5.6z"/>
+    </g>
+  </g>
+  <path fill="#fff" d="m249 299.7-.1 2.2h-.4v-1.5a7.4 7.4 0 0 0-.4-1.3 5.8 5.8 0 0 0-.5-1 11.3 11.3 0 0 0-.8-1.1l.7-1.8a5.3 5.3 0 0 1 1.1 2 7.5 7.5 0 0 1 .5 2.5m5.5-3.4c0 .6-.1 1-.3 1.2-.2.3-.6.5-1 .6l.2 1.1a5.3 5.3 0 0 1 0 1.7v1h-.4v-1a4.4 4.4 0 0 0-.2-.8 28.8 28.8 0 0 0-.3-.8 8.4 8.4 0 0 0-.6-1.2l-.8-1.3.5-1.6.8.9.7.2c.7 0 1-.3 1-1h.3a8 8 0 0 0 0 .5v.5m5.1 3.9-.4 1.7-.6-.6a3.5 3.5 0 0 1-.3-1 9.9 9.9 0 0 1 0-1.4 3 3 0 0 1-.9.1c-.4 0-.7 0-1-.3a1 1 0 0 1-.4-.8c0-.7.2-1.3.6-1.8.3-.6.7-.9 1.2-.9.3 0 .6.1.7.3l.3.8v1.6c0 .7 0 1.2.2 1.4 0 .3.3.5.6.9m-1.5-2.9c0-.4-.3-.6-.7-.6a.8.8 0 0 0-.4.1c-.2.1-.2.2-.2.3 0 .2.2.3.8.3a2.2 2.2 0 0 0 .5 0m6.9 2.3-.2 2.1c-.4-.3-.8-.8-1.1-1.5a20 20 0 0 1-1.1-3.3 41.3 41.3 0 0 1-.8 3l-.6 1.3a2 2 0 0 1-.6.6v-2l.8-1.2a6 6 0 0 0 .6-1.4 16 16 0 0 0 .3-2h.4l.7 2a6.7 6.7 0 0 0 1.6 2.4"/>
+  <path fill="#bf0000" d="M280.5 319.2c.3.3.5.6.6 1l.2 1.2h-.6a6.2 6.2 0 0 0-.7-1.1 15.2 15.2 0 0 0-1-1l-1.3-1.2a27.3 27.3 0 0 0-1.6-1.3l-.5-.4-.2-.6a9 9 0 0 1-.1-1.3l2.1 1.7a35.3 35.3 0 0 1 2 1.8l1.1 1.2m-7.6-4.6-.1 1.6-2.5-.1.2-1.6h2.4m6.7 7.1-6 1.9-1.2-1.6 5.2-1.5a6.3 6.3 0 0 0-.5-.7l-.7-.5a1.1 1.1 0 0 1-.4.8 2 2 0 0 1-.8.5 2.7 2.7 0 0 1-1.4 0c-.5 0-.8-.3-1-.6a3.1 3.1 0 0 1-.5-1.7c0-.8.2-1.3.6-1.5.6-.2 1.4 0 2.5.5a6.5 6.5 0 0 1 2.4 2l1.8 2.4m-4.7-3.2a3.1 3.1 0 0 0-.6-.2.9.9 0 0 0-.5 0 .5.5 0 0 0-.4.3.4.4 0 0 0 0 .4l.4.2h.5a.9.9 0 0 0 .3-.3l.3-.4m-6.4-1.2-.4 1.6-2.5-.3.4-1.5 2.5.2m6 6-1.4.4a4.2 4.2 0 0 1-1.4 0 2.8 2.8 0 0 1-1.2-.3c-.2.4-.6.7-1.1 1a5.9 5.9 0 0 1-1.3.4l-1 .3-.8-1.6 1-.2 1-.3.6-.4a4.7 4.7 0 0 0-.7-.4 1 1 0 0 0-.6-.1.3.3 0 0 0-.2 0 .5.5 0 0 0 0 .3h-.5c-.4-.7-.5-1.2-.3-1.6.3-.4.8-.7 1.6-.9.8-.2 1.5-.2 2.1 0 .6 0 1 .3 1.2.6.1.2.2.4.1.6 0 .2 0 .5-.3 1a1.6 1.6 0 0 0 1 0l1.3-.3.8 1.6m-6.4 1.5-1.3.2c-.7 0-1.3 0-1.8-.4a4.3 4.3 0 0 1-1.3-2l-.6-1.7a2 2 0 0 0-.6-1l-.8-.3.5-1.7 1.1.9.8 1.3.4 1.2a5 5 0 0 0 1 1.7c.2.3.4.4.7.3l1.3-.2.6 1.7m-5.5-6-.9 1.5-2.3-.6.8-1.5 2.4.6m1.4 6.7-6 .5-.3-1.6 5-.5a1.9 1.9 0 0 0-.6-.7 6 6 0 0 0-.8-.5l.5-1.5c.5.3 1 .6 1.2 1 .2.4.5 1 .6 1.7l.4 1.6m-4.8.8a13 13 0 0 1-1.8-.2 8.3 8.3 0 0 1-1.3-.4 4.5 4.5 0 0 1-1 .3h-3c-.5 0-.8 0-1-.2l-.6-.8a3.3 3.3 0 0 1-1.3.7 4 4 0 0 1-1.3.2h-1.4l.2-1.8 1.3.1c.7 0 1.3 0 1.7-.3.6-.3 1-.8 1-1.4h.6a22.9 22.9 0 0 0-.1 1c0 .3 0 .5.3.6l.7.2h2.9c.4-.2.6-.5.7-1l.1-.3a2.6 2.6 0 0 1 .4-.2l.4-.1v.6l-.3.8a6.4 6.4 0 0 0 1.7.4c0-.1 0-.3-.2-.5 0-.3-.2-.4-.2-.5a.4.4 0 0 1 .1-.2l.3-.2.8-.7.3.7c0 .2.1.5 0 .8l-.1 2.4m-9-7-1.5 1-1.1-.6-1.1.8-1.5-.9 1.4-1 1.2.7 1.1-.9 1.5 1m-2.4 6.4-5.8-1 .7-1.6 4.8.8a1.3 1.3 0 0 0 0-.8 4 4 0 0 0-.5-.6l1.3-1.3c.3.4.5.8.5 1.2 0 .4 0 1-.4 1.7l-.6 1.6m-4.9-.8-1.2-.3c-.7-.1-1.1-.4-1.2-.9-.1-.5.1-1.2.7-2.2l1-1.7.2-.9-.3-.6 1.8-1.2.2 1.1c0 .4-.2.9-.6 1.4l-.6 1.2a4 4 0 0 0-.7 1.7c0 .3.1.5.4.5l1.2.3-.9 1.6m-3-6.3-2 .9-1.4-1.4 2-.8 1.5 1.3m-.9 5.3a4 4 0 0 1-1.2 1.1c-.4.3-.9.4-1.4.5a7 7 0 0 1-1.9 0 11.8 11.8 0 0 1-2.2-.6 6 6 0 0 1-2.7-1.6c-.5-.6-.5-1.2 0-1.8a5.6 5.6 0 0 1 1.5-1.3 18.8 18.8 0 0 1 3-1.2l.4.4c-1 .4-1.8.7-2.2 1a3.3 3.3 0 0 0-1 .7c-.3.4-.3.8.1 1.3a8.4 8.4 0 0 0 5 1.8c1 0 1.6-.3 1.9-.6l.4-.7.1-1.4 2-1.2-.1 1.2c-.1.4-.4.8-.8 1.3l-.9 1.1"/>
+</svg>
+                                                                                                                                                                                                                                                                                                                                                                                                                 E,‹E(óXØ‰E(óXÅóXe(óXU(EÀPó]ØóEÜóeàóUäèYû÷ÿjtÇEü    èûSäÿ‹ĞƒÄ‰U,ÆEü…Òt&jEØP…`ÿÿÿP‹Eƒì‹Ì‰‹E‰A‹Êè÷*ùÿë3ÀPMˆÆEü è¶òåÿ‹ğèï_äÿ‰EèÇEì    ‹‰Mè‹F‰Eì‰M,‹U,¸   ğÁ‰EğQ‹ÄÆEüMœÇ     ‹Eÿ0è®Òëÿè©_äÿ9ƒ`  uè¬¹äÿ‹‹d  UœR•øşÿÿR‹ÿP`øşÿÿè‹9êÿƒì‹ø‹ôèo_äÿ‰ÇF    ‹‰‹G‰F‹Á‰E,‹U,¸   ğÁ‰E(E´Pè?\õÿƒÄ‹ğÆEüè1_äÿ‰EÈÇEÌ    ‹‰MÈ‹F‰EÌ‰M,‹U,¸   ğÁ‰E(‹E´ÆEü‰E,‹U,¸ÿÿÿÿğÁ‰E(‹E(HuM´è“> èŞ^äÿ9EÈuèä¸äÿ‹MÌ•<ÿÿÿƒÁ0j ÿu$‹RÿP$ƒìÆEüÆ…Uÿÿÿ‹ôè¨^äÿ‰ÇF    ‹Eè‰‹Eì‰F‹‰E,‹U,¸   ğÁ‰E(E¬Pèw[õÿƒÄÆEüèk^äÿ9E¬uèq¸äÿ‹M°…<ÿÿÿPè¢Bùÿ‹EÔj‹8èRäÿ‹ğƒÄ‰u,‰u(ÆEü…öt:‹O‰>‰Nè&^äÿ‰FÇF    ‹Eè‰F‹Eì‰F‹F‰E,‹U,¸   ğÁ‰E(ë3ö‰wÿÿÿ‹F‹}ĞÆEü‰0ÿGèÊ/äÿj E‹ËPE”PE˜P…ÿÿÿPèçûÿó…4ÿÿÿ‹…8ÿÿÿóY4¸Æj jQ‰E¨‹ÄóE¤Ç     E¤Pÿu$ÿuÿuÿuƒì‹Ä‰8‰pèt›ûÿ‹E¬ƒÄ,ÆEü‰E,‹U,¸ÿÿÿÿğÁ‰E(‹E(HuM¬èú< ‹EÈÇ…<ÿÿÿ ÇÆEü‰E,‹U,¸ÿÿÿÿğÁ‰E(‹E(HuMÈèÉ< ‹EèÆEü ‰E,‹U,¸ÿÿÿÿğÁ‰E$‹E$HuMèè¢< ‹Môd‰    Y_^[‹å]Â( ÌÌÌÌÌÌÌÌÌÌÌÌÌÌU‹ìQV‹uEüPVÇEü    Ç    èQ	  ‹Æ^‹å]Â ÌÌÌÌÌÌÌÌU‹ìjÿh@Åd¡    Pì°   SVW¡ vø3ÅPEôd£    ‹Ùj EÄPE„PEˆPÿuè­åûÿMœè5/äÿQ‹ÄMŒj Ç     èBÏëÿj C‹ËP…pÿÿÿPèâûÿè)\äÿ9ƒ`  uè,¶äÿ‹‹d  UŒRÿµtÿÿÿƒÁt•DÿÿÿÿµpÿÿÿR‹ÿPDÿÿÿèü5êÿƒì‹ø‹ôèà[äÿ‰ÇF    ‹‰‹G‰F‹Á‰E‹U¸   ğÁ‰EèE”Pè°XõÿƒÄ‹ğÇEü    èŸ[äÿ‰EìÇEğ    ‹‰Mì‹F‰Eğ‰M‹U¸   ğÁ‰Eè‹E”ÆEü‰E‹U¸ÿÿÿÿğÁ‰Eè‹EèHuM”è; èL[äÿ9EìuèRµäÿ‹Mğè*¤ıÿ‹ÈèCXüÿj M¼Q‹Èè6ÖëÿŠC,M¼‹uUÀ„ÀEÊ‹‹MÄ‰Eœ‰M¤…ötJjÿj ‰EÈ‹E j‰MĞ\ÿÿÿ‰EÌ‹jQ‹ËÿPx‹M¤óo ‹@‰Eä‹EœóEÔóoEÈóóoEØóF‹u…ötJjÿj ‰EÈ‹E j ‰MĞ\ÿÿÿ‰EÌ‹jQ‹ËÿPx‹M¤óo ‹@‰Eä‹EœóEÔóoEÈóóoEØóF‹U…ÒtóoEœóóoE¬óB‹u…ötDjÿj ‰EÈ‹E j‰MĞ\ÿÿÿ‰EÌ‹j Q‹ËÿPxóo ‹@‰EäóEÔóoEÈóóoEØóF‹u…ötMÈè×,äÿóo óóo@óF‹EìÇEüÿÿÿÿ‰E‹U¸ÿÿÿÿğÁ‰E‹EHuMìèk9 ‹Môd‰    Y_^[‹å]Â ÌÌÌÌÌÌÌU‹ìjÿh¼Åd¡    Pìü  SVW¡ vø3ÅPEôd£    ‹Ù‰]ÄÇE¼    ‹MÇEü    èŠïÿƒ»„   »h  ÇEü    ÇE¼   t‹G ;Gt‹ÏèŞkóÿ‹W ‹w…Òu‰–<  é‚   ‹†  ‹H‹†  ;Á‹†”   ‹H‹†˜   u‹ÁëTƒ<ÁuÇ†<      ëHƒ¾,   t/‹,  IÇEÜ    ˜À„À‹†(  EMÜ;ˆ}ÿw$‹ÎRèù[åÿë
+jR‹Îè^åÿ‰†<  ‹†<  ‹wjÿjPN‰Eè‰G$èkÈÄÿ‹N\‰Eì‹FXÁáH‹A‰EÜèaXäÿ‹uì‹MÜ9ñuèa²äÿ‹EÜ‹Lğ‹¤   k‰¨   |H‹Eè+‹q@‰EÜè'Xäÿ‹MÜ9DÎuè)²äÿ‹EÜ‹LÆIèš1êÿMˆQ‹Èè¿+òÿMŒÇEü   è@šëÿ‹ğèéWäÿ;ğu‹u èİWäÿ;ğ„#  W<ÿÿÿè©7íÿ‹ËÆEüè^¤ÿP<ÿÿÿèÂ{óÿQ‹ÄM¬j Ç     èŸÊëÿèšWäÿ9ƒ`  uè±äÿ‹ƒd  ‹XtƒÀt‹MÄ‹½@ÿÿÿ‰EèE¬P‹ƒì‹ôjÿPd+ø‹ÎWè[Êëÿ‹Mè…$ÿÿÿPÿS$ÿÿÿèS1êÿƒì‹ø‹ôè7Wäÿ‰ÇF    ‹‰‹G‰F‹‰Eè‹Uè¸   ğÁ‰EğE´PèTõÿƒÄ‹ğÆEüèùVäÿ‰EĞÇEÔ    ‹‰MĞ‹F‰EÔ‰Mè‹Uè¸   ğÁ‰Eğ‹E´ÆEü‰Eè‹Uè¸ÿÿÿÿğÁ‰Eì‹EìHuM´è[6 è¦Väÿ9EĞuè¬°äÿ‹MÔè„Ÿıÿ‹ğ‹ÎèUüÿ‹Î‰Eğè‘Güÿ‹Î‰Eàè‡Süÿ‹ğ½¤şÿÿ¹   Eäó¥j P¤şÿÿègÑëÿ‹MÄ‹èmÜnÿP<ÿÿÿèQzóÿè<Väÿ‹MÄ9`  uè<°äÿ‹MÄ‹d  ‹½@ÿÿÿƒÀt‰Eè‹ ƒÀ‰EìE¬P‹ƒì‹ôjÿPd+ø‹ÎWèõÈëÿ‹Mè…ÿÿÿP‹Eìÿÿÿÿèë/êÿƒì‹ø‹ôèÏUäÿ‰ÇF    ‹‰‹G‰F‹‰Eè‹Uè¸   ğÁ‰EìEÀPèŸRõÿƒÄ‹ğÆEüè‘Uäÿ‰EÈÇEÌ    ‹‰MÈ‹F‰EÌ‰Mè‹Uè¸   ğÁ‰Eì‹EÀÆEü‰Eè‹Uè¸ÿÿÿÿğÁ‰Eì‹EìHuMÀèó4 è>Uäÿ9EÈuèD¯äÿ‹MÌèıÿ‹ğ‹Îè£Süÿ‹Î‰Eìè)Füÿ‹Î‰EèèRüÿ‹ğ½<şÿÿ¹   EØó¥j P<şÿÿèÿÏëÿÿµDÿÿÿ‹<ÿÿÿjÿµ@ÿÿÿ‹0èÄ?äÿ‹<ÿÿÿ‹ø‰½Dÿÿÿ‹AL‹IPÁáH‹A‰EÜè¯Täÿ‹MÜ9ùuè²®äÿ‹EÜÿuèÿuà‹Løÿuìÿuğ‹D  i‰H    VSH‹…@ÿÿÿ+‹QMˆ·BPh Q  …øıÿÿPè¦-êÿ‹Èè_7ïÿ‹]‹ÈÆEüóoAóC‹A‰C‹A‰C¶A ˆC ¶A!ˆC!óoA(óC(‹A8‰C8‹A<‰C<¶A@ˆC@¶AAˆCA‹EÈ‰Eğ‹Uğ¸ÿÿÿÿğÁ‰Eà‹EàHuMÈè‹3 ‹EĞÆEü‰Eğ‹Uğ¸ÿÿÿÿğÁ‰Eà‹EàHuMĞèd3 ë‹]‹E ÇEü
+   ‰Eğ‹Uğ¸ÿÿÿÿğÁ‰Eà‹EàHuM èE/ÂÿMŒÆEü	èÙ-Âÿ‹Ã‹Môd‰    Y_^[‹å]Â ÌÌÌU‹ìjÿhğÅd¡    Pì  SVW¡ vø3ÅPEôd£    ‹ñj FPE¼PèÙûÿQ‹ÄMĞj Ç     èÆëÿ‹MĞQÿuÀ\ÿÿÿÿu¼Q‹ÎÿPX‹MĞQÿuÈtÿÿÿÿuÄQ‹ÎÿPX…\ÿÿÿPM¤è2£éÿM¤è*¥ëÿtÿÿÿ‹ğè¥ëÿ;ğ  ‹]‹ÿM¤èHëÿ„À„ˆ  M¤è¨,êÿƒì‹ø‹ôèŒRäÿ‰ÇF    ‹‰‹G‰F‹Á‰E‹U¸   ğÁ‰E EØPè\OõÿƒÄ‹ğÇEü    èKRäÿ‰EìÇEğ    ‹‰Mì‹F‰Eğ‰M‹U¸   ğÁ‰Eœ‹EØÆEü‰E‹U¸ÿÿÿÿğÁ‰Eà‹EàHuMØè­1 èøQäÿ9Eìuèş«äÿ‹MğèÖšıÿ‹ÈèïNüÿ‹ğ½Üşÿÿ¹   ó¥Üşÿÿèu×ëÿj EŒPÜşÿÿèDÌëÿóMŒóE‹Mó\ÁóY4¸Æ/óEóMè—À„Àt‹E‰/—À„Àt‹Eè‰‹EìÇEüÿÿÿÿ‰E‹U¸ÿÿÿÿğÁ‰Eä‹EäHuMìèù0 Dÿÿÿè¢éÿPM¤è5~ëÿM¤è£ëÿtÿÿÿ‹ğè€£ëÿ;ğhşÿÿ‹Môd‰    Y_^[‹å]Â ÌÌÌÌU‹ìjÿh‘Åd¡    Pì(  SVW¡ vø3ÅPEôd£    ‹ñ‰uØÇEĞ    ‹]‹ËÇEü    èˆ
+ïÿƒ¾„   ¾h  ÇEü    ÇEĞ   t‹G ;Gt‹Ïè<cóÿ‹W ‹w…Òu‰–<  é‚   ‹†  ‹H‹†  ;Á‹†”   ‹H‹†˜   u‹ÁëTƒ<ÁuÇ†<      ëHƒ¾,   t/‹,  IÇEè    ˜À„À‹†(  EMè;ˆ}ÿw$‹ÎRèWSåÿë
+jR‹ÎèëUåÿ‰†<  ‹†<  ‹wjÿjPN‰Eğ‰G$èÉ¿Äÿ‹N\‰Eà‹FXÁáH‹A‰Eèè¿Oäÿ‹uà‹Mè9ñuè¿©äÿ‹Eè‹Lğ‹¤   k‰¨   |H‹Eğ+‹q@‰Eèè…Oäÿ‹Mè9DÎuè‡©äÿ‹Eè‹LÆIèø(êÿM€Q‹Èè#òÿM„ÇEü   è‘ëÿ‹ğèGOäÿ;ğu‹u˜è;Oäÿ;ğ„İ  ‹uØ‹Îj FP…lÿÿÿPèüÔûÿQ‹ÄMÈj Ç     è	Âëÿ€} „ß  ƒ t‹G ;Gt‹Ïèšaóÿ‹W ‹w…Òu‰–<  é‚   ‹†  ‹H‹†  ;Á‹†”   ‹H‹†˜   u‹ÁëTƒ<ÁuÇ†<      ëHƒ¾,   t/‹,  IÇE    ˜À„À‹†(  EM;ˆ}ÿw$‹ÎRèµQåÿë
+jR‹ÎèITåÿ‰†<  ‹–<  ‹w‰W$‰U‹†”   ‹H‹†˜   ;Áu‹†  ‹H‹†  ‹ÁëR‹Îè”cåÿ‹†(  ‹M‹ˆ‹uØ9†l  ”EèöMäÿ9†`  uèù§äÿ‹d  UÈRÿµpÿÿÿƒÁt•TÿÿÿÿµlÿÿÿR‹ÿPTÿÿÿèÉ'êÿƒì‹ø‹ôè­Mäÿ‰ÇF    ‹‰‹G‰F‹‰Eğ‹Uğ¸   ğÁ‰EàEÔPè}JõÿƒÄ‹ğÆEüèoMäÿ‰EäÇEè    ‹‰Mä‹F‰Eè‰Mğ‹Uğ¸   ğÁ‰Eà‹EÔÆEü‰Eğ‹Uğ¸ÿÿÿÿğÁ‰Eà‹EàHuMÔèÑ, èMäÿ9Eäuè"§äÿ‹Mèèú•ıÿ‹ğE¤P‹ÎèİFüÿ‹ÎÆEüèJüÿ‹ğ½Ìşÿÿ¹   Eìó¥jÌşÿÿPèâÇëÿM€‹@P…4ÿÿÿPè&êÿ€} ‹Ètè21ïÿëèk.ïÿ‹ÈóoAóC‹A‰C‹A‰C¶AˆC¶AˆC‹E¼ÆEü‰E‹U¸ÿÿÿÿğÁ‰Eğ‹EğHuM¼è(ÂÿM¨ÆEüè²&Âÿ‹EäÇE¤ ÇÆEü‰E‹U¸ÿÿÿÿğÁ‰Eğ‹EğH…Ò  MäéÅ  èLäÿ9†`  uè¦äÿ‹d  UÈRÿµxÿÿÿƒÁt•TÿÿÿÿµtÿÿÿR‹ÿPTÿÿÿèî%êÿƒì‹ø‹ôèÒKäÿ‰ÇF    ‹‰‹G‰F‹‰E‹U¸   ğÁ‰EğEÔPè¢HõÿƒÄ‹ğÆEüè”Käÿ‰EÜÇEà    ‹‰MÜ‹F‰Eà‰M‹U¸   ğÁ‰Eğ‹EÔÆEü
+‰E‹U¸ÿÿÿÿğÁ‰Eğ‹EğHuMÔèö* èAKäÿ9EÜuèG¥äÿ‹Màè”ıÿ‹ğE¤P‹ÎèEüÿ‹ÎÆEüè'Hüÿ‹ğ½Ìşÿÿ¹   Eìó¥jPÌşÿÿèÆëÿM€‹@P…4ÿÿÿPè4$êÿ‹Èè=,ïÿ‹ÈóoAóC‹A‰C‹A‰C¶AˆC¶AˆC‹E¼ÆEü‰E‹U¸ÿÿÿÿğÁ‰Eğ‹EğHuM¼èP&ÂÿM¨ÆEüèä$Âÿ‹EÜÇE¤ ÇÆEü‰E‹U¸ÿÿÿÿğÁ‰Eğ‹EğHuMÜè* ‹E˜ÇEü   ‰E‹U¸ÿÿÿÿğÁ‰Eğ‹EğHuM˜èì%ÂÿM„ÆEüè€$Âÿ‹Ã‹Môd‰    Y_^[‹å]Â ÌÌÌÌÌÌÌÌÌÌU‹ìjÿhÈÅd¡    Pì”   SVW¡ vø3ÅPEôd£    ‰Mì‹}™h  ÇEğ    ‹Eğ‰‰G‰GÆGÇG    ƒ{ t‹C ;Ct‹ËèG\óÿ‹S ‹s…Òu‰–<  é‚   ‹†  ‹H‹†  ;Á‹†”   ‹H‹†˜   u‹ÁëTƒ<ÁuÇ†<      ëHƒ¾,   t/‹,  IÇE    ˜À„À‹†(  EM;ˆ}ÿs$‹ÎRèbLåÿë
+jR‹ÎèöNåÿ‰†<  ‹†<  ‹sjÿjPN‰Eè‰C$èÔ¸Äÿ‹N\‰Eğ‹FXÁáH‹A‰EèÊHäÿ‹uğ‹M9ñuèÊ¢äÿ‹E‹Lğ‹¤   k‰¨   |H‹Eè+‹q@‰EèHäÿ‹M9DÎuè’¢äÿ‹E‹LÆIè"êÿM¤Q‹Èè(òÿM¨ÇEü    è©Šëÿ‹ğèRHäÿ;ğu‹u¼èFHäÿ;ğ„A  ƒ{ t‹C ;Ct‹ËèÙZóÿ‹S ‹s…Òu‰–<  é‚   ‹†  ‹H‹†  ;Á‹†”   ‹H‹†˜   u‹ÁëTƒ<ÁuÇ†<      ëHƒ¾,   t/‹,  IÇE    ˜À„À‹†(  EM;ˆ}ÿs$‹ÎRèôJåÿë
+jR‹ÎèˆMåÿ‰†<  ‹–<  ‹s‰S$‰U‹†”   ‹H‹†˜   ;Áu‹†  ‹H‹†  ‹ÁëR‹ÎèÓ\åÿ‹†(  ‹M‹ˆ‹]ì‹u9ƒl  ”À€} ˆEu„ÀtBjEÈ‹ËPèöÿÿƒşÿt;uàu+óóXEÌóóEĞóXGóGóEÔóXGóGŠE„ÀtEj EÈ‹ËPèÕõÿÿƒşÿt;uàu+óóXEÌóóGóXEĞóGóGóXEÔóGŠE€} …–   €} …Œ   „À…„   …`ÿÿÿ‹ËPèÓìÿÿƒşÿt;µ|ÿÿÿu4óóX…hÿÿÿóó…lÿÿÿóXGóGó…pÿÿÿóXGóGƒşÿt;uœu+óóXEˆóóEŒóXGóGóEóXGóG‹E¼ÇEü   ‰E‹U¸ÿÿÿÿğÁ‰E‹EHuM¼è“!ÂÿM¨ÆEüè' Âÿ‹Ç‹Môd‰    Y_^[‹å]Â ÌU‹ìV‹u‹N…É~€~ u‹Qÿv‹ÎÿPÇF    ^]Â ÌÌÌÌÌ3À8A,”ÀÃÌÌÌÌÌÌÌU‹ìjÿhøÒÄd¡    PƒìPSVW¡ vø3ÅPEôd£    ‰MğÿuM¤è%íÿ‹]M¤ÇEü    ÿ3è6ióÿM¤ènqóÿ„À„|  ›    ‹}¨;{m  ‹u´…öt‹U¸;×tM¤èÎXóÿ‹U¸‹u´…Òu‰–<  ëz‹†  ‹  ‹@;È‹†”   ‹˜   ‹@u‹ÈëLƒ<ÈuÇ†<      ë@ƒ¾,   t'‹,  ¸    IHÈ‹†(  ;ˆ}ÿu¼‹ÎRèÄGåÿë
+jR‹ÎèXJåÿ‰†<  ‹¾<  ‹u´jÿjWN‰}¼è9´Äÿ‹NX‹V\Áâ‹I‹L
+4Áè1Däÿ9uè8äÿ‹Fk¨   |‹€¤   P+:‹B4ÈèDäÿ9Fuèäÿ‹NIè€êÿ‹}ğÇh  ‰Eƒ t‹O ;Ot‹ÏèVóÿ‹W ‹w…Òu‰–<  ëz‹†  ‹  ‹@;È‹†”   ‹˜   ‹@u‹ÈëLƒ<ÈuÇ†<      ë@ƒ¾,   t'‹,  ¸    IHÈ‹†(  ;ˆ}ÿw$‹ÎRè¥Fåÿë
+jR‹Îè9Iåÿ‰†<  ‹<  ‹wjÿjSN‰_$è³Äÿ‹NX‹V\Áâ‹I‹L
+4ÁèCäÿ9uèäÿ‹Fk¨   |‹€¤   P+‹B[4ÈèæBäÿ9Fuèìœäÿ‹NIèaêÿ‹Èèòÿ‹MPèÑ	ñÿƒøujM¤è‚nóÿM¤èúnóÿ‹]„À…ıÿÿë‹]‹}¨9{KE‰}LÁ‹ ‹Môd‰    Y_^[‹å]Â ÌÌU‹ì‹E‹ ‰ä  ]Â ÌÌÌÌÌÌÌÌÌÌÌÌÌÌU‹ìƒìVWÿu‹ùÿuèËüÿÿ‹U‹ğ‰UôEô‹‹Ïj P‰uøÆEü ÿ’€   _‹Æ^‹å]Â ÌÌU‹ì‹U‹MVÇ    ‹‰‹AÇBÿÿÿÿ‰B‹E‹J‹p;Ît8‹ESW‹:· ‰E‹_‹ÿf9Kt;Ou	ÇB    ë	A‰B‹E‹J;ÎuÜ_[9r‹Â^u‹
+‹I‰J]ÃÌÌÌÌÌÌÌÌU‹ì‹U‹‰‹B‰A‹B‰A¶BˆA‹B‰A‹B‰A‹B‰A‹B‰A¶B ˆA ‹B$‰A$‹B(‰A(‹B,‰A,‹B0‰A0¶B4ˆA4‹Á]Â ÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌU‹ìjÿhÅd¡    PƒìSVW¡ vø3ÅPEôd£    ‹ñ‰uğ‹}ÇHÎ‹G‰F‹G‰F¶GˆF¶GˆF¶GˆF¶GˆF¶GˆF¶GˆF‹G‰Fè©@äÿ‰FÇF     ‹G‰F‹G ‰F ‹F‰E‹U¸   ğÁ‰Eì‹G$^0‰F$‹Ë‹G(‰F(¶G,ˆF,G0PÇEü    ‰]èc4äÿG0ÇğòÍƒx ÆEütP‹ËèH“öÿP‹Ëèà8äÿ¶GD^HˆFD‹Ë¶GEˆFEGHPÆEü‰]è4äÿGHÇğòÍƒx ÆEütP‹Ëè“öÿP‹Ëèš8äÿ‹G\Nl‰F\‹G`‰F`‹Gd‰Fd‹Gh‰FhGlPè6   ¶‡P  ˆ†P  ¶‡Q  ˆ†Q  ‹Æ‹Môd‰    Y_^[‹å]Â ÌÌÌÌÌÌU‹ì‹UóoóóoBóAó~B fÖA ‹B(‰A(‹B,‰A,‹B0‰A0‹B4‰A4¶B8ˆA8‹B<‰A<‹B@‰A@‹BD‰AD‹BH‰AH¶BLˆAL‹BP‰AP‹BT‰AT‹BX‰AX‹B\‰A\¶B`ˆA`‹Bd‰Ad‹Bh‰Ah‹Bl‰Al¶BpˆAp‹Bt‰At‹Bx‰Ax‹B|‰A|‹‚€   ‰€   ¶‚„   ˆ„   ‹‚ˆ   ‰ˆ   ‹‚Œ   ‰Œ   ‹‚   ‰   ‹‚”   ‰”   ¶‚˜   ˆ˜   ‹‚œ   ‰œ   ‹‚    ‰    ‹‚¤   ‰¤   ¶‚¨   ˆ¨   ‹‚¬   ‰¬   ‹‚°   ‰°   ‹‚´   ‰´   ‹‚¸   ‰¸   ¶‚¼   ˆ¼   ‹‚À   ‰À   ‹‚Ä   ‰Ä   ‹‚È   ‰È   ‹‚Ì   ‰Ì   ¶‚Ğ   ˆĞ   ‹‚Ô   ‰Ô   ‹‚Ø   ‰Ø   ‹‚Ü   ‰Ü   ¶‚à   ˆà   ‹‚ä   ‰ä   ‹‚è   ‰è   ‹‚ì   ‰ì   ‹‚ğ   ‰ğ   ¶‚ô   ˆô   ‹‚ø   ‰ø   ‹‚ü   ‰ü   ‹‚   ‰   ‹‚  ‰  ¶‚  ˆ  ‹‚  ‰  ‹‚  ‰  ‹‚  ‰  ¶‚  ˆ  ‹‚  ‰  ‹‚   ‰   ‹‚$  ‰$  ‹‚(  ‰(  ¶‚,  ˆ,  ‹‚0  ‰0  ‹‚4  ‰4  ‹‚8  ‰8  ‹‚<  ‰<  ¶‚@  ˆ@  ‹‚D  ‰D  ‹‚H  ‰H  ‹‚L  ‰L  ‹‚P  ‰P  ‹‚T  ‰T  ‹‚X  ‰X  ¶‚\  ˆ\  ‹‚`  ‰`  ‹‚d  ‰d  ‹‚h  ‰h  ‹‚l  ‰l  ‹‚p  ‰p  ‹‚t  ‰t  ‹‚x  ‰x  ¶‚|  ˆ|  ‹‚€  ‰€  ‹‚„  ‰„  ‹‚ˆ  ‰ˆ  ‹‚Œ  ‰Œ  ‹‚  ‰  ‹‚”  ‰”  ‹‚˜  ‰˜  ¶‚œ  ˆœ  ‹‚   ‰   ‹‚¤  ‰¤  ‹‚¨  ‰¨  ‹‚¬  ‰¬  ‹‚°  ‰°  ‹‚´  ‰´  ‹‚¸  ‰¸  ¶‚¼  ˆ¼  ‹‚À  ‰À  ‹‚Ä  ‰Ä  ‹‚È  ‰È  ‹‚Ì  ‰Ì  ‹‚Ğ  ‰Ğ  ‹‚Ô  ‰Ô  ‹‚Ø  ‰Ø  ¶‚Ü  ˆÜ  ‹‚à  ‰à  ‹Á]Â ÌÌÌÌU‹ìjÿhtÅd¡    PƒìSVW¡ vø3ÅPEôd£    ‹ù‰}ğ‹]Sè*  j ·Ô  ÇEü    FÇ@-ÎPj jjj j‹Î‰uè.äÿƒÔ  ÆEüP‹ÎÇ(-ÎèÅ.äÿŠƒğ  ·ô  ˆ‡ğ  ‹Îƒô  ÆEüP‰uè.äÿƒô  Ç¼†Çƒx ÆEütP‹Îè`ÀnÿP‹Îèˆ2äÿÆEüèÏ9äÿ‰‡  Ç‡      ‹ƒ  ‰‡  ‹ƒ  ‰‡  ‹‡  ‰E‹U¸   ğÁ‰EìŠƒ  ˆ‡  ‹Ç‹Môd‰    Y_^[‹å]Â ÌÌÌÌÌÌÌÌÌÌÌÌÌU‹ìjÿhÚÅd¡    Pƒì(SVW¡ vø3ÅPEôd£    ‹ù‰}ğÿu ÇEü    ÿuƒì‹ôè9äÿ‰ÇF    ‹E‰‹E‰F‹‰E ‹U ¸   ğÁ‰E‹u‹Ï‹]VSè…MûÿÇ@-Î‹Ô  ‹F‰Eì‹‰EäEèPEà‰Mè‰MàMÌPÆEüè$Ùóÿj ŸÔ  C‰] Pj jjj j‹Ëèä,äÿ€}Ü Ç(-Î‹]ĞÆEüu
+;]Ø”À„Àu ‹EÌMÌ‹pè)’ıÿP3Pj Ô  è0äÿ‹]·ô  S‹ÎÆEüÆ‡ğ   ‰u èH,äÿÇ¼†Çƒ{ ÆEütS‹Îè ¾nÿP‹ÎèÈ0äÿÆEüè8äÿ‰‡  Ç‡      Æ‡   ‹uÆEüèì7äÿ‹Ï;ğuèá6  ëÿuè§6  ‹EÇEüÿÿÿÿ‰E‹U¸ÿÿÿÿğÁ‰E ‹E HuMè] ‹Ç‹Môd‰    Y_^[‹å]Â ÌÌÌÌÌÌÌU‹ìjÿh, Åd¡    PƒìVW¡ vø3ÅPEôd£    ‹ù‰}ğÿu ÇEü    ƒì‹ôèP7äÿ‰ÇF    ‹E‰‹E‰F‹‰E ‹U ¸   ğÁ‰Eì‹Eƒì‹Ìÿu‰‹E‰A‹ÏèîNûÿj ‡è  ÆEüPj jjj jÔ  Ç@-Îè6+äÿÇ‡Ô  (-Îj j j jj jjô  ÆEüÆ‡ğ   è+äÿÇ‡ô  ¼†ÇÆEüè¥6äÿ‰‡  ‹EÇ‡      Æ‡   ÇEüÿÿÿÿ‰E ‹U ¸ÿÿÿÿğÁ‰E‹EHuMè¤Æòÿ‹Ç‹Môd‰    Y_^‹å]Â ÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌU‹ìjÿht Åd¡    PƒìVW¡ vø3ÅPEôd£    ‹ù‰}ğ‹uVèëôÿÿÇ€Î‹†T  ‰‡T  ‹†X  ÇEü    ‰‡X  èá5äÿ‰‡`  Ç‡d      ‹†`  ‰‡`  ‹†d  ‰‡d  ‹‡`  ‰E‹U¸   ğÁ‰Eì†h  Ph  èoíÿ‹†´  ‰‡´  ‹†¸  ‰‡¸  Š†¼  ÆEüˆ‡¼  èb5äÿ‰‡À  Ç‡Ä      ‹†À  ‰‡À  ‹†Ä  ‰‡Ä  ‹‡À  ‰E‹U¸   ğÁ‰Eì‹†È  ‰‡È  ‹†Ì  ‰‡Ì  ‹†Ğ  ‰‡Ğ  ‹Ç‹Môd‰    Y_^‹å]Â ÌÌÌÌÌÌÌÌÌU‹ìƒì‹‰Eü‹Uü¸ÿÿÿÿğÁ‰Eø‹EøHuèë  ‹å]ÃÌÌÌÌÌÌÌéËKæÿÌÌÌÌÌÌÌÌÌÌÌU‹ìjÿh´ Åd¡    PƒìV¡ vø3ÅPEô-padding-y * 2, $input-height-border, false)) !default;\n$input-height-sm:                       add($input-line-height-sm * 1em, add($input-padding-y-sm * 2, $input-height-border, false)) !default;\n$input-height-lg:                       add($input-line-height-lg * 1em, add($input-padding-y-lg * 2, $input-height-border, false)) !default;\n\n$input-transition:                      border-color .15s ease-in-out, box-shadow .15s ease-in-out !default;\n\n$form-text-margin-top:                  .25rem !default;\n\n$form-check-input-gutter:               1.25rem !default;\n$form-check-input-margin-y:             .3rem !default;\n$form-check-input-margin-x:             .25rem !default;\n\n$form-check-inline-margin-x:            .75rem !default;\n$form-check-inline-input-margin-x:      .3125rem !default;\n\n$form-grid-gutter-width:                10px !default;\n$form-group-margin-bottom:              1rem !default;\n\n$input-group-addon-color:               $input-color !default;\n$input-group-addon-bg:                  $gray-200 !default;\n$input-group-addon-border-color:        $input-border-color !default;\n\n$custom-forms-transition:               background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out !default;\n\n$custom-control-gutter:                 .5rem !default;\n$custom-control-spacer-x:               1rem !default;\n$custom-control-cursor:                 null !default;\n\n$custom-control-indicator-size:         1rem !default;\n$custom-control-indicator-bg:           $input-bg !default;\n\n$custom-control-indicator-bg-size:      50% 50% !default;\n$custom-control-indicator-box-shadow:   $input-box-shadow !default;\n$custom-control-indicator-border-color: $gray-500 !default;\n$custom-control-indicator-border-width: $input-border-width !default;\n\n$custom-control-label-color:            null !default;\n\n$custom-control-indicator-disabled-bg:          $input-disabled-bg !default;\n$custom-control-label-disabled-color:           $gray-600 !default;\n\n$custom-control-indicator-checked-color:        $component-active-color !default;\n$custom-control-indicator-checked-bg:           $component-active-bg !default;\n$custom-control-indicator-checked-disabled-bg:  rgba(theme-color(\"primary\"), .5) !default;\n$custom-control-indicator-checked-box-shadow:   null !default;\n$custom-control-indicator-checked-border-color: $custom-control-indicator-checked-bg !default;\n\n$custom-control-indicator-focus-box-shadow:     $input-focus-box-shadow !default;\n$custom-control-indicator-focus-border-color:   $input-focus-border-color !default;\n\n$custom-control-indicator-active-color:         $component-active-color !default;\n$custom-control-indicator-active-bg:            lighten($component-active-bg, 35%) !default;\n$custom-control-indicator-active-box-shadow:    null !default;\n$custom-control-indicator-active-border-color:  $custom-control-indicator-active-bg !default;\n\n$custom-checkbox-indicator-border-radius:       $border-radius !default;\n$custom-checkbox-indicator-icon-checked:        url(\"data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='0 0 8 8'><path fill='#{$custom-control-indicator-checked-color}' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26l2.974 2.99L8 2.193z'/></svg>\") !default;\n\n$custom-checkbox-indicator-indeterminate-bg:           $component-active-bg !default;\n$custom-checkbox-indicator-indeterminate-color:        $custom-control-indicator-checked-color !default;\n$custom-checkbox-indicator-icon-indeterminate:         url(\"data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'><path stroke='#{$custom-checkbox-indicator-indeterminate-color}' d='M0 2h4'/></svg>\") !default;\n$custom-checkbox-indicator-indeterminate-box-shadow:   null !default;\n$custom-checkbox-indicator-indeterminate-border-color: $custom-checkbox-indicator-indeterminate-bg !default;\n\n$custom-radio-indicator-border-radius:          50% !default;\n$custom-radio-indicator-icon-checked:           url(\"data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='-4 -4 8 8'><circle r='3' fill='#{$custom-control-indicator-checked-color}'/></svg>\") !default;\n\n$custom-switch-width:                           $custom-control-indicator-size * 1.75 !default;\n$custom-switch-indicator-border-radius:         $custom-control-indicator-size * .5 !default;\n$custom-switch-indicator-size:                  subtract($custom-control-indicator-size, $custom-control-indicator-border-width * 4) !default;\n\n$custom-select-padding-y:           $input-padding-y !default;\n$custom-select-padding-x:           $input-padding-x !default;\n$custom-select-font-family:         $input-font-family !default;\n$custom-select-font-size:           $input-font-size !default;\n$custom-select-height:              $input-height !default;\n$custom-select-indicator-padding:   1rem !default; // Extra padding to account for the presence of the background-image based indicator\n$custom-select-font-weight:         $input-font-weight !default;\n$custom-select-line-height:         $input-line-height !default;\n$custom-select-color:               $input-color !default;\n$custom-select-disabled-color:      $gray-600 !default;\n$custom-select-bg:                  $input-bg !default;\n$custom-select-disabled-bg:         $gray-200 !default;\n$custom-select-bg-size:             8px 10px !default; // In pixels because image dimensions\n$custom-select-indicator-color:     $gray-800 !default;\n$custom-select-indicator:           url(\"data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='4' height='5' viewBox='0 0 4 5'><path fill='#{$custom-select-indicator-color}' d='M2 0L0 2h4zm0 5L0 3h4z'/></svg>\") !default;\n$custom-select-background:          escape-svg($custom-select-indicator) right $custom-select-padding-x center / $custom-select-bg-size no-repeat !default; // Used so we can have multiple background elements (e.g., arrow and feedback icon)\n\n$custom-select-feedback-icon-padding-right: add(1em * .75, (2 * $custom-select-padding-y * .75) + $custom-select-padding-x + $custom-select-indicator-padding) !default;\n$custom-select-feedback-icon-position:      center right ($custom-select-padding-x + $custom-select-indicator-padding) !default;\n$custom-select-feedback-icon-size:          $input-height-inner-half $input-height-inner-half !default;\n\n$custom-select-border-width:        $input-border-width !default;\n$custom-select-border-color:        $input-border-color !default;\n$custom-select-border-radius:       $border-radius !default;\n$custom-select-box-shadow:          inset 0 1px 2px rgba($black, .075) !default;\n\n$custom-select-focus-border-color:  $input-focus-border-color !default;\n$custom-select-focus-width:         $input-focus-width !default;\n$custom-select-focus-box-shadow:    0 0 0 $custom-select-focus-width $input-btn-focus-color !default;\n\n$custom-select-padding-y-sm:        $input-padding-y-sm !default;\n$custom-select-padding-x-sm:        $input-padding-x-sm !default;\n$custom-select-font-size-sm:        $input-font-size-sm !default;\n$custom-select-height-sm:           $input-height-sm !default;\n\n$custom-select-padding-y-lg:        $input-padding-y-lg !default;\n$custom-select-padding-x-lg:        $input-padding-x-lg !default;\n$custom-select-font-size-lg:        $input-font-size-lg !default;\n$custom-select-height-lg:           $input-height-lg !default;\n\n$custom-range-track-width:          100% !default;\n$custom-range-track-height:         .5rem !default;\n$custom-range-track-cursor:         pointer !default;\n$custom-range-track-bg:             $gray-300 !default;\n$custom-range-track-border-radius:  1rem !default;\n$custom-range-track-box-shadow:     inset 0 .25rem .25rem rgba($black, .1) !default;\n\n$custom-range-thumb-width:                   1rem !default;\n$custom-range-thumb-height:                  $custom-range-thumb-width !default;\n$custom-range-thumb-bg:                      $component-active-bg !default;\n$custom-range-thumb-border:                  0 !default;\n$custom-range-thumb-border-radius:           1rem !default;\n$custom-range-thumb-box-shadow:              0 .1rem .25rem rgba($black, .1) !default;\n$custom-range-thumb-focus-box-shadow:        0 0 0 1px $body-bg, $input-focus-box-shadow !default;\n$custom-range-thumb-focus-box-shadow-width:  $input-focus-width !default; // For focus box shadow issue in IE/Edge\n$custom-range-thumb-active-bg:               lighten($component-active-bg, 35%) !default;\n$custom-range-thumb-disabled-bg:             $gray-500 !default;\n\n$custom-file-height:                $input-height !default;\n$custom-file-height-inner:          $input-height-inner !default;\n$custom-file-focus-border-color:    $input-focus-border-color !default;\n$custom-file-focus-box-shadow:      $input-focus-box-shadow !default;\n$custom-file-disabled-bg:           $input-disabled-bg !default;\n\n$custom-file-padding-y:             $input-padding-y !default;\n$custom-file-padding-x:             $input-padding-x !default;\n$custom-file-line-height:           $input-line-height !default;\n$custom-file-font-family:           $input-font-family !default;\n$custom-file-font-weight:           $input-font-weight !default;\n$custom-file-color:                 $input-color !default;\n$custom-file-bg:                    $input-bg !default;\n$custom-file-border-width:          $input-border-width !default;\n$custom-file-border-color:          $input-border-color !default;\n$custom-file-border-radius:         $input-border-radius !default;\n$custom-file-box-shadow:            $input-box-shadow !default;\n$custom-file-button-color:          $custom-file-color !default;\n$custom-file-button-bg:             $input-group-addon-bg !default;\n$custom-file-text: (\n  en: \"Browse\"\n) !default;\n\n\n// Form validation\n\n$form-feedback-margin-top:          $form-text-margin-top !default;\n$form-feedback-font-size:           $small-font-size !default;\n$form-feedback-valid-color:         theme-color(\"success\") !default;\n$form-feedback-invalid-color:       theme-color(\"danger\") !default;\n\n$form-feedback-icon-valid-color:    $form-feedback-valid-color !default;\n$form-feedback-icon-valid:          url(\"data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='0 0 8 8'><path fill='#{$form-feedback-icon-valid-color}' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/></svg>\") !default;\n$form-feedback-icon-invalid-color:  $form-feedback-invalid-color !default;\n$form-feedback-icon-invalid:        url(\"data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='none' stroke='#{$form-feedback-icon-invalid-color}' viewBox='0 0 12 12'><circle cx='6' cy='6' r='4.5'/><path stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/><circle cx='6' cy='8.2' r='.6' fill='#{$form-feedback-icon-invalid-color}' stroke='none'/></svg>\") !default;\n\n$form-validation-states: () !default;\n$form-validation-states: map-merge(\n  (\n    \"valid\": (\n      \"color\": $form-feedback-valid-color,\n      \"icon\": $form-feedback-icon-valid\n    ),\n    \"invalid\": (\n      \"color\": $form-feedback-invalid-color,\n      \"icon\": $form-feedback-icon-invalid\n    ),\n  ),\n  $form-validation-states\n);\n\n// Z-index master list\n//\n// Warning: Avoid customizing these values. They're used for a bird's eye view\n// of components dependent on the z-axis and are designed to all work together.\n\n$zindex-dropdown:                   1000 !default;\n$zindex-sticky:                     1020 !default;\n$zindex-fixed:                      1030 !default;\n$zindex-modal-backdrop:             1040 !default;\n$zindex-modal:                      1050 !default;\n$zindex-popover:                    1060 !default;\n$zindex-tooltip:                    1070 !default;\n\n\n// Navs\n\n$nav-link-padding-y:                .5rem !default;\n$nav-link-padding-x:                1rem !default;\n$nav-link-disabled-color:           $gray-600 !default;\n\n$nav-tabs-border-color:             $gray-300 !default;\n$nav-tabs-border-width:             $border-width !default;\n$nav-tabs-border-radius:            $border-radius !default;\n$nav-tabs-link-hover-border-color:  $gray-200 $gray-200 $nav-tabs-border-color !default;\n$nav-tabs-link-active-color:        $gray-700 !default;\n$nav-tabs-link-active-bg:           $body-bg !default;\n$nav-tabs-link-active-border-color: $gray-300 $gray-300 $nav-tabs-link-active-bg !default;\n\n$nav-pills-border-radius:           $border-radius !default;\n$nav-pills-link-active-color:       $component-active-color !default;\n$nav-pills-link-active-bg:          $component-active-bg !default;\n\n$nav-divider-color:                 $gray-200 !default;\n$nav-divider-margin-y:              $spacer * .5 !default;\n\n\n// Navbar\n\n$navbar-padding-y:                  $spacer * .5 !default;\n$navbar-padding-x:                  $spacer !default;\n\n$navbar-nav-link-padding-x:         .5rem !default;\n\n$navbar-brand-font-size:            $font-size-lg !default;\n// Compute the navbar-brand padding-y so the navbar-brand will have the same height as navbar-text and nav-link\n$nav-link-height:                   $font-size-base * $line-height-base + $nav-link-padding-y * 2 !default;\n$navbar-brand-height:               $navbar-brand-font-size * $line-height-base !default;\n$navbar-brand-padding-y:            ($nav-link-height - $navbar-brand-height) * .5 !default;\n\n$navbar-toggler-padding-y:          .25rem !default;\n$navbar-toggler-padding-x:          .75rem !default;\n$navbar-toggler-font-size:          $font-size-lg !default;\n$navbar-toggler-border-radius:      $btn-border-radius !default;\n\n$navbar-nav-scroll-max-height:      75vh !default;\n\n$navbar-dark-color:                 rgba($white, .5) !default;\n$navbar-dark-hover-color:           rgba($white, .75) !default;\n$navbar-dark-active-color:          $white !default;\n$navbar-dark-disabled-color:        rgba($white, .25) !default;\n$navbar-dark-toggler-icon-bg:       url(\"data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'><path stroke='#{$navbar-dark-color}' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/></svg>\") !default;\n$navbar-dark-toggler-border-color:  rgba($white, .1) !default;\n\n$navbar-light-color:                rgba($black, .5) !default;\n$navbar-light-hover-color:          rgba($black, .7) !default;\n$navbar-light-active-color:         rgba($black, .9) !default;\n$navbar-light-disabled-color:       rgba($black, .3) !default;\n$navbar-light-toggler-icon-bg:      url(\"data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'><path stroke='#{$navbar-light-color}' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/></svg>\") !default;\n$navbar-light-toggler-border-color: rgba($black, .1) !default;\n\n$navbar-light-brand-color:                $navbar-light-active-color !default;\n$navbar-light-brand-hover-color:          $navbar-light-active-color !default;\n$navbar-dark-brand-color:                 $navbar-dark-active-color !default;\n$navbar-dark-brand-hover-color:           $navbar-dark-active-color !default;\n\n\n// Dropdowns\n//\n// Dropdown menu container and contents.\n\n$dropdown-min-width:                10rem !default;\n$dropdown-padding-x:                0 !default;\n$dropdown-padding-y:                .5rem !default;\n$dropdown-spacer:                   .125rem !default;\n$dropdown-font-size:                $font-size-base !default;\n$dropdown-color:                    $body-color !default;\n$dropdown-bg:                       $white !default;\n$dropdown-border-color:             rgba($black, .15) !default;\n$dropdown-border-radius:            $border-radius !default;\n$dropdown-border-width:             $border-width !default;\n$dropdown-inner-border-radius:      subtract($dropdown-border-radius, $dropdown-border-width) !default;\n$dropdown-divider-bg:               $gray-200 !default;\n$dropdown-divider-margin-y:         $nav-divider-margin-y !default;\n$dropdown-box-shadow:               0 .5rem dark .form-control-navbar:focus + .input-group-append .btn-navbar {\n  background-color: #7e55c7;\n  border-color: #8965cc !important;\n  color: #fff;\n}\n\n.navbar-pink {\n  background-color: #e83e8c;\n  color: #fff;\n}\n\n.navbar-pink.navbar-light .form-control-navbar::placeholder {\n  color: rgba(52, 58, 64, 0.8);\n}\n\n.navbar-pink.navbar-light .form-control-navbar,\n.navbar-pink.navbar-light .form-control-navbar + .input-group-append > .btn-navbar {\n  background-color: #e62c81;\n  border-color: #de1a74;\n  color: rgba(52, 58, 64, 0.8);\n}\n\n.navbar-pink.navbar-light .form-control-navbar:focus::placeholder {\n  color: #343a40;\n}\n\n.navbar-pink.navbar-light .form-control-navbar:focus,\n.navbar-pink.navbar-light .form-control-navbar:focus + .input-group-append .btn-navbar {\n  background-color: #e5277e;\n  border-color: #de1a74 !important;\n  color: #343a40;\n}\n\n.navbar-pink.navbar-dark .form-control-navbar::placeholder {\n  color: rgba(255, 255, 255, 0.8);\n}\n\n.navbar-pink.navbar-dark .form-control-navbar,\n.navbar-pink.navbar-dark .form-control-navbar + .input-group-append > .btn-navbar {\n  background-color: #ea5097;\n  border-color: #ed67a4;\n  color: rgba(255, 255, 255, 0.8);\n}\n\n.navbar-pink.navbar-dark .form-control-navbar:focus::placeholder {\n  color: #fff;\n}\n\n.navbar-pink.navbar-dark .form-control-navbar:focus,\n.navbar-pink.navbar-dark .form-control-navbar:focus + .input-group-append .btn-navbar {\n  background-color: #eb559a;\n  border-color: #ed67a4 !important;\n  color: #fff;\n}\n\n.navbar-red {\n  background-color: #dc3545;\n  color: #fff;\n}\n\n.navbar-red.navbar-light .form-control-navbar::placeholder {\n  color: rgba(52, 58, 64, 0.8);\n}\n\n.navbar-red.navbar-light .form-control-navbar,\n.navbar-red.navbar-light .form-control-navbar + .input-group-append > .btn-navbar {\n  background-color: #d72536;\n  border-color: #c22231;\n  color: rgba(52, 58, 64, 0.8);\n}\n\n.navbar-red.navbar-light .form-control-navbar:focus::placeholder {\n  color: #343a40;\n}\n\n.navbar-red.navbar-light .form-control-navbar:focus,\n.navbar-red.navbar-light .form-control-navbar:focus + .input-group-append .btn-navbar {\n  background-color: #d32535;\n  border-color: #c22231 !important;\n  color: #343a40;\n}\n\n.navbar-red.navbar-dark .form-control-navbar::placeholder {\n  color: rgba(255, 255, 255, 0.8);\n}\n\n.navbar-red.navbar-dark .form-control-navbar,\n.navbar-red.navbar-dark .form-control-navbar + .input-group-append > .btn-navbar {\n  background-color: #df4655;\n  border-color: #e35c69;\n  color: rgba(255, 255, 255, 0.8);\n}\n\n.navbar-red.navbar-dark .form-control-navbar:focus::placeholder {\n  color: #fff;\n}\n\n.navbar-red.navbar-dark .form-control-navbar:focus,\n.navbar-red.navbar-dark .form-control-navbar:focus + .input-group-append .btn-navbar {\n  background-color: #e04b59;\n  border-color: #e35c69 !important;\n  color: #fff;\n}\n\n.navbar-orange {\n  background-color: #fd7e14;\n  color: #1f2d3d;\n}\n\n.navbar-orange.navbar-light .form-control-navbar::placeholder {\n  color: rgba(52, 58, 64, 0.8);\n}\n\n.navbar-orange.navbar-light .form-control-navbar,\n.navbar-orange.navbar-light .form-control-navbar + .input-group-append > .btn-navbar {\n  background-color: #fa7302;\n  border-color: #e16702;\n  color: rgba(52, 58, 64, 0.8);\n}\n\n.navbar-orange.navbar-light .form-control-navbar:focus::placeholder {\n  color: #343a40;\n}\n\n.navbar-orange.navbar-light .form-control-navbar:focus,\n.navbar-orange.navbar-light .form-control-navbar:focus + .input-group-append .btn-navbar {\n  background-color: #f57102;\n  border-color: #e16702 !important;\n  color: #343a40;\n}\n\n.navbar-orange.navbar-dark .form-control-navbar::placeholder {\n  color: rgba(255, 255, 255, 0.8);\n}\n\n.navbar-orange.navbar-dark .form-control-navbar,\n.navbar-orange.navbar-dark .form-control-navbar + .input-group-append > .btn-navbar {\n  background-color: #fd8928;\n  border-color: #fd9742;\n  color: rgba(255, 255, 255, 0.8);\n}\n\n.navbar-orange.navbar-dark .form-control-navbar:focus::placeholder {\n  color: #fff;\n}\n\n.navbar-orange.navbar-dark .form-control-navbar:focus,\n.navbar-orange.navbar-dark .form-control-navbar:focus + .input-group-append .btn-navbar {\n  background-color: #fd8c2d;\n  border-color: #fd9742 !important;\n  color: #fff;\n}\n\n.navbar-yellow {\n  background-color: #ffc107;\n  color: #1f2d3d;\n}\n\n.navbar-yellow.navbar-light .form-control-navbar::placeholder {\n  color: rgba(52, 58, 64, 0.8);\n}\n\n.navbar-yellow.navbar-light .form-control-navbar,\n.navbar-yellow.navbar-light .form-control-navbar + .input-group-append > .btn-navbar {\n  background-color: #f2b500;\n  border-color: #d8a200;\n  color: rgba(52, 58, 64, 0.8);\n}\n\n.navbar-yellow.navbar-light .form-control-navbar:focus::placeholder {\n  color: #343a40;\n}\n\n.navbar-yellow.navbar-light .form-control-navbar:focus,\n.navbar-yellow.navbar-light .form-control-navbar:focus + .input-group-append .btn-navbar {\n  background-color: #edb100;\n  border-color: #d8a200 !important;\n  color: #343a40;\n}\n\n.navbar-yellow.navbar-dark .form-control-navbar::placeholder {\n  color: rgba(255, 255, 255, 0.8);\n}\n\n.navbar-yellow.navbar-dark .form-control-navbar,\n.navbar-yellow.navbar-dark .form-control-navbar + .input-group-append > .btn-navbar {\n  background-color: #ffc61b;\n  border-color: #ffcc35;\n  color: rgba(255, 255, 255, 0.8);\n}\n\n.navbar-yellow.navbar-dark .form-control-navbar:focus::placeholder {\n  color: #fff;\n}\n\n.navbar-yellow.navbar-dark .form-control-navbar:focus,\n.navbar-yellow.navbar-dark .form-control-navbar:focus + .input-group-append .btn-navbar {\n  background-color: #ffc721;\n  border-color: #ffcc35 !important;\n  color: #fff;\n}\n\n.navbar-green {\n  background-color: #28a745;\n  color: #fff;\n}\n\n.navbar-green.navbar-light .form-control-navbar::placeholder {\n  color: rgba(52, 58, 64, 0.8);\n}\n\n.navbar-green.navbar-light .form-control-navbar,\n.navbar-green.navbar-light .form-control-navbar + .input-group-append > .btn-navbar {\n  background-color: #24973e;\n  border-color: #1f8236;\n  color: rgba(52, 58, 64, 0.8);\n}\n\n.navbar-green.navbar-light .form-control-navbar:focus::placeholder {\n  color: #343a40;\n}\n\n.navbar-green.navbar-light .form-control-navbar:focus,\n.navbar-green.navbar-light .form-control-navbar:focus + .input-group-append .btn-navbar {\n  background-color: #23923d;\n  border-color: #1f8236 !important;\n  color: #343a40;\n}\n\n.navbar-green.navbar-dark .form-control-navbar::placeholder {\n  color: rgba(255, 255, 255, 0.8);\n}\n\n.navbar-green.navbar-dark .form-control-navbar,\n.navbar-green.navbar-dark .form-control-navbar + .input-group-append > .btn-navbar {\n  background-color: #2cb74c;\n  border-color: #31cc54;\n  color: rgba(255, 255, 255, 0.8);\n}\n\n.navbar-green.navbar-dark .form-control-navbar:focus::placeholder {\n  color: #fff;\n}\n\n.navbar-green.navbar-dark .form-control-navbar:focus,\n.navbar-green.navbar-dark .form-control-navbar:focus + .input-group-append .btn-navbar {\n  background-color: #2dbc4e;\n  border-color: #31cc54 !important;\n  color: #fff;\n}\n\n.navbar-teal {\n  background-color: #20c997;\n  color: #fff;\n}\n\n.navbar-teal.navbar-light .form-control-navbar::placeholder {\n  color: rgba(52, 58, 64, 0.8);\n}\n\n.navbar-teal.navbar-light .form-control-navbar,\n.navbar-teal.navbar-light .form-control-navbar + .input-group-append > .btn-navbar {\n  background-color: #1db78a;\n  border-color: #1aa179;\n  color: rgba(52, 58, 64, 0.8);\n}\n\n.navbar-teal.navbar-light .form-control-navbar:focus::placeholder {\n  color: #343a40;\n}\n\n.navbar-teal.navbar-light .form-control-navbar:focus,\n.navbar-teal.navbar-light .form-control-navbar:focus + .input-group-append .btn-navbar {\n  background-color: #1cb386;\n  border-color: #1aa179 !important;\n  color: #343a40;\n}\n\n.navbar-teal.navbar-dark .form-control-navbar::placeholder {\n  color: rgba(255, 255, 255, 0.8);\n}\n\n.navbar-teal.navbar-dark .form-control-navbar,\n.navbar-teal.navbar-dark .form-control-navbar + .input-group-append > .btn-navbar {\n  background-color: #23dba4;\n  border-color: #38dfae;\n  color: rgba(255, 255, 255, 0.8);\n}\n\n.navbar-teal.navbar-dark .form-control-navbar:focus::placeholder {\n  color: #fff;\n}\n\n.navbar-teal.navbar-dark .form-control-navbar:focus,\n.navbar-teal.navbar-dark .form-control-navbar:focus + .input-group-append .btn-navbar {\n  background-color: #26dca6;\n  border-color: #38dfae !important;\n  color: #fff;\n}\n\n.navbar-cyan {\n  background-color: #17a2b8;\n  color: #fff;\n}\n\n.navbar-cyan.navbar-light .form-control-navbar::placeholder {\n  color: rgba(52, 58, 64, 0.8);\n}\n\n.navbar-cyan.navbar-light .form-control-navbar,\n.navbar-cyan.navbar-light .form-control-navbar + .input-group-append > .btn-navbar {\n  background-color: #1592a6;\n  border-color: #127e8f;\n  color: rgba(52, 58, 64, 0.8);\n}\n\n.navbar-cyan.navbar-light .form-control-navbar:focus::placeholder {\n  color: #343a40;\n}\n\n.navbar-cyan.navbar-light .form-control-navbar:focus,\n.navbar-cyan.navbar-light .form-control-navbar:focus + .input-group-append .btn-navbar {\n  background-color: #148ea1;\n  border-color: #127e8f !important;\n  color: #343a40;\n}\n\n.navbar-cyan.navbar-dark .form-control-navbar::placeholder {\n  color: rgba(255, 255, 255, 0.8);\n}\n\n.navbar-cyan.navbar-dark .form-control-navbar,\n.navbar-cyan.navbar-dark .form-control-navbar + .input-group-append > .btn-navbar {\n  background-color: #19b2ca;\n  border-color: #1cc6e1;\n  color: rgba(255, 255, 255, 0.8);\n}\n\n.navbar-cyan.navbar-dark .form-control-navbar:focus::placeholder {\n  color: #fff;\n}\n\n.navbar-cyan.navbar-dark .form-control-navbar:focus,\n.navbar-cyan.navbar-dark .form-control-navbar:focus + .input-group-append .btn-navbar {\n  background-color: #1ab6cf;\n  border-color: #1cc6e1 !important;\n  color: #fff;\n}\n\n.navbar-white {\n  background-color: #fff;\n  color: #1f2d3d;\n}\n\n.navbar-white.navbar-light .form-control-navbar::placeholder {\n  color: rgba(52, 58, 64, 0.8);\n}\n\n.navbar-white.navbar-light .form-control-navbar,\n.navbar-white.navbar-light .form-control-navbar + .input-group-append > .btn-navbar {\n  background-color: whitesmoke;\n  border-color: #e8e8e8;\n  color: rgba(52, 58, 64, 0.8);\n}\n\n.navbar-white.navbar-light .form-control-navbar:focus::placeholder {\n  color: #343a40;\n}\n\n.navbar-white.navbar-light .form-control-navbar:focus,\n.navbar-white.navbar-light .form-control-navbar:focus + .input-group-append .btn-navbar {\n  background-color: #f2f2f2;\n  border-color: #e8e8e8 !important;\n  color: #343a40;\n}\n\n.navbar-white.navbar-dark .form-control-navbar::placeholder {\n  color: rgba(255, 255, 255, 0.8);\n}\n\n.navbar-white.navbar-dark .form-control-navbar,\n.navbar-white.navbar-dark .form-control-navbar + .input-group-append > .btn-navbar {\n  background-color: white;\n  border-color: white;\n  color: rgba(255, 255, 255, 0.8);\n}\n\n.navbar-white.navbar-dark .form-control-navbar:focus::placeholder {\n  color: #fff;\n}\n\n.navbar-white.navbar-dark .form-control-navbar:focus,\n.navbar-white.navbar-dark .form-control-navbar:focus + .input-group-append .btn-navbar {\n  background-color: white;\n  border-color: white !important;\n  color: #fff;\n}\n\n.navbar-gray {\n  background-color: #6c757d;\n  color: #fff;\n}\n\n.navbar-gray.navbar-light .form-control-navbar::placeholder {\n  color: rgba(52, 58, 64, 0.8);\n}\n\n.navbar-gray.navbar-light .form-control-navbar,\n.navbar-gray.navbar-light .form-control-navbar + .input-group-append > .btn-navbar {\n  background-color: #636b72;\n  border-color: #575e64;\n  color: rgba(52, 58, 64, 0.8);\n}\n\n.navbar-gray.navbar-light .form-control-navbar:focus::placeholder {\n  color: #343a40;\n}\n\n.navbar-gray.navbar-light .form-control-navbar:focus,\n.navbar-gray.navbar-light .form-control-navbar:focus + .input-group-append .btn-navbar {\n  background-color: #60686f;\n  border-color: #575e64 !important;\n  color: #343a40;\n}\n\n.navbar-gray.navbar-dark .form-control-navbar::placeholder {\n  color: rgba(255, 255, 255, 0.8);\n}\n\n.navbar-gray.navbar-dark .form-control-navbar,\n.navbar-gray.navbar-dark .form-control-navbar + .input-group-append > .btn-navbar {\n  background-color: #757f88;\n  border-color: #838c94;\n  color: rgba(255, 255, 255, 0.8);\n}\n\n.navbar-gray.navbar-dark .form-control-navbar:focus::placeholder {\n  color: #fff;\n}\n\n.navbar-gray.navbar-dark .form-control-navbar:focus,\n.navbar-gray.navbar-dark .form-control-navbar:focus + .input-group-append .btn-navbar {\n  background-color: #78828a;\n  border-color: #838c94 !important;\n  color: #fff;\n}\n\n.navbar-gray-dark {\n  background-color: #343a40;\n  color: #fff;\n}\n\n.navbar-gray-dark.navbar-light .form-control-navbar::placeholder {\n  color: rgba(52, 58, 64, 0.8);\n}\n\n.navbar-gray-dark.navbar-light .form-control-navbar,\n.navbar-gray-dark.navbar-light .form-control-navbar + .input-group-append > .btn-navbar {\n  background-color: #2b3035;\n  border-color: #1f2327;\n  color: rgba(52, 58, 64, 0.8);\n}\n\n.navbar-gray-dark.navbar-light .form-control-navbar:focus::placeholder {\n  color: #343a40;\n}\n\n.navbar-gray-dark.navbar-light .form-control-navbar:focus,\n.navbar-gray-dark.navbar-light .form-control-navbar:focus + .input-group-append .btn-navbar {\n  background-color: #292d32;\n  border-color: #1f2327 !important;\n  color: #343a40;\n}\n\n.navbar-gray-dark.navbar-dark .form-control-navbar::placeholder {\n  color: rgba(255, 255, 255, 0.8);\n}\n\n.navbar-gray-dark.navbar-dark .form-control-navbar,\n.navbar-gray-dark.navbar-dark .form-control-navbar + .input-group-append > .btn-navbar {\n  background-color: #3d444b;\n  border-color: #495159;\n  color: rgba(255, 255, 255, 0.8);\n}\n\n.navbar-gray-dark.navbar-dark .form-control-navbar:focus::placeholder {\n  color: #fff;\n}\n\n.navbar-gray-dark.navbar-dark .form-control-navbar:focus,\n.navbar-gray-dark.navbar-dark .form-control-navbar:focus + .input-group-append .btn-navbar {\n  background-color: #3f474e;\n  border-color: #495159 !important;\n  color: #fff;\n}\n\n.navbar-nav-not-expanded {\n  flex-direction: row;\n}\n\n.navbar-nav-not-expanded .dropdown-menu {\n  position: absolute;\n}\n\n.navbar-nav-not-expanded .nav-link {\n  padding-right: 1rem;\n  padding-left: 1rem;\n}\n\n.dark-mode .nav-pills .nav-link {\n  color: #ced4da;\n}\n\n.dark-mode .nav-tabs {\n  border-color: #56606a;\n}\n\n.dark-mode .nav-tabs .nav-link:focus,\n.dark-mode .nav-tabs .nav-link:hover {\n  border-color: #56606a;\n}\n\n.dark-mode .nav-tabs .nav-item.show .nav-link,\n.dark-mode .nav-tabs .nav-link.active {\n  background-color: #343a40;\n  border-color: #56606a #56606a transparent #56606a;\n  color: #fff;\n}\n\n.dark-mode .nav-tabs.flex-column .nav-item.show .nav-link.active, .dark-mode .nav-tabs.flex-column .nav-item.show .nav-link:focus, .dark-mode .nav-tabs.flex-column .nav-item.show .nav-link:hover,\n.dark-mode .nav-tabs.flex-column .nav-link.active,\n.dark-mode .nav-tabs.flex-column .nav-link:focus,\n.dark-mode .nav-tabs.flex-column .nav-link:hover {\n  border-color: #56606a transparent #56606a #56606a;\n}\n\n.dark-mode .nav-tabs.flex-column .nav-item.show .nav-link:focus, .dark-mode .nav-tabs.flex-column .nav-item.show .nav-link:hover,\n.dark-mode .nav-tabs.flex-column .nav-link:focus,\n.dark-mode .nav-tabs.flex-column .nav-link:hover {\n  background-color: #3f474e;\n}\n\n.dark-mode .nav-tabs.flex-column.nav-tabs-right {\n  border-color: #56606a;\n}\n\n.dark-mode .nav-tabs.flex-column.nav-tabs-right .nav-link.active, .dark-mode .nav-tabs.flex-column.nav-tabs-right .nav-link:focus, .dark-mode .nav-tabs.flex-column.nav-tabs-right .nav-link:hover {\n  border-color: #56606a #56606a #56606a transparent;\n}\n\n.dark-mode .navbar-light {\n  background-color: #f8f9fa;\n}\n\n.dark-mode .navbar-dark {\n  background-color: #343a40;\n  border-color: #4b545c;\n}\n\n.dark-mode .navbar-primary {\n  background-color: #3f6791;\n  color: #fff;\n}\n\n.dark-mode .navbar-primary.navbar-light .form-control-navbar::placeholder {\n  color: rgba(52, 58, 64, 0.8);\n}\n\n.dark-mode .navbar-primary.navbar-light .form-control-navbar,\n.dark-mode .navbar-primary.navbar-light .form-control-navbar + .input-group-append > .btn-navbar {\n  background-color: #395d83;\n  border-color: #315071;\n  color: rgba(52, 58, 64, 0.8);\n}\n\n.dark-mode .navbar-primary.navbar-light .form-c

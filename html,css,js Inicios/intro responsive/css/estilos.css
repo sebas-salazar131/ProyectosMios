@@ -1,0 +1,45 @@
+body{
+    text-align: center;
+}
+article{
+    border: 1px solid black;
+    padding: 1em;
+}
+img{
+    max-width: 100%;
+}
+
+/*pantalla grande mayor a 900px */
+@media (min-width:901px){
+    body{
+        background: red;
+    }
+    article{
+        display: inline-block;
+        width: 20%;
+    }
+    
+}
+/*pantalla mediada mayor a 500px y menor a 900px*/
+@media (min-width:501px) and (max-width:900px){
+    body{
+        background: yellow;
+    }
+    article{
+        display: inline-block;
+        width: 40%;
+    }
+
+}
+/*pantalla penqueña menor a igual 500px*/
+@media (max-width:500px){
+    body{
+        background: blue;
+    }
+    article{
+        display: block;
+        width: 90%;
+        margin: 0px auto;
+    }
+
+}

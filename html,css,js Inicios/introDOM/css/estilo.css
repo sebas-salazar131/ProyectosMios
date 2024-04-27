@@ -1,0 +1,13 @@
+
+button{
+    width: 3em;
+    background: rgb(79, 192, 107);
+}
+.azul{
+    background: rgb(18, 148, 235);
+}
+.resultado{
+    width: 13em;
+    height: 5em;
+    border: black;
+}

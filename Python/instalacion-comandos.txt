@@ -1,0 +1,17 @@
+conda env lis
+crear carpeta: mkdir introFastApi
+crear entorno: conda create --name fastApi
+conda activate fastApi
+code .
+
+pip install fastapi
+pip install "uvicorn[standard]"
+pip install sqlalchemy
+pip install psycopg2
+
+PARA IMAGENES DE AZURE:
+pip install -r requirements.txt
+
+pip install dotenv
+uvicorn main:app --reload
+
